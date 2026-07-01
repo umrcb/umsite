@@ -1,5 +1,5 @@
 import dbConnect from '@/lib/mongodb';
-import { Settings as SettingsModel } from '@/models';
+import { Setting as SettingsModel } from '@/models';
 import { Settings } from './validations';
 import 'server-only';
 import { unstable_cache, revalidateTag } from 'next/cache';

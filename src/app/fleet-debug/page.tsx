@@ -1,10 +1,10 @@
-import { vehicleService } from '@/services/vehicleService';
+import { VehicleService } from '@/services/vehicleService';
 import Image from 'next/image';
 
 export const dynamic = 'force-dynamic';
 
 export default async function FleetDebugPage() {
-    const vehicles = await vehicleService.getActiveVehicles();
+    const vehicles = await VehicleService.getActiveVehicles();
 
     return (
         <div className="p-10 bg-white text-black">

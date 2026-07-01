@@ -1,9 +1,9 @@
 import React from 'react';
-import { vehicleService } from '@/services/vehicleService';
+import { VehicleService } from '@/services/vehicleService';
 import FleetShowcase, { Vehicle as ShowcaseVehicle } from '@/components/fleet/FleetShowcase';
 
 export default async function FleetShowcaseLoader() {
-    const vehicles = await vehicleService.getActiveVehicles();
+    const vehicles = await VehicleService.getActiveVehicles();
 
     const showcaseVehicles: ShowcaseVehicle[] = vehicles.map(v => ({
         id: v.id || '',

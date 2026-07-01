@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
 import { revalidateTag } from 'next/cache';
 import { routeService } from '@/services/routeService';
-import { vehicleService } from '@/services/vehicleService';
+import { VehicleService } from '@/services/vehicleService';
 
 // This endpoint is for internal/admin use to seed the DB with the specific routes from the Pricing Grids
 export async function GET() {
     try {
         // 1. Get Vehicles to find IDs
-        const vehicles = await vehicleService.getActiveVehicles();
+        const vehicles = await VehicleService.getActiveVehicles();
         const gmc = vehicles.find((v: any) => v.name.toLowerCase().includes('gmc') || v.id.includes('gmc'));
         const camry = vehicles.find((v: any) => v.name.toLowerCase().includes('camry'));
 

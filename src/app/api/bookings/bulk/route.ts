@@ -4,7 +4,7 @@ import { validateRequest } from '@/lib/server-auth';
 import { calculateFinalPrice } from '@/lib/pricing';
 import { getSettings } from '@/lib/settings-storage';
 import { routeService, RouteWithPrices } from '@/services/routeService';
-import { vehicleService } from '@/services/vehicleService';
+import { VehicleService } from '@/services/vehicleService';
 
 import dbConnect from '@/lib/mongodb';
 
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
         const [settings, routes, vehicles] = await Promise.all([
             getSettings(),
             routeService.getRoutes(),
-            vehicleService.getVehicles()
+            VehicleService.getActiveVehicles()
         ]);
 
         // First Pass: Calculate Prices and Validate

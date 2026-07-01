@@ -5,7 +5,7 @@ import { BookingSchema } from '@/lib/validations';
 import { validateRequest } from '@/lib/server-auth';
 import { getSettings } from '@/lib/settings-storage';
 import { routeService, RouteWithPrices } from '@/services/routeService';
-import { vehicleService } from '@/services/vehicleService';
+import { VehicleService } from '@/services/vehicleService';
 import { calculateFinalPrice } from '@/lib/pricing';
 
 
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
             try {
                 const [routes, vehicles, settings] = await Promise.all([
                     routeService.getRoutes(),
-                    vehicleService.getVehicles(),
+                    VehicleService.getActiveVehicles(),
                     getSettings()
                 ]);
 

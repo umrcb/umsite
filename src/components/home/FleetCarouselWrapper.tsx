@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 import FleetCarousel from './FleetCarousel';
-import { vehicleService } from '@/services/vehicleService';
+import { VehicleService } from '@/services/vehicleService';
 import { Vehicle as FleetVehicle } from './FleetCarousel';
 
 import { getSettings } from '@/lib/settings-storage';
 
 async function FleetCarouselFetcher() {
-    const vehicles = await vehicleService.getVehicles();
+    const vehicles = await VehicleService.getActiveVehicles();
     const settings = await getSettings();
 
     // Map to FleetCarousel format

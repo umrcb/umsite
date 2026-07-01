@@ -4,3 +4,6 @@ export * from './Route';
 export * from './Booking';
 export * from './Review';
 export * from './Setting';
+export * from './AuditLog';
+export * from './BlogPost';
+export * from './Section';

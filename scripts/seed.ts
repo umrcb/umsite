@@ -23,7 +23,7 @@ async function seed() {
         const adminPassword = await bcrypt.hash('admin123', 10);
         await User.create({
             name: 'System Admin',
-            email: 'admin@ahsas.local',
+            email: 'admin@umrahtaxiservices.com',
             password: adminPassword,
             role: 'admin',
             isActive: true,
@@ -70,7 +70,7 @@ async function seed() {
         // Settings
         await Setting.create({
             key: 'site_name',
-            value: 'Ahsas Cab Services',
+            value: 'Umrah Taxi Services',
             type: 'text'
         });
 

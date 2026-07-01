@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { vehicleService } from '@/services/vehicleService';
+import { VehicleService } from '@/services/vehicleService';
 import { auditLogService } from '@/services/auditLogService';
 import { requireRole } from '@/lib/server-auth';
 
@@ -10,7 +10,7 @@ export async function GET() {
     }
 
     try {
-        const vehicles = await vehicleService.getVehicles();
+        const vehicles = await VehicleService.getActiveVehicles();
 
         // Enforce specific sort order
         // Enforce specific sort order with robust matching
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
         const body = await request.json();
         const { name, image, passengers, luggage, features, price, hourlyRate, category, isActive, unavailableDates } = body;
 
-        const vehicle = await vehicleService.createVehicle({
+        const vehicle = await VehicleService.createVehicle({
             name,
             image,
             passengers: parseInt(passengers),
@@ -89,7 +89,7 @@ export async function PUT(request: Request) {
             return NextResponse.json({ error: 'ID required' }, { status: 400 });
         }
 
-        const vehicle = await vehicleService.updateVehicle(id, {
+        const vehicle = await VehicleService.updateVehicle(id, {
             name,
             image,
             passengers: parseInt(passengers),
@@ -139,7 +139,7 @@ export async function DELETE(request: Request) {
             return NextResponse.json({ error: 'ID required' }, { status: 400 });
         }
 
-        await vehicleService.deleteVehicle(id);
+        await VehicleService.deleteVehicle(id);
 
         // Audit Log
         await auditLogService.log({

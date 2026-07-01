@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { routeService } from '@/services/routeService';
-import { vehicleService } from '@/services/vehicleService';
+import { VehicleService } from '@/services/vehicleService';
 import pricingData from '@/data/pricing.json';
 
 const DEFAULT_ROUTES = pricingData.routes;
@@ -12,7 +12,7 @@ export async function GET() {
     try {
         const [routes, vehicles] = await Promise.all([
             routeService.getActiveRoutes(),
-            vehicleService.getActiveVehicles()
+            VehicleService.getActiveVehicles()
         ]);
 
         // Fallback to default data if database is empty
