@@ -1,0 +1,280 @@
+.container {
+    position: relative;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 Columns for better space usage, matches screenshot */
+    gap: 1.25rem;
+    padding: 0.5rem;
+}
+
+/* Premium White Card Design */
+.card {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: left;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover State */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.1);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* Selected State - Gold Border */
+.selected {
+    background: #fffcf5;
+    /* Very subtle cream tint */
+    border-color: var(--gold);
+    box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.2);
+}
+
+.activeBorder {
+    position: absolute;
+    inset: 0;
+    border: 2px solid var(--gold);
+    border-radius: 1.25rem;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 1;
+}
+
+.iconWrapper {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+    color: #64748b;
+}
+
+/* Selected Icon - Gold Filled */
+.selected .iconWrapper {
+    background: linear-gradient(135deg, var(--gold) 0%, #f3e5ab 100%);
+    color: var(--navy);
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.info {
+    flex: 1;
+    min-width: 0;
+    /* Prevents overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.name {
+    font-family: var(--font-playfair), serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.01em;
+}
+
+.specs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.spec {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Check Mark Animation */
+.checkIcon {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    color: white;
+    background: var(--navy);
+    border-bottom-left-radius: 1rem;
+    padding: 0.4rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+}
+
+/* Mobile Dropdown Styling matches Desktop style roughly */
+.trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.trigger:hover {
+    border-color: #cbd5e1;
+}
+
+.trigger.open {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.triggerIconWrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.trigger.open .triggerIconWrapper {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: transparent;
+}
+
+.vehicleInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.value {
+    font-weight: 700;
+    color: var(--navy);
+    font-family: var(--font-playfair), serif;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    padding: 0.5rem;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    transition: background 0.2s;
+}
+
+.option:hover {
+    background: #f8fafc;
+}
+
+.option.selectedOption {
+    background: #f1f5f9;
+}
+
+.optionIcon {
+    color: #94a3b8;
+}
+
+.option.selectedOption .optionIcon {
+    color: var(--gold);
+}
+
+.optionName {
+    display: block;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.95rem;
+    margin-bottom: 0.1rem;
+}
+
+.optionMeta {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.selectedIndicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}

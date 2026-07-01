@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 
+      Theme: Professional & Spiritual (Ahsas Cab)
+      Palette: Deep Midnight Navy, Antique Gold, Pearl, Desert Sand
+    */
+
+    /* Base Colors */
+    --background: 210 20% 98%;
+    /* Pearl White (Off-white) */
+    --foreground: 224 71% 4%;
+    /* Midnight Navy (Very Dark Blue) */
+
+    --card: 0 0% 100%;
+    /* Pure White */
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    /* Brand Colors */
+    --primary: 43 74% 49%;
+    /* Antique Gold (#D9B34A) */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 47% 11%;
+    /* Deep Navy Blue (#0F172A) */
+    --secondary-foreground: 43 74% 49%;
+    /* Gold Text on Navy */
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 43 74% 66%;
+    /* Soft Gold/Beige */
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 43 74% 49%;
+    /* Gold Ring */
+
+    --radius: 0.5rem;
+
+    /* Custom Variables */
+    --gold: 43 74% 49%;
+    --navy: 222 47% 11%;
+
+    /* Gradients & Effects */
+    --gold-gradient: linear-gradient(135deg, #F2D57E 0%, #D4AF37 50%, #997B28 100%);
+    --navy-gradient: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+    --pearl-gradient: linear-gradient(to bottom, #ffffff, #fdfbf7);
+
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    /* Slightly more transparent */
+    --glass-border: rgba(226, 232, 240, 0.6);
+    /* Slate-200ish for definition */
+    --glass-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.05);
+    /* Navy-tinted shadow */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: var(--pearl-gradient);
+    background-attachment: fixed;
+  }
+
+  /* Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+    font-family: var(--font-playfair), sans-serif;
+    color: hsl(var(--navy));
+    /* Enforce Navy */
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+
+  /* Selection Override */
+  ::selection {
+    background-color: hsl(var(--primary) / 0.3);
+    color: hsl(var(--secondary));
+  }
+}
+
+@layer utilities {
+
+  /* Spiritual/Geometric Pattern Overlay */
+  .pattern-grid-fade {
+    background-image: radial-gradient(hsl(var(--primary)) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    opacity: 0.05;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-card {
+    @apply glass rounded-lg transition-all duration-300;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Text Gradients */
+  .text-gradient-gold {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Premium Button Styles */
+  .btn-gold {
+    background: var(--gold-gradient);
+    color: white;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
+    filter: brightness(1.05);
+  }
+}
