@@ -1,22 +1,22 @@
 import dbConnect from '@/lib/mongodb';
-import { Settings } from '@/models';
+import { Setting } from '@/models';
 
 export const settingsService = {
     async getSettings() {
         await dbConnect();
-        const settings = await Settings.find({}).lean();
-        return settings.map(s => ({ key: s.key, value: s.value }));
+        const settings = await Setting.find({}).lean();
+        return settings.map((s: any) => ({ key: s.key, value: s.value }));
     },
 
     async getSetting(key: string) {
         await dbConnect();
-        const setting = await Settings.findOne({ key }).lean();
+        const setting = await Setting.findOne({ key }).lean();
         return setting ? setting.value : null;
     },
 
     async updateSetting(key: string, value: string) {
         await dbConnect();
-        const updatedSetting = await Settings.findOneAndUpdate(
+        const updatedSetting = await Setting.findOneAndUpdate(
             { key },
             { value },
             { upsert: true, new: true }

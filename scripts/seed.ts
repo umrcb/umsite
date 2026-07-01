@@ -83,3 +83,5 @@ async function seed() {
 }
 
 seed();
+
+export {};
