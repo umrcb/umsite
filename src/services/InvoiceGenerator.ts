@@ -23,7 +23,7 @@ export const generateInvoice = async (booking: any) => {
     doc.setTextColor(30, 41, 59); // Slate-800
     doc.setFontSize(22);
     doc.setFont("helvetica", "bold");
-    doc.text("Ahsas Cab", 15, 20);
+    doc.text("Umrah Cabs", 15, 20);
 
     doc.setFontSize(10);
     doc.setFont("helvetica", "normal");
@@ -48,10 +48,10 @@ export const generateInvoice = async (booking: any) => {
 
     doc.setTextColor(51, 65, 85); // Slate-700
     doc.setFont("helvetica", "bold");
-    doc.text("Ahsas Cab", 15, yPos + 6);
+    doc.text("Umrah Cabs", 15, yPos + 6);
     doc.setFont("helvetica", "normal");
     doc.text("Makkah, Saudi Arabia", 15, yPos + 11);
-    doc.text("cabahsas@gmail.com", 15, yPos + 16);
+    doc.text("info@umrahcabs.com", 15, yPos + 16);
 
     // To (Customer)
     doc.setFontSize(10);

@@ -41,10 +41,10 @@ export const AbandonedCartTemplate = ({
                         {/* Logo */}
                         <Section className="mb-6 text-center">
                             <Img
-                                src={`${process.env.NEXT_PUBLIC_APP_URL}/ahsas-logo-v2.png`}
+                                src={`${process.env.NEXT_PUBLIC_APP_URL}/umrah-cabs-logo-v2.svg`}
                                 width="80"
                                 height="80"
-                                alt="Ahsas Cab"
+                                alt="Umrah Cabs"
                                 className="mx-auto"
                             />
                         </Section>
@@ -85,7 +85,7 @@ export const AbandonedCartTemplate = ({
                         {/* Footer */}
                         <Section className="text-center mt-8">
                             <Text className="text-slate-400 text-xs">
-                                © {new Date().getFullYear()} Ahsas Cab. All rights reserved.
+                                © {new Date().getFullYear()} Umrah Cabs. All rights reserved.
                             </Text>
                             <Link href={`${process.env.NEXT_PUBLIC_APP_URL}/contact`} className="text-slate-400 text-xs underline">
                                 Contact Support

@@ -14,7 +14,7 @@ export default function CompanyStory() {
                             From Vision to Service, <span className="text-gold">Guided by Faith</span>
                         </h2>
                         <p className="text-teal-100/80 leading-relaxed">
-                            Ahsas Cab was founded with a simple yet profound mission: to serve the guests of Allah with the dignity and comfort they deserve. What started as a humble initiative has grown into a trusted name in Umrah transportation.
+                            Umrah Cabs was founded with a simple yet profound mission: to serve the guests of Allah with the dignity and comfort they deserve. What started as a humble initiative has grown into a trusted name in Umrah transportation.
                         </p>
                         <p className="text-teal-100/80 leading-relaxed">
                             We understand that your journey is not just physical but spiritual. That&apos;s why every aspect of our service—from our well-maintained fleet to our courteous drivers—is designed to ensure your peace of mind, allowing you to focus entirely on your worship.

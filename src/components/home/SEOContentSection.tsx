@@ -19,10 +19,10 @@ export default function SEOContentSection() {
                         <div className="prose dark:prose-invert max-w-none text-left space-y-8">
                             <div className="space-y-4">
                                 <h2 className="text-3xl md:text-4xl font-bold font-playfair text-gold">
-                                    Your Trusted Companion on the Sacred Journey to Ahsas Cab
+                                    Your Trusted Companion on the Sacred Journey to Umrah Cabs
                                 </h2>
                                 <p className="text-lg text-foreground/80 leading-relaxed">
-                                    Embarking on <Link href="/services" className="text-secondary font-medium hover:underline">Umrah</Link> is one of life's most blessed moments—a call from Allah that touches the soul. At Ahsas Cab, we don't just provide transportation; we become part of your spiritual journey, ensuring every moment of travel brings you peace and comfort as you answer this divine invitation.
+                                    Embarking on <Link href="/services" className="text-secondary font-medium hover:underline">Umrah</Link> is one of life's most blessed moments—a call from Allah that touches the soul. At Umrah Cabs, we don't just provide transportation; we become part of your spiritual journey, ensuring every moment of travel brings you peace and comfort as you answer this divine invitation.
                                 </p>
                                 <p className="text-lg text-muted-foreground leading-relaxed">
                                     We understand that your heart is already in the holy cities, filled with anticipation to walk where the Prophet Muhammad (peace be upon him) walked. Your mind is preparing for prayers, du'as, and spiritual reflection. The last thing you need is worry about logistics and transportation. That's where we step in—as your dedicated travel companions who care deeply about your sacred experience.
@@ -32,7 +32,7 @@ export default function SEOContentSection() {
                             <div className="space-y-4">
                                 <h3 className="text-2xl font-bold font-playfair text-gold">Driven by Faith, Guided by Compassion</h3>
                                 <p className="text-lg text-foreground/80 leading-relaxed">
-                                    Every member of our Ahsas Cab family treats each pilgrim with the respect and warmth they deserve. Our drivers aren't just professionals—they're fellow believers who understand the sanctity of your journey. Many have performed Umrah themselves and know the emotions you're experiencing: the excitement, the nervousness, the overwhelming gratitude to Allah for this opportunity.
+                                    Every member of our Umrah Cabs family treats each pilgrim with the respect and warmth they deserve. Our drivers aren't just professionals—they're fellow believers who understand the sanctity of your journey. Many have performed Umrah themselves and know the emotions you're experiencing: the excitement, the nervousness, the overwhelming gratitude to Allah for this opportunity.
                                 </p>
                                 <p className="text-lg text-muted-foreground leading-relaxed">
                                     When you step into our vehicles, you'll feel the difference. Whether you're traveling from the <Link href="/services/jeddah-airport-transfer" className="text-secondary font-medium hover:underline">airport</Link> with your luggage and tired from your flight, or journeying between <Link href="/services/makkah-madinah-taxi" className="text-secondary font-medium hover:underline">Makkah and Madinah</Link> with your heart full of spiritual blessings, we ensure your comfort so you can focus entirely on your worship and connection with Allah.
@@ -62,7 +62,7 @@ export default function SEOContentSection() {
                             <div className="space-y-4">
                                 <h3 className="text-2xl font-bold font-playfair text-gold">Walking in the Footsteps of Prophets</h3>
                                 <p className="text-lg text-foreground/80 leading-relaxed">
-                                    The roads between Makkah and Madinah are sacred paths. The Prophet Muhammad (peace be upon him) traveled these routes, and millions of believers continue to follow in his blessed footsteps. When Ahsas Cab drives you along these roads, we're conscious of the history beneath our wheels and the spiritual significance of every mile.
+                                    The roads between Makkah and Madinah are sacred paths. The Prophet Muhammad (peace be upon him) traveled these routes, and millions of believers continue to follow in his blessed footsteps. When Umrah Cabs drives you along these roads, we're conscious of the history beneath our wheels and the spiritual significance of every mile.
                                 </p>
                                 <p className="text-lg text-muted-foreground leading-relaxed">
                                     We share in your joy when you first glimpse the minarets of Masjid al-Haram. We understand the tears that flow when leaving Madinah after days of praying in Masjid an-Nabawi. These aren't just destinations on a map for us—they're the holiest places on earth.
@@ -85,14 +85,14 @@ export default function SEOContentSection() {
                                     Every pilgrim who trusts us with their transportation honors us. We've witnessed countless emotional departures from airports, tears of joy at the Haram, peaceful faces in Madinah, and grateful hearts returning home transformed. Being part of these sacred moments is what drives us.
                                 </p>
                                 <p className="text-lg text-muted-foreground leading-relaxed">
-                                    Ahsas Cab isn't just a business name—it represents our commitment to serving those who seek Allah's pleasure. We're local to Saudi Arabia, familiar with every route and shortcuts, aware of traffic patterns during peak Umrah seasons, and always thinking ahead to ensure your time is spent in worship, not in worry.
+                                    Umrah Cabs isn't just a business name—it represents our commitment to serving those who seek Allah's pleasure. We're local to Saudi Arabia, familiar with every route and shortcuts, aware of traffic patterns during peak Umrah seasons, and always thinking ahead to ensure your time is spent in worship, not in worry.
                                 </p>
                             </div>
 
                             <div className="space-y-4">
                                 <h3 className="text-2xl font-bold font-playfair text-gold">Let Us Carry You on This Blessed Path</h3>
                                 <p className="text-lg text-foreground/80 leading-relaxed">
-                                    Your Umrah is a once-in-a-lifetime experience for some, an annual blessing for others. However often you travel, let Ahsas Cab be your constant companion on these sacred roads. We promise to treat you like family, safeguard your journey like a trust from Allah, and serve you with the sincerity that this blessed work deserves.
+                                    Your Umrah is a once-in-a-lifetime experience for some, an annual blessing for others. However often you travel, let Umrah Cabs be your constant companion on these sacred roads. We promise to treat you like family, safeguard your journey like a trust from Allah, and serve you with the sincerity that this blessed work deserves.
                                 </p>
                                 <p className="text-lg text-muted-foreground leading-relaxed">
                                     <strong>Contact us today</strong>, and let's begin planning your transport arrangements. While you prepare your heart and soul for this spiritual journey, let us prepare everything else. May Allah accept your Umrah and grant you a journey filled with peace, blessings, and life-changing spiritual moments.

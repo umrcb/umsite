@@ -57,7 +57,7 @@ export default function WelcomeSection() {
                         Welcome | أهلاً بك
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold text-navy mb-6 font-playfair leading-tight">
-                        Welcome to Ahsas Cab
+                        Welcome to Umrah Cabs
                         <span className="block text-2xl md:text-4xl mt-3 font-reem-kufi text-secondary">احساس الرحلات</span>
                     </h2>
                     <p className="text-xl text-slate-600 font-light max-w-2xl mx-auto leading-relaxed">
@@ -84,7 +84,7 @@ export default function WelcomeSection() {
                         </div>
 
                         <p className="text-lg leading-relaxed text-slate-700">
-                            {parseMarkdown("Our fleet of [modern buses and vans](/fleet) ensures **stress‑free [Jeddah Airport transfers](/services/jeddah-airport-transfer) and [Makkah to Madinah journeys](/services/makkah-madinah-taxi)**. We provide professional drivers dedicated to hospitality and punctuality. Whether you are traveling solo, with family, or in large groups, Ahsas Cab offers **[customized packages](/booking)** to meet your needs.")}
+                            {parseMarkdown("Our fleet of [modern buses and vans](/fleet) ensures **stress‑free [Jeddah Airport transfers](/services/jeddah-airport-transfer) and [Makkah to Madinah journeys](/services/makkah-madinah-taxi)**. We provide professional drivers dedicated to hospitality and punctuality. Whether you are traveling solo, with family, or in large groups, Umrah Cabs offers **[customized packages](/booking)** to meet your needs.")}
                         </p>
                     </div>
 

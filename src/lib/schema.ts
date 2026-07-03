@@ -5,9 +5,9 @@ export type SchemaType = 'LocalBusiness' | 'Product' | 'BreadcrumbList' | 'FAQPa
 export const ORGANIZATION_SCHEMA = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Ahsas Cab",
-    "url": "https://ahsascab.com",
-    "logo": "https://ahsascab.com/ahsas-logo-v2.png",
+    "name": "Umrah Cabs",
+    "url": "https://UmrahCabs.com",
+    "logo": "https://UmrahCabs.com/umrah-cabs-logo-v2.svg",
     "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+966-54-549-4921",
@@ -16,9 +16,9 @@ export const ORGANIZATION_SCHEMA = {
         "availableLanguage": ["en", "ar", "ur"]
     },
     "sameAs": [
-        "https://www.facebook.com/ahsascab",
-        "https://www.instagram.com/ahsascab",
-        "https://twitter.com/ahsascab"
+        "https://www.facebook.com/UmrahCabs",
+        "https://www.instagram.com/UmrahCabs",
+        "https://twitter.com/UmrahCabs"
     ]
 };
 
@@ -39,7 +39,7 @@ export function generateProductSchema(route: {
         "sku": `ROUTE-${route.slug.toUpperCase()}`,
         "brand": {
             "@type": "Brand",
-            "name": "Ahsas Cab"
+            "name": "Umrah Cabs"
         },
         "offers": {
             "@type": "AggregateOffer",

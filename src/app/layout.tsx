@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display, Open_Sans, Reem_Kufi } from "next/font/google";
+import { Inter, Poppins, Open_Sans, Reem_Kufi } from "next/font/google";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { MobileMenuProvider } from "@/context/MobileMenuContext";
 import { PricingProvider } from '@/context/PricingContext';
@@ -27,10 +27,10 @@ const interMono = Inter({
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: 'swap',
   preload: true,
 });
@@ -74,7 +74,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${interMono.variable} ${playfair.variable} ${openSans.variable} ${reemKufi.variable}`}>
+      <body className={`${inter.variable} ${interMono.variable} ${poppins.variable} ${openSans.variable} ${reemKufi.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

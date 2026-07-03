@@ -149,7 +149,7 @@ export default function AdminLayout({
                 <div className="p-6 border-b border-navy-800 bg-navy-950/50">
                     <div className="flex flex-col items-start gap-1">
                         <div className="flex flex-col items-start text-left">
-                            <span className="text-2xl font-bold text-gold font-playfair">Ahsas</span>
+                            <span className="text-2xl font-bold text-gold font-playfair">Umrah Cabs</span>
                             <span className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase font-outfit">Alrihlat</span>
                             <span className="text-lg font-bold text-gold mt-1 font-[family-name:var(--font-reem-kufi)] opacity-90">احساس الرحلات</span>
                         </div>

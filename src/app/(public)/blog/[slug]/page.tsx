@@ -41,10 +41,10 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     return constructMetadata({
         title: post.title,
         description: post.excerpt,
-        image: post.image,
+        image: (post as any).imageUrl || (post as any).image,
         type: 'article',
         canonicalUrl: '/blog/${post.slug}',
-        keywords: post.tags,
+        keywords: (post as any).tags || [],
     });
 }
 
@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         },
         "publisher": {
             "@type": "Organization",
-            "name": "Ahsas Alrihlat",
+            "name": "Umrah Cabs",
             "logo": {
                 "@type": "ImageObject",
                 "url": `${getBaseUrl()}/logo.png` // Update with actual logo URL

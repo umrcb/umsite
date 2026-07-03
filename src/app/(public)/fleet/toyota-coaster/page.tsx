@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, Shield, Star, Briefcase, Users, Fuel, MapPin, Wifi } from 'lucide-react';
 import FAQSection from '@/components/services/FAQSection';
 import { getSettings } from '@/lib/settings-storage';
-import FleetCarouselWrapper from '@/components/home/FleetCarouselWrapper';
+import FleetShowcase from '@/components/home/FleetShowcase';
 import FleetPricingGrid from '@/components/fleet/FleetPricingGrid';
 import FleetFeatureImage from '@/components/fleet/FleetFeatureImage';
 import OtherFleetSEO from '@/components/fleet/OtherFleetSEO';
@@ -187,7 +187,7 @@ export default async function ToyotaCoasterPage() {
                 </div>
             </section>
 
-            <FleetCarouselWrapper />
+            <FleetShowcase />
 
             <FAQSection items={coasterFAQs} title="Toyota Coaster Rental - Frequently Asked Questions" />
         </main>

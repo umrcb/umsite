@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const CANONICAL_URL = 'https://www.ahsascab.com';
+const CANONICAL_URL = 'https://www.UmrahCabs.com';
 
 export default function robots(): MetadataRoute.Robots {
     return {
@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: '*',
                 disallow: '/',
-                // This rule applies when host is ahsascab.vercel.app
+                // This rule applies when host is UmrahCabs.vercel.app
             },
             // Allow crawlers only on the canonical custom domain
             {

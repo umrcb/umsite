@@ -66,8 +66,8 @@ export default function Preloader() {
                     {/* Using Next Image for priority loading */}
                     <div className={styles.logoImage}>
                         <Image
-                            src="/ahsas-logo-v2.png"
-                            alt="Ahsas Cab"
+                            src="/umrah-cabs-logo-v2.svg"
+                            alt="Umrah Cabs"
                             width={110}
                             height={110}
                             priority

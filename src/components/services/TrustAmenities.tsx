@@ -37,7 +37,7 @@ export default function TrustAmenities() {
                 <div className="text-center mb-12">
                     <FadeIn>
                         <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                            Why Choose Ahsas Alrihlat?
+                            Why Choose Umrah Cabs?
                         </h2>
                         <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                             We are committed to providing a safe, reliable, and spiritually uplifting journey for all guests of Allah.

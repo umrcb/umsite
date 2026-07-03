@@ -1,26 +1,26 @@
 {
   "general": {
-    "siteName": "Ahsas Cab",
+    "siteName": "Umrah Cabs",
     "description": "Premium Luxury Transport & Cab Service in Saudi Arabia",
-    "footerText": "© 2026 Ahsas Cab. All rights reserved.",
-    "logo": "/ahsas-logo-v2.png",
+    "footerText": "© 2026 Umrah Cabs. All rights reserved.",
+    "logo": "/umrah-cabs-logo-v2.svg",
     "googleAnalyticsId": ""
   },
   "contact": {
-    "email": "cabahsas@gmail.com",
+    "email": "info@umrahcabs.com",
     "phone": "+966 54 549 4921",
     "address": "Makkah, Saudi Arabia",
     "whatsapp": "+966 54 549 4921",
     "social": {
       "facebook": "https://facebook.com/ahsascal",
-      "twitter": "https://twitter.com/ahsascab",
-      "instagram": "https://instagram.com/ahsascab"
+      "twitter": "https://twitter.com/UmrahCabs",
+      "instagram": "https://instagram.com/UmrahCabs"
     }
   },
   "seo": {
-    "defaultTitle": "Ahsas Cab - Luxury Umrah Transport",
+    "defaultTitle": "Umrah Cabs - Luxury Umrah Transport",
     "defaultDescription": "Premium taxi and luxury transport service in Makkah, Madinah, and Jeddah. Trusted by thousands of pilgrims.",
-    "keywords": "Ahsas Cab, umrah taxi, makkah transport, jeddah airport transfer, luxury transport saudi arabia, vip umrah transport"
+    "keywords": "Umrah Cabs, umrah taxi, makkah transport, jeddah airport transfer, luxury transport saudi arabia, vip umrah transport"
   },
   "appearance": {
     "darkMode": false,

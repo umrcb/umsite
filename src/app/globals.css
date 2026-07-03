@@ -4,66 +4,49 @@
 
 @layer base {
   :root {
-    /* 
-      Theme: Professional & Spiritual (Ahsas Cab)
-      Palette: Deep Midnight Navy, Antique Gold, Pearl, Desert Sand
-    */
+    /* Base & Neutral Colors */
+    --background: 210 20% 98%; /* #F8FAFC Off White */
+    --foreground: 215 19% 35%; /* #475569 Secondary Text */
 
-    /* Base Colors */
-    --background: 210 20% 98%;
-    /* Pearl White (Off-white) */
-    --foreground: 224 71% 4%;
-    /* Midnight Navy (Very Dark Blue) */
-
-    --card: 0 0% 100%;
-    /* Pure White */
-    --card-foreground: 224 71% 4%;
+    --card: 0 0% 100%; /* #FFFFFF Pure White */
+    --card-foreground: 222 47% 11%; /* #0F172A Dark Text */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
+    --popover-foreground: 222 47% 11%;
 
-    /* Brand Colors */
-    --primary: 43 74% 49%;
-    /* Antique Gold (#D9B34A) */
-    --primary-foreground: 0 0% 100%;
+    /* Primary Brand Colors */
+    --primary: 146 50% 36%; /* #2E8B57 Emerald Green */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
 
-    --secondary: 222 47% 11%;
-    /* Deep Navy Blue (#0F172A) */
-    --secondary-foreground: 43 74% 49%;
-    /* Gold Text on Navy */
+    --secondary: 124 55% 24%; /* #1B5E20 Forest Green (Hover) */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215 16% 47%;
+    /* Additional Theme Colors */
+    --kaaba-black: 222 47% 11%; /* #0F172A */
 
-    --accent: 43 74% 66%;
-    /* Soft Gold/Beige */
-    --accent-foreground: 222 47% 11%;
+    --muted: 215 16% 47%; /* #64748B Muted Text */
+    --muted-foreground: 210 20% 98%;
+
+    --accent: 45 66% 47%; /* #C9A227 Royal Gold */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 43 74% 49%;
-    /* Gold Ring */
+    --success: 142 71% 45%; /* #22C55E */
+    --warning: 38 92% 50%; /* #F59E0B */
+    --error: 0 72% 51%; /* #DC2626 */
 
-    --radius: 0.5rem;
+    --border: 214 32% 91%; /* #E2E8F0 */
+    --input: 214 32% 91%; /* #E2E8F0 */
+    --ring: 146 50% 36%; /* Emerald Green */
 
-    /* Custom Variables */
-    --gold: 43 74% 49%;
+    --radius: 1rem; /* 16px */
+
+    /* Custom Theme Variables */
+    --gold: 45 66% 47%;
+    --gold-hover: 42 72% 41%; /* #B3871D */
     --navy: 222 47% 11%;
-
-    /* Gradients & Effects */
-    --gold-gradient: linear-gradient(135deg, #F2D57E 0%, #D4AF37 50%, #997B28 100%);
-    --navy-gradient: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-    --pearl-gradient: linear-gradient(to bottom, #ffffff, #fdfbf7);
-
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    /* Slightly more transparent */
-    --glass-border: rgba(226, 232, 240, 0.6);
-    /* Slate-200ish for definition */
-    --glass-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.05);
-    /* Navy-tinted shadow */
   }
 }
 
@@ -75,42 +58,20 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    background-image: var(--pearl-gradient);
-    background-attachment: fixed;
   }
 
   /* Typography */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-bold tracking-tight;
-    font-family: var(--font-playfair), sans-serif;
-    color: hsl(var(--navy));
-    /* Enforce Navy */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-poppins text-[#0F172A] font-bold;
   }
 
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
-  }
-
-  h2 {
-    @apply text-3xl md:text-4xl;
-  }
-
-  h3 {
-    @apply text-2xl md:text-3xl;
-  }
-
-  h4 {
-    @apply text-xl md:text-2xl;
-  }
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl font-[800]; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+  h4 { @apply text-xl md:text-2xl; }
 
   p {
-    @apply leading-relaxed;
-    font-family: var(--font-geist-sans), sans-serif;
+    @apply leading-relaxed font-sans font-normal;
   }
 
   /* Selection Override */
@@ -121,52 +82,40 @@
 }
 
 @layer utilities {
-
-  /* Spiritual/Geometric Pattern Overlay */
-  .pattern-grid-fade {
-    background-image: radial-gradient(hsl(var(--primary)) 1px, transparent 1px);
-    background-size: 24px 24px;
-    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-    opacity: 0.05;
+  /* Enterprise Cards */
+  .premium-card {
+    @apply bg-white rounded-[20px] p-8 border border-[#E2E8F0] transition-all duration-300;
+    box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+  }
+  .premium-card:hover {
+    @apply -translate-y-2;
+    box-shadow: 0 20px 40px rgba(15,23,42,0.12);
   }
 
-  /* Glassmorphism */
-  .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
+  /* Enterprise Buttons */
+  .btn-primary {
+    @apply bg-primary text-white rounded-[14px] font-semibold transition-all duration-300 px-6 py-3 inline-flex items-center justify-center;
+  }
+  .btn-primary:hover {
+    @apply bg-[#1B5E20];
   }
 
-  .glass-card {
-    @apply glass rounded-lg transition-all duration-300;
+  .btn-secondary {
+    @apply bg-white text-primary border border-primary rounded-[14px] font-semibold transition-all duration-300 px-6 py-3 inline-flex items-center justify-center;
+  }
+  .btn-secondary:hover {
+    @apply bg-primary text-white;
   }
 
-  .glass-card:hover {
-    transform: translateY(-4px);
-    border-color: hsl(var(--primary) / 0.4);
-    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
-  }
-
-  /* Text Gradients */
-  .text-gradient-gold {
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Premium Button Styles */
   .btn-gold {
-    background: var(--gold-gradient);
-    color: white;
-    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
-    transition: all 0.3s ease;
+    @apply bg-[#C9A227] text-white rounded-[14px] font-semibold transition-all duration-300 px-6 py-3 inline-flex items-center justify-center;
+  }
+  .btn-gold:hover {
+    @apply bg-[#B3871D];
   }
 
-  .btn-gold:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.35);
-    filter: brightness(1.05);
+  /* Navigation Glass */
+  .nav-glass {
+    @apply bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20;
   }
 }

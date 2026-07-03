@@ -3,8 +3,8 @@ import RateBookingClient from './RateBookingClient';
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: "Rate Your Trip | Ahsas Cab",
-        description: "Rate your recent Umrah taxi journey with Ahsas Cab.",
+        title: "Rate Your Trip | Umrah Cabs",
+        description: "Rate your recent Umrah taxi journey with Umrah Cabs.",
         noIndex: true, // Keep out of SERPs
     });
 }

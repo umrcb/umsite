@@ -8,14 +8,14 @@ import { DEFAULT_BOOKING_CONFIRMATION_TEMPLATE, DEFAULT_ADMIN_NOTIFICATION_TEMPL
 
 const DEFAULT_SETTINGS: Settings = {
     general: {
-        siteName: 'Ahsas Cab',
+        siteName: 'Umrah Cabs',
         description: 'Premium Umrah Taxi Service & Car Rental in Saudi Arabia',
-        footerText: '© 2026 Ahsas Cab. All rights reserved.',
+        footerText: '© 2026 Umrah Cabs. All rights reserved.',
         logo: '',
         googleAnalyticsId: '',
     },
     contact: {
-        email: 'cabahsas@gmail.com',
+        email: 'info@umrahcabs.com',
         phone: '+966 54 549 4921',
         phone2: '',
         address: 'Makkah, Saudi Arabia',
@@ -28,7 +28,7 @@ const DEFAULT_SETTINGS: Settings = {
         },
     },
     seo: {
-        defaultTitle: 'Ahsas Cab',
+        defaultTitle: 'Umrah Cabs',
         defaultDescription: 'Reliable Umrah taxi service in Makkah and Madinah. Book comfortable, affordable, and safe transport for your spiritual journey. Premium fleet available.',
         keywords: 'umrah taxi, makkah transport, jeddah airport transfer, umrah transport services, pilgrim travel comfort, affordable umrah transport, saudi arabia transport',
     },

@@ -7,7 +7,7 @@ import { constructMetadata } from '@/lib/metadata';
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: "Privacy Policy | Ahsas Cab",
+        title: "Privacy Policy | Umrah Cabs",
         description: "Our privacy practices and policies for protecting your data.",
         canonicalUrl: '/privacy',
         noIndex: true,
@@ -17,7 +17,7 @@ export async function generateMetadata() {
 export default async function PrivacyPage() {
     const settings = await getSettings();
     const phone = settings.contact.phone || '+966 54 549 4921';
-    const email = settings.contact.email || 'info@ahsascab.com';
+    const email = settings.contact.email || 'info@UmrahCabs.com';
     const address = settings.contact.address || 'Al Aziziyah, Makkah, Saudi Arabia';
 
     return (
@@ -32,7 +32,7 @@ export default async function PrivacyPage() {
                     <section className={styles.section}>
                         <h2 className={styles.sectionTitle}>1. Introduction</h2>
                         <p className={styles.text}>
-                            Welcome to Ahsas Alrihlat. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
+                            Welcome to Umrah Cabs. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
                         </p>
                     </section>
 

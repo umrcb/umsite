@@ -2,9 +2,9 @@ import { getBaseUrl } from '@/lib/url-utils';
 import { constructMetadata } from '@/lib/metadata';
 import Hero from '@/components/common/Hero';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
-import FleetCarouselWrapper from '@/components/home/FleetCarouselWrapper';
+import FleetShowcase from '@/components/home/FleetShowcase';
 import dynamic from 'next/dynamic';
-const Features = dynamic(() => import('@/components/home/Features'));
+const WhyChooseUs = dynamic(() => import('@/components/home/WhyChooseUs'));
 import Link from 'next/link';
 import { ArrowRight, Moon, Clock, ShieldCheck, MapPin } from 'lucide-react';
 import FAQSection from '@/components/services/FAQSection';
@@ -12,7 +12,7 @@ import { getSettings } from '@/lib/settings-storage';
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: "Ramadan 2026 Umrah Transport Booking | Ahsas Cab | نقل معتمرين",
+        title: "Ramadan 2026 Umrah Transport Booking | Umrah Cabs | نقل معتمرين",
         description: "Reliable 24/7 transport during Ramadan. Advance booking, guaranteed availability, and punctual service for Iftar and Qiyam-ul-Layl. حجز مواصلات العمرة في رمضان.",
         keywords: [
             "Ramadan Umrah transport 2026", "Makkah taxi Ramadan", "Iftar time taxi Haram",
@@ -32,7 +32,7 @@ const jsonLd = {
     "alternateName": "خدمات نقل المعتمرين في رمضان",
     "provider": {
         "@type": "LocalBusiness",
-        "name": "Ahsas Alrihlat",
+        "name": "Umrah Cabs",
         "image": `${getBaseUrl()}/logo.png`
     },
     "serviceType": "Religious Tourism Transport",
@@ -149,7 +149,7 @@ export default async function RamadanTransportPage() {
                     </h2>
                     <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                         Ramadan in Makkah and Madinah is a spiritually uplifting experience, but the logistics can be challenging.
-                        With millions of pilgrims, finding reliable transport can be difficult. Ahsas Alrihlat ensures you arrive
+                        With millions of pilgrims, finding reliable transport can be difficult. Umrah Cabs ensures you arrive
                         fresh and on time for your prayers, Ziyarat, and airport transfers.
                     </p>
                 </div>
@@ -187,8 +187,8 @@ export default async function RamadanTransportPage() {
                 </div>
             </section>
 
-            <Features />
-            <FleetCarouselWrapper />
+            <WhyChooseUs />
+            <FleetShowcase />
 
             <FAQSection items={ramadanFAQs} title="Ramadan Transport FAQs" />
 

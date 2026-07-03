@@ -76,7 +76,7 @@ const PricingCard = ({ route, dbVehicleId }: { route: RouteProduct; dbVehicleId:
                 </div>
 
                 <a
-                    href={getWhatsAppLink(`Salam Ahsas Alrihlat, I would like to book a ${route.title} trip.`)}
+                    href={getWhatsAppLink(`Salam Umrah Cabs, I would like to book a ${route.title} trip.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackConversion('other', `pricing_grid_${route.id}_${dbVehicleId}`)}

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { ArrowRight, Shield, Star, Briefcase, Users, Wifi, MapPin } from 'lucide-react';
 import FAQSection from '@/components/services/FAQSection';
 import { getSettings } from '@/lib/settings-storage';
-import FleetCarouselWrapper from '@/components/home/FleetCarouselWrapper';
+import FleetShowcase from '@/components/home/FleetShowcase';
 import FleetPricingGrid from '@/components/fleet/FleetPricingGrid';
 import FleetFeatureImage from '@/components/fleet/FleetFeatureImage';
 import GmcYukonSEO from '@/components/fleet/GmcYukonSEO';
@@ -256,7 +256,7 @@ export default async function GmcYukonPage() {
                 </div>
             </section>
 
-            <FleetCarouselWrapper />
+            <FleetShowcase />
 
             <FAQSection items={gmcFAQs} title="GMC Yukon Rental - Frequently Asked Questions" />
         </main>

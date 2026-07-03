@@ -2,8 +2,8 @@ import { getBaseUrl } from '@/lib/url-utils';
 import type { Metadata } from "next";
 import Hero from '@/components/common/Hero';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
-import FleetCarouselWrapper from '@/components/home/FleetCarouselWrapper';
-import Features from '@/components/home/Features';
+import FleetShowcase from '@/components/home/FleetShowcase';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
 import styles from '@/app/page.module.css';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, MapPin, Clock } from 'lucide-react';
@@ -18,7 +18,7 @@ const jsonLd = {
     "alternateName": "تاكسي مكة المدينة",
     "provider": {
         "@type": "LocalBusiness",
-        "name": "Ahsas Alrihlat",
+        "name": "Umrah Cabs",
         "image": `${getBaseUrl()}/logo.png`
     },
     "serviceType": "Intercity Transfer",
@@ -170,9 +170,9 @@ export default async function MakkahMadinahTaxiPage() {
             </section>
 
             {/* Fleet Section Reuse */}
-            <FleetCarouselWrapper />
+            <FleetShowcase />
 
-            <Features />
+            <WhyChooseUs />
 
             {/* FAQ Section - NEW */}
             <FAQSection items={makkahMadinahFAQs} title="Frequently Asked Questions" />

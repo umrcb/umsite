@@ -19,11 +19,11 @@ import { constructMetadata } from '@/lib/metadata';
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: "About Ahsas Cab | Premier Makkah Taxi | من نحن",
-        description: "Learn about Ahsas Cab, the leading Umrah transport provider in Saudi Arabia. We offer safe, reliable, and comfortable journeys for pilgrims.",
+        title: "About Umrah Cabs | Premier Makkah Taxi | من نحن",
+        description: "Learn about Umrah Cabs, the leading Umrah transport provider in Saudi Arabia. We offer safe, reliable, and comfortable journeys for pilgrims.",
         keywords: [
             // Brand & Identity (25)
-            "About Ahsas Umrah Cab", "Ahsas Cab transport company", "Umrah transport agency Saudi Arabia", "pilgrim travel partners", "Makkah taxi company", "reliable Umrah transport provider", "trusted Umrah cab service", "best Umrah taxi in Jeddah", "licensed transport company Saudi Arabia", "professional Umrah drivers", "Umrah transport specialists", "Saudi Arabia premium car rental", "safe pilgrim transport", "experienced Umrah drivers Makkah", "Ahsas Cab reviews", "Ahsas Cab fleet", "Ahsas Cab history", "Umrah transport experts", "top rated Umrah taxi company", "certified Umrah transport", "Ahsas Cab mission", "Ahsas Cab vision", "pilgrim focused transport", "VIP Umrah services company", "Ahsas Cab contact info",
+            "About Umrah Cabs Umrah Cab", "Umrah Cabs transport company", "Umrah transport agency Saudi Arabia", "pilgrim travel partners", "Makkah taxi company", "reliable Umrah transport provider", "trusted Umrah cab service", "best Umrah taxi in Jeddah", "licensed transport company Saudi Arabia", "professional Umrah drivers", "Umrah transport specialists", "Saudi Arabia premium car rental", "safe pilgrim transport", "experienced Umrah drivers Makkah", "Umrah Cabs reviews", "Umrah Cabs fleet", "Umrah Cabs history", "Umrah transport experts", "top rated Umrah taxi company", "certified Umrah transport", "Umrah Cabs mission", "Umrah Cabs vision", "pilgrim focused transport", "VIP Umrah services company", "Umrah Cabs contact info",
             // Core Services Offered (25)
             "Jeddah airport transfer services", "Makkah to Madinah transport services", "Madinah airport taxi services", "Ziyarat tour services Makkah", "Ziyarat tour services Madinah", "Umrah family transport services", "VIP vehicle rental Saudi Arabia", "GMC Yukon rental service", "Hyundai Staria rental service", "Toyota Hiace bus rental Makkah", "Umrah group transport services", "private car hire Makkah", "chauffeur driver service Jeddah", "wheelchair accessible Umrah transport", "luxury SUV rental Jeddah airport", "affordable Umrah taxi packages", "Umrah cab booking online", "24/7 Umrah taxi service", "instant Umrah cab booking", "WhatsApp Umrah taxi booking", "female pilgrim safe transport", "elderly pilgrim transport care", "Umrah transport corporate accounts", "Hajj and Umrah transport solutions", "Saudi railways train station transfer",
             // Trust & Reliability (25)
@@ -37,19 +37,19 @@ export async function generateMetadata() {
 
 export default async function AboutPage() {
     const section = await getSectionContent('about-hero');
-    const title = section?.title || "About Ahsas Cab";
-    const subtitle = section?.subtitle || "Serving Guests of Allah with VIP Transport & Reliable Airport Transfers";
+    const title = section?.title || "About Umrah Cabs";
+    const subtitle = section?.content || "Serving Guests of Allah with VIP Transport & Reliable Airport Transfers";
     const bgImage = getSectionImage(section, 'desktop') || "https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=2000&auto=format&fit=crop";
 
     const jsonLd = {
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "About Ahsas Cab",
-        "description": "Information about Ahsas Cab, a leading provider of pilgrim transport services in Saudi Arabia.",
+        "name": "About Umrah Cabs",
+        "description": "Information about Umrah Cabs, a leading provider of pilgrim transport services in Saudi Arabia.",
         "url": `${getBaseUrl()}/about`,
         "mainEntity": {
             "@type": "TransportationService",
-            "name": "Ahsas Cab",
+            "name": "Umrah Cabs",
             "sameAs": `${getBaseUrl()}`
         }
     };

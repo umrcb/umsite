@@ -8,7 +8,7 @@ import { constructMetadata } from '@/lib/metadata';
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: "Safety Standards & Protocols | Ahsas Cab | معايير السلامة",
+        title: "Safety Standards & Protocols | Umrah Cabs | معايير السلامة",
         description: "Your safety is our sacred duty. Comprehensive vehicle sanitation, driver checks, & 24/7 support. معايير سلامة عالية لخدمة المعتمرين.",
         keywords: [
             "Umrah safety", "safe taxi Makkah", "sanitized transport Saudi",
@@ -61,7 +61,7 @@ export default function SafetyPage() {
                         Traveling with Confidence
                     </h2>
                     <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                        At Ahsas Cab, we understand that strict safety measures are essential for you to focus on your Ibadah.
+                        At Umrah Cabs, we understand that strict safety measures are essential for you to focus on your Ibadah.
                         We go beyond the industry standards to ensure every aspect of your journey—from the driver's conduct to the vehicle's hygiene—is perfect.
                     </p>
                 </div>
@@ -388,7 +388,7 @@ export default function SafetyPage() {
                         "name": "Umrah Transport Safety Standards",
                         "provider": {
                             "@type": "Organization",
-                            "name": "Ahsas Cab"
+                            "name": "Umrah Cabs"
                         },
                         "serviceType": "Safe Transport",
                         "description": "Comprehensive safety protocols including vehicle sanitation, driver vetting, and 24/7 emergency support.",

@@ -20,7 +20,7 @@ export async function POST(request: Request) {
         // Send feedback email to the customer
         const emailSent = await sendEmail({
             to: email,
-            subject: 'We received your message - Ahsas Cab',
+            subject: 'We received your message - Umrah Cabs',
             html: getContactFeedbackTemplate({ name, message }),
         });
 

@@ -2,8 +2,8 @@ import { constructMetadata } from '@/lib/metadata';
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: "Cookie Preferences | Ahsas Cab",
-        description: "Manage your cookie preferences for ahsascab.com.",
+        title: "Cookie Preferences | Umrah Cabs",
+        description: "Manage your cookie preferences for UmrahCabs.com.",
         canonicalUrl: '/cookie-preferences',
         noIndex: true,
     });

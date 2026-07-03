@@ -37,7 +37,7 @@ export const staticBlogPosts = [
         readTime: '6 min read',
         image: '/images/blog/spiritual_journey_taxi_vs_train.png',
         alt: 'Private GMC Yukon Taxi vs Haramain Train for Umrah Transport',
-        author: 'Ahsas Team',
+        author: 'Umrah Cabs Team',
         tags: ['Haramain Train', 'Private Taxi', 'Makkah Transport', 'Family Travel'],
         isPublished: true,
         metaTitle: 'Private Taxi vs Haramain Train for Umrah | 2024 Comparison',
@@ -100,7 +100,7 @@ export const staticBlogPosts = [
         readTime: '5 min read',
         image: '/images/blog/makkah-haram-view-new.png',
         alt: 'Sunrise over Makkah Clock Tower symbolizing New Year 2026',
-        author: 'Ahsas Editorial Team',
+        author: 'Umrah Cabs Editorial Team',
         tags: ['New Year 2026', 'Umrah Planning', 'Spiritual Resolutions', 'Makkah Weather'],
         isPublished: true,
         metaTitle: 'Planning Umrah for New Year 2026 | Dates, Weather & Tips',
@@ -353,10 +353,10 @@ export const staticBlogPosts = [
         _id: 'static-new-vetting-3',
         slug: 'reliable-umrah-drivers-vetting-process',
         title: 'Who is Driving Your Family? Our Rigorous Driver Vetting Process',
-        excerpt: 'Safety starts with the person behind the wheel. Discover the strict background checks, etiquette training, and health screenings every Ahsas Cab driver must pass.',
+        excerpt: 'Safety starts with the person behind the wheel. Discover the strict background checks, etiquette training, and health screenings every Umrah Cabs driver must pass.',
         content: `
             <h2>Safety Starts with the Driver</h2>
-            <p>You can have the newest car in the world, but if the driver is reckless, untrained, or unprofessional, your family is at risk. At Ahsas Cab, we believe that the driver is the most critical safety feature of any vehicle.</p>
+            <p>You can have the newest car in the world, but if the driver is reckless, untrained, or unprofessional, your family is at risk. At Umrah Cabs, we believe that the driver is the most critical safety feature of any vehicle.</p>
             <p>Many pilgrims ask us: <em>"Who will be picking us up?"</em> We want to give you the full answer. Here is how we select the top 10% of applicants to become your "Sisters' Safe" and "Family First" chauffeurs.</p>
 
             <h3>1. The "Adab" (Etiquette) Interview</h3>
@@ -402,7 +402,7 @@ export const staticBlogPosts = [
         tags: ['Safety', 'Driver Vetting', 'Family Transport', 'Sisters Safety'],
         isPublished: true,
         metaTitle: 'Safe Umrah Drivers | Vetting Process & Background Checks',
-        metaDescription: 'Who is driving your family? Learn about the rigorous background checks, Adab training, and health screenings for every Ahsas Cab licensed driver.',
+        metaDescription: 'Who is driving your family? Learn about the rigorous background checks, Adab training, and health screenings for every Umrah Cabs licensed driver.',
         createdAt: new Date('2026-01-10'),
         updatedAt: new Date('2026-01-10'),
     },
@@ -445,7 +445,7 @@ export const staticBlogPosts = [
                 </div>
             </div>
 
-            <p>Don't compromise on hygiene. Travel with Ahsas Cab, where cleanliness is our culture.</p>
+            <p>Don't compromise on hygiene. Travel with Umrah Cabs, where cleanliness is our culture.</p>
         `,
         category: 'Safety',
         date: new Date('2026-01-08'),
@@ -626,7 +626,7 @@ export const staticBlogPosts = [
                 <li><strong>Ziyarat Knowledge:</strong> Can the driver narrate the history of Uhud or Quba?</li>
             </ul>
 
-            <p>At Ahsas Cab, we combine the reliability of a corporate fleet with the hospitality of local hosts. Don't leave your journey to chance.</p>
+            <p>At Umrah Cabs, we combine the reliability of a corporate fleet with the hospitality of local hosts. Don't leave your journey to chance.</p>
         `,
         category: 'Guide',
         date: new Date('2025-10-15'),
@@ -717,7 +717,7 @@ export const staticBlogPosts = [
 
             <h3>2. Car Seats and Child Safety in Saudi</h3>
             <p><strong>"Are car seats required?"</strong> Legally, yes. Practically, taxi drivers rarely have them. </p>
-            <p>At Ahsas Cab, we prioritize safety. If you request a child seat in advance, we ensure one is installed. We also ensure working seatbelts for every passenger—something not guaranteed in street taxis.</p>
+            <p>At Umrah Cabs, we prioritize safety. If you request a child seat in advance, we ensure one is installed. We also ensure working seatbelts for every passenger—something not guaranteed in street taxis.</p>
 
             <h3>3. Convenience for Seniors (Door-to-Door)</h3>
             <p>If you are traveling with elderly parents, door-to-door service is non-negotiable.</p>
@@ -892,7 +892,7 @@ export const staticBlogPosts = [
             <h3>4. Spiritual Ease is the Goal</h3>
             <p>Knowing that a car is waiting for you after a long flight, or that your ride to Madinah is confirmed, removes "dunya" (worldly) anxiety. This <strong>spiritual ease</strong> allows your heart to remain connected to the holy purpose of your visit.</p>
 
-            <p>At Ahsas Cab, our mission is to facilitate your journey of faith with the highest standards of hospitality. We consider it an honor to serve the guests of Allah.</p>
+            <p>At Umrah Cabs, our mission is to facilitate your journey of faith with the highest standards of hospitality. We consider it an honor to serve the guests of Allah.</p>
         `,
         category: 'Spiritual',
         date: new Date('2025-11-20'),
@@ -1408,7 +1408,7 @@ export const staticBlogPosts = [
             </div>
 
             <h3>Key Landmarks & Rest Stops</h3>
-            <p>Unlike the old days, the highway is now lined with modern "SASCO" and "ENOC" rest areas. When you book a private ride with Ahsas Cab, you control the stops.</p>
+            <p>Unlike the old days, the highway is now lined with modern "SASCO" and "ENOC" rest areas. When you book a private ride with Umrah Cabs, you control the stops.</p>
             <ul>
                 <li><strong>Prayer Stops:</strong> Drivers know exactly which large Masjids have the cleanest facilities for Wudhu and Salah.</li>
                 <li><strong>Food & Coffee:</strong> Craving a Starbucks or Al Baik? The best service stations on Route 15 (like Sasco) offer premium food courts.</li>
@@ -1505,7 +1505,7 @@ export const staticBlogPosts = [
             </div>
 
             <h3>How to Identify a Licensed, Safe Driver</h3>
-            <p>Official transport providers like <strong>Ahsas Cab</strong> operate under strict Ministry of Transport regulations. Here is what to look for:</p>
+            <p>Official transport providers like <strong>Umrah Cabs</strong> operate under strict Ministry of Transport regulations. Here is what to look for:</p>
             <ul>
                 <li><strong>Uniform/ID:</strong> Professional drivers often wear a vest or carry an ID badge.</li>
                 <li><strong>White Plate vs. Yellow Plate:</strong> Official taxis have specific plate markings. However, reputable private transfer services (like ours) use high-end private plates but provide <strong>digital booking confirmations</strong> beforehand.</li>
@@ -1548,7 +1548,7 @@ export const staticBlogPosts = [
 
             <h3>Option 1: Private VIP Transport (The "Zero Stress" Winner)</h3>
             <p><strong>Look for:</strong> Licensed companies offering GMC Yukons, Ford Expeditions, or Toyota Camrys.</p>
-            <p>For 90% of international pilgrims—especially families, elderly travelers, and those with luggage—luxury private taxis remain the gold standard. Services like <strong>Ahsas Cab</strong> specialize in this "door-to-door" experience.</p>
+            <p>For 90% of international pilgrims—especially families, elderly travelers, and those with luggage—luxury private taxis remain the gold standard. Services like <strong>Umrah Cabs</strong> specialize in this "door-to-door" experience.</p>
             
             <div class="bg-amber-50 dark:bg-slate-800 p-6 rounded-xl border-l-4 border-amber-500 my-8">
                 <h4 class="font-bold text-lg mb-2 text-amber-700 dark:text-amber-400">Why It Ranks #1:</h4>

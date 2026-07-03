@@ -8,7 +8,7 @@ export async function generateLocalBusinessSchema() {
     return {
         "@context": "https://schema.org",
         "@type": "TaxiService",
-        "name": settings.general.siteName || "Ahsas Cab",
+        "name": settings.general.siteName || "Umrah Cabs",
         "image": `${baseUrl}/images/og-default.jpg`,
         "@id": baseUrl,
         "url": baseUrl,
@@ -42,8 +42,8 @@ export async function generateLocalBusinessSchema() {
             "closes": "23:59"
         },
         "sameAs": [
-            "https://www.facebook.com/ahsascab",
-            "https://www.instagram.com/ahsascab"
+            "https://www.facebook.com/UmrahCabs",
+            "https://www.instagram.com/UmrahCabs"
         ]
     };
 }

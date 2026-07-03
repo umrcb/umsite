@@ -7,12 +7,12 @@ import Image from 'next/image';
 import { ArrowRight, MapPin, Clock, Camera, Heart, BookOpen } from 'lucide-react';
 import FAQSection from '@/components/services/FAQSection';
 import { getSettings } from '@/lib/settings-storage';
-import FleetCarouselWrapper from '@/components/home/FleetCarouselWrapper';
+import FleetShowcase from '@/components/home/FleetShowcase';
 import ExpandedZiyaratSEO from '@/components/services/ExpandedZiyaratSEO';
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: "Makkah & Madinah Ziyarat Tours | Ahsas Cab | جولات المزارات",
+        title: "Makkah & Madinah Ziyarat Tours | Umrah Cabs | جولات المزارات",
         description: "Private guided historical tours in Makkah (Cave Hira, Arafat) and Madinah (Masjid Quba, Uhud). Experienced drivers and comfortable VIP vehicles. Book your Ziyarat tour today.",
         keywords: [
             "Ziyarat tours Makkah", "Madinah historical places tour", "Cave Hira taxi",
@@ -32,7 +32,7 @@ const jsonLd = {
     "description": "Private guided tour of historical Islamic sites in Makkah and Madinah including Cave Hira and Masjid Quba.",
     "provider": {
         "@type": "TransportationService",
-        "name": "Ahsas Alrihlat"
+        "name": "Umrah Cabs"
     },
     "itinerary": [
         {
@@ -253,7 +253,7 @@ export default async function ZiyaratToursPage() {
                 </div>
             </section>
 
-            <FleetCarouselWrapper />
+            <FleetShowcase />
 
             <FAQSection items={ziyaratFAQs} title="Ziyarat Tours - Frequently Asked Questions" />
         </main>

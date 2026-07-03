@@ -28,7 +28,7 @@ const jsonLd = {
     "name": "Intercity Transport Service",
     "provider": {
         "@type": "LocalBusiness",
-        "name": "Ahsas Alrihlat Transport"
+        "name": "Umrah Cabs Transport"
     },
     "serviceType": "Ground Transport",
     "areaServed": {
@@ -77,19 +77,19 @@ const jsonLd = {
                 "@type": "ListItem",
                 "position": 1,
                 "name": "Home",
-                "item": "https://www.ahsascab.com"
+                "item": "https://www.UmrahCabs.com"
             },
             {
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Services",
-                "item": "https://www.ahsascab.com/services"
+                "item": "https://www.UmrahCabs.com/services"
             },
             {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Intercity Transport",
-                "item": "https://www.ahsascab.com/services/intercity-transfer"
+                "item": "https://www.UmrahCabs.com/services/intercity-transfer"
             }
         ]
     }

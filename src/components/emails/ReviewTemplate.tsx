@@ -29,7 +29,7 @@ export const ReviewTemplate: React.FC<ReviewTemplateProps> = ({
         <div style={{ backgroundColor: white, padding: '30px', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', textAlign: 'center' }}>
             <p style={{ fontSize: '16px', lineHeight: '1.6', marginBottom: '24px' }}>
                 Dear <strong>{customerName}</strong>,<br /><br />
-                Thank you for choosing Ahsas Cab for your recent journey.
+                Thank you for choosing Umrah Cabs for your recent journey.
                 We hope you had a comfortable and spiritual experience.
             </p>
 
@@ -60,7 +60,7 @@ export const ReviewTemplate: React.FC<ReviewTemplateProps> = ({
         </div>
 
         <div style={{ textAlign: 'center', marginTop: '20px', fontSize: '12px', color: '#94a3b8' }}>
-            <p>&copy; {new Date().getFullYear()} Ahsas Cab. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Umrah Cabs. All rights reserved.</p>
         </div>
     </div>
 );

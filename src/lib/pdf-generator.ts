@@ -2,11 +2,11 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 // Define font and styling constants
-const COMPANY_NAME = "Ahsas Alrihlat";
+const COMPANY_NAME = "Umrah Cabs";
 const COMPANY_ISLAMIC_NAME = "احساس الرحلات";
 const COMPANY_ADDRESS = "Makkah Al Mukarramah, Saudi Arabia";
 const COMPANY_PHONE = "+966 50 123 4567";
-const COMPANY_EMAIL = "cabahsas@gmail.com";
+const COMPANY_EMAIL = "info@umrahcabs.com";
 const PRIMARY_COLOR = "#0F172A"; // Navy (slate-900)
 
 interface InvoiceData {
@@ -23,7 +23,7 @@ export const generateBookingInvoice = (booking: any) => {
     doc.setFontSize(22);
     doc.setTextColor(PRIMARY_COLOR);
     doc.setFont("helvetica", "bold");
-    doc.text("Ahsas", 20, 20);
+    doc.text("Umrah Cabs", 20, 20);
     doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
     doc.text("Alrihlat", 20, 26);
@@ -121,7 +121,7 @@ export const generateBookingInvoice = (booking: any) => {
     doc.setFont("helvetica", "italic");
     doc.setTextColor(150, 150, 150);
     doc.text("Thank you for your business.", 105, 280, { align: "center" });
-    doc.text("Ahsas Alrihlat - CR: 1234567890", 105, 285, { align: "center" });
+    doc.text("Umrah Cabs - CR: 1234567890", 105, 285, { align: "center" });
 
     // Save
     doc.save(`Invoice-${booking._id}.pdf`);

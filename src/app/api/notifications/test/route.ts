@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
         await sendPushNotification(user.id as string, {
             title: 'Test Notification',
-            body: 'This is a test notification from Ahsas Alrihlat!',
+            body: 'This is a test notification from Umrah Cabs!',
             url: '/admin/dashboard'
         });
 

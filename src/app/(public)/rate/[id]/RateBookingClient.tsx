@@ -61,7 +61,7 @@ export default function RateBookingClient({ bookingId }: { bookingId: string }) 
                     </div>
                     <h1 className="text-2xl font-bold text-slate-800">Rate Your Trip</h1>
                     <p className="text-slate-500 mt-2">
-                        How was your experience with Ahsas Alrihlat?
+                        How was your experience with Umrah Cabs?
                     </p>
                 </div>
 

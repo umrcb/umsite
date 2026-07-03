@@ -14,7 +14,7 @@ export const DEFAULT_BOOKING_CONFIRMATION_TEMPLATE = `
         <p style="font-size: 18px; color: #D4AF37; font-family: 'Amiri', serif; margin: 0;">أهلاً بك يا ضيف الرحمن</p>
     </div>
 
-    <p style="text-align: center; color: #334155;">Thank you for choosing Ahsas Cab. Your ride has been scheduled successfully.<br>
+    <p style="text-align: center; color: #334155;">Thank you for choosing Umrah Cabs. Your ride has been scheduled successfully.<br>
     <span style="font-family: 'Amiri', serif; color: #64748b;">شكراً لاختيارك احساس الرحلات. تم حجز رحلتك بنجاح.</span></p>
 
     <!-- Booking Details Card -->
@@ -101,7 +101,7 @@ export const DEFAULT_BOOKING_CONFIRMATION_TEMPLATE = `
     </div>
 
     <p style="text-align: center; margin-top: 30px; color: #94a3b8; font-size: 12px;">
-        &copy; {{year}} Ahsas Cab. All rights reserved.
+        &copy; {{year}} Umrah Cabs. All rights reserved.
     </p>
 </div>
 `;
@@ -132,7 +132,7 @@ export const DEFAULT_ADMIN_NOTIFICATION_TEMPLATE = `
         {{price_row}}
     </div>
 
-    <p style="font-size: 12px; color: #666;">This is an automated notification from the Ahsas Cab booking system.</p>
+    <p style="font-size: 12px; color: #666;">This is an automated notification from the Umrah Cabs booking system.</p>
 </div>
 `;
 

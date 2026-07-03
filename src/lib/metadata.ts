@@ -26,11 +26,11 @@ export async function constructMetadata({
     authors,
 }: SeoProps = {}): Promise<Metadata> {
     const settings = await getSettings();
-    const siteName = settings.general.siteName || "Ahsas Cab";
+    const siteName = settings.general.siteName || "Umrah Cabs";
     const baseUrl = getBaseUrl();
 
     // defaults from settings
-    const defaultTitle = settings.seo.defaultTitle || "Ahsas Cab - Premium Transport Services";
+    const defaultTitle = settings.seo.defaultTitle || "Umrah Cabs - Premium Transport Services";
     const defaultDescription = settings.seo.defaultDescription || "Book trusted Umrah transport services in Saudi Arabia. Ramadan 2026 bookings open. Private GMC Yukon & luxury taxi transfers from Jeddah Airport to Makkah & Madinah.";
 
     // Process Keywords: Handle string or array input, merge with defaults
@@ -99,7 +99,7 @@ export async function constructMetadata({
             title: fullTitle,
             description: finalDescription,
             images: [finalImage],
-            creator: '@ahsascab', // Replace with actual handle if available
+            creator: '@UmrahCabs', // Replace with actual handle if available
         },
         alternates: {
             canonical: finalCanonical,

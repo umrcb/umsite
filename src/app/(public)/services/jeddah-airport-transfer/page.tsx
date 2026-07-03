@@ -3,9 +3,9 @@ import { getSettings } from '@/lib/settings-storage';
 import { constructMetadata } from '@/lib/metadata';
 import Hero from '@/components/common/Hero';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
-import FleetCarouselWrapper from '@/components/home/FleetCarouselWrapper';
+import FleetShowcase from '@/components/home/FleetShowcase';
 import dynamic from 'next/dynamic';
-const Features = dynamic(() => import('@/components/home/Features'));
+const WhyChooseUs = dynamic(() => import('@/components/home/WhyChooseUs'));
 import styles from '@/app/page.module.css';
 import Link from 'next/link';
 import { ArrowRight, Plane, ShieldCheck, UserCheck } from 'lucide-react';
@@ -21,7 +21,7 @@ const jsonLd = {
     "alternateName": "توصيل من مطار جدة الى مكة",
     "provider": {
         "@type": "LocalBusiness",
-        "name": "Ahsas Alrihlat",
+        "name": "Umrah Cabs",
         "image": `${getBaseUrl()}/logo.png`
     },
     "serviceType": "Airport Transfer",
@@ -64,7 +64,7 @@ const jsonLd = {
 const jeddahAirportFAQs = [
     {
         question: "Where will the driver meet me?",
-        answer: "Our driver will be waiting for you at the arrival hall after you clear customs and baggage claim. They will be holding a sign with your name or 'Ahsas Alrihlat'. We track your flight to ensure we are there when you land."
+        answer: "Our driver will be waiting for you at the arrival hall after you clear customs and baggage claim. They will be holding a sign with your name or 'Umrah Cabs'. We track your flight to ensure we are there when you land."
     },
     {
         question: "What if my flight is delayed?",
@@ -182,8 +182,8 @@ export default async function JeddahAirportTransferPage() {
 
             <VehicleCapacityGuide />
 
-            <Features />
-            <FleetCarouselWrapper />
+            <WhyChooseUs />
+            <FleetShowcase />
 
             <FAQSection items={jeddahAirportFAQs} title="Jeddah Airport Transfer FAQs" />
 

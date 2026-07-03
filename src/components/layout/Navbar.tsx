@@ -4,15 +4,13 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-
-import { Menu, X, ChevronDown } from 'lucide-react';
-
+import { Menu, X, MessageCircle } from 'lucide-react';
 import { useMobileMenu } from '@/context/MobileMenuContext';
 import GlassButton from '@/components/ui/GlassButton';
+import { getWhatsAppLink } from '@/lib/whatsapp';
 
 export default function Navbar() {
     const pathname = usePathname();
-    // Force rebuild
     const { isMenuOpen, setIsMenuOpen, toggleMenu } = useMobileMenu();
     const [scrolled, setScrolled] = useState(false);
     const [mounted, setMounted] = useState(false);
@@ -49,83 +47,44 @@ export default function Navbar() {
 
     const links = [
         { href: '/', label: 'Home' },
-        {
-            href: '/routes',
-            label: 'Routes',
-            children: [
-                { href: '/services/makkah-madinah-taxi', label: 'Makkah ⇄ Madinah' },
-                { href: '/services/jeddah-airport-transfer', label: 'Jeddah Airport ⇄ Makkah' },
-                { href: '/services/madinah-airport-transfer', label: 'Madinah Airport ⇄ Hotel' },
-                { href: '/services/intercity-transfer', label: 'Jeddah Airport ⇄ Madinah' },
-                { href: '/services/ziyarat-tours', label: 'Ziyarat Tours (City Tours)' },
-            ]
-        },
-        {
-            href: '/services',
-            label: 'Services',
-            children: [
-                { href: '/services/ramadan-transport', label: 'Ramadan 2026 Transport' },
-                { href: '/services/airport-transfers', label: 'Airport Transfer (General)' },
-                { href: '/services/intercity-transfer', label: 'Intercity Transfer' },
-                { href: '/services/hotel-transfers', label: 'Hotel Transfer' },
-                { href: '/track-booking', label: 'Track Booking' },
-            ]
-        },
-        {
-            href: '/fleet',
-            label: 'Fleet',
-            children: [
-                { href: '/fleet/gmc-yukon-at4', label: 'GMC Yukon XL' },
-                { href: '/fleet/hyundai-staria', label: 'Hyundai Staria' },
-                { href: '/fleet/hyundai-starex', label: 'Hyundai H1 Starex' },
-                { href: '/fleet/toyota-hiace', label: 'Toyota Hiace' },
-                { href: '/fleet/toyota-camry', label: 'Toyota Camry' },
-            ]
-        },
-        {
-            href: '/about',
-            label: 'About Us',
-            children: [
-                { href: '/about', label: 'Company Profile' },
-            ]
-        },
-        { href: '/blog', label: 'Blog' },
-        { href: '/contact', label: 'Contact us' },
+        { href: '/services', label: 'Services' },
+        { href: '/fleet', label: 'Fleet' },
+        { href: '/services/ziyarat-tours', label: 'Umrah & Ziyarat' },
+        { href: '/pricing', label: 'Pricing' },
+        { href: '/about', label: 'About' },
+        { href: '/contact', label: 'Contact' },
     ];
 
-    // Routes that have a light background physically at the top (no hero image)
-    const lightRoutes = ['/booking', '/track-booking', '/contact'];
-    const isLightPage = lightRoutes.includes(pathname);
-    const showDarkNav = scrolled || isLightPage || isMenuOpen;
+    const showDarkNav = scrolled || isMenuOpen;
+
+    const whatsappUrl = getWhatsAppLink("Hello! I would like to inquire about Umrah Taxi Services.");
 
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${mounted && showDarkNav
-                ? 'bg-white/80 backdrop-blur-md border-b border-white/20 shadow-lg py-2 lg:py-3'
-                : 'bg-transparent py-4 lg:py-6'
+                ? 'bg-white/90 backdrop-blur-md border-b border-white/20 shadow-sm py-3'
+                : 'bg-transparent py-5'
                 } ${isMenuOpen ? 'bg-white' : ''}`}
         >
-            <div className="absolute inset-0 bg-noise opacity-10 pointer-events-none"></div>
-            <div className="container mx-auto px-4 flex items-center justify-between relative z-10">
-                <Link href="/" className="flex items-center gap-4 group">
+            <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between relative z-10">
+                <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative flex items-center">
                         <div className={`transition-all duration-500 ease-out ${showDarkNav ? 'w-12 h-12 lg:w-16 lg:h-16' : 'w-16 h-16 lg:w-20 lg:h-20'} relative`}>
                             <Image
-                                src="/ahsas-logo-v2.png"
-                                alt="Ahsas Cab"
+                                src="/umrah-cabs-logo-v2.svg"
+                                alt="Umrah Taxi Services"
                                 fill
-                                className="object-contain drop-shadow-md"
+                                className="object-contain drop-shadow-md mix-blend-multiply"
                                 priority
-                                sizes="(max-width: 768px) 64px, 80px"
+                                sizes="(max-width: 768px) 48px, 64px"
                             />
                         </div>
-                        <div className={`flex flex-col ml-3 transition-opacity duration-300 ${showDarkNav ? 'opacity-0 lg:opacity-100' : 'opacity-100'}`}>
-                            <span className={`text-xl lg:text-2xl font-bold font-playfair leading-none tracking-tight transition-colors duration-300 flex items-center gap-2 ${showDarkNav ? 'text-secondary' : 'text-white'}`}>
-                                <span>Ahsas <span className="text-primary">Cab</span></span>
-                                <span className="font-sans text-xl lg:text-2xl text-primary/90">| إحساس الرحلات</span>
+                        <div className={`flex flex-col ml-3 transition-opacity duration-300 ${showDarkNav ? 'opacity-100' : 'opacity-100'}`}>
+                            <span className={`text-xl lg:text-2xl font-bold font-poppins leading-none tracking-tight transition-colors duration-300 flex items-center gap-2 ${showDarkNav ? 'text-foreground' : 'text-white'}`}>
+                                <span>Umrah <span className="text-primary">Taxi</span></span>
                             </span>
                             <span className={`text-[0.65rem] lg:text-xs font-medium tracking-[0.2em] uppercase leading-none mt-1 transition-colors duration-300 ${showDarkNav ? 'text-muted-foreground' : 'text-white/80'}`}>
-                                Luxury Transport
+                                Premium Services
                             </span>
                         </div>
                     </div>
@@ -134,62 +93,42 @@ export default function Navbar() {
                 {/* Desktop Nav */}
                 <div className="hidden xl:flex items-center gap-8">
                     {links.map((link) => (
-                        <div key={link.href} className="relative group/nav">
-                            {link.href === '#' ? (
-                                <span
-                                    className={`relative text-sm font-medium transition-all duration-300 py-2 flex items-center gap-1 cursor-default ${showDarkNav ? 'text-secondary hover:text-primary' : 'text-white/90 hover:text-white'}`}
-                                >
-                                    {link.label}
-                                    {link.children && <ChevronDown size={14} className="group-hover/nav:rotate-180 transition-transform duration-300" />}
-                                </span>
-                            ) : (
-                                <Link
-                                    href={link.href}
-                                    className={`relative text-sm font-medium transition-all duration-300 py-2 flex items-center gap-1 ${mounted && pathname === link.href
-                                        ? 'text-primary font-bold'
-                                        : (showDarkNav ? 'text-secondary hover:text-primary' : 'text-white/90 hover:text-white')
-                                        }`}
-                                >
-                                    {link.label}
-                                    {link.children && <ChevronDown size={14} className="group-hover/nav:rotate-180 transition-transform duration-300" />}
-                                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300 ${mounted && pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover/nav:scale-x-100'}`} />
-                                </Link>
-                            )}
-
-                            {/* Dropdown Menu */}
-                            {link.children && (
-                                <div className="absolute top-full left-0 w-64 pt-4 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 translate-y-2 group-hover/nav:translate-y-0">
-                                    <div className="glass-card p-2 overflow-hidden bg-white/90 backdrop-blur-xl border border-white/20 shadow-xl rounded-xl">
-                                        {link.children.map((child) => (
-                                            <Link
-                                                key={child.href}
-                                                href={child.href}
-                                                className="block px-4 py-3 text-sm font-medium text-secondary/80 hover:text-primary hover:bg-secondary/5 rounded-lg transition-colors duration-200"
-                                            >
-                                                {child.label}
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={`relative text-sm font-medium transition-all duration-300 py-2 flex items-center gap-1 ${mounted && pathname === link.href
+                                ? 'text-primary font-bold'
+                                : (showDarkNav ? 'text-foreground hover:text-primary' : 'text-white/90 hover:text-white')
+                                }`}
+                        >
+                            {link.label}
+                            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300 ${mounted && pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                        </Link>
                     ))}
                 </div>
 
+                {/* Action Buttons */}
                 <div className="hidden xl:flex items-center gap-4">
-                    <GlassButton
+                    <a 
+                        href={whatsappUrl} 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="btn-secondary"
+                    >
+                        <MessageCircle size={18} className="mr-2" />
+                        WhatsApp
+                    </a>
+                    <Link
                         href="/booking"
-                        variant="primary"
-                        size="md"
-                        className="font-bold shadow-lg btn-gold"
+                        className="btn-gold"
                     >
                         Book Now
-                    </GlassButton>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <button
-                    className={`xl:hidden p-2 transition-colors relative z-50 ${scrolled ? 'text-secondary hover:text-primary' : 'text-white hover:text-primary'}`}
+                    className={`xl:hidden p-2 transition-colors relative z-50 ${scrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-primary'}`}
                     onClick={toggleMenu}
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     aria-expanded={isMenuOpen}
@@ -211,78 +150,60 @@ export default function Navbar() {
                 role="dialog"
                 aria-modal="true"
             >
-                <div className="absolute inset-0 bg-noise opacity-5 pointer-events-none"></div>
-
-                <div className="relative flex items-center justify-between p-6 border-b border-secondary/5">
+                <div className="relative flex items-center justify-between p-6 border-b border-border/50">
                     <Link href="/" className="flex items-center gap-3">
-                        <div className="relative w-12 h-12">
+                        <div className="relative w-10 h-10">
                             <Image
-                                src="/ahsas-logo-v2.png"
-                                alt="Ahsas Cab"
+                                src="/umrah-cabs-logo-v2.svg"
+                                alt="Umrah Taxi Services"
                                 fill
                                 className="object-contain"
-                                sizes="48px"
+                                sizes="40px"
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-lg font-bold text-secondary font-playfair flex items-center gap-1.5">Ahsas Cab <span className="font-sans text-primary">| إحساس الرحلات</span></span>
-                            <span className="text-[0.6rem] font-bold text-primary tracking-widest uppercase">Luxury Transport</span>
+                            <span className="text-lg font-bold text-foreground font-poppins flex items-center gap-1.5">Umrah <span className="text-primary">Taxi</span></span>
+                            <span className="text-[0.6rem] font-bold text-muted-foreground tracking-widest uppercase">Premium Services</span>
                         </div>
                     </Link>
                 </div>
 
-                <div className="relative flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-1">
+                <div className="relative flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-2">
                     {links.map((link) => (
-                        <div key={link.href} className="flex flex-col">
-                            {link.children ? (
-                                <div className="space-y-1">
-                                    <div className="px-4 py-3 text-sm font-bold text-secondary/40 uppercase tracking-widest">
-                                        {link.label}
-                                    </div>
-                                    <div className="pl-4 border-l-2 border-secondary/5 ml-4 space-y-1">
-                                        {link.children.map((child) => (
-                                            <Link
-                                                key={child.href}
-                                                href={child.href}
-                                                className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${mounted && pathname === child.href
-                                                    ? 'bg-primary/10 text-primary font-bold'
-                                                    : 'text-secondary/70 hover:text-secondary hover:bg-secondary/5'
-                                                    }`}
-                                                onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
-                                            >
-                                                {child.label}
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-                            ) : (
-                                <Link
-                                    href={link.href}
-                                    className={`px-4 py-3 rounded-lg text-lg font-medium transition-all duration-200 ${mounted && pathname === link.href
-                                        ? 'bg-primary/10 text-primary font-bold'
-                                        : 'text-secondary/80 hover:text-secondary hover:bg-secondary/5'
-                                        }`}
-                                    onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
-                                >
-                                    {link.label}
-                                </Link>
-                            )}
-                        </div>
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 ${mounted && pathname === link.href
+                                ? 'bg-primary/10 text-primary font-bold'
+                                : 'text-foreground/80 hover:text-foreground hover:bg-muted/50'
+                                }`}
+                            onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
+                        >
+                            {link.label}
+                        </Link>
                     ))}
                 </div>
 
-                <div className="relative p-6 border-t border-secondary/5 bg-secondary/5 space-y-4">
-                    <GlassButton
+                <div className="relative p-6 border-t border-border/50 bg-muted/20 flex flex-col gap-3">
+                    <a 
+                        href={whatsappUrl} 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="btn-secondary w-full"
+                        onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
+                    >
+                        <MessageCircle size={20} className="mr-2" />
+                        WhatsApp Us
+                    </a>
+                    <Link
                         href="/booking"
-                        variant="primary"
-                        size="lg"
-                        className="w-full justify-center shadow-md btn-gold font-bold"
+                        className="btn-gold w-full"
                         onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
                     >
                         Book Your Ride
-                    </GlassButton>
+                    </Link>
                 </div>
             </div>
-        </nav >
+        </nav>
     );
 }

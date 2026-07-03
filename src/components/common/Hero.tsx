@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({
                 >
                     <Image
                         src={bgImage}
-                        alt={alt || "Ahsas Cab Premium Transport"}
+                        alt={alt || "Umrah Cabs Premium Transport"}
                         fill
                         priority
                         quality={85}

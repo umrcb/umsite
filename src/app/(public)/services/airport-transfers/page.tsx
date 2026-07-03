@@ -41,7 +41,7 @@ export default async function AirportTransfersPage() {
         "alternateName": "توصيل من مطار جدة الى مكة",
         "provider": {
             "@type": "TransportationService",
-            "name": "Ahsas Alrihlat"
+            "name": "Umrah Cabs"
         },
         "description": "Premium airport transfer service from King Abdulaziz International Airport (KAIA) to Makkah. خدمة نقل فاخرة من مطار الملك عبدالعزيز الى مكة.",
         "areaServed": {

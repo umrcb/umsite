@@ -29,7 +29,7 @@ export default function RouteSEOContent({ slug }: { slug: string }) {
                                 <PlaneLanding className="text-amber-600" /> Airport Arrival & Pick-up Process
                             </h3>
                             <p className="mb-4">
-                                Navigating KAIA can be overwhelming, especially during peak Umrah seasons. Booking a private taxi in advance with <strong>Ahsas Cab</strong> guarantees a stress-free arrival at Terminal 1 or North Terminal.
+                                Navigating KAIA can be overwhelming, especially during peak Umrah seasons. Booking a private taxi in advance with <strong>Umrah Cabs</strong> guarantees a stress-free arrival at Terminal 1 or North Terminal.
                             </p>
                             <ul className="space-y-3 list-none pl-0">
                                 <li className="flex gap-3"><CheckCircle2 className="text-emerald-500 shrink-0 mt-1" size={20} /> <strong>Flight Tracking:</strong> We monitor your flight schedule automatically.</li>
@@ -191,7 +191,7 @@ export default function RouteSEOContent({ slug }: { slug: string }) {
                         Private Taxi Service for this Route
                     </h2>
                     <p className="mb-4">
-                        Ahsas Cab provides premium, direct door-to-door transportation. Booking a private taxi ensures you don't have to share your vehicle, wait in long lines, or handle luggage struggles.
+                        Umrah Cabs provides premium, direct door-to-door transportation. Booking a private taxi ensures you don't have to share your vehicle, wait in long lines, or handle luggage struggles.
                     </p>
                     <p>
                         Our fixed-price guarantee means the price you see is the final price. All vehicles are air-conditioned, fully sanitized, and driven by professional chauffeurs local to Saudi Arabia.

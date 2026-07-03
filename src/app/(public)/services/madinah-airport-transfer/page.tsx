@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowRight, Plane, Clock, Hotel, MapPin } from 'lucide-react';
 import FAQSection from '@/components/services/FAQSection';
 import { getSettings } from '@/lib/settings-storage';
-import FleetCarouselWrapper from '@/components/home/FleetCarouselWrapper';
+import FleetShowcase from '@/components/home/FleetShowcase';
 import RouteVisual from '@/components/services/RouteVisual';
 
 
@@ -16,7 +16,7 @@ const jsonLd = {
     "alternateName": "توصيل مطار المدينة المنورة",
     "provider": {
         "@type": "LocalBusiness",
-        "name": "Ahsas Alrihlat"
+        "name": "Umrah Cabs"
     },
     "serviceType": "Airport Transfer",
     "areaServed": {
@@ -186,7 +186,7 @@ export default async function MadinahAirportPage() {
                 </div>
             </section>
 
-            <FleetCarouselWrapper />
+            <FleetShowcase />
 
             <FAQSection items={madinahAirportFAQs} title="Madinah Airport Transfers - FAQ" />
         </main>

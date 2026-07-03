@@ -13,7 +13,7 @@ export default function ExpandedServicesSEO() {
                         Comprehensive Umrah Taxi Services: Your Guide to Holy Transport
                     </h2>
                     <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                        When undertaking the sacred journey of Umrah or Hajj, reliable transportation is as critical as your accommodation. Ahsas Cab offers a dedicated suite of <Link href="/services/jeddah-airport-transfer" className="text-gold font-semibold hover:underline border-b border-gold/30">Umrah taxi services</Link> designed specifically for the unique needs of pilgrims travelling across Saudi Arabia. From immediate airport pickups to comprehensive historical Ziyarat tours, we manage the logistics so you can focus entirely on your worship.
+                        When undertaking the sacred journey of Umrah or Hajj, reliable transportation is as critical as your accommodation. Umrah Cabs offers a dedicated suite of <Link href="/services/jeddah-airport-transfer" className="text-gold font-semibold hover:underline border-b border-gold/30">Umrah taxi services</Link> designed specifically for the unique needs of pilgrims travelling across Saudi Arabia. From immediate airport pickups to comprehensive historical Ziyarat tours, we manage the logistics so you can focus entirely on your worship.
                     </p>
                 </div>
 

@@ -146,7 +146,7 @@ export default function FleetShowcase({ vehicles }: FleetShowcaseProps) {
                                         </div>
 
                                         <a
-                                            href={getWhatsAppLink(`Salam Ahsas Alrihlat, I would like to book the ${vehicle.name}.`)}
+                                            href={getWhatsAppLink(`Salam Umrah Cabs, I would like to book the ${vehicle.name}.`)}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className={styles.bookBtn}

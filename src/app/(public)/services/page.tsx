@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { Bus, MapPin, Users, Headphones, ArrowRight, Calendar, CheckCircle, Car, Check } from 'lucide-react';
 import styles from './page.module.css';
-import FleetSectionLoader from '@/components/services/FleetSectionLoader';
+import FleetShowcase from '@/components/home/FleetShowcase';
 import FadeIn from '@/components/common/FadeIn';
 import Hero from '@/components/common/Hero';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
@@ -15,7 +15,7 @@ import ExpandedServicesSEO from '@/components/services/ExpandedServicesSEO';
 
 import { constructMetadata } from '@/lib/metadata';
 
-const ReviewsSection = dynamic(() => import('@/components/reviews/ReviewsSection'), {
+const PilgrimExperiences = dynamic(() => import('@/components/home/PilgrimExperiences'), {
     loading: () => <div className="h-[400px] w-full bg-gray-100 dark:bg-navy-900 animate-pulse" />
 });
 
@@ -229,13 +229,13 @@ export default function ServicesPage() {
             <section className="py-24 bg-gray-50 dark:bg-navy-950">
                 <FadeIn>
                     <Suspense fallback={<div className="h-[600px] w-full bg-gray-200 dark:bg-navy-800 animate-pulse rounded-3xl" />}>
-                        <FleetSectionLoader />
+                        <FleetShowcase />
                     </Suspense>
                 </FadeIn>
             </section>
 
             {/* Reviews Section - NEW */}
-            <ReviewsSection />
+            <PilgrimExperiences />
 
             {/* SEO Content Section - NEW for 1200+ words */}
             <ExpandedServicesSEO />
@@ -269,7 +269,7 @@ export default function ServicesPage() {
                         "serviceType": "Umrah Transport",
                         "provider": {
                             "@type": "TransportationService",
-                            "name": "Ahsas Cab"
+                            "name": "Umrah Cabs"
                         },
                         "areaServed": {
                             "@type": "Place",

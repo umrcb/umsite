@@ -1,92 +1,41 @@
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
-// import styles from './page.module.css'; // Removed
-import FadeIn from '@/components/common/FadeIn';
-import Hero from '@/components/common/Hero';
-
-import { ArrowRight } from 'lucide-react';
-
-import { getSectionContent, getSectionImage, getCustomField } from '@/lib/content-service';
-import { getWhatsAppLink } from '@/lib/whatsapp';
-
-import AnimatedBackground from '@/components/ui/AnimatedBackground';
+import HomeHero from '@/components/home/HomeHero';
+import TransportServices from '@/components/home/TransportServices';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import FadeIn from '@/components/common/FadeIn';
 import { constructMetadata } from '@/lib/metadata';
 import { getBaseUrl } from '@/lib/url-utils';
+import { ArrowRight } from 'lucide-react';
+import { getWhatsAppLink } from '@/lib/whatsapp';
+import { CheckCircle2 } from 'lucide-react';
+
+// Consolidated Components
+import UnifiedBookingWidget from '@/components/home/UnifiedBookingWidget';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
+import FleetShowcase from '@/components/home/FleetShowcase';
+import PilgrimExperiences from '@/components/home/PilgrimExperiences';
+import SEOArticles from '@/components/home/SEOArticles';
 
 
-
-import InstantPriceCalculator from '@/components/home/InstantPriceCalculator';
-import Features from '@/components/home/Features';
-import TransportServices from '@/components/home/TransportServices';
-
-// Lazy load non-critical components below the fold
-const SafetyPromise = dynamic(() => import('@/components/home/SafetyPromise'));
-const PassengerCare = dynamic(() => import('@/components/home/PassengerCare'));
-const FleetCarouselWrapper = dynamic(() => import('@/components/home/FleetCarouselWrapper'));
-const ReviewsSection = dynamic(() => import('@/components/reviews/ReviewsSection'));
-const CustomerGallery = dynamic(() => import('@/components/home/CustomerGallery'));
-const LatestArticles = dynamic(() => import('@/components/home/LatestArticles'));
-const ExpandedSEOContent = dynamic(() => import('@/components/home/ExpandedSEOContent'));
-
-const Testimonials = dynamic(() => import('@/components/home/Testimonials'));
-const FleetGallery = dynamic(() => import('@/components/home/FleetGallery'));
-const BookingGuide = dynamic(() => import('@/components/home/BookingGuide'));
-import QuickBookingForm from '@/components/home/QuickBookingForm';
 
 export async function generateMetadata() {
   return constructMetadata({
     title: 'Trusted Umrah Taxi Service | Jeddah to Makkah & Madinah',
-    description: 'Ahsas Cab offers trusted, affordable, and safe Umrah travel services worldwide. Serving pilgrims with comfort and care with our luxury fleet.',
-    keywords: [
-      // Core Service Keywords (15)
-      "Umrah cab service", "Umrah transport Saudi Arabia", "pilgrim taxi", "Ahsas Umrah Cab", "trusted Umrah transport", "premium Umrah taxi", "affordable Umrah cab", "luxury Umrah transport", "Umrah taxi booking online", "Umrah travel agency Saudi Arabia", "Umrah group transport", "family Umrah taxi", "cheap Umrah cab", "best Umrah transport company", "VIP Umrah transport",
-      // Locational / Airport Transfers (30)
-      "taxi Jeddah airport to Makkah", "Jeddah to Makkah transport", "Jeddah Islamic Port to Makkah taxi", "cab from Jeddah to Madinah", "taxi Makkah to Madinah", "Makkah to Jeddah airport cab", "Madinah to Jeddah airport taxi", "Madinah airport to Madinah hotel transport", "Jeddah airport to Madinah taxi fare", "Makkah to Madinah Haram taxi", "Jeddah to Makkah Haram transport", "Jeddah to Taif taxi", "Makkah to Taif taxi service", "airport transfer Jeddah", "Madinah airport transfer", "Saudi Arabia airport taxi", "booking transport from Jeddah to Makkah", "Jeddah airport VIP transfer", "private taxi Jeddah to Makkah", "Jeddah airport to Makkah hotel transport", "Makkah to Madinah train station taxi", "Madinah train station to hotel taxi", "Jeddah to Makkah private car", "Madinah to Makkah luxury transport", "Jeddah to Al Ula transport", "Jeddah to Yanbu taxi", "Makkah to Yanbu taxi", "cab from Madinah to Yanbu", "Jeddah to Badar transport", "Makkah to Badar taxi",
-      // Ziyarat & Tourism (25)
-      "Makkah Ziyarat taxi", "Madinah Ziyarat cab", "historical places Makkah transport", "historical places Madinah taxi", "Taif Ziyarat taxi", "Jabal al-Nour transport", "Cave of Hira taxi", "Jabal Thawr transport", "Arafat transport", "Muzdalifah taxi", "Mina transport service", "Quba Mosque taxi", "Masjid al-Qiblatayn transport", "Mount Uhud taxi service", "Battle of Khandaq site transport", "Jeddah city tour cab", "Taif city tour transport", "Al Baqi cemetery taxi", "Masjid Quba visitation transport", "Makkah holy sites tour", "Madinah holy sites tour", "Ziyarat packages Makkah", "Ziyarat packages Madinah", "Umrah Ziyarat private car", "guided Ziyarat tour transport",
-      // Fleet / Vehicle Specific (20)
-      "GMC Yukon XL booking Saudi Arabia", "Hyundai Staria Umrah taxi", "Toyota Hiace bus Makkah", "Ford Taurus taxi Jeddah", "Toyota Camry Umrah transport", "Hyundai Sonata Makkah taxi", "GMC Yukon Umrah booking", "11 passenger bus Makkah", "7 seater Umrah cab", "5 seater taxi Jeddah to Makkah", "VIP car rental Makkah", "luxury SUV Umrah transport", "family van rental Madinah", "coaster bus for Umrah group", "book GMC Yukon Makkah", "rent Hyundai Staria Jeddah", "Toyota Hiace for rent Madinah", "luxury fleet Umrah Saudi Arabia", "premium SUV Jeddah to Madinah", "chauffeur driven car Makkah",
-      // Target Audience / Intent (15)
-      "Umrah packages worldwide transport", "international Umrah pilgrims transport", "UK pilgrims Umrah taxi", "USA pilgrims Umrah transport", "Pakistan to Saudi Umrah transport", "India to Saudi Umrah cab", "Malaysia Umrah group transport", "Indonesia Umrah travel taxi", "safe Umrah journey transport", "comfortable Umrah ride", "reliable taxi for Umrah", "online Umrah taxi reservation", "Umrah transport cost calculator", "Umrah taxi app alternatives", "book Umrah cab via WhatsApp"
-    ],
+    description: 'Umrah Cabs offers trusted, affordable, and safe Umrah travel services worldwide. Serving pilgrims with comfort and care with our luxury fleet.',
     canonicalUrl: '/',
   });
 }
 
 export default async function Home() {
-  const heroSection = await getSectionContent('home-hero');
-  // SEO Optimized Fallbacks
-  const heroTitle = heroSection?.title || "Premium Umrah Transport";
-  // Styled Subtitle with Arabic
-  const heroSubtitleText = heroSection?.subtitle || "Jeddah, Makkah & Madinah • Airport Transfers • Intercity Travel";
-  const heroSubtitleContent = (
-    <>
-      <span className="block mb-4 opacity-90 font-light tracking-wider uppercase text-sm md:text-base">{heroSubtitleText}</span>
-      <h2
-        className="block text-xl md:text-2xl mt-2 text-gold font-bold tracking-wide drop-shadow-sm opacity-100"
-        style={{ fontFamily: 'var(--font-reem-kufi)' }}
-        lang="ar"
-        dir="rtl"
-      >
-        خدمة نقل المعتمرين VIP
-      </h2>
-    </>
-  );
-
-  const heroImage = getSectionImage(heroSection, 'desktop') || "/images/blog/makkah-haram-view-new.png";
-  const ctaText = getCustomField(heroSection, 'cta_text') || "Book Now / احجز الآن";
-  const ctaLink = "/booking";
-
   const baseUrl = getBaseUrl();
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
-        "name": "Ahsas Cab",
+        "name": "Umrah Cabs",
         "url": baseUrl,
-        "logo": `${baseUrl}/ahsas-logo-v2.png`,
+        "logo": `${baseUrl}/umrah-cabs-logo-v2.svg`,
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+966-54-549-4921",
@@ -95,19 +44,9 @@ export default async function Home() {
           "availableLanguage": ["en", "ar"]
         },
         "sameAs": [
-          "https://www.facebook.com/ahsascab",
-          "https://www.instagram.com/ahsascab"
+          "https://www.facebook.com/UmrahCabs",
+          "https://www.instagram.com/UmrahCabs"
         ]
-      },
-      {
-        "@type": "WebSite",
-        "name": "Ahsas Cab Services",
-        "url": baseUrl,
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": `${baseUrl}/search?q={search_term_string}`,
-          "query-input": "required name=search_term_string"
-        }
       }
     ]
   };
@@ -118,108 +57,96 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Hero Section */}
-      <Hero
-        title={heroTitle}
-        subtitle={heroSubtitleContent}
-        bgImage={heroImage}
-        layout="two-column"
-        ctaText={ctaText}
-        ctaLink={ctaLink}
-        backgroundChildren={<AnimatedBackground />}
-      >
-        <div className="hidden md:block w-full max-w-md ml-auto">
-          <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-3 rounded-[2rem] shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] relative overflow-hidden group">
-            {/* Subtle inner glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-            <div className="relative z-10">
-              <QuickBookingForm
-                title="Book Your Ride"
-                subtitle="Instant Confirmation"
-                className="shadow-none border-0 bg-transparent"
-              />
-            </div>
-          </div>
-        </div>
-      </Hero>
+      
+      {/* 1. Hero Section */}
+      <HomeHero />
 
-      {/* Transport Services Section - NEW */}
+      {/* 2. Unified Booking Widget (Replaces Horizontal Form & Calculator) */}
+      <UnifiedBookingWidget />
+
+      {/* 3. Transport Services */}
       <ScrollReveal width="100%">
         <TransportServices />
       </ScrollReveal>
 
-      {/* Instant Price Calculator Section */}
-      <InstantPriceCalculator />
-
-      {/* Booking Guide Section - NEW */}
-      <BookingGuide />
-
-      {/* Features Section */}
+      {/* 4. Why Choose Us (Replaces Features, SafetyPromise, PassengerCare) */}
       <ScrollReveal width="100%">
-        <Features />
+        <WhyChooseUs />
       </ScrollReveal>
 
-      {/* Passenger Care Section */}
-      <PassengerCare />
 
-      {/* Fleet Gallery - NEW */}
+
+      {/* 6. Fleet Showcase (Replaces Gallery & Carousel) */}
       <ScrollReveal width="100%">
-        <FleetGallery />
+        <FleetShowcase />
       </ScrollReveal>
 
-      {/* Fleet Section */}
-      <FadeIn>
-        <FleetCarouselWrapper />
-      </FadeIn>
-
-      {/* Gallery Section */}
-      <CustomerGallery />
-
-      {/* Testimonials Section */}
+      {/* 7. Pilgrim Experiences (Replaces Testimonials, Reviews, CustomerGallery) */}
       <ScrollReveal width="100%">
-        <Testimonials />
+        <PilgrimExperiences />
       </ScrollReveal>
-      {/* Reviews Section */}
-      <ReviewsSection />
 
-      {/* SEO Content Section - Enhanced */}
-      <ExpandedSEOContent />
+      {/* 8. SEO & Content (Replaces ExpandedSEO & Articles) */}
+      <SEOArticles />
 
-      {/* Latest Articles Section */}
-      <LatestArticles />
-
-      {/* Safety Promise Section - Moved to Bottom */}
-      <FadeIn>
-        <SafetyPromise />
-      </FadeIn>
-
-      {/* CTA Section */}
-      <section className="relative py-20 bg-secondary text-white overflow-hidden">
-        {/* Pattern Overlay */}
-        <div className="absolute inset-0 pattern-grid-fade opacity-10 pointer-events-none"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-secondary via-secondary to-[#0a0f1d] z-0"></div>
-
-        <div className="container relative z-10 mx-auto px-4 text-center">
-          <FadeIn>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-playfair mb-6 tracking-tight drop-shadow-lg">
-              Ready to Begin Your <span className="text-gold italic">Blessed Journey?</span>
+      {/* 9. Final CTA */}
+      <section className="relative py-24 bg-[#0F172A] overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 pattern-grid-fade opacity-10 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
+        
+        <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
+          <ScrollReveal>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white text-xs font-bold uppercase tracking-widest mb-8 backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                Available 24/7
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl font-bold font-poppins text-white mb-6 leading-tight">
+              Ready for Your <br className="hidden md:block"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">Spiritual Journey?</span>
             </h2>
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-              Book your VIP transport now and let us take care of the logistics while you focus on your worship.
+            
+            <p className="text-xl text-slate-300 font-inter mb-10 max-w-2xl mx-auto leading-relaxed">
+              Book your reliable, comfortable, and safe Umrah taxi today. Experience the premium standard of travel with zero prepayment required.
             </p>
-            <a
-              href={getWhatsAppLink("Salam Ahsas Cab, I am ready to book my journey.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-gold to-amber-600 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
-            >
-              Book Your Ride via WhatsApp
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-          </FadeIn>
+            
+            <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
+              <a 
+                href="/booking" 
+                className="btn-primary px-10 py-4 text-lg w-full sm:w-auto shadow-[0_0_40px_rgba(34,197,94,0.3)] hover:shadow-[0_0_60px_rgba(34,197,94,0.5)] transition-shadow"
+              >
+                Book Your Ride Now
+              </a>
+              <a 
+                href={getWhatsAppLink("Salam, I would like to make an inquiry.")}
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="group flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-10 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-md w-full sm:w-auto"
+              >
+                <i className="fab fa-whatsapp text-2xl text-green-400 group-hover:scale-110 transition-transform"></i>
+                Contact via WhatsApp
+              </a>
+            </div>
+            
+            <div className="mt-12 flex items-center justify-center gap-8 text-sm font-medium text-slate-400">
+                <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                        <CheckCircle2 size={12} className="text-primary" />
+                    </div>
+                    No Hidden Fees
+                </div>
+                <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                        <CheckCircle2 size={12} className="text-primary" />
+                    </div>
+                    Pay Upon Arrival
+                </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
-      {/* Force Rebuild */}
     </main>
   );
 }

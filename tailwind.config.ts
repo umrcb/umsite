@@ -21,6 +21,7 @@ const config: Config = {
                 sans: ["var(--font-geist-sans)", "sans-serif"],
                 mono: ["var(--font-geist-mono)", "monospace"],
                 playfair: ["var(--font-playfair)", "serif"],
+                poppins: ["var(--font-poppins)", "sans-serif"],
                 opensans: ["var(--font-open-sans)", "sans-serif"],
                 reem: ["var(--font-reem-kufi)", "sans-serif"],
             },
@@ -66,6 +67,10 @@ const config: Config = {
                 navy: {
                     DEFAULT: "hsl(var(--navy))",
                     foreground: "hsl(var(--gold))",
+                },
+                "kaaba-black": {
+                    DEFAULT: "hsl(var(--kaaba-black))",
+                    foreground: "hsl(var(--background))",
                 }
             },
             borderRadius: {
