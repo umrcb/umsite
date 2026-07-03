@@ -61,7 +61,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": post.title,
-        "image": [post.image], // In production, prepend domain
+        "image": [post.imageUrl], // In production, prepend domain
         "datePublished": post.date, // Format should ideally be ISO 8601
         "author": {
             "@type": "Person",
