@@ -3,7 +3,7 @@ import autoTable from 'jspdf-autotable';
 
 // Define font and styling constants
 const COMPANY_NAME = "Umrah Cabs";
-const COMPANY_ISLAMIC_NAME = "احساس الرحلات";
+const COMPANY_ISLAMIC_NAME = "Umrah Cabs";
 const COMPANY_ADDRESS = "Makkah Al Mukarramah, Saudi Arabia";
 const COMPANY_PHONE = "+966 50 123 4567";
 const COMPANY_EMAIL = "info@umrahcabs.com";
@@ -26,7 +26,7 @@ export const generateBookingInvoice = (booking: any) => {
     doc.text("Umrah Cabs", 20, 20);
     doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
-    doc.text("Alrihlat", 20, 26);
+    doc.text("Premium Taxi Service", 20, 26);
 
     // Company Info (Right)
     doc.setFontSize(10);

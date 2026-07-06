@@ -42,7 +42,7 @@ export default function PricingComparison() {
                 {/* Our Services */}
                 <div className="w-full md:w-1/2 bg-white rounded-3xl p-6 lg:p-8 border-2 border-primary/20 shadow-sm relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-2 bg-primary" />
-                    <h3 className="font-bold text-navy text-lg mb-6 pb-4 border-b border-slate-100 text-center">Umrah Taxi Services</h3>
+                    <h3 className="font-bold text-navy text-lg mb-6 pb-4 border-b border-slate-100 text-center">Umrah Cabs</h3>
                     <ul className="space-y-4">
                         {ourFeatures.map((feature, index) => (
                             <li key={index} className="flex items-start gap-3">

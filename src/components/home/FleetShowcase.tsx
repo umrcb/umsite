@@ -9,10 +9,10 @@ async function FleetFetcher() {
 
     // Map to FleetVehicle format
     const showcaseVehicles: FleetVehicle[] = vehicles
-        .filter(v => v.isActive)
+        .filter(v => v.isActive && v.image && v.image.trim() !== '')
         .slice(0, 6)
-        .map(v => ({
-            id: v.id,
+        .map((v, idx) => ({
+            id: (v as any)._id ? (v as any)._id.toString() : (v.id || `vehicle-${idx}`),
             name: v.name,
             image: v.image,
             passengers: v.name.toLowerCase().includes('hiace') ? "10/11" : v.passengers,

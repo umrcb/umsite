@@ -10,7 +10,7 @@ export default function ExpandedServicesSEO() {
                 {/* Main Heading - H2 */}
                 <div className="text-center mb-16 max-w-4xl mx-auto">
                     <h2 className="text-3xl md:text-5xl font-bold font-playfair text-slate-900 dark:text-white mb-6 leading-tight">
-                        Comprehensive Umrah Taxi Services: Your Guide to Holy Transport
+                        Comprehensive Umrah Cabs: Your Guide to Holy Transport
                     </h2>
                     <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                         When undertaking the sacred journey of Umrah or Hajj, reliable transportation is as critical as your accommodation. Umrah Cabs offers a dedicated suite of <Link href="/services/jeddah-airport-transfer" className="text-gold font-semibold hover:underline border-b border-gold/30">Umrah taxi services</Link> designed specifically for the unique needs of pilgrims travelling across Saudi Arabia. From immediate airport pickups to comprehensive historical Ziyarat tours, we manage the logistics so you can focus entirely on your worship.

@@ -20,10 +20,10 @@ import FAQSection from '@/components/about/FAQSection';
 import FinalCTA from '@/components/about/FinalCTA';
 
 export const metadata: Metadata = {
-  title: 'About Umrah Taxi Services | Premium Umrah Transportation',
-  description: 'Learn about Umrah Taxi Services, the trusted choice for premium, safe, and reliable pilgrim transportation across Makkah, Madinah, and Saudi Arabia.',
+  title: 'About Umrah Cabs | Premium Umrah Transportation',
+  description: 'Learn about Umrah Cabs, the trusted choice for premium, safe, and reliable pilgrim transportation across Makkah, Madinah, and Saudi Arabia.',
   keywords: [
-    'About Umrah Taxi Services',
+    'About Umrah Cabs',
     'Premium Umrah Transportation',
     'Trusted Taxi Makkah',
     'Saudi Arabia Chauffeur Service',
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     'Pilgrim Transportation'
   ],
   openGraph: {
-    title: 'About Umrah Taxi Services | Premium Umrah Transportation',
-    description: 'Learn about Umrah Taxi Services, the trusted choice for premium, safe, and reliable pilgrim transportation across Makkah, Madinah, and Saudi Arabia.',
+    title: 'About Umrah Cabs | Premium Umrah Transportation',
+    description: 'Learn about Umrah Cabs, the trusted choice for premium, safe, and reliable pilgrim transportation across Makkah, Madinah, and Saudi Arabia.',
     type: 'website',
     url: 'https://umrahtaxiservices.com/about',
     images: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Umrah Taxi Services | Premium Umrah Transportation',
+    title: 'About Umrah Cabs | Premium Umrah Transportation',
     description: 'The trusted choice for premium, safe, and reliable pilgrim transportation.',
     images: ['https://images.unsplash.com/photo-1598462725916-24eb2fbff99d?q=80&w=1200&auto=format&fit=crop'],
   }
@@ -60,7 +60,7 @@ export default function AboutPage() {
       {
         "@type": "Organization",
         "@id": "https://umrahtaxiservices.com/#organization",
-        "name": "Umrah Taxi Services",
+        "name": "Umrah Cabs",
         "url": "https://umrahtaxiservices.com",
         "logo": "https://umrahtaxiservices.com/logo.png",
         "contactPoint": {
@@ -72,7 +72,7 @@ export default function AboutPage() {
       {
         "@type": "LocalBusiness",
         "@id": "https://umrahtaxiservices.com/#localbusiness",
-        "name": "Umrah Taxi Services",
+        "name": "Umrah Cabs",
         "image": "https://images.unsplash.com/photo-1598462725916-24eb2fbff99d?q=80&w=1200&auto=format&fit=crop",
         "telephone": "+966-500-000-000",
         "url": "https://umrahtaxiservices.com/about",

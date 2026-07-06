@@ -37,7 +37,8 @@ export async function GET() {
                 // Frontend expects: customRates map.
 
                 const customRates = (route.prices || []).reduce((acc: Record<string, number>, rp: any) => {
-                    acc[rp.vehicleId] = rp.price;
+                    const vid = rp.vehicleId?.toString() || rp.vehicleId;
+                    acc[vid] = rp.price;
                     return acc;
                 }, {} as Record<string, number>);
 
@@ -61,7 +62,7 @@ export async function GET() {
                 };
             }),
             vehicles: vehicles.map(vehicle => ({
-                id: vehicle.id,
+                id: (vehicle as any)._id?.toString() || (vehicle as any).id,
                 name: vehicle.name,
                 capacity: vehicle.capacity || `${vehicle.passengers} Seater`,
                 multiplier: 1, // Default

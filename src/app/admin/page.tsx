@@ -2,7 +2,7 @@ import { getBookings, getFleet, getDashboardStats } from '@/lib/db';
 import { getLogs } from '@/lib/logger';
 import { routeService } from '@/services/routeService';
 import DashboardClient from './DashboardClient';
-import AdminAutoLock from '@/components/admin/AdminAutoLock';
+
 export default async function AdminDashboard() {
     const [stats, recentBookings, logsData] = await Promise.all([
         getDashboardStats(),
@@ -13,38 +13,61 @@ export default async function AdminDashboard() {
     // Ensure safe defaults
     const safeStats = stats || {
         totalBookings: 0,
-        activeFleet: 0,
-        totalFleet: 0,
         pendingBookings: 0,
-        confirmedBookings: 0,
-        totalRevenue: 0,
-        analyticsData: { labels: [], bookings: [], revenue: [] }
+        completedBookings: 0,
+        revenue: 0,
+    };
+
+    const analyticsData = {
+        revenueChart: [
+            { name: 'Mon', revenue: 0, bookings: 0 },
+            { name: 'Tue', revenue: 0, bookings: 0 },
+            { name: 'Wed', revenue: 0, bookings: 0 },
+            { name: 'Thu', revenue: 0, bookings: 0 },
+            { name: 'Fri', revenue: 0, bookings: 0 },
+            { name: 'Sat', revenue: 0, bookings: 0 },
+            { name: 'Sun', revenue: 0, bookings: 0 },
+        ],
+        statusPie: [
+            { name: 'Pending', value: safeStats.pendingBookings, color: '#f59e0b' },
+            { name: 'Completed', value: safeStats.completedBookings || 0, color: '#10b981' },
+            { name: 'Cancelled', value: 0, color: '#ef4444' },
+        ],
+        vehicleBar: [
+            { name: 'Car', value: 0 },
+            { name: 'GMC', value: 0 },
+            { name: 'Hiace', value: 0 },
+        ],
+        routeBar: [
+            { name: 'Jeddah to Makkah', value: 0 },
+            { name: 'Makkah to Madinah', value: 0 },
+        ]
     };
 
     const dashboardData = {
         totalBookings: safeStats.totalBookings,
-        activeFleet: safeStats.activeFleet,
-        totalFleet: safeStats.totalFleet,
+        activeFleet: 0,
+        totalFleet: 0,
         pendingBookings: safeStats.pendingBookings,
-        confirmedBookings: safeStats.confirmedBookings,
+        confirmedBookings: safeStats.completedBookings || 0,
         routesCount: await routeService.getRoutes().then(r => r.length).catch(() => 0),
-        totalRevenue: safeStats.totalRevenue,
+        totalRevenue: safeStats.revenue || 0,
         recentBookings: (recentBookings || []).map(b => ({
             ...b,
             id: b.id || (b as any)._id?.toString() || '',
             status: b.status || 'pending'
-        })) as any, // Cast to any to avoid strict type checks on minor mismatches for now
+        })) as any, 
         recentLogs: (logsData ? logsData.logs : []).map(l => ({
             ...l,
             timestamp: new Date(l.timestamp),
             user: l.user || 'Unknown'
         })),
-        analyticsData: safeStats.analyticsData
+        analyticsData: analyticsData
     };
 
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white pb-20 md:pb-0">
-            <AdminAutoLock />
+
             <div className="max-w-[1600px] mx-auto">
                 <DashboardClient
                     totalBookings={dashboardData.totalBookings}

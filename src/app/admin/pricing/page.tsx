@@ -237,7 +237,7 @@ export default function PricingPage() {
                 <button
                     onClick={handleSaveAll}
                     disabled={saving || Object.keys(modified).length === 0}
-                    className="flex items-center gap-2 bg-gold text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-gold/20 hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100 whitespace-nowrap"
+                    className="flex items-center gap-2 bg-emerald-600 text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-emerald-600/20 hover:bg-emerald-700 hover:scale-105 transition-all disabled:opacity-50 disabled:hover:scale-100 whitespace-nowrap"
                 >
                     <Save size={20} />
                     {saving ? 'Saving...' : 'Save Changes'}

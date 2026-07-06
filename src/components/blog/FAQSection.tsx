@@ -8,7 +8,7 @@ import FadeIn from '@/components/common/FadeIn';
 const faqs = [
     {
         question: "How to book a taxi for Umrah in Saudi Arabia?",
-        answer: "Booking is simple with Umrah Cabs. You can book online through our website for instant confirmation. We offer reliable Umrah Taxi Services from Jeddah Airport, Makkah, and Madinah with 24/7 support."
+        answer: "Booking is simple with Umrah Cabs. You can book online through our website for instant confirmation. We offer reliable Umrah Cabs from Jeddah Airport, Makkah, and Madinah with 24/7 support."
     },
     {
         question: "What is the best way to travel from Jeddah to Makkah?",

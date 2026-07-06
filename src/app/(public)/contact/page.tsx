@@ -38,7 +38,7 @@ export default async function ContactPage() {
         "@context": "https://schema.org",
         "@type": "TransportationService",
         "name": "Umrah Cabs",
-        "alternateName": "احساس الرحلات",
+        "alternateName": "Umrah Cabs",
         "image": `${getBaseUrl()}/images/logo.png`,
         "@id": `${getBaseUrl()}`,
         "url": `${getBaseUrl()}`,

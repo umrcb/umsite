@@ -8,7 +8,7 @@ export default function OurStory() {
         <div className={`${styles.fadeInUp}`} style={{ animationDelay: '0.1s' }}>
           <h2 className={styles.sectionTitle}>Our <span>Story</span></h2>
           <p className={styles.bodyText} style={{ marginBottom: '1.5rem' }}>
-            Founded with a deep understanding of the challenges pilgrims face upon arriving in Saudi Arabia, Umrah Taxi Services was created to eliminate transportation stress from the spiritual journey.
+            Founded with a deep understanding of the challenges pilgrims face upon arriving in Saudi Arabia, Umrah Cabs was created to eliminate transportation stress from the spiritual journey.
           </p>
           <p className={styles.bodyText}>
             We recognized that finding reliable, safe, and transparent transportation was often a point of anxiety for guests of Allah. Our mission is to transform that experience by offering a seamless, luxurious, and deeply respectful service that allows pilgrims to focus entirely on their faith.

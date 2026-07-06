@@ -17,7 +17,7 @@ export default function HeroSection() {
         </h1>
         
         <p className={styles.sectionSubtitle} style={{ marginBottom: '2rem' }}>
-          Umrah Taxi Services is committed to providing safe, reliable, and premium transportation for pilgrims across Makkah, Madinah, Jeddah, Taif, and surrounding cities. Your spiritual journey deserves the highest standard of comfort.
+          Umrah Cabs is committed to providing safe, reliable, and premium transportation for pilgrims across Makkah, Madinah, Jeddah, Taif, and surrounding cities. Your spiritual journey deserves the highest standard of comfort.
         </p>
         
         <div className={styles.btnGroup}>

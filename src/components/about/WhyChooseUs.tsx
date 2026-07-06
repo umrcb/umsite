@@ -20,7 +20,7 @@ export default function WhyChooseUs() {
     <section className={`${styles.section} ${styles.sectionLight}`}>
       <div className={styles.grid2} style={{ alignItems: 'center' }}>
         <div className={`${styles.fadeInUp}`} style={{ animationDelay: '0.1s' }}>
-          <h2 className={styles.sectionTitle}>Why Choose <span>Umrah Taxi Services</span></h2>
+          <h2 className={styles.sectionTitle}>Why Choose <span>Umrah Cabs</span></h2>
           <p className={styles.bodyText} style={{ marginBottom: '2rem' }}>
             We understand that embarking on Umrah is a profoundly personal and spiritual undertaking. That's why we've designed every aspect of our service to provide comfort, security, and absolute reliability.
           </p>

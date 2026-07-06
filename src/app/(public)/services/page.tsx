@@ -29,10 +29,10 @@ const PilgrimExperiences = dynamic(() => import('@/components/home/PilgrimExperi
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: "Umrah Taxi Services & Ziyarat Tours | Premium Transport",
+        title: "Umrah Cabs & Ziyarat Tours | Premium Transport",
         description: "Professional A-Z Umrah transport services: Jeddah Airport pickups, Makkah to Madinah transfers, VIP luxury fleet, and historic Ziyarat tours. Reliable 24/7.",
         keywords: [
-            "Umrah Taxi Services", "Ziyarat Tours Makkah", "Intercity Transfers Saudi",
+            "Umrah Cabs", "Ziyarat Tours Makkah", "Intercity Transfers Saudi",
             "Jeddah Airport Pickup", "Madinah Ziyarat", "Makkah to Madinah Taxi",
             "VIP Umrah Transport", "Family Umrah Taxi"
         ],

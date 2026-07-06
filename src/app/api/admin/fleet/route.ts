@@ -10,7 +10,12 @@ export async function GET() {
     }
 
     try {
-        const vehicles = await VehicleService.getActiveVehicles();
+        const rawVehicles = await VehicleService.getActiveVehicles();
+        const vehicles = rawVehicles.map(v => ({
+            ...v,
+            id: v._id?.toString() || (v as any).id,
+            _id: v._id?.toString()
+        }));
 
         // Enforce specific sort order
         // Enforce specific sort order with robust matching

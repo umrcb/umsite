@@ -15,7 +15,7 @@ export const DEFAULT_BOOKING_CONFIRMATION_TEMPLATE = `
     </div>
 
     <p style="text-align: center; color: #334155;">Thank you for choosing Umrah Cabs. Your ride has been scheduled successfully.<br>
-    <span style="font-family: 'Amiri', serif; color: #64748b;">شكراً لاختيارك احساس الرحلات. تم حجز رحلتك بنجاح.</span></p>
+    <span style="font-family: 'Amiri', serif; color: #64748b;">شكراً لاختيارك Umrah Cabs. تم حجز رحلتك بنجاح.</span></p>
 
     <!-- Booking Details Card -->
     <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; margin: 25px 0; box-shadow: 0 4px 6px rgba(15, 23, 42, 0.05);">

@@ -56,9 +56,9 @@ export default function Navbar() {
 
     const showDarkNav = scrolled || isMenuOpen;
     const isHomePage = pathname === '/';
-    const useDarkText = showDarkNav || isHomePage;
+    const useDarkText = showDarkNav || isHomePage || pathname === '/booking';
 
-    const whatsappUrl = getWhatsAppLink("Hello! I would like to inquire about Umrah Taxi Services.");
+    const whatsappUrl = getWhatsAppLink("Hello! I would like to inquire about Umrah Cabs.");
 
     return (
         <nav
@@ -73,7 +73,7 @@ export default function Navbar() {
                         <div className={`transition-all duration-500 ease-out ${showDarkNav ? 'w-12 h-12 lg:w-16 lg:h-16' : 'w-16 h-16 lg:w-20 lg:h-20'} relative`}>
                             <Image
                                 src="/umrah-cabs-logo-v2.svg"
-                                alt="Umrah Taxi Services"
+                                alt="Umrah Cabs"
                                 fill
                                 className="object-contain drop-shadow-md mix-blend-multiply"
                                 priority
@@ -81,10 +81,10 @@ export default function Navbar() {
                             />
                         </div>
                         <div className={`flex flex-col ml-3 transition-opacity duration-300 ${showDarkNav ? 'opacity-100' : 'opacity-100'}`}>
-                            <span className={`text-xl lg:text-2xl font-bold font-poppins leading-none tracking-tight transition-colors duration-300 flex items-center gap-2 ${useDarkText ? 'text-foreground' : 'text-white'}`}>
-                                <span>Umrah <span className="text-primary">Taxi</span></span>
+                            <span className={`text-xl lg:text-2xl font-bold font-poppins leading-none tracking-tight transition-colors duration-300 flex items-center gap-2 ${useDarkText ? 'text-slate-900' : 'text-white'}`}>
+                                <span>Umrah <span className="text-primary">Cabs</span></span>
                             </span>
-                            <span className={`text-[0.65rem] lg:text-xs font-medium tracking-[0.2em] uppercase leading-none mt-1 transition-colors duration-300 ${useDarkText ? 'text-muted-foreground' : 'text-white/80'}`}>
+                            <span className={`text-[0.65rem] lg:text-xs font-bold tracking-[0.2em] uppercase leading-none mt-1 transition-colors duration-300 ${useDarkText ? 'text-slate-500' : 'text-white/80'}`}>
                                 Premium Services
                             </span>
                         </div>
@@ -156,15 +156,15 @@ export default function Navbar() {
                         <div className="relative w-10 h-10">
                             <Image
                                 src="/umrah-cabs-logo-v2.svg"
-                                alt="Umrah Taxi Services"
+                                alt="Umrah Cabs"
                                 fill
                                 className="object-contain"
                                 sizes="40px"
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-lg font-bold text-foreground font-poppins flex items-center gap-1.5">Umrah <span className="text-primary">Taxi</span></span>
-                            <span className="text-[0.6rem] font-bold text-muted-foreground tracking-widest uppercase">Premium Services</span>
+                            <span className="text-lg font-bold text-slate-900 font-poppins flex items-center gap-1.5">Umrah <span className="text-primary">Cabs</span></span>
+                            <span className="text-[0.6rem] font-bold text-slate-500 tracking-widest uppercase">Premium Services</span>
                         </div>
                     </Link>
                 </div>

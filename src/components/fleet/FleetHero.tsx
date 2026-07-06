@@ -76,7 +76,7 @@ export default function FleetHero() {
                         <div className="relative w-full h-full max-w-[900px] mx-auto">
                             <Image
                                 src="/images/fleet/gmc-yukon-hero-professional.png"
-                                alt="Umrah Taxi Services Premium Fleet Lineup"
+                                alt="Umrah Cabs Premium Fleet Lineup"
                                 fill
                                 className="object-contain drop-shadow-2xl z-20 scale-125 lg:scale-110 translate-y-12"
                                 priority

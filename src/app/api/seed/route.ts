@@ -49,8 +49,8 @@ export async function GET() {
                 passengers: parseCapacity(vData.capacity),
                 luggage: parseLuggage(vData.luggage as string),
                 features: vData.features,
-                price: "0",
-                hourlyRate: "0",
+                price: (vData as any).hourlyRate || 0,
+                hourlyRate: (vData as any).hourlyRate || 0,
                 category: (vData as any).category || "Standard",
                 isActive: true
             });

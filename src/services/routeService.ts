@@ -18,14 +18,9 @@ export const routeService = {
             const routes = await Route.aggregate([
                 { $sort: { createdAt: -1 } },
                 {
-                    $addFields: {
-                        routeIdString: { $toString: "$_id" }
-                    }
-                },
-                {
                     $lookup: {
                         from: 'routeprices',
-                        localField: 'routeIdString',
+                        localField: '_id',
                         foreignField: 'route',
                         as: 'prices_data'
                     }
@@ -76,14 +71,9 @@ export const routeService = {
                 { $match: { isActive: true } },
                 { $sort: { createdAt: -1 } },
                 {
-                    $addFields: {
-                        routeIdString: { $toString: "$_id" }
-                    }
-                },
-                {
                     $lookup: {
                         from: 'routeprices',
-                        localField: 'routeIdString',
+                        localField: '_id',
                         foreignField: 'route',
                         as: 'prices_data'
                     }

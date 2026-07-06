@@ -7,7 +7,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { LayoutDashboard, Calendar, Car, DollarSign, Settings, LogOut, MapPin, MessageSquare, FileText, Users, Image as ImageIcon, PenTool, UserCheck, Navigation, BarChart3, Menu, X } from 'lucide-react';
 import { logout } from '@/lib/auth';
 
-import AdminAutoLock from '@/components/admin/AdminAutoLock';
+
 
 interface User {
     id: string;
@@ -92,9 +92,6 @@ export default function AdminLayout({
         { href: '/admin/pricing', label: 'Pricing', icon: DollarSign, roles: ['admin'] },
         { href: '/admin/reviews', label: 'Reviews', icon: MessageSquare, roles: ['admin', 'manager', 'operational_manager'] },
         { href: '/admin/blog', label: 'Blog', icon: FileText, roles: ['admin', 'manager', 'operational_manager'] },
-        { href: '/admin/gallery', label: 'Gallery', icon: ImageIcon, roles: ['admin', 'manager', 'operational_manager'] },
-        { href: '/admin/content', label: 'Content', icon: PenTool, roles: ['admin', 'manager', 'operational_manager'] },
-        { href: '/admin/marketing', label: 'Marketing', icon: MessageSquare, roles: ['admin', 'manager'] },
         { href: '/admin/users', label: 'Users', icon: Users, roles: ['admin'] },
         { href: '/admin/settings', label: 'Settings', icon: Settings, roles: ['admin'] },
     ];
@@ -150,8 +147,6 @@ export default function AdminLayout({
                     <div className="flex flex-col items-start gap-1">
                         <div className="flex flex-col items-start text-left">
                             <span className="text-2xl font-bold text-gold font-playfair">Umrah Cabs</span>
-                            <span className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase font-outfit">Alrihlat</span>
-                            <span className="text-lg font-bold text-gold mt-1 font-[family-name:var(--font-reem-kufi)] opacity-90">احساس الرحلات</span>
                         </div>
                     </div>
                 </div>
@@ -207,7 +202,7 @@ export default function AdminLayout({
                     {children}
                 </div>
             </main>
-            <AdminAutoLock />
+
         </div>
     );
 }

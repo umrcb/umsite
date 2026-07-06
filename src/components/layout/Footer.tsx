@@ -150,7 +150,7 @@ export default function Footer() {
             <div className="bg-[#115E39] py-3">
                 <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium">
                     <p className="text-white/90">
-                        © 2026 Umrah Taxi Services. All Rights Reserved.
+                        © 2026 Umrah Cabs. All Rights Reserved.
                     </p>
                     
                     <div className="flex items-center gap-6">
