@@ -17,14 +17,12 @@ export default function Footer() {
         { label: "Home", href: "/" },
         { label: "Services", href: "/services" },
         { label: "Fleet", href: "/fleet" },
-        { label: "Umrah & Ziyarat", href: "/services/ziyarat-tours" },
     ];
 
     const quickLinksCol2 = [
         { label: "Pricing", href: "/pricing" },
         { label: "About Us", href: "/about" },
         { label: "Contact Us", href: "/contact" },
-        { label: "FAQs", href: "/faqs" },
     ];
 
     const servicesCol1 = [

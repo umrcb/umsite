@@ -49,13 +49,14 @@ export default function Navbar() {
         { href: '/', label: 'Home' },
         { href: '/services', label: 'Services' },
         { href: '/fleet', label: 'Fleet' },
-        { href: '/services/ziyarat-tours', label: 'Umrah & Ziyarat' },
         { href: '/pricing', label: 'Pricing' },
         { href: '/about', label: 'About' },
         { href: '/contact', label: 'Contact' },
     ];
 
     const showDarkNav = scrolled || isMenuOpen;
+    const isHomePage = pathname === '/';
+    const useDarkText = showDarkNav || isHomePage;
 
     const whatsappUrl = getWhatsAppLink("Hello! I would like to inquire about Umrah Taxi Services.");
 
@@ -80,10 +81,10 @@ export default function Navbar() {
                             />
                         </div>
                         <div className={`flex flex-col ml-3 transition-opacity duration-300 ${showDarkNav ? 'opacity-100' : 'opacity-100'}`}>
-                            <span className={`text-xl lg:text-2xl font-bold font-poppins leading-none tracking-tight transition-colors duration-300 flex items-center gap-2 ${showDarkNav ? 'text-foreground' : 'text-white'}`}>
+                            <span className={`text-xl lg:text-2xl font-bold font-poppins leading-none tracking-tight transition-colors duration-300 flex items-center gap-2 ${useDarkText ? 'text-foreground' : 'text-white'}`}>
                                 <span>Umrah <span className="text-primary">Taxi</span></span>
                             </span>
-                            <span className={`text-[0.65rem] lg:text-xs font-medium tracking-[0.2em] uppercase leading-none mt-1 transition-colors duration-300 ${showDarkNav ? 'text-muted-foreground' : 'text-white/80'}`}>
+                            <span className={`text-[0.65rem] lg:text-xs font-medium tracking-[0.2em] uppercase leading-none mt-1 transition-colors duration-300 ${useDarkText ? 'text-muted-foreground' : 'text-white/80'}`}>
                                 Premium Services
                             </span>
                         </div>
@@ -98,7 +99,7 @@ export default function Navbar() {
                             href={link.href}
                             className={`relative text-sm font-medium transition-all duration-300 py-2 flex items-center gap-1 ${mounted && pathname === link.href
                                 ? 'text-primary font-bold'
-                                : (showDarkNav ? 'text-foreground hover:text-primary' : 'text-white/90 hover:text-white')
+                                : (useDarkText ? 'text-foreground hover:text-primary' : 'text-white/90 hover:text-white')
                                 }`}
                         >
                             {link.label}
@@ -128,7 +129,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className={`xl:hidden p-2 transition-colors relative z-50 ${scrolled ? 'text-foreground hover:text-primary' : 'text-white hover:text-primary'}`}
+                    className={`xl:hidden p-2 transition-colors relative z-50 ${useDarkText ? 'text-foreground hover:text-primary' : 'text-white hover:text-primary'}`}
                     onClick={toggleMenu}
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     aria-expanded={isMenuOpen}
