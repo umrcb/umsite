@@ -26,16 +26,14 @@ export default function Footer() {
     ];
 
     const servicesCol1 = [
-        { label: "Airport Transfers", href: "/services/jeddah-airport-transfer" },
-        { label: "Umrah Transportation", href: "/services/makkah-madinah-taxi" },
-        { label: "Ziyarat Tours", href: "/services/ziyarat-tours" },
-        { label: "City Transfers", href: "/services" },
+        { label: "Jeddah Airport Transfer", href: "/services/jeddah-airport-transfer" },
+        { label: "Madinah Airport Transfer", href: "/services/madinah-airport-transfer" },
     ];
 
     const servicesCol2 = [
-        { label: "Long Distance", href: "/services" },
-        { label: "Corporate Travel", href: "/services" },
-        { label: "Group Bookings", href: "/fleet/toyota-coaster" },
+        { label: "Makkah to Madinah Taxi", href: "/services/makkah-madinah-taxi" },
+        { label: "Hotel Transfers", href: "/services/hotel-transfers" },
+        { label: "Intercity Transfers", href: "/services/intercity-transfer" },
     ];
 
     return (

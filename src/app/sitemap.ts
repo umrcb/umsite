@@ -29,11 +29,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/resources',
         '/services/jeddah-airport-transfer',
         '/services/makkah-madinah-taxi',
-        '/services/ziyarat-tours',
         '/services/madinah-airport-transfer',
         '/services/intercity-transfer',
         '/services/airport-transfers',
-        '/services/ramadan-transport',
         '/services/taif-city-tour',
         '/routes',
     ].map((route) => ({

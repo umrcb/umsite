@@ -46,16 +46,6 @@ const services = [
         image: '/images/blog/makkah-haram-view.jpg',
         link: '/services/ziyarat-tours',
         keywords: ['Makkah Ziyarat', 'Madinah Ziyarat']
-    },
-    {
-        id: 'ramadan-transport',
-        title: 'Ramadan Transport',
-        subtitle: '24/7 Availability • Tarawih & Qiyam',
-        description: 'Specialized transport services for the Holy Month. We handle the heavy traffic during peak times so you can focus on your fasting and prayers. Pre-book to guarantee your ride.',
-        icon: <Car size={32} className="text-primary" />,
-        image: '/images/hero/ramadan-transport-hero.png',
-        link: '/services/ramadan-transport',
-        keywords: ['Ramadan transport Makkah', 'Tarawih taxi']
     }
 ];
 

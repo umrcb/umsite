@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
 import { useMobileMenu } from '@/context/MobileMenuContext';
 import GlassButton from '@/components/ui/GlassButton';
 import { getWhatsAppLink } from '@/lib/whatsapp';
@@ -47,8 +47,29 @@ export default function Navbar() {
 
     const links = [
         { href: '/', label: 'Home' },
-        { href: '/services', label: 'Services' },
-        { href: '/fleet', label: 'Fleet' },
+        { 
+            href: '/services', 
+            label: 'Services',
+            dropdown: [
+                { href: '/services/jeddah-airport-transfer', label: 'Jeddah Airport Transfer' },
+                { href: '/services/madinah-airport-transfer', label: 'Madinah Airport Transfer' },
+                { href: '/services/makkah-madinah-taxi', label: 'Makkah to Madinah Taxi' },
+                { href: '/services/hotel-transfers', label: 'Hotel Transfers' },
+                { href: '/services/intercity-transfer', label: 'Intercity Transfers' },
+            ]
+        },
+        { 
+            href: '/fleet', 
+            label: 'Fleet',
+            dropdown: [
+                { href: '/fleet/toyota-camry', label: 'Toyota Camry' },
+                { href: '/fleet/gmc-yukon-at4', label: 'GMC Yukon AT4' },
+                { href: '/fleet/hyundai-staria', label: 'Hyundai Staria' },
+                { href: '/fleet/hyundai-starex', label: 'Hyundai Starex' },
+                { href: '/fleet/toyota-hiace', label: 'Toyota Hiace' },
+                { href: '/fleet/toyota-coaster', label: 'Toyota Coaster' },
+            ]
+        },
         { href: '/pricing', label: 'Pricing' },
         { href: '/about', label: 'About' },
         { href: '/contact', label: 'Contact' },
@@ -94,17 +115,46 @@ export default function Navbar() {
                 {/* Desktop Nav */}
                 <div className="hidden xl:flex items-center gap-8">
                     {links.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className={`relative text-sm font-medium transition-all duration-300 py-2 flex items-center gap-1 ${mounted && pathname === link.href
-                                ? 'text-primary font-bold'
-                                : (useDarkText ? 'text-foreground hover:text-primary' : 'text-white/90 hover:text-white')
-                                }`}
-                        >
-                            {link.label}
-                            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300 ${mounted && pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-                        </Link>
+                        link.dropdown ? (
+                            <div key={link.href} className="relative group">
+                                <Link
+                                    href={link.href}
+                                    className={`relative text-sm font-medium transition-all duration-300 py-2 flex items-center gap-1 ${mounted && (pathname === link.href || pathname.startsWith(link.href + '/'))
+                                        ? 'text-primary font-bold'
+                                        : (useDarkText ? 'text-foreground hover:text-primary' : 'text-white/90 hover:text-white')
+                                        }`}
+                                >
+                                    {link.label}
+                                    <ChevronDown size={14} className="ml-1 opacity-70 group-hover:rotate-180 transition-transform duration-300" />
+                                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300 ${mounted && (pathname === link.href || pathname.startsWith(link.href + '/')) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                                </Link>
+                                <div className="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-50">
+                                    <div className="w-64 bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden py-2">
+                                        {link.dropdown.map(sublink => (
+                                            <Link
+                                                key={sublink.href}
+                                                href={sublink.href}
+                                                className="block px-5 py-3 text-sm text-slate-600 hover:bg-emerald-50 hover:text-emerald-600 font-medium transition-colors"
+                                            >
+                                                {sublink.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={`relative text-sm font-medium transition-all duration-300 py-2 flex items-center gap-1 ${mounted && pathname === link.href
+                                    ? 'text-primary font-bold'
+                                    : (useDarkText ? 'text-foreground hover:text-primary' : 'text-white/90 hover:text-white')
+                                    }`}
+                            >
+                                {link.label}
+                                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left transition-transform duration-300 ${mounted && pathname === link.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                            </Link>
+                        )
                     ))}
                 </div>
 
@@ -171,17 +221,47 @@ export default function Navbar() {
 
                 <div className="relative flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-2">
                     {links.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 ${mounted && pathname === link.href
-                                ? 'bg-primary/10 text-primary font-bold'
-                                : 'text-foreground/80 hover:text-foreground hover:bg-muted/50'
-                                }`}
-                            onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
-                        >
-                            {link.label}
-                        </Link>
+                        link.dropdown ? (
+                            <div key={link.href} className="flex flex-col gap-1">
+                                <Link
+                                    href={link.href}
+                                    className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 ${mounted && (pathname === link.href || pathname.startsWith(link.href + '/'))
+                                        ? 'bg-primary/10 text-primary font-bold'
+                                        : 'text-foreground/80 hover:text-foreground hover:bg-muted/50'
+                                        }`}
+                                    onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
+                                >
+                                    {link.label}
+                                </Link>
+                                <div className="pl-4 flex flex-col gap-1 border-l-2 border-slate-100 ml-6 my-1">
+                                    {link.dropdown.map(sublink => (
+                                        <Link
+                                            key={sublink.href}
+                                            href={sublink.href}
+                                            className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${mounted && pathname === sublink.href
+                                                ? 'text-primary font-bold bg-primary/5'
+                                                : 'text-slate-500 hover:text-slate-800 hover:bg-slate-50'
+                                                }`}
+                                            onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
+                                        >
+                                            {sublink.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={`px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 ${mounted && pathname === link.href
+                                    ? 'bg-primary/10 text-primary font-bold'
+                                    : 'text-foreground/80 hover:text-foreground hover:bg-muted/50'
+                                    }`}
+                                onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
+                            >
+                                {link.label}
+                            </Link>
+                        )
                     ))}
                 </div>
 
