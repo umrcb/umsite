@@ -34,7 +34,7 @@ export default function ServicesCTABanner() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link 
                             href="/booking" 
-                            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gold text-navy font-bold text-lg hover:bg-white transition-colors duration-300 shadow-lg hover:shadow-gold/30 flex items-center justify-center gap-2 group"
+                            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-primary text-navy font-bold text-lg hover:bg-white transition-colors duration-300 shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-2 group"
                         >
                             Book Now
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

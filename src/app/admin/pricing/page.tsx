@@ -63,11 +63,11 @@ const PriceCell = memo(({
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                     onBlur={handleBlur}
-                    className={`w-20 text-center bg-transparent border-b border-transparent hover:border-gray-300 dark:hover:border-navy-600 focus:border-gold focus:outline-none transition-all ${isModified ? 'text-gold font-bold' : 'text-navy-900 dark:text-white'
+                    className={`w-20 text-center bg-transparent border-b border-transparent hover:border-gray-300 dark:hover:border-navy-600 focus:border-primary focus:outline-none transition-all ${isModified ? 'text-primary font-bold' : 'text-navy-900 dark:text-white'
                         } py-1`}
                 />
                 {isModified && (
-                    <div className="absolute -top-2 -right-2 w-2 h-2 bg-gold rounded-full animate-pulse" />
+                    <div className="absolute -top-2 -right-2 w-2 h-2 bg-primary rounded-full animate-pulse" />
                 )}
             </div>
         </td>
@@ -200,7 +200,7 @@ export default function PricingPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center min-h-[400px]">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gold" />
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
         </div>
     );
 
@@ -210,7 +210,7 @@ export default function PricingPage() {
 
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent font-playfair">Price Management</h1>
+                    <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent font-playfair">Price Management</h1>
                     <p className="text-gray-500 dark:text-gray-400">Manage dynamic pricing for routes and vehicles</p>
                 </div>
                 <div className="relative flex-1 md:w-64">
@@ -220,7 +220,7 @@ export default function PricingPage() {
                         placeholder="Search routes..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 bg-white dark:bg-navy-900 border border-gray-200 dark:border-navy-700 rounded-full focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none transition-all text-navy-900 dark:text-white"
+                        className="w-full pl-10 pr-4 py-2 bg-white dark:bg-navy-900 border border-gray-200 dark:border-navy-700 rounded-full focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-navy-900 dark:text-white"
                     />
                 </div>
 

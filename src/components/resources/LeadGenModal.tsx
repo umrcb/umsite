@@ -48,7 +48,7 @@ export default function LeadGenModal({ resource, isOpen, onClose }: LeadGenModal
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy/80 backdrop-blur-sm">
             <div
-                className="bg-white dark:bg-slate-900 w-full max-w-md rounded-3xl shadow-2xl border border-gold/20 overflow-hidden relative"
+                className="bg-white dark:bg-slate-900 w-full max-w-md rounded-3xl shadow-2xl border border-primary/20 overflow-hidden relative"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Close Button */}
@@ -75,38 +75,38 @@ export default function LeadGenModal({ resource, isOpen, onClose }: LeadGenModal
 
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div>
-                                <label className="block text-xs font-bold text-navy dark:text-gold uppercase tracking-wider mb-2">
+                                <label className="block text-xs font-bold text-navy dark:text-primary uppercase tracking-wider mb-2">
                                     Full Name
                                 </label>
                                 <input
                                     type="text"
                                     required
-                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-navy dark:text-white focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-navy dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                                     placeholder="e.g. Abdullah Khan"
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                 />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-navy dark:text-gold uppercase tracking-wider mb-2">
+                                <label className="block text-xs font-bold text-navy dark:text-primary uppercase tracking-wider mb-2">
                                     WhatsApp Number
                                 </label>
                                 <input
                                     type="tel"
                                     required
-                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-navy dark:text-white focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-navy dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                                     placeholder="+966 50 123 4567"
                                     value={formData.whatsapp}
                                     onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
                                 />
                             </div>
                             <div>
-                                <label className="block text-xs font-bold text-navy dark:text-gold uppercase tracking-wider mb-2">
+                                <label className="block text-xs font-bold text-navy dark:text-primary uppercase tracking-wider mb-2">
                                     Email Address <span className="text-slate-400 font-normal lowercase">(optional)</span>
                                 </label>
                                 <input
                                     type="email"
-                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-navy dark:text-white focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all"
+                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-navy dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                                     placeholder="name@example.com"
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -116,7 +116,7 @@ export default function LeadGenModal({ resource, isOpen, onClose }: LeadGenModal
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full py-4 bg-gold text-navy font-bold rounded-xl hover:bg-white border-2 border-transparent hover:border-gold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 mt-6 uppercase tracking-widest text-sm"
+                                className="w-full py-4 bg-primary text-navy font-bold rounded-xl hover:bg-white border-2 border-transparent hover:border-primary transition-all duration-300 shadow-lg flex items-center justify-center gap-2 mt-6 uppercase tracking-widest text-sm"
                             >
                                 {isSubmitting ? (
                                     <>

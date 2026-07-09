@@ -29,9 +29,9 @@ export default function FleetFeatures() {
                         Every Vehicle Comes With
                     </h2>
                     <div className="flex items-center justify-center gap-2">
-                        <div className="h-[1px] w-12 bg-gold/50" />
-                        <div className="w-2 h-2 rounded-full bg-gold" />
-                        <div className="h-[1px] w-12 bg-gold/50" />
+                        <div className="h-[1px] w-12 bg-primary/50" />
+                        <div className="w-2 h-2 rounded-full bg-primary" />
+                        <div className="h-[1px] w-12 bg-primary/50" />
                     </div>
                 </div>
 
@@ -45,7 +45,7 @@ export default function FleetFeatures() {
                             transition={{ duration: 0.4, delay: index * 0.05 }}
                             className="bg-white rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
                         >
-                            <div className="text-primary group-hover:text-gold transition-colors duration-300">
+                            <div className="text-primary group-hover:text-primary transition-colors duration-300">
                                 {feature.icon}
                             </div>
                             <span className="text-sm font-semibold text-navy">

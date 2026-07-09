@@ -120,7 +120,7 @@ export default function FleetRecommendation() {
 
                                     {/* Details */}
                                     <div className="w-full lg:w-1/2 flex flex-col">
-                                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/10 text-gold rounded-full text-xs font-bold uppercase tracking-wider mb-4 w-fit">
+                                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-4 w-fit">
                                             <Shield size={14} /> Recommended
                                         </div>
                                         <h3 className="text-4xl font-bold text-navy mb-4 font-playfair">

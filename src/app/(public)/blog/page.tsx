@@ -16,8 +16,8 @@ import { constructMetadata } from '@/lib/metadata';
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: 'Umrah Travel Blog | Tips & Guides | مدونة العمرة',
-        description: 'Read our latest articles on Umrah travel tips, transport advice, and spiritual guides. نصائح وارشادات للمعتمرين. دليل المواصلات في مكة والمدينة.',
+        title: 'Umrah Travel Blog | Tips & Guides',
+        description: 'Read our latest articles on Umrah travel tips, transport advice, and spiritual guides.',
         canonicalUrl: '/blog',
     });
 }
@@ -103,7 +103,7 @@ export default async function BlogPage() {
 
             {/* Resources Section - Integrated */}
             <section className="py-20 bg-slate-50 border-y border-slate-100 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
+                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
                 <div className="container mx-auto px-4 relative z-10">
                     <FadeIn>
                         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">

@@ -50,7 +50,7 @@ export default function BookingProcessTimeline() {
 
                 <div className="relative max-w-5xl mx-auto">
                     {/* Connecting Line (Desktop) */}
-                    <div className="hidden lg:block absolute top-12 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-30" />
+                    <div className="hidden lg:block absolute top-12 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-30" />
 
                     <div className="flex flex-col lg:flex-row justify-between relative z-10 gap-12 lg:gap-4">
                         {steps.map((step, index) => (
@@ -64,11 +64,11 @@ export default function BookingProcessTimeline() {
                             >
                                 {/* Mobile connecting line */}
                                 {index !== steps.length - 1 && (
-                                    <div className="block lg:hidden absolute top-24 left-1/2 w-[2px] h-16 bg-gold/30 -translate-x-1/2" />
+                                    <div className="block lg:hidden absolute top-24 left-1/2 w-[2px] h-16 bg-primary/30 -translate-x-1/2" />
                                 )}
 
                                 <div className="w-24 h-24 rounded-full bg-white border border-slate-100 shadow-md flex items-center justify-center mb-6 relative z-10 group-hover:-translate-y-2 transition-transform duration-300">
-                                    <div className="w-20 h-20 rounded-full bg-slate-50 flex items-center justify-center text-gold group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                    <div className="w-20 h-20 rounded-full bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                                         {step.icon}
                                     </div>
                                     

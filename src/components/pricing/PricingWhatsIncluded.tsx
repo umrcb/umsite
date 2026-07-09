@@ -26,7 +26,7 @@ export default function PricingWhatsIncluded() {
             
             <div className="mb-10">
                 <h2 className="text-2xl md:text-3xl font-bold font-poppins text-navy mb-2">What's Included in Every Ride</h2>
-                <div className="w-12 h-1 bg-gold rounded-full" />
+                <div className="w-12 h-1 bg-primary rounded-full" />
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10 flex-grow">

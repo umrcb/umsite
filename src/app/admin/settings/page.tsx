@@ -254,7 +254,7 @@ export default function SettingsPage() {
 
     if (loading) return (
         <div className="flex items-center justify-center min-h-[400px]">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gold" />
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
         </div>
     );
 
@@ -269,13 +269,13 @@ export default function SettingsPage() {
 
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent font-playfair">Settings</h1>
+                    <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent font-playfair">Settings</h1>
                     <p className="text-gray-500 dark:text-gray-400">Manage your website configuration and preferences</p>
                 </div>
                 <button
                     onClick={handleSubmit}
                     disabled={saving}
-                    className="flex items-center gap-2 bg-gold text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-gold/20 hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100"
+                    className="flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100"
                 >
                     <Save size={20} />
                     {saving ? 'Saving...' : 'Save Changes'}
@@ -293,11 +293,11 @@ export default function SettingsPage() {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id as Tab)}
                                 className={`group flex items-center gap-4 px-4 py-4 rounded-2xl transition-all text-left border ${isActive
-                                    ? 'bg-white dark:bg-navy-900 shadow-md border-gold/20'
+                                    ? 'bg-white dark:bg-navy-900 shadow-md border-primary/20'
                                     : 'hover:bg-white/50 dark:hover:bg-navy-800/50 border-transparent hover:border-gray-100 dark:hover:border-navy-700'
                                     }`}
                             >
-                                <div className={`p-2.5 rounded-xl transition-colors ${isActive ? 'bg-gold text-white shadow-lg shadow-gold/30' : 'bg-gray-100 dark:bg-navy-800 text-gray-500 dark:text-gray-400 group-hover:bg-white dark:group-hover:bg-navy-700 group-hover:text-gold'}`}>
+                                <div className={`p-2.5 rounded-xl transition-colors ${isActive ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'bg-gray-100 dark:bg-navy-800 text-gray-500 dark:text-gray-400 group-hover:bg-white dark:group-hover:bg-navy-700 group-hover:text-primary'}`}>
                                     <Icon size={20} />
                                 </div>
                                 <div>
@@ -328,7 +328,7 @@ export default function SettingsPage() {
                                 <div className="space-y-8">
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2 flex items-center gap-2 text-navy-900 dark:text-white">
-                                            <Layout className="text-gold" size={28} />
+                                            <Layout className="text-primary" size={28} />
                                             General Information
                                         </h2>
                                         <p className="text-gray-500 dark:text-gray-400">Basic details about your website identity.</p>
@@ -343,7 +343,7 @@ export default function SettingsPage() {
                                                     name="site_name"
                                                     value={settings.site_name}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="Umrah Cabs"
                                                 />
                                             </div>
@@ -356,7 +356,7 @@ export default function SettingsPage() {
                                                     name="site_description"
                                                     value={settings.site_description}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none min-h-[120px]"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none min-h-[120px]"
                                                     placeholder="Brief description of your services..."
                                                 />
                                             </div>
@@ -369,7 +369,7 @@ export default function SettingsPage() {
                                 <div className="space-y-8">
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2 flex items-center gap-2 text-navy-900 dark:text-white">
-                                            <Phone className="text-gold" size={28} />
+                                            <Phone className="text-primary" size={28} />
                                             Contact Details
                                         </h2>
                                         <p className="text-gray-500 dark:text-gray-400">How customers can reach you.</p>
@@ -384,7 +384,7 @@ export default function SettingsPage() {
                                                     name="contact_phone"
                                                     value={settings.contact_phone}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="+966 50 123 4567"
                                                 />
                                             </div>
@@ -398,7 +398,7 @@ export default function SettingsPage() {
                                                     name="contact_phone_2"
                                                     value={settings.contact_phone_2}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="+966 50 987 6543"
                                                 />
                                             </div>
@@ -412,7 +412,7 @@ export default function SettingsPage() {
                                                     name="contact_email"
                                                     value={settings.contact_email}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="info@UmrahCabs.com"
                                                 />
                                             </div>
@@ -426,7 +426,7 @@ export default function SettingsPage() {
                                                     name="address"
                                                     value={settings.address}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="Makkah, Saudi Arabia"
                                                 />
                                             </div>
@@ -439,7 +439,7 @@ export default function SettingsPage() {
                                 <div className="space-y-8">
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2 flex items-center gap-2 text-navy-900 dark:text-white">
-                                            <Globe className="text-gold" size={28} />
+                                            <Globe className="text-primary" size={28} />
                                             Social Media
                                         </h2>
                                         <p className="text-gray-500 dark:text-gray-400">Connect your social platforms.</p>
@@ -463,7 +463,7 @@ export default function SettingsPage() {
                                                         name={social.name}
                                                         value={settings[social.name as keyof typeof settings] as string}
                                                         onChange={handleChange}
-                                                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                        className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                         placeholder={`https://${social.label.toLowerCase().split(' ')[0]}.com/...`}
                                                     />
                                                 </div>
@@ -477,7 +477,7 @@ export default function SettingsPage() {
                                 <div className="space-y-8">
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2 flex items-center gap-2 text-navy-900 dark:text-white">
-                                            <Search className="text-gold" size={28} />
+                                            <Search className="text-primary" size={28} />
                                             SEO Configuration
                                         </h2>
                                         <p className="text-gray-500 dark:text-gray-400">Optimize your site for search engines.</p>
@@ -492,7 +492,7 @@ export default function SettingsPage() {
                                                     name="seo_title"
                                                     value={settings.seo_title}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="Umrah Cabs - Premium Taxi Service"
                                                 />
                                             </div>
@@ -506,7 +506,7 @@ export default function SettingsPage() {
                                                     name="seo_description"
                                                     value={settings.seo_description}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none min-h-[100px]"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none min-h-[100px]"
                                                     placeholder="Best Umrah taxi service in Saudi Arabia..."
                                                 />
                                             </div>
@@ -521,7 +521,7 @@ export default function SettingsPage() {
                                                     name="seo_keywords"
                                                     value={settings.seo_keywords}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="umrah taxi, makkah transport, jeddah airport taxi"
                                                 />
                                             </div>
@@ -535,7 +535,7 @@ export default function SettingsPage() {
                                 <div className="space-y-8">
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2 flex items-center gap-2 text-navy-900 dark:text-white">
-                                            <Code className="text-gold" size={28} />
+                                            <Code className="text-primary" size={28} />
                                             Custom Scripts
                                         </h2>
                                         <p className="text-gray-500 dark:text-gray-400">Inject custom code into your site.</p>
@@ -550,7 +550,7 @@ export default function SettingsPage() {
                                                     name="google_analytics_id"
                                                     value={settings.google_analytics_id}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="G-XXXXXXXXXX"
                                                 />
                                             </div>
@@ -565,7 +565,7 @@ export default function SettingsPage() {
                                                     name="scripts_header"
                                                     value={settings.scripts_header}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none font-mono text-sm min-h-[200px]"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-mono text-sm min-h-[200px]"
                                                     placeholder="<!-- Google Analytics -->"
                                                 />
                                             </div>
@@ -579,7 +579,7 @@ export default function SettingsPage() {
                                                     name="scripts_footer"
                                                     value={settings.scripts_footer}
                                                     onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none font-mono text-sm min-h-[200px]"
+                                                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-mono text-sm min-h-[200px]"
                                                     placeholder="<!-- Chat Widget -->"
                                                 />
                                             </div>
@@ -608,15 +608,15 @@ export default function SettingsPage() {
                                 <div className="space-y-8">
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2 flex items-center gap-2 text-navy-900 dark:text-white">
-                                            <DatabaseBackup className="text-gold" size={28} />
+                                            <DatabaseBackup className="text-primary" size={28} />
                                             Database Maintenance
                                         </h2>
                                         <p className="text-gray-500 dark:text-gray-400">Manage data retention and optimization.</p>
                                     </div>
 
-                                    <div className="bg-gold/10 dark:bg-navy-800/30 border border-gold/20 dark:border-navy-700 rounded-2xl p-6">
+                                    <div className="bg-primary/10 dark:bg-navy-800/30 border border-primary/20 dark:border-navy-700 rounded-2xl p-6">
                                         <div className="flex items-start gap-4">
-                                            <div className="p-3 bg-gold/20 dark:bg-navy-800 rounded-xl text-gold">
+                                            <div className="p-3 bg-primary/20 dark:bg-navy-800 rounded-xl text-primary">
                                                 <Trash2 size={24} />
                                             </div>
                                             <div className="flex-1">
@@ -633,7 +633,7 @@ export default function SettingsPage() {
                                                         <select
                                                             value={retentionMonths}
                                                             onChange={(e) => setRetentionMonths(e.target.value)}
-                                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold outline-none font-medium"
+                                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary outline-none font-medium"
                                                         >
                                                             <option value="1">1 Month</option>
                                                             <option value="3">3 Months</option>
@@ -678,7 +678,7 @@ export default function SettingsPage() {
                                 <div className="space-y-8">
                                     <div>
                                         <h2 className="text-2xl font-bold mb-2 flex items-center gap-2 text-navy-900 dark:text-white">
-                                            <ShieldCheck className="text-gold" size={28} />
+                                            <ShieldCheck className="text-primary" size={28} />
                                             Security Settings
                                         </h2>
                                         <p className="text-gray-500 dark:text-gray-400">Manage your account security and password.</p>
@@ -698,7 +698,7 @@ export default function SettingsPage() {
                                                     value={passwordForm.currentPassword}
                                                     onChange={handlePasswordChange}
                                                     required
-                                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="Enter current password"
                                                 />
                                             </div>
@@ -711,7 +711,7 @@ export default function SettingsPage() {
                                                     onChange={handlePasswordChange}
                                                     required
                                                     minLength={6}
-                                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="Enter new password"
                                                 />
                                             </div>
@@ -724,7 +724,7 @@ export default function SettingsPage() {
                                                     onChange={handlePasswordChange}
                                                     required
                                                     minLength={6}
-                                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold transition-all outline-none"
+                                                    className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white dark:bg-navy-900 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
                                                     placeholder="Confirm new password"
                                                 />
                                             </div>
@@ -732,7 +732,7 @@ export default function SettingsPage() {
                                                 <button
                                                     type="submit"
                                                     disabled={passwordLoading}
-                                                    className="px-6 py-2.5 bg-navy-900 dark:bg-gold text-white dark:text-navy-900 rounded-lg font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
+                                                    className="px-6 py-2.5 bg-navy-900 dark:bg-primary text-white dark:text-navy-900 rounded-lg font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
                                                 >
                                                     {passwordLoading ? 'Updating...' : 'Update Password'}
                                                 </button>

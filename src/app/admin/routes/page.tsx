@@ -160,12 +160,12 @@ export default function RoutesPage() {
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent font-playfair">Route Management</h1>
+                    <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent font-playfair">Route Management</h1>
                     <p className="text-gray-500 dark:text-gray-400 mt-1">Manage transport routes, distances, and durations</p>
                 </div>
                 <button
                     onClick={() => { resetForm(); setShowModal(true); }}
-                    className="flex items-center gap-2 bg-gold text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-gold/20 hover:scale-105 transition-transform"
+                    className="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
                 >
                     <Plus size={20} />
                     Add Route
@@ -179,7 +179,7 @@ export default function RoutesPage() {
                     <input
                         type="text"
                         placeholder="Search origin or destination..."
-                        className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none transition-all"
+                        className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -188,7 +188,7 @@ export default function RoutesPage() {
                     <select
                         value={filterCategory}
                         onChange={(e) => setFilterCategory(e.target.value)}
-                        className="px-4 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none cursor-pointer"
+                        className="px-4 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none cursor-pointer"
                     >
                         {categories.map(cat => (
                             <option key={cat} value={cat}>{cat}</option>
@@ -224,7 +224,7 @@ export default function RoutesPage() {
                                     >
                                         <td className="p-4 font-medium">
                                             <div className="flex items-center gap-2 text-navy-900 dark:text-white">
-                                                <div className="w-2 h-2 rounded-full bg-gold" />
+                                                <div className="w-2 h-2 rounded-full bg-primary" />
                                                 {route.origin}
                                             </div>
                                         </td>
@@ -251,7 +251,7 @@ export default function RoutesPage() {
                                                 ? 'bg-blue-500/10 text-blue-600 border-blue-500/20'
                                                 : route.category === 'Ziarat'
                                                     ? 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20'
-                                                    : 'bg-gold/10 text-gold border-gold/20'
+                                                    : 'bg-primary/10 text-primary border-primary/20'
                                                 }`}>
                                                 {route.category}
                                             </span>
@@ -260,7 +260,7 @@ export default function RoutesPage() {
                                             <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                                                 <button
                                                     onClick={() => handleEdit(route)}
-                                                    className="p-2 text-gold hover:bg-gold/10 rounded-lg transition-colors border border-transparent hover:border-gold/20"
+                                                    className="p-2 text-primary hover:bg-primary/10 rounded-lg transition-colors border border-transparent hover:border-primary/20"
                                                     title="Edit"
                                                 >
                                                     <Edit size={18} />
@@ -310,7 +310,7 @@ export default function RoutesPage() {
                             </button>
 
                             <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-navy-900 dark:text-white">
-                                {editingId ? <Edit className="text-gold" /> : <Plus className="text-gold" />}
+                                {editingId ? <Edit className="text-primary" /> : <Plus className="text-primary" />}
                                 {editingId ? 'Edit Route' : 'Add New Route'}
                             </h2>
 
@@ -320,7 +320,7 @@ export default function RoutesPage() {
                                         <label className="text-sm font-semibold text-navy-900 dark:text-white ml-1">Origin</label>
                                         <input
                                             required
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                                             value={formData.origin}
                                             onChange={e => setFormData({ ...formData, origin: e.target.value })}
                                             placeholder="e.g. Makkah"
@@ -330,7 +330,7 @@ export default function RoutesPage() {
                                         <label className="text-sm font-semibold text-navy-900 dark:text-white ml-1">Destination</label>
                                         <input
                                             required
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                                             value={formData.destination}
                                             onChange={e => setFormData({ ...formData, destination: e.target.value })}
                                             placeholder="e.g. Madinah"
@@ -341,7 +341,7 @@ export default function RoutesPage() {
                                     <div className="space-y-2">
                                         <label className="text-sm font-semibold text-navy-900 dark:text-white ml-1">Distance</label>
                                         <input
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                                             value={formData.distance}
                                             onChange={e => setFormData({ ...formData, distance: e.target.value })}
                                             placeholder="e.g. 450 km"
@@ -350,7 +350,7 @@ export default function RoutesPage() {
                                     <div className="space-y-2">
                                         <label className="text-sm font-semibold text-navy-900 dark:text-white ml-1">Duration</label>
                                         <input
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                                             value={formData.duration}
                                             onChange={e => setFormData({ ...formData, duration: e.target.value })}
                                             placeholder="e.g. 4.5 hours"
@@ -360,7 +360,7 @@ export default function RoutesPage() {
                                 <div className="space-y-2">
                                     <label className="text-sm font-semibold text-navy-900 dark:text-white ml-1">Category</label>
                                     <select
-                                        className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none transition-all cursor-pointer"
+                                        className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all cursor-pointer"
                                         value={formData.category}
                                         onChange={e => setFormData({ ...formData, category: e.target.value })}
                                     >
@@ -380,7 +380,7 @@ export default function RoutesPage() {
                                     </button>
                                     <button
                                         type="submit"
-                                        className="px-4 py-2 bg-gold text-white rounded-lg text-sm font-bold hover:bg-yellow-600 shadow-lg shadow-gold/20 hover:scale-105 transition-all"
+                                        className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-yellow-600 shadow-lg shadow-primary/20 hover:scale-105 transition-all"
                                     >
                                         {editingId ? 'Save Changes' : 'Create Route'}
                                     </button>

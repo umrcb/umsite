@@ -23,7 +23,7 @@ export default function MobileBottomNav() {
                         <Link
                             key={item.name}
                             href={item.href}
-                            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${isActive ? 'text-gold' : 'text-gray-400 hover:text-gray-600'
+                            className={`flex flex-col items-center justify-center w-full h-full space-y-1 ${isActive ? 'text-primary' : 'text-gray-400 hover:text-gray-600'
                                 }`}
                         >
                             <item.icon size={22} strokeWidth={isActive ? 2.5 : 2} />

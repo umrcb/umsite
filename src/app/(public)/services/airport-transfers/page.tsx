@@ -13,13 +13,11 @@ import { constructMetadata } from '@/lib/metadata';
 
 export async function generateMetadata() {
     return constructMetadata({
-        title: "Jeddah & Madinah Airport Transfers | Umrah Taxi | توصيل المطارات",
-        description: "Reliable airport pickups for Jeddah & Madinah. Punctual, hassle-free transfers. 24/7 service. توصيل من مطار جدة الى مكة. استقبال مطار المدينة المنورة.",
+        title: "Jeddah & Madinah Airport Transfers | Umrah Taxi",
+        description: "Reliable airport pickups for Jeddah & Madinah. Punctual, hassle-free transfers. 24/7 service.",
         keywords: [
             "Jeddah airport to Makkah taxi", "KAIA transfer", "Umrah airport pickup", "Madinah airport taxi",
-            "VIP Umrah Transport", "Jeddah Airport Shuttle", "Makkah Private Taxi",
-            "توصيل مطار جدة", "تاكسي مطار المدينة", "استقبال المعتمرين",
-            "نقل من مطار الملك عبدالعزيز", "حجز تاكسي الحرم", "خدمات المعتمرين"
+            "VIP Umrah Transport", "Jeddah Airport Shuttle", "Makkah Private Taxi"
         ],
         canonicalUrl: '/services/airport-transfers',
     });
@@ -38,12 +36,11 @@ export default async function AirportTransfersPage() {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Jeddah Airport Transfer to Makkah",
-        "alternateName": "توصيل من مطار جدة الى مكة",
         "provider": {
             "@type": "TransportationService",
             "name": "Umrah Cabs"
         },
-        "description": "Premium airport transfer service from King Abdulaziz International Airport (KAIA) to Makkah. خدمة نقل فاخرة من مطار الملك عبدالعزيز الى مكة.",
+        "description": "Premium airport transfer service from King Abdulaziz International Airport (KAIA) to Makkah.",
         "areaServed": {
             "@type": "City",
             "name": "Makkah"

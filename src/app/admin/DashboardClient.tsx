@@ -124,7 +124,7 @@ export default function DashboardClient({
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 dark:bg-navy-950 text-navy-900 dark:text-gray-200 font-sans selection:bg-gold/30 transition-colors duration-300">
+        <div className="min-h-screen bg-slate-50 dark:bg-navy-950 text-navy-900 dark:text-gray-200 font-sans selection:bg-primary/30 transition-colors duration-300">
             {toast && <Toast message={toast.message} type={toast.type} isVisible={true} onClose={() => setToast(null)} />}
 
             <div className="max-w-[1600px] mx-auto p-6 space-y-8">

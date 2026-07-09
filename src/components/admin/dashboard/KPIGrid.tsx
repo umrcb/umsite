@@ -43,8 +43,8 @@ export default function KPIGrid({
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
             {/* Revenue Card */}
-            <motion.div variants={item} className="relative group bg-white dark:bg-navy-900/50 backdrop-blur-xl border border-gray-200 dark:border-navy-800 p-6 rounded-2xl hover:border-gold/30 transition-all duration-300 shadow-sm hover:shadow-xl overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointers-events-none group-hover:bg-gold/10 transition-colors" />
+            <motion.div variants={item} className="relative group bg-white dark:bg-navy-900/50 backdrop-blur-xl border border-gray-200 dark:border-navy-800 p-6 rounded-2xl hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointers-events-none group-hover:bg-primary/10 transition-colors" />
                 <div className="flex justify-between items-start mb-4 relative z-10">
                     <div>
                         <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Total Revenue</p>
@@ -53,7 +53,7 @@ export default function KPIGrid({
                             {totalRevenue.toLocaleString()}
                         </h3>
                     </div>
-                    <div className="p-3 bg-gray-100 dark:bg-navy-800 rounded-xl text-gold border border-gray-200 dark:border-navy-700/50">
+                    <div className="p-3 bg-gray-100 dark:bg-navy-800 rounded-xl text-primary border border-gray-200 dark:border-navy-700/50">
                         <TrendingUp size={24} />
                     </div>
                 </div>
@@ -78,7 +78,7 @@ export default function KPIGrid({
                 <div className="flex items-center gap-2 text-xs font-medium text-gray-500 dark:text-gray-400">
                     <span>{confirmedBookings} Confirmed</span>
                     <span className="w-1 h-1 rounded-full bg-gray-400 dark:bg-gray-600" />
-                    <span className="text-gold dark:text-gold">{pendingBookings} Pending</span>
+                    <span className="text-primary dark:text-primary">{pendingBookings} Pending</span>
                 </div>
             </motion.div>
 

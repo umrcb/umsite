@@ -12,7 +12,7 @@ export default function ResourceCard(resource: Resource) {
 
     return (
         <>
-            <GlassCard className="p-0 overflow-hidden flex flex-col h-full group hover:border-gold/50 transition-all duration-500">
+            <GlassCard className="p-0 overflow-hidden flex flex-col h-full group hover:border-primary/50 transition-all duration-500">
                 {/* Thumbnail */}
                 <div className="relative h-48 w-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
                     <Image
@@ -22,7 +22,7 @@ export default function ResourceCard(resource: Resource) {
                         className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
                     />
                     <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-gold text-navy text-[10px] font-bold uppercase tracking-widest rounded-full shadow-md">
+                        <span className="px-3 py-1 bg-primary text-navy text-[10px] font-bold uppercase tracking-widest rounded-full shadow-md">
                             {resource.category}
                         </span>
                     </div>
@@ -45,7 +45,7 @@ export default function ResourceCard(resource: Resource) {
 
                         <button
                             onClick={() => setIsModalOpen(true)}
-                            className="flex items-center gap-2 text-sm font-bold text-navy dark:text-white hover:text-gold transition-colors"
+                            className="flex items-center gap-2 text-sm font-bold text-navy dark:text-white hover:text-primary transition-colors"
                         >
                             Download
                             <Download size={16} />

@@ -75,7 +75,7 @@ export default function FleetShowcase({ vehicles }: FleetShowcaseProps) {
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold text-navy-900 dark:text-white mb-4 font-playfair">Our Premium <span className="text-gold">Fleet</span></h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-navy-900 dark:text-white mb-4 font-playfair">Our Premium <span className="text-primary">Fleet</span></h2>
                     <p className="text-lg text-navy-600 dark:text-gray-300 max-w-2xl mx-auto font-light">Choose from our wide range of luxury vehicles, ensuring comfort and spirituality on your journey.</p>
                 </div>
 
@@ -97,7 +97,7 @@ export default function FleetShowcase({ vehicles }: FleetShowcaseProps) {
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         />
                                         {discountInfo && settings?.discount && (
-                                            <div className="absolute top-4 right-4 bg-gold text-navy-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20 animate-pulse border border-yellow-400">
+                                            <div className="absolute top-4 right-4 bg-primary text-navy-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20 animate-pulse border border-yellow-400">
                                                 {settings.discount.type === 'percentage' ? `-${settings.discount.value}% OFF` : `-${settings.discount.value} SAR`}
                                             </div>
                                         )}
@@ -110,7 +110,7 @@ export default function FleetShowcase({ vehicles }: FleetShowcaseProps) {
                                     <div className="p-6 flex flex-col flex-grow">
                                         <div className="flex justify-between items-end mb-6 border-b border-gray-100 dark:border-navy-800 pb-4">
                                             <div>
-                                                <span className="text-xs font-bold text-gold uppercase tracking-widest block mb-1">Starting From</span>
+                                                <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-1">Starting From</span>
                                                 <div className="flex flex-col">
                                                     {discountInfo ? (
                                                         <>
@@ -124,11 +124,11 @@ export default function FleetShowcase({ vehicles }: FleetShowcaseProps) {
                                             </div>
                                             <div className="flex gap-2">
                                                 <div className="flex flex-col items-center bg-gray-50 dark:bg-navy-800 p-2 rounded-xl min-w-[60px] border border-gray-100 dark:border-navy-700">
-                                                    <Users size={18} className="text-gold mb-1" />
+                                                    <Users size={18} className="text-primary mb-1" />
                                                     <span className="text-xs font-bold text-navy-600 dark:text-gray-300">{vehicle.passengers} pax</span>
                                                 </div>
                                                 <div className="flex flex-col items-center bg-gray-50 dark:bg-navy-800 p-2 rounded-xl min-w-[60px] border border-gray-100 dark:border-navy-700">
-                                                    <Briefcase size={18} className="text-gold mb-1" />
+                                                    <Briefcase size={18} className="text-primary mb-1" />
                                                     <span className="text-xs font-bold text-navy-600 dark:text-gray-300">{vehicle.luggage} bags</span>
                                                 </div>
                                             </div>
@@ -137,8 +137,8 @@ export default function FleetShowcase({ vehicles }: FleetShowcaseProps) {
                                         <div className="space-y-3 mb-8 flex-grow">
                                             {vehicle.features.map((feature: string, i: number) => (
                                                 <div key={i} className="flex items-start gap-3 text-sm text-navy-600 dark:text-gray-300">
-                                                    <div className="mt-0.5 bg-gold/10 p-1 rounded-full">
-                                                        <Check size={10} className="text-gold" strokeWidth={3} />
+                                                    <div className="mt-0.5 bg-primary/10 p-1 rounded-full">
+                                                        <Check size={10} className="text-primary" strokeWidth={3} />
                                                     </div>
                                                     <span>{feature}</span>
                                                 </div>

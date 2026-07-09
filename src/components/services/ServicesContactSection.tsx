@@ -17,9 +17,9 @@ export default function ServicesContactSection() {
                         We're Here to Help
                     </h2>
                     <div className="flex items-center justify-center gap-2">
-                        <div className="h-[1px] w-12 bg-gold/50" />
-                        <div className="w-2 h-2 rounded-full bg-gold" />
-                        <div className="h-[1px] w-12 bg-gold/50" />
+                        <div className="h-[1px] w-12 bg-primary/50" />
+                        <div className="w-2 h-2 rounded-full bg-primary" />
+                        <div className="h-[1px] w-12 bg-primary/50" />
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@ export default function ServicesContactSection() {
                                         href={getWhatsAppLink("Hello! I need help with booking.")}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="text-primary font-bold text-lg hover:text-gold transition-colors inline-flex items-center gap-2"
+                                        className="text-primary font-bold text-lg hover:text-primary transition-colors inline-flex items-center gap-2"
                                     >
                                         <MessageCircle size={18} />
                                         +966 50 123 4567
@@ -56,7 +56,7 @@ export default function ServicesContactSection() {
                                 <div>
                                     <h4 className="font-bold text-navy mb-1">Email Address</h4>
                                     <p className="text-slate-600 mb-2">For Corporate & Group Inquiries</p>
-                                    <a href="mailto:info@umrahtaxi.com" className="text-primary font-bold hover:text-gold transition-colors">
+                                    <a href="mailto:info@umrahtaxi.com" className="text-primary font-bold hover:text-primary transition-colors">
                                         info@umrahtaxi.com
                                     </a>
                                 </div>

@@ -80,7 +80,7 @@ export default async function AnalyticsPage() {
     return (
         <div className="p-6 max-w-7xl mx-auto min-h-screen">
             <div className="mb-8">
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent font-playfair mb-2">Business Analytics</h1>
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent font-playfair mb-2">Business Analytics</h1>
                 <p className="text-gray-500 dark:text-gray-400">Track your business performance and revenue trends.</p>
             </div>
 

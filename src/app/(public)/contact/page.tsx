@@ -86,7 +86,7 @@ export default async function ContactPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
             <Hero
-                title="Get in Touch | تواصل معنا"
+                title="Get in Touch"
                 subtitle="Reliable Booking & 24/7 Support for Your Umrah Journey. Premium Transport Services from Makkah to Madinah."
                 bgImage="/images/contact-hero.jpg"
                 breadcrumbs={<Breadcrumbs />}
@@ -97,17 +97,17 @@ export default async function ContactPage() {
                 <FadeIn direction="up" delay={0.1}>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                         {[
-                            { icon: Clock, text: "24/7 Service", sub: "خدمة على مدار الساعة" },
-                            { icon: ShieldCheck, text: "Licensed & Safe", sub: "مرخص ومؤمن" },
-                            { icon: Globe, text: "Multilingual", sub: "دعم متعدد اللغات" },
-                            { icon: Star, text: "Top Rated", sub: "أعلى تقييم" }
+                            { icon: Clock, text: "24/7 Service", sub: "Round-the-clock support" },
+                            { icon: ShieldCheck, text: "Licensed & Safe", sub: "Fully insured vehicles" },
+                            { icon: Globe, text: "Multilingual", sub: "English, Urdu, Arabic" },
+                            { icon: Star, text: "Top Rated", sub: "Excellent service" }
                         ].map((item, idx) => (
                             <div key={idx} className="bg-white p-4 rounded-xl shadow-lg border border-slate-100 text-center transform hover:-translate-y-1 transition-transform duration-300">
                                 <div className="w-10 h-10 mx-auto mb-2 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
                                     <item.icon className="w-5 h-5" />
                                 </div>
                                 <h3 className="font-bold text-navy text-sm md:text-base">{item.text}</h3>
-                                <p className="text-xs text-slate-500 font-arabic">{item.sub}</p>
+                                <p className="text-xs text-slate-500">{item.sub}</p>
                             </div>
                         ))}
                     </div>
@@ -124,7 +124,7 @@ export default async function ContactPage() {
 
                         {/* Map Placeholder */}
                         <FadeIn direction="up" delay={0.4}>
-                            <GlassCard className="p-0 overflow-hidden min-h-[400px] relative flex items-center justify-center bg-white border border-gold/20 shadow-lg" id="map">
+                            <GlassCard className="p-0 overflow-hidden min-h-[400px] relative flex items-center justify-center bg-white border border-primary/20 shadow-lg" id="map">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.526883410923!2d39.8126588!3d21.447833599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21d9da1e4d599%3A0xb8a485c3949902cc!2sAl%20Aqsa%20Umrah%20Transport!5e0!3m2!1sen!2s"
                                     width="100%"
@@ -146,7 +146,7 @@ export default async function ContactPage() {
                                 <div className="mb-8 relative z-10">
                                     <h2 className="text-3xl font-bold text-navy mb-2 font-playfair">
                                         Send Us a Message
-                                        <span className="block text-xl font-arabic font-normal text-secondary mt-2">أرسل لنا رسالة</span>
+                                        <span className="block text-xl font-normal text-secondary mt-2">Get in touch</span>
                                     </h2>
                                     <p className="text-slate-600 leading-relaxed">
                                         Need a custom quote for your Umrah group? Have questions about our GMC Yukon fleet?

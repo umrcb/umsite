@@ -16,30 +16,30 @@ export default function PricingCorporate() {
                     
                     <ul className="space-y-4 mb-8 flex-grow">
                         <li className="flex items-center gap-3">
-                            <Star size={16} className="text-gold fill-gold/30" />
+                            <Star size={16} className="text-primary fill-primary/30" />
                             <span className="text-sm font-semibold text-navy">Special corporate rates</span>
                         </li>
                         <li className="flex items-center gap-3">
-                            <Star size={16} className="text-gold fill-gold/30" />
+                            <Star size={16} className="text-primary fill-primary/30" />
                             <span className="text-sm font-semibold text-navy">Monthly billing available</span>
                         </li>
                         <li className="flex items-center gap-3">
-                            <Star size={16} className="text-gold fill-gold/30" />
+                            <Star size={16} className="text-primary fill-primary/30" />
                             <span className="text-sm font-semibold text-navy">Bulk & group discounts</span>
                         </li>
                         <li className="flex items-center gap-3">
-                            <Star size={16} className="text-gold fill-gold/30" />
+                            <Star size={16} className="text-primary fill-primary/30" />
                             <span className="text-sm font-semibold text-navy">Custom travel solutions</span>
                         </li>
                         <li className="flex items-center gap-3">
-                            <Star size={16} className="text-gold fill-gold/30" />
+                            <Star size={16} className="text-primary fill-primary/30" />
                             <span className="text-sm font-semibold text-navy">Dedicated account manager</span>
                         </li>
                     </ul>
 
                     <Link 
                         href="/contact?subject=Corporate+Booking"
-                        className="w-fit bg-gold hover:bg-navy text-white px-6 py-3 rounded-lg font-bold text-sm transition-colors flex items-center justify-center gap-2"
+                        className="w-fit bg-primary hover:bg-navy text-white px-6 py-3 rounded-lg font-bold text-sm transition-colors flex items-center justify-center gap-2"
                     >
                         Contact Sales Team <ArrowRight size={16} />
                     </Link>

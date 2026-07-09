@@ -12,8 +12,8 @@ export default function ServicesHero() {
         <section className="relative min-h-[85vh] flex flex-col justify-center pt-28 pb-16 lg:pt-36 lg:pb-32 overflow-hidden bg-white">
             {/* Background elements to create a premium feel with soft golden lighting */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 right-0 w-[80%] md:w-[60%] h-full bg-gradient-to-l from-gold/5 via-gold/5 to-transparent rounded-bl-[100px]" />
-                <div className="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] bg-gold/10 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute top-0 right-0 w-[80%] md:w-[60%] h-full bg-gradient-to-l from-primary/5 via-primary/5 to-transparent rounded-bl-[100px]" />
+                <div className="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
                 <div className="absolute bottom-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
             </div>
 
@@ -38,7 +38,7 @@ export default function ServicesHero() {
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 border border-slate-200 shadow-sm">
                             <div className="flex gap-0.5">
                                 {[...Array(5)].map((_, i) => (
-                                    <Star key={i} size={14} className="text-gold fill-gold" />
+                                    <Star key={i} size={14} className="text-primary fill-primary" />
                                 ))}
                             </div>
                             <span className="text-sm font-medium text-slate-700">Trusted by Thousands of Pilgrims</span>

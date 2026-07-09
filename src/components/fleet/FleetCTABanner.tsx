@@ -24,7 +24,7 @@ export default function FleetCTABanner() {
                     transition={{ duration: 0.8 }}
                     className="max-w-4xl mx-auto"
                 >
-                    <span className="text-gold font-bold tracking-wider uppercase text-sm mb-4 block">
+                    <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">
                         Begin Your Journey
                     </span>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-playfair text-white mb-6 leading-tight">
@@ -37,7 +37,7 @@ export default function FleetCTABanner() {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link 
                             href="/booking" 
-                            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gold text-navy font-bold text-lg hover:bg-white transition-colors duration-300 shadow-lg hover:shadow-gold/30 flex items-center justify-center gap-2 group"
+                            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-primary text-navy font-bold text-lg hover:bg-white transition-colors duration-300 shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-2 group"
                         >
                             Book Your Vehicle
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

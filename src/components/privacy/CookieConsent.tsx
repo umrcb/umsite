@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ShieldCheck } from 'lucide-react';
+import { Cookie } from 'lucide-react';
 import styles from './CookieConsent.module.css';
 
 declare global {
@@ -69,9 +69,9 @@ export default function CookieConsent() {
         <AnimatePresence>
             {isVisible && (
                 <motion.div
-                    initial={{ y: 100, opacity: 0, scale: 0.95 }}
-                    animate={{ y: 0, opacity: 1, scale: 1 }}
-                    exit={{ y: 100, opacity: 0, scale: 0.95 }}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 50, opacity: 0 }}
                     transition={{
                         type: "spring",
                         stiffness: 300,
@@ -80,34 +80,28 @@ export default function CookieConsent() {
                     }}
                     className={styles.banner}
                 >
-                    <div className={styles.glow} />
-
                     <div className={styles.content}>
                         <div className={styles.textSection}>
                             <div className={styles.iconWrapper}>
-                                <ShieldCheck size={28} />
+                                <Cookie size={24} />
                             </div>
                             <div className={styles.textContent}>
-                                <h3 className="flex items-center gap-2">
-                                    Your Privacy Matters
-                                    <span className="text-amber-500 font-arabic text-sm opacity-80">| خصوصيتك تهمنا</span>
-                                </h3>
+                                <h3>Your Privacy Matters</h3>
                                 <p>
                                     We use cookies to enhance your experience, provide secure booking, and deliver personalized pilgrim services.
-                                    <span className="block font-arabic text-xs mt-1 opacity-70">نستخدم ملفات تعريف الارتباط لتحسين تجربتك وضمان حجز آمن لضيوف الرحمن.</span>
                                 </p>
                             </div>
                         </div>
 
                         <div className={styles.actions}>
                             <button onClick={handleAccept} className={styles.btnAccept}>
-                                Accept All <span className="font-arabic text-xs ml-1">موافق</span>
+                                Accept All
                             </button>
                             <button onClick={handleReject} className={styles.btnReject}>
-                                Reject <span className="font-arabic text-xs ml-1">رفض</span>
+                                Reject
                             </button>
                             <Link href="/cookie-preferences" className={styles.linkManage}>
-                                Preferences <span className="font-arabic text-xs ml-1">إعدادات</span>
+                                Preferences
                             </Link>
                         </div>
                     </div>

@@ -98,9 +98,9 @@ export default function ServiceComparison() {
                         Compare Our Services
                     </h2>
                     <div className="flex items-center justify-center gap-2">
-                        <div className="h-[1px] w-12 bg-gold/50" />
-                        <div className="w-2 h-2 rounded-full bg-gold" />
-                        <div className="h-[1px] w-12 bg-gold/50" />
+                        <div className="h-[1px] w-12 bg-primary/50" />
+                        <div className="w-2 h-2 rounded-full bg-primary" />
+                        <div className="h-[1px] w-12 bg-primary/50" />
                     </div>
                 </div>
 
@@ -132,7 +132,7 @@ export default function ServiceComparison() {
                                         <td className="py-4 px-6 text-center whitespace-nowrap">
                                             <Link 
                                                 href={row.link}
-                                                className="text-primary font-semibold hover:text-gold transition-colors underline underline-offset-4"
+                                                className="text-primary font-semibold hover:text-primary transition-colors underline underline-offset-4"
                                             >
                                                 Book Now
                                             </Link>

@@ -16,7 +16,7 @@ export default function FinalCTA() {
         </p>
         
         <div className={`${styles.btnGroup} ${styles.fadeInUp}`} style={{ justifyContent: 'center', animationDelay: '0.3s' }}>
-          <Link href="/book" className={`${styles.btn} ${styles.btnPremium}`}>
+          <Link href="/booking" className={`${styles.btn} ${styles.btnPremium}`}>
             Book Your Ride <ArrowRight size={20} />
           </Link>
           <a href="https://wa.me/966500000000" target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnSecondary}`} style={{ backgroundColor: 'transparent', color: '#ffffff', borderColor: '#ffffff' }}>

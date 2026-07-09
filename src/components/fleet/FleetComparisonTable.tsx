@@ -113,7 +113,7 @@ export default function FleetComparisonTable() {
                                         <td className="py-4 px-6 text-slate-600 whitespace-nowrap">{row.passengers}</td>
                                         <td className="py-4 px-6 text-slate-600 whitespace-nowrap">{row.luggage}</td>
                                         <td className="py-4 px-6 text-slate-600 whitespace-nowrap">
-                                            <span className={`px-3 py-1 rounded-full text-xs font-bold ${row.luxury.includes('VIP') ? 'bg-gold/10 text-gold' : 'bg-slate-100 text-slate-600'}`}>
+                                            <span className={`px-3 py-1 rounded-full text-xs font-bold ${row.luxury.includes('VIP') ? 'bg-primary/10 text-primary' : 'bg-slate-100 text-slate-600'}`}>
                                                 {row.luxury}
                                             </span>
                                         </td>
@@ -136,7 +136,7 @@ export default function FleetComparisonTable() {
                                         <td className="py-4 px-6 text-center whitespace-nowrap">
                                             <Link 
                                                 href={row.link}
-                                                className="text-primary font-semibold hover:text-gold transition-colors underline underline-offset-4"
+                                                className="text-primary font-semibold hover:text-primary transition-colors underline underline-offset-4"
                                             >
                                                 Book
                                             </Link>

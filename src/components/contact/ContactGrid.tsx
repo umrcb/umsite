@@ -21,7 +21,7 @@ export default function ContactGrid({ contactSettings }: ContactGridProps) {
     const contactCards = [
         {
             icon: Phone,
-            title: "Call Us 24/7 (اتصل بنا)",
+            title: "Call Us 24/7",
             value: phone,
             sub: "Support in English, Arabic, Urdu",
             action: `tel:${phone.replace(/\s/g, '')}`,
@@ -30,7 +30,7 @@ export default function ContactGrid({ contactSettings }: ContactGridProps) {
         },
         {
             icon: MessageCircle,
-            title: "WhatsApp Support (واتساب)",
+            title: "WhatsApp Support",
             value: "Instant replies for bookings",
             sub: "Average response: < 5 mins",
             action: `https://wa.me/${whatsapp.replace(/\D/g, '')}`,
@@ -39,7 +39,7 @@ export default function ContactGrid({ contactSettings }: ContactGridProps) {
         },
         {
             icon: Mail,
-            title: "Email Us (البريد الإلكتروني)",
+            title: "Email Us",
             value: email,
             sub: "For quote requests & inquiries",
             action: `mailto:${email}`,
@@ -48,7 +48,7 @@ export default function ContactGrid({ contactSettings }: ContactGridProps) {
         },
         {
             icon: MapPin,
-            title: "Visit Our Office (موقعنا)",
+            title: "Visit Our Office",
             value: address,
             sub: "Open Daily: 9 AM - 10 PM",
             action: "#map",

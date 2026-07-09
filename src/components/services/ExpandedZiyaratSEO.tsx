@@ -39,7 +39,7 @@ export default function ExpandedZiyaratSEO() {
                         <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl border-l-4 border-amber-500 my-6">
                             <h4 className="font-bold text-slate-900 dark:text-white mt-0 mb-2">Transport Tip</h4>
                             <p className="m-0 text-sm">
-                                The roads approaching Jabal al-Nour can be heavily congested with large buses. By booking a private <Link href="/fleet/toyota-camry" className="text-amber-600 hover:underline">Toyota Camry</Link> or <Link href="/fleet/hyundai-staria" className="text-amber-600 hover:underline">Staria Van</Link>, our drivers can navigate tighter local streets, getting you much closer to the visitor center than traditional campaign buses.
+                                The roads approaching Jabal al-Nour can be heavily congested with large buses. By booking a private Toyota Camry or Staria Van, our drivers can navigate tighter local streets, getting you much closer to the visitor center than traditional campaign buses.
                             </p>
                         </div>
                     </div>
@@ -98,7 +98,7 @@ export default function ExpandedZiyaratSEO() {
                     <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
                     <h3 className="text-3xl font-bold font-playfair mb-4 relative z-10">Private and Respected Travel</h3>
                     <p className="text-slate-300 mb-8 max-w-2xl mx-auto relative z-10">
-                        Historical Ziyarat should not be rushed. By booking a private vehicle like the <Link href="/fleet/gmc-yukon-at4" className="text-amber-400 hover:underline text-sm ml-1">GMC Yukon</Link>, you control the pace. Stop for photos, make Dua at length, and return to your hotel comfortably.
+                        Historical Ziyarat should not be rushed. By booking a private vehicle like the GMC Yukon, you control the pace. Stop for photos, make Dua at length, and return to your hotel comfortably.
                     </p>
                     <Link href="/booking?service=ziyarat" className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-amber-500/40 relative z-10">
                         Schedule Your Private Ziyarat <MapPin className="w-5 h-5" />

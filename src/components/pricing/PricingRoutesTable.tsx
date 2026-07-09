@@ -58,7 +58,7 @@ export default function PricingRoutesTable() {
                     <span className="text-sm text-slate-600">Need a custom route? Get a personalized quote.</span>
                     <button 
                         onClick={() => document.getElementById('price-estimator')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="text-sm font-bold text-primary flex items-center hover:text-gold transition-colors"
+                        className="text-sm font-bold text-primary flex items-center hover:text-primary transition-colors"
                     >
                         Get Instant Quote <ArrowRight size={14} className="ml-1" />
                     </button>

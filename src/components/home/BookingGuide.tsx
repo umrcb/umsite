@@ -71,7 +71,7 @@ export default function BookingGuide() {
                                         </div>
 
                                         {/* Step Number Badge */}
-                                        <div className="absolute -top-3 -right-3 w-8 h-8 bg-gold text-white rounded-lg flex items-center justify-center font-bold text-sm shadow-md z-20">
+                                        <div className="absolute -top-3 -right-3 w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center font-bold text-sm shadow-md z-20">
                                             {step.id}
                                         </div>
                                     </div>

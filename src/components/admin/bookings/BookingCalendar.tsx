@@ -69,7 +69,7 @@ export default function BookingCalendar({ events, onSelectEvent }: BookingCalend
                     </button>
                     <button
                         onClick={() => handleNavigate('TODAY')}
-                        className="px-4 py-1.5 text-sm font-bold bg-gold/10 text-gold rounded-md hover:bg-gold/20 transition-colors uppercase tracking-wider"
+                        className="px-4 py-1.5 text-sm font-bold bg-primary/10 text-primary rounded-md hover:bg-primary/20 transition-colors uppercase tracking-wider"
                     >
                         Today
                     </button>
@@ -80,7 +80,7 @@ export default function BookingCalendar({ events, onSelectEvent }: BookingCalend
                         <ChevronRight size={20} className="text-gray-600 dark:text-gray-300" />
                     </button>
                     <h3 className="text-xl font-bold ml-2 text-slate-900 dark:text-white flex items-center gap-2 font-playfair">
-                        <CalendarIcon size={20} className="text-gold" />
+                        <CalendarIcon size={20} className="text-primary" />
                         {format(date, 'MMMM yyyy')}
                     </h3>
                 </div>
@@ -91,7 +91,7 @@ export default function BookingCalendar({ events, onSelectEvent }: BookingCalend
                             key={v}
                             onClick={() => setView(v as View)}
                             className={`px-4 py-1.5 rounded-md text-sm font-bold capitalize transition-all ${view === v
-                                ? 'bg-white dark:bg-slate-700 text-gold shadow-sm'
+                                ? 'bg-white dark:bg-slate-700 text-primary shadow-sm'
                                 : 'text-gray-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-gray-200'
                                 }`}
                         >
@@ -124,7 +124,7 @@ export default function BookingCalendar({ events, onSelectEvent }: BookingCalend
                     const status = event.resource.status;
 
                     if (status === 'confirmed') className = '!bg-emerald-500 !border-emerald-600 !text-white';
-                    else if (status === 'pending') className = '!bg-gold !border-yellow-600 !text-black font-bold';
+                    else if (status === 'pending') className = '!bg-primary !border-yellow-600 !text-black font-bold';
                     else if (status === 'cancelled') className = '!bg-red-500 !border-red-600 !opacity-60 !text-white';
                     else if (status === 'completed') className = '!bg-secondary !border-secondary dark:!bg-slate-700 !text-white';
 

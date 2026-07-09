@@ -60,15 +60,7 @@ export default function Navbar() {
         },
         { 
             href: '/fleet', 
-            label: 'Fleet',
-            dropdown: [
-                { href: '/fleet/toyota-camry', label: 'Toyota Camry' },
-                { href: '/fleet/gmc-yukon-at4', label: 'GMC Yukon AT4' },
-                { href: '/fleet/hyundai-staria', label: 'Hyundai Staria' },
-                { href: '/fleet/hyundai-starex', label: 'Hyundai Starex' },
-                { href: '/fleet/toyota-hiace', label: 'Toyota Hiace' },
-                { href: '/fleet/toyota-coaster', label: 'Toyota Coaster' },
-            ]
+            label: 'Fleet'
         },
         { href: '/pricing', label: 'Pricing' },
         { href: '/about', label: 'About' },
@@ -77,7 +69,8 @@ export default function Navbar() {
 
     const showDarkNav = scrolled || isMenuOpen;
     const isHomePage = pathname === '/';
-    const useDarkText = showDarkNav || isHomePage || pathname === '/booking';
+    // Make sure we use dark text on all pages that have light backgrounds at the top
+    const useDarkText = showDarkNav || isHomePage || pathname === '/booking' || pathname.startsWith('/services') || pathname.startsWith('/about') || pathname.startsWith('/contact') || pathname.startsWith('/pricing');
 
     const whatsappUrl = getWhatsAppLink("Hello! I would like to inquire about Umrah Cabs.");
 
@@ -171,7 +164,7 @@ export default function Navbar() {
                     </a>
                     <Link
                         href="/booking"
-                        className="btn-gold"
+                        className="btn-primary"
                     >
                         Book Now
                     </Link>
@@ -278,7 +271,7 @@ export default function Navbar() {
                     </a>
                     <Link
                         href="/booking"
-                        className="btn-gold w-full"
+                        className="btn-primary w-full"
                         onClick={() => setTimeout(() => setIsMenuOpen(false), 150)}
                     >
                         Book Your Ride

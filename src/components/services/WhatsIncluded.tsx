@@ -48,7 +48,7 @@ export default function WhatsIncluded() {
                                     transition={{ duration: 0.4, delay: index * 0.05 }}
                                     className="flex items-center gap-3"
                                 >
-                                    <CheckCircle size={20} className="text-gold flex-shrink-0" />
+                                    <CheckCircle size={20} className="text-primary flex-shrink-0" />
                                     <span className="text-slate-700 font-medium">{item}</span>
                                 </motion.div>
                             ))}

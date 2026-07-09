@@ -52,7 +52,6 @@ export default function ContactForm() {
             <div className="space-y-2">
                 <label className="text-sm font-bold text-navy flex items-center justify-between uppercase tracking-wider" htmlFor="name">
                     <span>Full Name</span>
-                    <span className="text-xs text-secondary font-arabic">الاسم الكامل</span>
                 </label>
                 <div className="relative group">
                     <User className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/40 group-focus-within:text-secondary transition-colors h-5 w-5" />
@@ -70,7 +69,6 @@ export default function ContactForm() {
             <div className="space-y-2">
                 <label className="text-sm font-bold text-navy flex items-center justify-between uppercase tracking-wider" htmlFor="email">
                     <span>Email Address</span>
-                    <span className="text-xs text-secondary font-arabic">البريد الإلكتروني</span>
                 </label>
                 <div className="relative group">
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/40 group-focus-within:text-secondary transition-colors h-5 w-5" />
@@ -90,7 +88,6 @@ export default function ContactForm() {
             <div className="space-y-2">
                 <label className="text-sm font-bold text-navy flex items-center justify-between uppercase tracking-wider" htmlFor="message">
                     <span>Message</span>
-                    <span className="text-xs text-secondary font-arabic">الرسالة</span>
                 </label>
                 <div className="relative group">
                     <MessageSquare className="absolute left-4 top-5 text-navy/40 group-focus-within:text-secondary transition-colors h-5 w-5" />
@@ -98,7 +95,7 @@ export default function ContactForm() {
                         id="message"
                         name="message"
                         className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-12 pr-4 py-4 h-32 resize-none focus:ring-4 focus:ring-secondary/10 focus:border-secondary outline-none transition-all placeholder:text-slate-400 text-navy font-medium"
-                        placeholder="How can we help you? (كيف يمكننا مساعدتك؟)"
+                        placeholder="How can we help you?"
                         required
                     ></textarea>
                 </div>
@@ -108,7 +105,7 @@ export default function ContactForm() {
                 type="submit"
                 variant="primary"
                 size="lg"
-                className="w-full relative overflow-hidden group !bg-amber-500 hover:!bg-amber-600 text-white"
+                className="w-full relative overflow-hidden group"
                 disabled={status === 'submitting'}
             >
                 <div className="relative z-10 flex items-center justify-center gap-2">
@@ -120,7 +117,7 @@ export default function ContactForm() {
                     ) : (
                         <>
                             <Send size={18} className="group-hover:translate-x-1 transition-transform" />
-                            <span>Send Message (ارسال)</span>
+                            <span>Send Message</span>
                         </>
                     )}
                 </div>
@@ -129,16 +126,12 @@ export default function ContactForm() {
             {status === 'success' && (
                 <div className="p-4 bg-green-500/10 border border-green-500/20 rounded-lg text-green-700 text-center text-sm animate-in fade-in slide-in-from-bottom-2">
                     Message sent successfully! We will contact you soon.
-                    <br />
-                    <span className="font-arabic text-xs opacity-75">تم الإرسال بنجاح! سنتواصل معك قريباً.</span>
                 </div>
             )}
 
             {status === 'error' && (
                 <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg text-red-600 text-center text-sm animate-in fade-in slide-in-from-bottom-2">
                     Failed to send message. Please try again.
-                    <br />
-                    <span className="font-arabic text-xs opacity-75">فشل الإرسال. يرجى المحاولة مرة أخرى.</span>
                 </div>
             )}
         </form>

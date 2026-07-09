@@ -67,7 +67,7 @@ export default function AdminLayout({
     if (loading) {
         return (
             <div className="flex flex-col items-center justify-center h-screen bg-slate-50 dark:bg-navy-950 gap-4">
-                <div className="w-16 h-16 border-4 border-gold/30 border-t-gold rounded-full animate-spin"></div>
+                <div className="w-16 h-16 border-4 border-primary/30 border-t-gold rounded-full animate-spin"></div>
                 <div className="text-navy-600 font-medium animate-pulse font-outfit">Verifying Session...</div>
             </div>
         );
@@ -90,8 +90,6 @@ export default function AdminLayout({
         { href: '/admin/routes', label: 'Routes', icon: MapPin, roles: ['admin', 'manager', 'operational_manager'] },
         { href: '/admin/fleet', label: 'Fleet', icon: Car, roles: ['admin', 'manager', 'operational_manager'] },
         { href: '/admin/pricing', label: 'Pricing', icon: DollarSign, roles: ['admin'] },
-        { href: '/admin/reviews', label: 'Reviews', icon: MessageSquare, roles: ['admin', 'manager', 'operational_manager'] },
-        { href: '/admin/blog', label: 'Blog', icon: FileText, roles: ['admin', 'manager', 'operational_manager'] },
         { href: '/admin/users', label: 'Users', icon: Users, roles: ['admin'] },
         { href: '/admin/settings', label: 'Settings', icon: Settings, roles: ['admin'] },
     ];
@@ -123,7 +121,7 @@ export default function AdminLayout({
                     <span className="font-bold text-lg text-navy-900 dark:text-white font-playfair">Admin Panel</span>
                 </div>
                 {user && (
-                    <div className="w-8 h-8 rounded-full bg-gold flex items-center justify-center text-navy-900 font-bold text-sm shadow-md">
+                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-navy-900 font-bold text-sm shadow-md">
                         {user.name.charAt(0)}
                     </div>
                 )}
@@ -146,7 +144,7 @@ export default function AdminLayout({
                 <div className="p-6 border-b border-navy-800 bg-navy-950/50">
                     <div className="flex flex-col items-start gap-1">
                         <div className="flex flex-col items-start text-left">
-                            <span className="text-2xl font-bold text-gold font-playfair">Umrah Cabs</span>
+                            <span className="text-2xl font-bold text-primary font-playfair">Umrah Cabs</span>
                         </div>
                     </div>
                 </div>
@@ -164,11 +162,11 @@ export default function AdminLayout({
                                 className={`
                                     flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 group
                                     ${isActive
-                                        ? 'bg-gold text-navy-900 shadow-lg shadow-gold/20 font-bold'
+                                        ? 'bg-primary text-navy-900 shadow-lg shadow-primary/20 font-bold'
                                         : 'text-gray-400 hover:bg-navy-800 hover:text-white'}
                                 `}
                             >
-                                <Icon size={20} className={`transition-colors ${isActive ? 'text-navy-900' : 'group-hover:text-gold'}`} />
+                                <Icon size={20} className={`transition-colors ${isActive ? 'text-navy-900' : 'group-hover:text-primary'}`} />
                                 <span>{link.label}</span>
                             </Link>
                         );
@@ -178,7 +176,7 @@ export default function AdminLayout({
                 {/* User Profile Footer */}
                 <div className="p-4 border-t border-navy-800 bg-navy-950/30">
                     <div className="flex items-center gap-3 p-2 rounded-xl bg-navy-800/50 border border-navy-700/50">
-                        <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-navy-900 font-bold shadow-inner">
+                        <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-navy-900 font-bold shadow-inner">
                             {user.name.charAt(0)}
                         </div>
                         <div className="flex-1 min-w-0">

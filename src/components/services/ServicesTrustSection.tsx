@@ -45,7 +45,7 @@ export default function ServicesTrustSection() {
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left px-4"
                         >
-                            <div className="text-gold">
+                            <div className="text-primary">
                                 {stat.icon}
                             </div>
                             <div className="flex flex-col">

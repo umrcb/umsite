@@ -80,7 +80,7 @@ export default function LoginPage() {
 
             {/* Decorative Elements */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] animate-pulse-slow"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold/10 rounded-full blur-[100px] animate-pulse-slow delay-1000"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] animate-pulse-slow delay-1000"></div>
 
             <div className="w-full max-w-md relative z-10 p-6">
                 <div className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 overflow-hidden ring-1 ring-black/5 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">

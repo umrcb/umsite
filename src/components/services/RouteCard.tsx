@@ -29,7 +29,7 @@ export default function RouteCard({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay }}
-            className="group block relative bg-white dark:bg-navy-900 rounded-2xl border border-gray-200 dark:border-navy-700 hover:border-gold/50 dark:hover:border-gold/50 shadow-sm hover:shadow-xl transition-all duration-300"
+            className="group block relative bg-white dark:bg-navy-900 rounded-2xl border border-gray-200 dark:border-navy-700 hover:border-primary/50 dark:hover:border-primary/50 shadow-sm hover:shadow-xl transition-all duration-300"
         >
             <Link href={`/booking?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}&service=transfer`} className="block p-6">
 
@@ -37,8 +37,8 @@ export default function RouteCard({
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8">
                     {/* Origin */}
                     <div className="flex items-center gap-4 flex-1">
-                        <div className={`w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center shrink-0`}>
-                            <MapPin className="text-gold" size={20} />
+                        <div className={`w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0`}>
+                            <MapPin className="text-primary" size={20} />
                         </div>
                         <div>
                             <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">From</span>
@@ -50,7 +50,7 @@ export default function RouteCard({
                     <div className="hidden md:flex flex-col items-center justify-center w-32 relative">
                         <div className="w-full h-[2px] bg-gray-100 dark:bg-navy-800 rounded-full relative overflow-hidden">
                             <motion.div
-                                className={`absolute inset-0 bg-gold`}
+                                className={`absolute inset-0 bg-primary`}
                                 initial={{ x: '-100%' }}
                                 whileInView={{ x: '100%' }}
                                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -68,7 +68,7 @@ export default function RouteCard({
                             <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">To</span>
                             <h3 className="text-lg font-bold text-navy-900 dark:text-white leading-tight">{to}</h3>
                         </div>
-                        <div className={`w-12 h-12 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center shrink-0 order-1 md:order-2 group-hover:bg-gold group-hover:text-navy-900 transition-colors duration-300`}>
+                        <div className={`w-12 h-12 rounded-full bg-gray-100 dark:bg-navy-800 flex items-center justify-center shrink-0 order-1 md:order-2 group-hover:bg-primary group-hover:text-navy-900 transition-colors duration-300`}>
                             <MapPin size={20} className="text-gray-400 group-hover:text-navy-900 transition-colors" />
                         </div>
                     </div>
@@ -78,11 +78,11 @@ export default function RouteCard({
                 <div className="flex items-center justify-between pt-6 border-t border-gray-100 dark:border-navy-800/50">
                     <div className="flex items-center gap-6">
                         <div className="flex items-center gap-2 text-sm text-gray-500">
-                            <Clock size={16} className="text-gold" />
+                            <Clock size={16} className="text-primary" />
                             <span>{duration}</span>
                         </div>
                         <div className="flex items-center gap-2 text-sm text-gray-500 md:hidden">
-                            <ArrowRight size={16} className="text-gold" />
+                            <ArrowRight size={16} className="text-primary" />
                             <span>{distance}</span>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ export default function RouteCard({
                                 <span className="font-bold text-lg text-navy-900 dark:text-white">{price} SAR</span>
                             </div>
                         )}
-                        <div className="w-10 h-10 rounded-full bg-gray-50 dark:bg-navy-800 flex items-center justify-center group-hover:bg-gold group-hover:text-navy-900 transition-all duration-300 group-hover:translate-x-1">
+                        <div className="w-10 h-10 rounded-full bg-gray-50 dark:bg-navy-800 flex items-center justify-center group-hover:bg-primary group-hover:text-navy-900 transition-all duration-300 group-hover:translate-x-1">
                             <ChevronRight size={20} />
                         </div>
                     </div>

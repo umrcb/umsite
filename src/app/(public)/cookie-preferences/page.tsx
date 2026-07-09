@@ -84,7 +84,7 @@ export default function CookiePreferences() {
         <div className="min-h-screen bg-gray-50 dark:bg-gray-950 py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-b from-gray-900 to-transparent opacity-10 pointer-events-none" />
-            <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-primary-500/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="max-w-4xl mx-auto relative z-10">
                 <motion.div
@@ -95,14 +95,14 @@ export default function CookiePreferences() {
                 >
                     <Link
                         href="/"
-                        className="inline-flex items-center text-gray-500 hover:text-gold-600 transition-colors mb-6 group"
+                        className="inline-flex items-center text-gray-500 hover:text-primary-600 transition-colors mb-6 group"
                     >
                         <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                         Back to Home
                     </Link>
                     <div className="flex items-center gap-4 mb-4">
-                        <div className="p-3 bg-gold-100 dark:bg-gold-900/20 rounded-2xl">
-                            <Shield className="w-8 h-8 text-gold-600 dark:text-gold-400" />
+                        <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-2xl">
+                            <Shield className="w-8 h-8 text-primary-600 dark:text-primary-400" />
                         </div>
                         <h1 className="text-4xl font-bold text-gray-900 dark:text-white tracking-tight">
                             Cookie Preferences
@@ -127,14 +127,14 @@ export default function CookiePreferences() {
                                 className={`
                                     group relative overflow-hidden rounded-2xl border transition-all duration-300
                                     ${isEnabled
-                                        ? 'bg-white dark:bg-gray-900 border-gold-500/30 shadow-lg shadow-gold-500/5'
+                                        ? 'bg-white dark:bg-gray-900 border-primary-500/30 shadow-lg shadow-primary-500/5'
                                         : 'bg-white/50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-800'}
                                 `}
                             >
                                 <div className="p-6 sm:p-8 flex items-start gap-6">
                                     <div className={`
                                         p-3 rounded-xl shrink-0 transition-colors duration-300
-                                        ${isEnabled ? 'bg-gold-100 dark:bg-gold-900/20 text-gold-600' : 'bg-gray-100 dark:bg-gray-800 text-gray-400'}
+                                        ${isEnabled ? 'bg-primary-100 dark:bg-primary-900/20 text-primary-600' : 'bg-gray-100 dark:bg-gray-800 text-gray-400'}
                                     `}>
                                         <Icon className="w-6 h-6" />
                                     </div>
@@ -152,8 +152,8 @@ export default function CookiePreferences() {
                                                 <button
                                                     onClick={() => toggleSetting(section.id as keyof CookieSettings)}
                                                     className={`
-                                                        relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 focus-visible:ring-offset-2
-                                                        ${isEnabled ? 'bg-gold-600' : 'bg-gray-200 dark:bg-gray-700'}
+                                                        relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2
+                                                        ${isEnabled ? 'bg-primary-600' : 'bg-gray-200 dark:bg-gray-700'}
                                                     `}
                                                 >
                                                     <span className="sr-only">Use setting</span>
@@ -193,7 +193,7 @@ export default function CookiePreferences() {
                         <button
                             onClick={handleSave}
                             disabled={saved}
-                            className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white rounded-xl font-semibold transition-all shadow-lg shadow-gold-500/25 hover:shadow-gold-500/40 disabled:opacity-75 disabled:cursor-not-allowed transform active:scale-95"
+                            className="flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white rounded-xl font-semibold transition-all shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40 disabled:opacity-75 disabled:cursor-not-allowed transform active:scale-95"
                         >
                             {saved ? (
                                 <>

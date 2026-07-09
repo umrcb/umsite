@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { Calendar, Phone, User, ArrowRight, Car, Navigation, Clock, CheckCircle, Bus, Mail, MapPin, PlaneLanding, PlaneTakeoff, Building2, ShieldCheck, HeartHandshake, CreditCard, Headphones } from 'lucide-react';
@@ -511,9 +511,9 @@ const QuickBookingForm = ({
                                 <label className={styles.label}>Where are you going?</label>
                                 <div className="flex flex-wrap gap-1.5 mt-1">
                                     {[
-                                        { label: 'Jeddah ⇄ Makkah', icon: PlaneLanding, pickup: 'Jeddah Airport', dropoff: 'Makkah Hotel' },
-                                        { label: 'Makkah ⇄ Madinah', icon: Bus, pickup: 'Makkah Hotel', dropoff: 'Madinah Hotel' },
-                                        { label: 'Jeddah ⇄ Madinah', icon: PlaneTakeoff, pickup: 'Jeddah Airport', dropoff: 'Madinah Hotel' },
+                                        { label: 'Jeddah ? Makkah', icon: PlaneLanding, pickup: 'Jeddah Airport', dropoff: 'Makkah Hotel' },
+                                        { label: 'Makkah ? Madinah', icon: Bus, pickup: 'Makkah Hotel', dropoff: 'Madinah Hotel' },
+                                        { label: 'Jeddah ? Madinah', icon: PlaneTakeoff, pickup: 'Jeddah Airport', dropoff: 'Madinah Hotel' },
                                         { label: 'Custom Route', icon: MapPin, pickup: '', dropoff: '', isCustom: true },
                                     ].map((route) => {
                                         // Dynamic active check
@@ -555,12 +555,12 @@ const QuickBookingForm = ({
                                                 className={`
                                                     flex items-center gap-1.5 px-3 py-2 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all duration-300 border backdrop-blur-sm
                                                     ${isActive
-                                                        ? 'bg-gold border-gold text-navy shadow-lg scale-[1.05]'
-                                                        : 'bg-white/5 border-white/10 text-white/70 hover:border-gold hover:text-white hover:bg-gold/10'
+                                                        ? 'bg-primary border-primary text-navy shadow-lg scale-[1.05]'
+                                                        : 'bg-white/5 border-white/10 text-white/70 hover:border-primary hover:text-white hover:bg-primary/10'
                                                     }
                                                 `}
                                             >
-                                                <route.icon size={12} className={isActive ? 'text-gold' : 'text-slate-400'} />
+                                                <route.icon size={12} className={isActive ? 'text-primary' : 'text-slate-400'} />
                                                 {route.label}
                                             </button>
                                         );
@@ -585,7 +585,7 @@ const QuickBookingForm = ({
                                                 handleDateChange(new Date(e.target.value));
                                             }}
                                             min={minDate}
-                                            className="w-full pl-9 pr-2 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all text-white backdrop-blur-md shadow-sm h-[40px] [color-scheme:dark]"
+                                            className="w-full pl-9 pr-2 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-white backdrop-blur-md shadow-sm h-[40px] [color-scheme:dark]"
                                         />
                                     </div>
                                     {errors.date && <span className="absolute -bottom-4 left-0 text-[9px] text-red-500 font-semibold">{errors.date}</span>}
@@ -605,7 +605,7 @@ const QuickBookingForm = ({
                                                 const t = new Date(); t.setHours(h); t.setMinutes(m);
                                                 handleTimeChange(t);
                                             }}
-                                            className="w-full pl-9 pr-2 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all text-white backdrop-blur-md shadow-sm h-[40px] [color-scheme:dark]"
+                                            className="w-full pl-9 pr-2 py-2 bg-white/5 border border-white/10 rounded-xl text-xs font-medium outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-white backdrop-blur-md shadow-sm h-[40px] [color-scheme:dark]"
                                         />
                                     </div>
                                     {errors.time && <span className="absolute -bottom-4 left-0 text-[9px] text-red-500 font-semibold">{errors.time}</span>}
@@ -677,7 +677,7 @@ const QuickBookingForm = ({
                                             max="5"
                                             value={formData.vehicleCount}
                                             onChange={handleChange}
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all text-white backdrop-blur-md shadow-sm h-[40px]"
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-white backdrop-blur-md shadow-sm h-[40px]"
                                         />
                                     </div>
                                 </div>
@@ -691,7 +691,7 @@ const QuickBookingForm = ({
                                             min="1"
                                             value={formData.passengers}
                                             onChange={handleChange}
-                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all text-white backdrop-blur-md shadow-sm h-[40px]"
+                                            className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-white backdrop-blur-md shadow-sm h-[40px]"
                                         />
                                     </div>
                                 </div>
@@ -714,7 +714,7 @@ const QuickBookingForm = ({
                                                 placeholder="Your Name"
                                                 value={formData.name}
                                                 onChange={handleChange}
-                                                className={`w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all text-white placeholder-white/50 backdrop-blur-md shadow-sm h-[40px] ${errors.name ? 'border-red-500 bg-red-500/10' : ''}`}
+                                                className={`w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-white placeholder-white/50 backdrop-blur-md shadow-sm h-[40px] ${errors.name ? 'border-red-500 bg-red-500/10' : ''}`}
                                             />
                                         </div>
                                         {errors.name && <span className="text-[9px] text-red-500 mt-0.5 ml-1 block font-semibold">{errors.name}</span>}
@@ -729,7 +729,7 @@ const QuickBookingForm = ({
                                                 placeholder="email@example.com"
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                className={`w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all text-white placeholder-white/50 backdrop-blur-md shadow-sm h-[40px] ${errors.email ? 'border-red-500 bg-red-500/10' : ''}`}
+                                                className={`w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-white placeholder-white/50 backdrop-blur-md shadow-sm h-[40px] ${errors.email ? 'border-red-500 bg-red-500/10' : ''}`}
                                             />
                                         </div>
                                         {errors.email && <span className="text-[9px] text-red-500 mt-0.5 ml-1 block font-semibold">{errors.email}</span>}
@@ -744,7 +744,7 @@ const QuickBookingForm = ({
                                                 placeholder="+966 50..."
                                                 value={formData.phone}
                                                 onChange={handleChange}
-                                                className={`w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 transition-all text-white placeholder-white/50 backdrop-blur-md shadow-sm h-[40px] ${errors.phone ? 'border-red-500 bg-red-500/10' : ''}`}
+                                                className={`w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 pl-9 text-xs outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all text-white placeholder-white/50 backdrop-blur-md shadow-sm h-[40px] ${errors.phone ? 'border-red-500 bg-red-500/10' : ''}`}
                                             />
                                         </div>
                                         {errors.phone && <span className="text-[9px] text-red-500 mt-0.5 ml-1 block font-semibold">{errors.phone}</span>}

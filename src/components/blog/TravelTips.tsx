@@ -31,7 +31,7 @@ export default function TravelTips() {
             <div className="container">
                 <FadeIn>
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <span className="text-gold-500 font-bold tracking-widest uppercase text-sm mb-3 block">Expert Advice</span>
+                        <span className="text-primary-500 font-bold tracking-widest uppercase text-sm mb-3 block">Expert Advice</span>
                         <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Essential Travel Tips</h2>
                         <p className="text-slate-500 text-lg font-light">
                             Maximize your spiritual experience with these key recommendations for a smooth and hassle-free journey.

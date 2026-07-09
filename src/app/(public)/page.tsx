@@ -14,7 +14,6 @@ import UnifiedBookingWidget from '@/components/home/UnifiedBookingWidget';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import FleetShowcase from '@/components/home/FleetShowcase';
 import PilgrimExperiences from '@/components/home/PilgrimExperiences';
-import SEOArticles from '@/components/home/SEOArticles';
 
 
 
@@ -86,15 +85,12 @@ export default async function Home() {
         <PilgrimExperiences />
       </ScrollReveal>
 
-      {/* 8. SEO & Content (Replaces ExpandedSEO & Articles) */}
-      <SEOArticles />
-
       {/* 9. Final CTA */}
       <section className="relative py-24 bg-[#0F172A] overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 pattern-grid-fade opacity-10 pointer-events-none" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/4 pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
           <ScrollReveal>
@@ -105,7 +101,7 @@ export default async function Home() {
             
             <h2 className="text-4xl md:text-6xl font-bold font-poppins text-white mb-6 leading-tight">
               Ready for Your <br className="hidden md:block"/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">Spiritual Journey?</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-200">Spiritual Journey?</span>
             </h2>
             
             <p className="text-xl text-slate-300 font-inter mb-10 max-w-2xl mx-auto leading-relaxed">

@@ -82,9 +82,8 @@ const formatPriceRow = (booking: BookingData) => {
     return `<tr>
         <td style="padding: 15px 20px; border-bottom: 1px solid #eee; width: 40%; color: #666;">
             <div style="font-size: 12px; text-transform: uppercase;">Total Price</div>
-            <div style="font-family: 'Amiri', serif; font-size: 12px;">السعر الإجمالي</div>
         </td>
-        <td style="padding: 15px 20px; border-bottom: 1px solid #eee; font-weight: bold; color: #D4AF37; font-size: 18px;">
+        <td style="padding: 15px 20px; border-bottom: 1px solid #eee; font-weight: bold; color: #0F172A; font-size: 18px;">
             ${booking.price}
         </td>
     </tr>`;
@@ -153,7 +152,7 @@ export const sendBookingConfirmationEmail = async (booking: BookingData) => {
     const htmlContent = getBookingConfirmationTemplate(booking, templateString);
 
     // 3. Bilingual Subject
-    const subject = `Booking Confirmation #${booking.id} | تأكيد الحجز`;
+    const subject = `Booking Confirmation #${booking.id}`;
 
     // 4. Send
     return await sendEmail({

@@ -138,11 +138,11 @@ export default function VehicleRecommendation() {
 
                                     <div className="grid grid-cols-2 gap-4 mb-8">
                                         <div className="flex items-center gap-2 text-sm text-slate-700 font-medium bg-white px-3 py-2 rounded-lg border border-slate-200">
-                                            <Users size={18} className="text-gold" />
+                                            <Users size={18} className="text-primary" />
                                             {activeData.capacity}
                                         </div>
                                         <div className="flex items-center gap-2 text-sm text-slate-700 font-medium bg-white px-3 py-2 rounded-lg border border-slate-200">
-                                            <Briefcase size={18} className="text-gold" />
+                                            <Briefcase size={18} className="text-primary" />
                                             {activeData.luggage}
                                         </div>
                                     </div>

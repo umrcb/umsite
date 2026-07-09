@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
                                 <Shield size={36} strokeWidth={1.5} />
                             </div>
                             <h3 className="text-xl font-bold font-poppins mb-2 text-[#0F172A]">Safe & Trusted</h3>
-                            <p className="text-primary font-bold font-reem-kufi mb-4 text-base">نقل آمن وموثوق</p>
+
                             <p className="text-[#475569] font-inter leading-relaxed">
                                 Officially licensed chauffeurs & well-maintained vehicles. Your safety is our highest priority.
                             </p>
@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
                                 <Clock size={36} strokeWidth={1.5} />
                             </div>
                             <h3 className="text-xl font-bold font-poppins mb-2 text-[#0F172A]">Punctual Transfers</h3>
-                            <p className="text-primary font-bold font-reem-kufi mb-4 text-base">دقة في المواعيد</p>
+
                             <p className="text-[#475569] font-inter leading-relaxed">
                                 We track your flight to ensure timely pickups. Reliable airport service available 24/7.
                             </p>
@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
                                 <Heart size={36} strokeWidth={1.5} />
                             </div>
                             <h3 className="text-xl font-bold font-poppins mb-2 text-[#0F172A]">VIP Hospitality</h3>
-                            <p className="text-primary font-bold font-reem-kufi mb-4 text-base">ضيافة وراحة VIP</p>
+
                             <p className="text-[#475569] font-inter leading-relaxed">
                                 Spacious GMC Yukons & luxury vans. We serve the guests of Allah with utmost respect.
                             </p>

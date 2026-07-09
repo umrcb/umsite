@@ -109,7 +109,7 @@ export default function PricingFleetShowcase() {
                             className="flex-none w-[260px] md:w-[280px] bg-white rounded-2xl border border-slate-100 shadow-sm snap-start flex flex-col relative group hover:shadow-lg hover:border-slate-200 transition-all duration-300"
                         >
                             {vehicle.tag && (
-                                <div className={`absolute top-3 left-3 z-10 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${vehicle.tag.includes('VIP') ? 'bg-gold text-white' : 'bg-primary text-white'}`}>
+                                <div className={`absolute top-3 left-3 z-10 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${vehicle.tag.includes('VIP') ? 'bg-primary text-white' : 'bg-primary text-white'}`}>
                                     {vehicle.tag}
                                 </div>
                             )}

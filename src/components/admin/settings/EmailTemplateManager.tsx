@@ -65,7 +65,6 @@ export default function EmailTemplateManager({ settings, onChange }: EmailTempla
                 <tr>
                     <td style="padding: 15px 20px; border-bottom: 1px solid #eee; width: 40%; color: #666;">
                         <div style="font-size: 12px; text-transform: uppercase;">Total Price</div>
-                        <div style="font-family: 'Amiri', serif; font-size: 12px;">السعر الإجمالي</div>
                     </td>
                     <td style="padding: 15px 20px; border-bottom: 1px solid #eee; font-weight: bold; color: #d4af37; font-size: 18px;">
                         450 SAR

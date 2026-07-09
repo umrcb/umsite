@@ -84,7 +84,7 @@ export default function PopularRoutes() {
                                 <div className="flex flex-col items-center">
                                     <div className="w-3 h-3 rounded-full bg-primary" />
                                     <div className="w-[2px] h-8 bg-slate-200 my-1" />
-                                    <div className="w-3 h-3 rounded-full bg-gold" />
+                                    <div className="w-3 h-3 rounded-full bg-primary" />
                                 </div>
                                 <div className="flex flex-col justify-between h-[60px]">
                                     <span className="text-sm font-bold text-navy">{route.from}</span>
@@ -110,7 +110,7 @@ export default function PopularRoutes() {
                                     <div className="flex items-center gap-2 text-slate-500">
                                         <Tag size={16} /> Starting Price
                                     </div>
-                                    <span className="font-semibold text-gold">{route.price}</span>
+                                    <span className="font-semibold text-primary">{route.price}</span>
                                 </div>
                             </div>
 

@@ -68,6 +68,18 @@ export default function UnifiedBookingWidget() {
 
     const currentRoute = routes.find(r => r.id === selectedRoute);
     const currentVehicle = vehicles.find(v => v.id === selectedVehicle);
+    
+    // Clean up duplicate locations (like Madina vs Madinah)
+    const rawLocations = routes.flatMap(r => r.name.split(/\u2192|\u2194| to /).map(s => s.trim()));
+    const normalizedLocations = new Map();
+    rawLocations.forEach(loc => {
+        if (!loc) return;
+        const normalized = loc.toLowerCase().replace('madina ', 'madinah ').replace('madina', 'madinah').replace('ziyyarat', 'ziyarat');
+        if (!normalizedLocations.has(normalized)) {
+            normalizedLocations.set(normalized, loc);
+        }
+    });
+    const uniqueLocations = Array.from(normalizedLocations.values()).sort();
 
     return (
         <div className="w-full max-w-7xl mx-auto px-4 relative z-30 -mt-16 md:-mt-24">
@@ -114,16 +126,29 @@ export default function UnifiedBookingWidget() {
                                     <label className="block text-[10px] font-bold text-[#475569] uppercase tracking-wider mb-1">Pickup Location</label>
                                     <div className="relative">
                                         <MapPin size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-primary" />
-                                        <input type="text" name="pickup" value={formData.pickup} onChange={handleFormChange} placeholder="Jeddah Airport, Makkah..." className="w-full pl-10 pr-3 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                        <select name="pickup" value={formData.pickup} onChange={handleFormChange} className="w-full pl-10 pr-3 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none">
+                                            <option value="">Select Pickup...</option>
+                                            {uniqueLocations.map(loc => (
+                                                <option key={loc} value={loc}>{loc}</option>
+                                            ))}
+                                            <option value="Other">Other (Type in WhatsApp)</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div className="relative">
                                     <label className="block text-[10px] font-bold text-[#475569] uppercase tracking-wider mb-1">Destination</label>
                                     <div className="relative">
                                         <MapPin size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-primary" />
-                                        <input type="text" name="dropoff" value={formData.dropoff} onChange={handleFormChange} placeholder="Makkah Hotel, Madinah..." className="w-full pl-10 pr-3 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                        <select name="dropoff" value={formData.dropoff} onChange={handleFormChange} className="w-full pl-10 pr-3 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none">
+                                            <option value="">Select Destination...</option>
+                                            {uniqueLocations.map(loc => (
+                                                <option key={loc} value={loc}>{loc}</option>
+                                            ))}
+                                            <option value="Other">Other (Type in WhatsApp)</option>
+                                        </select>
                                     </div>
                                 </div>
+
                                 <div className="relative">
                                     <label className="block text-[10px] font-bold text-[#475569] uppercase tracking-wider mb-1">Journey Type</label>
                                     <div className="relative">
@@ -155,10 +180,9 @@ export default function UnifiedBookingWidget() {
                                         <Car size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-primary" />
                                         <select name="vehicle" value={formData.vehicle} onChange={handleFormChange} className="w-full pl-10 pr-3 py-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none">
                                             <option value="">Any Vehicle</option>
-                                            <option value="GMC Yukon">GMC Yukon XL (VIP)</option>
-                                            <option value="Hyundai Staria">Hyundai Staria</option>
-                                            <option value="Toyota Hiace">Toyota Hiace</option>
-                                            <option value="Toyota Camry">Toyota Camry</option>
+                                            {vehicles.map(v => (
+                                                <option key={v.id} value={v.name}>{v.name}</option>
+                                            ))}
                                         </select>
                                     </div>
                                 </div>

@@ -189,12 +189,12 @@ export default function FleetPage() {
             {/* Header Section */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-gold to-yellow-500 bg-clip-text text-transparent font-playfair">Fleet Management</h1>
+                    <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-primary to-yellow-500 bg-clip-text text-transparent font-playfair">Fleet Management</h1>
                     <p className="text-gray-500 dark:text-gray-400 mt-1">Manage your vehicle collection, pricing, and availability</p>
                 </div>
                 <button
                     onClick={() => { resetForm(); setShowModal(true); }}
-                    className="flex items-center gap-2 bg-gold text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-gold/20 hover:scale-105 transition-transform"
+                    className="flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform"
                 >
                     <Plus size={20} />
                     Add Vehicle
@@ -208,7 +208,7 @@ export default function FleetPage() {
                     <input
                         type="text"
                         placeholder="Search vehicles..."
-                        className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-800 focus:ring-2 focus:ring-gold/20 outline-none transition-all dark:text-white"
+                        className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                     />
@@ -218,7 +218,7 @@ export default function FleetPage() {
                     <select
                         value={filterCategory}
                         onChange={(e) => setFilterCategory(e.target.value)}
-                        className="px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-800 focus:ring-2 focus:ring-gold/20 outline-none cursor-pointer dark:text-white"
+                        className="px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-800 bg-gray-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 outline-none cursor-pointer dark:text-white"
                     >
                         {categories.map(cat => (
                             <option key={cat} value={cat}>{cat}</option>
@@ -251,7 +251,7 @@ export default function FleetPage() {
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.9 }}
-                                    className={`bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-gray-200 dark:border-slate-800 rounded-2xl shadow-sm overflow-hidden p-4 group hover:border-gold/50 transition-colors`}
+                                    className={`bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-gray-200 dark:border-slate-800 rounded-2xl shadow-sm overflow-hidden p-4 group hover:border-primary/50 transition-colors`}
                                 >
                                     <div className="relative h-52 mb-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-slate-800">
                                         <Image
@@ -291,12 +291,12 @@ export default function FleetPage() {
                                         <div className="flex justify-between items-start">
                                             <div>
                                                 <h3 className="text-lg font-bold text-slate-900 dark:text-white line-clamp-1">{vehicle.name}</h3>
-                                                <span className="text-xs font-bold text-gold uppercase tracking-wider bg-gold/10 px-2 py-0.5 rounded">
+                                                <span className="text-xs font-bold text-primary uppercase tracking-wider bg-primary/10 px-2 py-0.5 rounded">
                                                     {vehicle.category}
                                                 </span>
                                             </div>
                                             <div className="text-right">
-                                                <div className="font-bold text-lg text-gold">{vehicle.price}</div>
+                                                <div className="font-bold text-lg text-primary">{vehicle.price}</div>
                                                 {vehicle.hourlyRate && (
                                                     <div className="text-xs text-gray-500">{vehicle.hourlyRate}/hr</div>
                                                 )}
@@ -305,11 +305,11 @@ export default function FleetPage() {
 
                                         <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-slate-800 p-2 rounded-lg">
                                             <div className="flex items-center gap-1.5">
-                                                <Users size={16} className="text-gold" />
+                                                <Users size={16} className="text-primary" />
                                                 <span>{vehicle.passengers} Pax</span>
                                             </div>
                                             <div className="flex items-center gap-1.5">
-                                                <Briefcase size={16} className="text-gold" />
+                                                <Briefcase size={16} className="text-primary" />
                                                 <span>{vehicle.luggage} Bags</span>
                                             </div>
                                         </div>
@@ -352,7 +352,7 @@ export default function FleetPage() {
                             </button>
 
                             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-slate-900 dark:text-white font-playfair">
-                                {editingId ? <Edit className="text-gold" /> : <Plus className="text-gold" />}
+                                {editingId ? <Edit className="text-primary" /> : <Plus className="text-primary" />}
                                 {editingId ? 'Edit Vehicle' : 'Add New Vehicle'}
                             </h2>
 
@@ -362,7 +362,7 @@ export default function FleetPage() {
                                         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Vehicle Name</label>
                                         <input
                                             required
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-gold/20 outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                             value={formData.name}
                                             onChange={e => setFormData({ ...formData, name: e.target.value })}
                                             placeholder="e.g. GMC Yukon 2024"
@@ -371,7 +371,7 @@ export default function FleetPage() {
                                     <div className="space-y-2">
                                         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Category</label>
                                         <select
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-gold/20 outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                             value={formData.category}
                                             onChange={e => setFormData({ ...formData, category: e.target.value })}
                                         >
@@ -454,14 +454,14 @@ export default function FleetPage() {
                                                             }
                                                         }
                                                     }}
-                                                    className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gold/10 file:text-gold hover:file:bg-gold/20 transition-all"
+                                                    className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-all"
                                                 />
                                             </div>
                                         </div>
 
                                         {/* URL Input Fallback */}
                                         <input
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-gold/20 outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                             value={formData.image}
                                             onChange={e => setFormData({ ...formData, image: e.target.value })}
                                             placeholder="Or enter image URL manually..."
@@ -486,7 +486,7 @@ export default function FleetPage() {
                                         <input
                                             type="number"
                                             required
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-gold/20 outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                             value={formData.passengers}
                                             onChange={e => setFormData({ ...formData, passengers: parseInt(e.target.value) })}
                                         />
@@ -496,7 +496,7 @@ export default function FleetPage() {
                                         <input
                                             type="number"
                                             required
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-gold/20 outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                             value={formData.luggage}
                                             onChange={e => setFormData({ ...formData, luggage: parseInt(e.target.value) })}
                                         />
@@ -505,7 +505,7 @@ export default function FleetPage() {
                                         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Base Price</label>
                                         <input
                                             required
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-gold/20 outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                             value={formData.price}
                                             onChange={e => setFormData({ ...formData, price: e.target.value })}
                                             placeholder="SAR 150"
@@ -514,7 +514,7 @@ export default function FleetPage() {
                                     <div className="space-y-2">
                                         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Hourly Rate</label>
                                         <input
-                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-gold/20 outline-none transition-all"
+                                            className="w-full p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                             value={formData.hourlyRate}
                                             onChange={e => setFormData({ ...formData, hourlyRate: e.target.value })}
                                             placeholder="SAR 50/hr"
@@ -526,7 +526,7 @@ export default function FleetPage() {
                                     <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Features</label>
                                     <div className="flex gap-2">
                                         <input
-                                            className="flex-1 p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-gold/20 outline-none transition-all"
+                                            className="flex-1 p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                             value={featureInput}
                                             onChange={e => setFeatureInput(e.target.value)}
                                             placeholder="Add a feature (e.g. Free WiFi)"
@@ -566,7 +566,7 @@ export default function FleetPage() {
                                         <input
                                             type="date"
                                             min={new Date().toISOString().split('T')[0]}
-                                            className="flex-1 p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-gold/20 outline-none transition-all"
+                                            className="flex-1 p-2.5 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                             onChange={(e) => {
                                                 if (e.target.value && !formData.unavailableDates?.includes(e.target.value)) {
                                                     setFormData(prev => ({
@@ -607,7 +607,7 @@ export default function FleetPage() {
                                             id="isActive"
                                             checked={formData.isActive}
                                             onChange={e => setFormData({ ...formData, isActive: e.target.checked })}
-                                            className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 checked:border-gold checked:bg-gold transition-all"
+                                            className="peer h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-300 dark:border-slate-600 bg-white dark:bg-slate-700 checked:border-primary checked:bg-primary transition-all"
                                         />
                                         <Check size={14} className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 peer-checked:opacity-100 transition-opacity" />
                                     </div>
@@ -626,7 +626,7 @@ export default function FleetPage() {
                                     </button>
                                     <button
                                         type="submit"
-                                        className="px-6 py-2 bg-gold text-white rounded-lg text-sm font-bold hover:bg-yellow-600 shadow-lg shadow-gold/20 hover:scale-105 transition-all"
+                                        className="px-6 py-2 bg-primary text-white rounded-lg text-sm font-bold hover:bg-yellow-600 shadow-lg shadow-primary/20 hover:scale-105 transition-all"
                                     >
                                         {editingId ? 'Save Changes' : 'Add Vehicle'}
                                     </button>

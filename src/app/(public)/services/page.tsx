@@ -44,15 +44,15 @@ export default function ServicesPage() {
     const serviceFAQs = [
         {
             question: "How do I book a taxi from Jeddah Airport to Makkah?",
-            answer: <span>Booking is simple. You can reserve your <Link href="/services/jeddah-airport-transfer" className="text-gold hover:underline">Jeddah Airport to Makkah taxi</Link> online in advance. We monitor your flight arrival and our driver meets you at the terminal with a name sign.</span>
+            answer: <span>Booking is simple. You can reserve your <Link href="/services/jeddah-airport-transfer" className="text-primary hover:underline">Jeddah Airport to Makkah taxi</Link> online in advance. We monitor your flight arrival and our driver meets you at the terminal with a name sign.</span>
         },
         {
             question: "What is the best transport for Umrah families?",
-            answer: <span>For families, we highly recommend our <Link href="/fleet/gmc-yukon-at4" className="text-gold hover:underline">GMC Yukon XL</Link> or <Link href="/fleet/hyundai-staria" className="text-gold hover:underline">Hyundai Staria</Link>. These spacious vehicles offer ample luggage space and AC comfort for the journey to Makkah.</span>
+            answer: <span>For families, we highly recommend our GMC Yukon XL or Hyundai Staria. These spacious vehicles offer ample luggage space and AC comfort for the journey to Makkah.</span>
         },
         {
             question: "Do you offer direct Makkah to Madinah taxi services?",
-            answer: <span>Yes, our <Link href="/services/makkah-madinah-taxi" className="text-gold hover:underline">Makkah to Madinah private taxi</Link> service is the most convenient option. Unlike the train or bus, we offer door-to-door service from your Makkah hotel lobby directly to your Madinah hotel.</span>
+            answer: <span>Yes, our <Link href="/services/makkah-madinah-taxi" className="text-primary hover:underline">Makkah to Madinah private taxi</Link> service is the most convenient option. Unlike the train or bus, we offer door-to-door service from your Makkah hotel lobby directly to your Madinah hotel.</span>
         },
         {
             question: "Can I stop at Miqat on the way to Makkah?",
@@ -60,11 +60,11 @@ export default function ServicesPage() {
         },
         {
             question: "Is the taxi fare fixed or metered?",
-            answer: <span>Our prices are fixed and transparent. You will know the exact cost of your <Link href="/booking" className="text-gold hover:underline">Umrah transport booking</Link> upfront, with no hidden fees, parking, or toll charges.</span>
+            answer: <span>Our prices are fixed and transparent. You will know the exact cost of your <Link href="/booking" className="text-primary hover:underline">Umrah transport booking</Link> upfront, with no hidden fees, parking, or toll charges.</span>
         },
         {
             question: "Do you provide Ziyarat tours in Makkah and Madinah?",
-            answer: <span>Yes, we offer comprehensive <Link href="/services/ziyarat-tours" className="text-gold hover:underline">Ziyarat packages</Link>. Visit historical sites like Jabal Al-Nour, Masjid Quba, and Mount Uhud in the comfort of a private vehicle with a knowledgeable driver.</span>
+            answer: <span>Yes, we offer comprehensive <Link href="/services/ziyarat-tours" className="text-primary hover:underline">Ziyarat packages</Link>. Visit historical sites like Jabal Al-Nour, Masjid Quba, and Mount Uhud in the comfort of a private vehicle with a knowledgeable driver.</span>
         }
     ];
 

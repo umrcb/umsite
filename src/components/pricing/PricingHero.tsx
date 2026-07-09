@@ -33,8 +33,8 @@ export default function PricingHero() {
                         </div>
 
                         {/* Trust Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 shadow-sm">
-                            <Star size={16} className="text-gold fill-gold" />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 shadow-sm">
+                            <Star size={16} className="text-primary fill-primary" />
                             <span className="text-sm font-bold text-navy">Transparent Pricing • No Hidden Charges</span>
                         </div>
 

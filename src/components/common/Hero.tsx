@@ -69,7 +69,7 @@ const Hero: React.FC<HeroProps> = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40 z-[1]" />
 
                 {/* Subtle light leak for spiritual feel */}
-                <div className="absolute top-0 right-1/4 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent opacity-60 mix-blend-screen z-[1]" />
+                <div className="absolute top-0 right-1/4 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-60 mix-blend-screen z-[1]" />
 
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.04] mix-blend-overlay z-[1]" />
             </div>
@@ -101,9 +101,9 @@ const Hero: React.FC<HeroProps> = ({
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className={cn("inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-gold text-xs font-bold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(212,175,55,0.15)]", !isTwoColumn && "mx-auto")}
+                                className={cn("inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-primary text-xs font-bold tracking-[0.2em] uppercase shadow-[0_0_30px_rgba(212,175,55,0.15)]", !isTwoColumn && "mx-auto")}
                             >
-                                <span className="w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(212,175,55,0.8)] animate-pulse" />
+                                <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(212,175,55,0.8)] animate-pulse" />
                                 {badge}
                             </motion.div>
                         )}
@@ -139,7 +139,7 @@ const Hero: React.FC<HeroProps> = ({
                                     href={ctaLink}
                                     variant="primary"
                                     size="lg"
-                                    className="h-14 px-10 text-lg font-bold btn-gold shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all"
+                                    className="h-14 px-10 text-lg font-bold btn-primary shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all"
                                 >
                                     {ctaText}
                                     <ArrowRight className="ml-2 w-5 h-5" />
@@ -150,7 +150,7 @@ const Hero: React.FC<HeroProps> = ({
                                     href={secondaryCtaLink}
                                     variant="outline"
                                     size="lg"
-                                    className="h-14 px-8 text-lg text-white border-white/20 hover:bg-white/10 hover:border-gold/40 hover:text-gold transition-colors"
+                                    className="h-14 px-8 text-lg text-white border-white/20 hover:bg-white/10 hover:border-primary/40 hover:text-primary transition-colors"
                                 >
                                     {secondaryCtaText}
                                 </GlassButton>

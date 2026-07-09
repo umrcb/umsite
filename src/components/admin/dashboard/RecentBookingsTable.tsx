@@ -40,7 +40,7 @@ export default function RecentBookingsTable({ bookings, onStatusChange }: Recent
                     <Clock size={20} className="text-blue-500" />
                     Recent Bookings
                 </h3>
-                <Link href="/admin/bookings" className="text-sm font-semibold text-gold hover:text-gold/80 transition-colors flex items-center gap-1">
+                <Link href="/admin/bookings" className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors flex items-center gap-1">
                     View All <ArrowUpRightIcon size={14} />
                 </Link>
             </div>
@@ -92,11 +92,11 @@ export default function RecentBookingsTable({ bookings, onStatusChange }: Recent
                                         inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wide
                                         ${booking.status === 'confirmed' ? 'bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-500/20' :
                                             booking.status === 'cancelled' ? 'bg-red-100 dark:bg-red-500/10 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-500/20' :
-                                                'bg-gold/10 dark:bg-gold/10 text-gold dark:text-gold border border-gold/20 dark:border-gold/20'}
+                                                'bg-primary/10 dark:bg-primary/10 text-primary dark:text-primary border border-primary/20 dark:border-primary/20'}
                                     `}>
                                         <span className={`w-1.5 h-1.5 rounded-full ${booking.status === 'confirmed' ? 'bg-emerald-500' :
                                             booking.status === 'cancelled' ? 'bg-red-500' :
-                                                'bg-gold'
+                                                'bg-primary'
                                             }`} />
                                         {booking.status || 'Pending'}
                                     </span>

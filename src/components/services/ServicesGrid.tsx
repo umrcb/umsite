@@ -93,9 +93,9 @@ export default function ServicesGrid() {
                         Our Premium Services
                     </h2>
                     <div className="flex items-center justify-center gap-2 mb-6">
-                        <div className="h-[1px] w-12 bg-gold/50" />
-                        <div className="w-2 h-2 rounded-full bg-gold" />
-                        <div className="h-[1px] w-12 bg-gold/50" />
+                        <div className="h-[1px] w-12 bg-primary/50" />
+                        <div className="w-2 h-2 rounded-full bg-primary" />
+                        <div className="h-[1px] w-12 bg-primary/50" />
                     </div>
                 </div>
 
@@ -148,7 +148,7 @@ export default function ServicesGrid() {
                                 <div className="mt-auto pt-6 border-t border-slate-100">
                                     <Link 
                                         href={service.link}
-                                        className="inline-flex items-center gap-2 text-gold font-bold hover:text-primary transition-colors group/link"
+                                        className="inline-flex items-center gap-2 text-primary font-bold hover:text-primary transition-colors group/link"
                                     >
                                         Learn More
                                         <ArrowRight size={18} className="group-hover/link:translate-x-2 transition-transform" />

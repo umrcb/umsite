@@ -13,7 +13,7 @@ export default function FleetHero() {
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white" />
                 <div className="absolute top-0 right-0 w-[80%] md:w-[60%] h-full bg-gradient-to-l from-primary/5 via-primary/5 to-transparent rounded-bl-[120px]" />
-                <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
+                <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
             </div>
 
             <div className="container mx-auto px-4 lg:px-8 relative z-20">
@@ -34,8 +34,8 @@ export default function FleetHero() {
                         </div>
 
                         {/* Trust Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 shadow-sm">
-                            <Star size={16} className="text-gold fill-gold" />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 shadow-sm">
+                            <Star size={16} className="text-primary fill-primary" />
                             <span className="text-sm font-medium text-navy">Premium Fleet For Your Comfort</span>
                         </div>
 

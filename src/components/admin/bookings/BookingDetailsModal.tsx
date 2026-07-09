@@ -52,7 +52,7 @@ export default function BookingDetailsModal({ booking, isOpen, onClose, onStatus
                                 {booking.status}
                             </span>
                         </div>
-                        <p className="text-sm text-gold font-mono">ID: #{booking.id}</p>
+                        <p className="text-sm text-primary font-mono">ID: #{booking.id}</p>
                     </div>
                     <button
                         onClick={onClose}
@@ -67,7 +67,7 @@ export default function BookingDetailsModal({ booking, isOpen, onClose, onStatus
                     {/* Journey Section */}
                     <section>
                         <h3 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                            <MapPin size={14} className="text-gold" /> Journey Information
+                            <MapPin size={14} className="text-primary" /> Journey Information
                         </h3>
                         <div className="bg-gray-50 dark:bg-slate-950/50 rounded-xl p-5 space-y-4 border border-gray-100 dark:border-slate-800">
                             <div className="flex flex-col md:flex-row gap-6">
@@ -85,7 +85,7 @@ export default function BookingDetailsModal({ booking, isOpen, onClose, onStatus
                                 <div>
                                     <label className="text-xs text-gray-500 font-bold uppercase mb-1 block">Date</label>
                                     <div className="flex items-center gap-2 text-slate-900 dark:text-white font-medium">
-                                        <Calendar size={16} className="text-gold" />
+                                        <Calendar size={16} className="text-primary" />
                                         {formattedDate}
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@ export default function BookingDetailsModal({ booking, isOpen, onClose, onStatus
                         {/* Customer Info */}
                         <section>
                             <h3 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                <User size={14} className="text-gold" /> Customer Details
+                                <User size={14} className="text-primary" /> Customer Details
                             </h3>
                             <div className="space-y-4">
                                 <div>
@@ -112,11 +112,11 @@ export default function BookingDetailsModal({ booking, isOpen, onClose, onStatus
                                 <div className="space-y-2">
                                     <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                                         <Mail size={16} className="text-slate-400" />
-                                        <a href={`mailto:${booking.email}`} className="hover:text-gold hover:underline transition-colors">{booking.email}</a>
+                                        <a href={`mailto:${booking.email}`} className="hover:text-primary hover:underline transition-colors">{booking.email}</a>
                                     </div>
                                     <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
                                         <Phone size={16} className="text-slate-400" />
-                                        <a href={`tel:${booking.phone}`} className="hover:text-gold hover:underline transition-colors">{booking.phone}</a>
+                                        <a href={`tel:${booking.phone}`} className="hover:text-primary hover:underline transition-colors">{booking.phone}</a>
                                     </div>
                                 </div>
                             </div>
@@ -125,16 +125,16 @@ export default function BookingDetailsModal({ booking, isOpen, onClose, onStatus
                         {/* Vehicle Info */}
                         <section>
                             <h3 className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
-                                <Car size={14} className="text-gold" /> Vehicle & Requirements
+                                <Car size={14} className="text-primary" /> Vehicle & Requirements
                             </h3>
                             <div className="space-y-3">
                                 <div>
                                     <p className="font-bold text-slate-900 dark:text-white text-lg">
                                         {booking.vehicle || 'Not selected'}
-                                        {booking.vehicleCount && booking.vehicleCount > 1 && <span className="text-gold ml-2 text-sm">x{booking.vehicleCount}</span>}
+                                        {booking.vehicleCount && booking.vehicleCount > 1 && <span className="text-primary ml-2 text-sm">x{booking.vehicleCount}</span>}
                                     </p>
                                     {booking.selectedVehicles && booking.selectedVehicles.length > 0 && (
-                                        <div className="text-xs text-gray-500 mt-1 pl-2 border-l-2 border-gold/50">
+                                        <div className="text-xs text-gray-500 mt-1 pl-2 border-l-2 border-primary/50">
                                             {booking.selectedVehicles.map((v, i) => (
                                                 <div key={i}>{v.name || 'Vehicle'} (x{v.quantity})</div>
                                             ))}
@@ -151,15 +151,15 @@ export default function BookingDetailsModal({ booking, isOpen, onClose, onStatus
 
                     {/* Rating & Review */}
                     {booking.rating && (
-                        <section className="bg-gold/5 dark:bg-gold/10 p-5 rounded-xl border border-gold/20">
-                            <h3 className="text-xs font-bold text-gold mb-3 uppercase tracking-widest flex items-center gap-2">
+                        <section className="bg-primary/5 dark:bg-primary/10 p-5 rounded-xl border border-primary/20">
+                            <h3 className="text-xs font-bold text-primary mb-3 uppercase tracking-widest flex items-center gap-2">
                                 <span className="text-lg">⭐</span> Customer Feedback
                             </h3>
                             <div className="flex items-center gap-1 mb-2">
                                 {[1, 2, 3, 4, 5].map((star) => (
                                     <svg
                                         key={star}
-                                        className={`w-5 h-5 ${star <= (booking.rating || 0) ? 'text-gold fill-gold' : 'text-gray-300 dark:text-gray-700'}`}
+                                        className={`w-5 h-5 ${star <= (booking.rating || 0) ? 'text-primary fill-primary' : 'text-gray-300 dark:text-gray-700'}`}
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 24 24"
                                         fill="none"
@@ -263,7 +263,7 @@ export default function BookingDetailsModal({ booking, isOpen, onClose, onStatus
 function getStatusBadge(status: string) {
     switch (status) {
         case 'confirmed': return 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20';
-        case 'pending': return 'bg-gold/10 text-gold border-gold/20';
+        case 'pending': return 'bg-primary/10 text-primary border-primary/20';
         case 'completed': return 'bg-secondary/10 text-secondary dark:text-gray-300 border-secondary/20';
         case 'cancelled': return 'bg-red-500/10 text-red-600 border-red-500/20';
         default: return 'bg-gray-100 text-gray-600 border-gray-200';

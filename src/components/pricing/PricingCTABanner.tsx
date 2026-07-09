@@ -13,7 +13,7 @@ export default function PricingCTABanner() {
             <div className="absolute inset-0 z-0">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/40 to-transparent" />
                 <div className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-primary/20 blur-[120px] rounded-full" />
-                <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-gold/10 blur-[100px] rounded-full" />
+                <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/10 blur-[100px] rounded-full" />
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=1200')] bg-cover bg-center opacity-10 mix-blend-overlay" />
             </div>
 
@@ -35,7 +35,7 @@ export default function PricingCTABanner() {
                     <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 w-full max-w-3xl">
                         <Link 
                             href="/booking" 
-                            className="w-full sm:w-auto flex-1 sm:flex-none px-6 py-4 rounded-xl bg-gold text-navy font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg flex items-center justify-center gap-2"
+                            className="w-full sm:w-auto flex-1 sm:flex-none px-6 py-4 rounded-xl bg-primary text-navy font-bold text-base hover:bg-white transition-colors duration-300 shadow-lg flex items-center justify-center gap-2"
                         >
                             <Calendar size={18} />
                             Book Now

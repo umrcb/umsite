@@ -41,16 +41,16 @@ export default function FleetShowcase() {
         <section className="py-24 bg-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 pattern-grid-fade opacity-5 pointer-events-none" />
-            <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="container mx-auto px-4 mb-16 relative z-10">
                 <div className="text-center max-w-3xl mx-auto">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 text-gold text-xs font-bold uppercase tracking-widest mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6">
                         Premium Fleet
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold font-poppins text-[#0F172A] mb-6">
-                        Travel in <span className="text-gold">Absolute Comfort</span>
+                        Travel in <span className="text-primary">Absolute Comfort</span>
                     </h2>
                     <p className="text-[#475569] text-lg leading-relaxed font-inter">
                         Meticulously maintained vehicles designed for your comfort, safety, and style.

@@ -19,7 +19,7 @@ export default function PilgrimExperiences() {
                 {/* Header Section */}
                 <div className="text-center mb-16">
                     <FadeIn>
-                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 text-gold text-xs font-bold uppercase tracking-widest mb-6">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6">
                             Pilgrim Reviews
                         </div>
 
@@ -39,7 +39,7 @@ export default function PilgrimExperiences() {
                                     <div className="text-6xl font-bold text-[#0F172A] font-poppins">{averageRating}</div>
                                     <div className="flex gap-1 justify-center mt-2">
                                         {[...Array(5)].map((_, i) => (
-                                            <Star key={i} size={20} className="fill-gold text-gold" />
+                                            <Star key={i} size={20} className="fill-primary text-primary" />
                                         ))}
                                     </div>
                                     <div className="text-sm text-[#475569] font-medium mt-2">{totalReviews} Verified Reviews</div>
@@ -83,7 +83,7 @@ export default function PilgrimExperiences() {
                                         <Star
                                             key={i}
                                             size={16}
-                                            className={`${i < testimonial.rating ? "fill-gold text-gold" : "text-[#E2E8F0]"}`}
+                                            className={`${i < testimonial.rating ? "fill-primary text-primary" : "text-[#E2E8F0]"}`}
                                         />
                                     ))}
                                 </div>

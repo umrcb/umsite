@@ -148,7 +148,7 @@ export default function UsersPage() {
                 </div>
                 <button
                     onClick={openCreateModal}
-                    className="flex items-center gap-2 px-4 py-2 bg-gold text-white rounded-lg hover:bg-yellow-600 transition-colors shadow-lg shadow-gold/20 font-bold"
+                    className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-yellow-600 transition-colors shadow-lg shadow-primary/20 font-bold"
                 >
                     <Plus size={20} />
                     Add User
@@ -164,14 +164,14 @@ export default function UsersPage() {
                         placeholder="Search by name or email..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-gold outline-none transition-all"
+                        className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-primary outline-none transition-all"
                     />
                 </div>
                 <div className="flex gap-2">
                     <select
                         value={filterRole}
                         onChange={(e) => setFilterRole(e.target.value)}
-                        className="px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-gold outline-none cursor-pointer"
+                        className="px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-primary outline-none cursor-pointer"
                     >
                         <option value="all">All Roles</option>
                         <option value="manager">Managers</option>
@@ -201,7 +201,7 @@ export default function UsersPage() {
 
             {loading ? (
                 <div className="flex justify-center py-20">
-                    <Loader2 size={40} className="animate-spin text-gold" />
+                    <Loader2 size={40} className="animate-spin text-primary" />
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -213,7 +213,7 @@ export default function UsersPage() {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, scale: 0.9 }}
-                                className="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow hover:border-gold/30"
+                                className="bg-white dark:bg-slate-900 rounded-xl p-6 border border-gray-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow hover:border-primary/30"
                             >
                                 <div className="flex justify-between items-start mb-4">
                                     <div className={`p-3 rounded-full ${user.role === 'admin' ? 'bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400' :
@@ -233,7 +233,7 @@ export default function UsersPage() {
                                         </Link>
                                         <button
                                             onClick={() => handleEdit(user)}
-                                            className="text-gray-400 hover:text-gold transition-colors text-sm font-medium"
+                                            className="text-gray-400 hover:text-primary transition-colors text-sm font-medium"
                                         >
                                             <Edit size={18} />
                                         </button>
@@ -290,7 +290,7 @@ export default function UsersPage() {
                                         required
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-gold outline-none transition-all"
+                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-primary outline-none transition-all"
                                     />
                                 </div>
                                 <div>
@@ -300,7 +300,7 @@ export default function UsersPage() {
                                         required
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-gold outline-none transition-all"
+                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-primary outline-none transition-all"
                                     />
                                 </div>
                                 <div>
@@ -312,7 +312,7 @@ export default function UsersPage() {
                                         required={!editingId}
                                         value={formData.password}
                                         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-gold outline-none transition-all"
+                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-primary outline-none transition-all"
                                         placeholder={editingId ? "••••••••" : ""}
                                     />
                                 </div>
@@ -321,7 +321,7 @@ export default function UsersPage() {
                                     <select
                                         value={formData.role}
                                         onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-gold outline-none transition-all"
+                                        className="w-full px-4 py-2 rounded-lg border border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-primary outline-none transition-all"
                                     >
                                         <option value="manager">Manager</option>
                                         <option value="operational_manager">Operational Manager</option>
@@ -340,7 +340,7 @@ export default function UsersPage() {
                                     <button
                                         type="submit"
                                         disabled={submitting}
-                                        className="flex-1 px-4 py-2 rounded-lg bg-gold text-white hover:bg-yellow-600 disabled:opacity-70 transition-colors shadow-lg shadow-gold/20 font-bold"
+                                        className="flex-1 px-4 py-2 rounded-lg bg-primary text-white hover:bg-yellow-600 disabled:opacity-70 transition-colors shadow-lg shadow-primary/20 font-bold"
                                     >
                                         {submitting ? 'Saving...' : (editingId ? 'Update User' : 'Create User')}
                                     </button>

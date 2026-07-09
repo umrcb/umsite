@@ -107,12 +107,7 @@
     @apply bg-primary text-white;
   }
 
-  .btn-gold {
-    @apply bg-[#C9A227] text-white rounded-[14px] font-semibold transition-all duration-300 px-6 py-3 inline-flex items-center justify-center;
-  }
-  .btn-gold:hover {
-    @apply bg-[#B3871D];
-  }
+
 
   /* Navigation Glass */
   .nav-glass {

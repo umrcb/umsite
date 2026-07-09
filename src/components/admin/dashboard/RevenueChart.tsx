@@ -17,7 +17,7 @@ export default function RevenueChart({ data }: RevenueChartProps) {
             <div className="flex items-center justify-between mb-8">
                 <div>
                     <h3 className="text-xl font-bold text-navy-900 dark:text-white flex items-center gap-2 font-playfair">
-                        <TrendingUp size={20} className="text-gold" />
+                        <TrendingUp size={20} className="text-primary" />
                         Revenue Analytics
                     </h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Monthly performance overview</p>

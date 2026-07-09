@@ -261,7 +261,7 @@ export default function BookingsPage() {
     const getStatusBadge = (status: string) => {
         switch (status) {
             case 'confirmed': return 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20';
-            case 'pending': return 'bg-gold/10 text-gold border-gold/20';
+            case 'pending': return 'bg-primary/10 text-primary border-primary/20';
             case 'completed': return 'bg-navy-500/10 text-navy-500 border-navy-500/20 dark:text-navy-300';
             case 'cancelled': return 'bg-red-500/10 text-red-500 border-red-500/20';
             default: return 'bg-gray-500/10 text-gray-500 border-gray-500/20';
@@ -271,7 +271,7 @@ export default function BookingsPage() {
     if (!isLoaded) {
         return (
             <div className="flex items-center justify-center min-h-[400px]">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gold"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
             </div>
         );
     }
@@ -312,7 +312,7 @@ export default function BookingsPage() {
                         <input
                             type="text"
                             placeholder="Search bookings..."
-                            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none transition-all text-navy-900 dark:text-white placeholder:text-gray-400"
+                            className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-navy-900 dark:text-white placeholder:text-gray-400"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                         />
@@ -323,7 +323,7 @@ export default function BookingsPage() {
                         <div className="relative">
                             <input
                                 type="date"
-                                className="pl-3 pr-2 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-sm focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none text-navy-900 dark:text-white"
+                                className="pl-3 pr-2 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-navy-900 dark:text-white"
                                 value={startDate}
                                 onChange={(e) => setStartDate(e.target.value)}
                                 title="Start Date"
@@ -333,7 +333,7 @@ export default function BookingsPage() {
                         <div className="relative">
                             <input
                                 type="date"
-                                className="pl-3 pr-2 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-sm focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none text-navy-900 dark:text-white"
+                                className="pl-3 pr-2 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-navy-900 dark:text-white"
                                 value={endDate}
                                 onChange={(e) => setEndDate(e.target.value)}
                                 title="End Date"
@@ -345,7 +345,7 @@ export default function BookingsPage() {
                     <select
                         value={specificVehicle}
                         onChange={(e) => setSpecificVehicle(e.target.value)}
-                        className="px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-sm focus:ring-2 focus:ring-gold/20 focus:border-gold outline-none cursor-pointer max-w-[200px] text-navy-900 dark:text-white"
+                        className="px-3 py-2 rounded-lg border border-gray-200 dark:border-navy-700 bg-gray-50 dark:bg-navy-950/50 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none cursor-pointer max-w-[200px] text-navy-900 dark:text-white"
                     >
                         <option value="All Vehicles">All Vehicles</option>
                         {uniqueVehicles.map(v => (
@@ -360,7 +360,7 @@ export default function BookingsPage() {
                             key={status}
                             onClick={() => setFilter(status)}
                             className={`px-4 py-2 rounded-lg text-sm font-bold tracking-wide transition-colors whitespace-nowrap ${filter === status
-                                ? 'bg-navy-900 dark:bg-gold text-white dark:text-navy-900 shadow-md'
+                                ? 'bg-navy-900 dark:bg-primary text-white dark:text-navy-900 shadow-md'
                                 : 'bg-gray-50 dark:bg-navy-800 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-navy-700'
                                 }`}
                         >
@@ -415,7 +415,7 @@ export default function BookingsPage() {
                                             >
                                                 <td className="p-4">
                                                     <div className="flex flex-col gap-1">
-                                                        <span className="font-mono text-xs text-gold">#{booking.id.slice(0, 8)}</span>
+                                                        <span className="font-mono text-xs text-primary">#{booking.id.slice(0, 8)}</span>
                                                         <div className="flex items-center gap-2">
                                                             <span className="font-bold text-navy-900 dark:text-white">{booking.name}</span>
                                                         </div>
@@ -430,7 +430,7 @@ export default function BookingsPage() {
                                                 <td className="p-4">
                                                     <div className="flex flex-col gap-2">
                                                         <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
-                                                            <MapPin size={14} className="text-gold" />
+                                                            <MapPin size={14} className="text-primary" />
                                                             <span>{booking.pickup}</span>
                                                         </div>
                                                         <div className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
@@ -466,7 +466,7 @@ export default function BookingsPage() {
                                                             </span>
                                                         </div>
                                                         {booking.notes && (
-                                                            <div className="text-xs text-gold bg-gold/10 px-1.5 py-0.5 rounded mt-1 break-words max-w-[200px]">
+                                                            <div className="text-xs text-primary bg-primary/10 px-1.5 py-0.5 rounded mt-1 break-words max-w-[200px]">
                                                                 {booking.notes}
                                                             </div>
                                                         )}
@@ -486,7 +486,7 @@ export default function BookingsPage() {
                                                         {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
                                                     </span>
                                                     {booking.rating && (
-                                                        <div className="mt-1 flex items-center gap-1 text-[10px] text-gold font-bold">
+                                                        <div className="mt-1 flex items-center gap-1 text-[10px] text-primary font-bold">
                                                             <span>⭐ {booking.rating}/5</span>
                                                         </div>
                                                     )}

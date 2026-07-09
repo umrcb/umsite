@@ -22,7 +22,7 @@ export default async function SEOArticles() {
                             The Complete Guide to <span className="text-primary">Umrah Transportation</span>
                         </h2>
                         <p className="text-lg text-[#475569] font-inter leading-relaxed">
-                            Planning your spiritual journey? Navigating Saudi Arabia's transport options can be overwhelming. <strong>Umrah Cabs</strong> provides the most reliable <Link href="/services/jeddah-airport-transfer" className="text-gold font-semibold hover:underline">Jeddah Airport to Makkah taxi</Link> service.
+                            Planning your spiritual journey? Navigating Saudi Arabia's transport options can be overwhelming. <strong>Umrah Cabs</strong> provides the most reliable <Link href="/services/jeddah-airport-transfer" className="text-primary font-semibold hover:underline">Jeddah Airport to Makkah taxi</Link> service.
                         </p>
                     </div>
 
@@ -50,9 +50,9 @@ export default async function SEOArticles() {
                                         While the Haramain Train is modern, a private car provides a superior door-to-door experience for families.
                                     </p>
                                     <ul className="space-y-2 text-sm text-[#475569] font-inter">
-                                        <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-gold" /> True Door-to-Door Service</li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-gold" /> Flexible 24/7 Availability</li>
-                                        <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-gold" /> Zero Luggage Hassles</li>
+                                        <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-primary" /> True Door-to-Door Service</li>
+                                        <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-primary" /> Flexible 24/7 Availability</li>
+                                        <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-primary" /> Zero Luggage Hassles</li>
                                     </ul>
                                 </div>
                             </div>

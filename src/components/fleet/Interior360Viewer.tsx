@@ -30,11 +30,38 @@ function Loader() {
     return (
         <Html center>
             <div className="flex flex-col items-center justify-center p-4 bg-black/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl">
-                <div className="w-12 h-12 border-4 border-gold border-t-transparent rounded-full animate-spin mb-3"></div>
+                <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-3"></div>
                 <div className="text-white font-mono text-sm tracking-widest">{progress.toFixed(0)}% LOADED</div>
             </div>
         </Html>
     );
+}
+
+class TextureErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
+    constructor(props: {children: React.ReactNode}) {
+        super(props);
+        this.state = { hasError: false };
+    }
+    static getDerivedStateFromError() {
+        return { hasError: true };
+    }
+    componentDidCatch(error: Error) {
+        console.error("360 Viewer failed to load texture:", error);
+    }
+    render() {
+        if (this.state.hasError) {
+            return (
+                <Html center>
+                    <div className="flex flex-col items-center justify-center p-6 bg-black/80 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl text-center w-[300px]">
+                        <Info className="w-10 h-10 text-slate-400 mb-3" />
+                        <h4 className="text-white font-bold mb-2">360° View Unavailable</h4>
+                        <p className="text-slate-300 text-sm leading-relaxed">The interior panorama for this vehicle is currently being updated. Please check back later.</p>
+                    </div>
+                </Html>
+            );
+        }
+        return this.props.children;
+    }
 }
 
 export default function Interior360Viewer({ imageUrl, title = "360° Interior Experience" }: Interior360ViewerProps) {
@@ -84,10 +111,12 @@ export default function Interior360Viewer({ imageUrl, title = "360° Interior Ex
                 gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping }}
                 onPointerDown={() => setIsInteracting(true)}
             >
-                <Suspense fallback={<Loader />}>
-                    <Sphere imageUrl={imageUrl} />
-                    <Preload all />
-                </Suspense>
+                <TextureErrorBoundary>
+                    <Suspense fallback={<Loader />}>
+                        <Sphere imageUrl={imageUrl} />
+                        <Preload all />
+                    </Suspense>
+                </TextureErrorBoundary>
 
                 <OrbitControls
                     enableZoom={true}

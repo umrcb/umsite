@@ -21,7 +21,7 @@ export default function HeroSection() {
         </p>
         
         <div className={styles.btnGroup}>
-          <Link href="/book" className={`${styles.btn} ${styles.btnPrimary}`}>
+          <Link href="/booking" className={`${styles.btn} ${styles.btnPrimary}`}>
             Book Your Ride <ArrowRight size={20} />
           </Link>
           <Link href="/fleet" className={`${styles.btn} ${styles.btnSecondary}`}>
