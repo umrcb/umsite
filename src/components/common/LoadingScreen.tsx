@@ -37,8 +37,8 @@ export default function LoadingScreen() {
                     {/* Logo */}
                     <div className={styles.logoImage}>
                         <Image
-                            src="/umrah-cabs-logo-v2.svg"
-                            alt="Umrah Cabs"
+                            src="/images/logo.png"
+                            alt="Umrah Cabs Logo"
                             fill
                             className="object-contain"
                             priority

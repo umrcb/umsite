@@ -66,12 +66,11 @@ export default function Preloader() {
                     {/* Using Next Image for priority loading */}
                     <div className={styles.logoImage}>
                         <Image
-                            src="/umrah-cabs-logo-v2.svg"
-                            alt="Umrah Cabs"
-                            width={110}
-                            height={110}
+                            src="/images/logo.png"
+                            alt="Umrah Cabs Logo"
+                            fill
                             priority
-                            className="w-full h-full object-contain"
+                            className="object-contain"
                         />
                     </div>
                 </div>

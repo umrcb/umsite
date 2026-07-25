@@ -41,7 +41,7 @@ export const AbandonedCartTemplate = ({
                         {/* Logo */}
                         <Section className="mb-6 text-center">
                             <Img
-                                src={`${process.env.NEXT_PUBLIC_APP_URL}/umrah-cabs-logo-v2.svg`}
+                                src={`${process.env.NEXT_PUBLIC_APP_URL}/images/logo.png`}
                                 width="80"
                                 height="80"
                                 alt="Umrah Cabs"

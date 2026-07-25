@@ -46,11 +46,11 @@ export default function Footer() {
                     <div className="xl:col-span-3 space-y-4">
                         <Link href="/" className="inline-block transition-transform duration-300 hover:opacity-90">
                             <Image
-                                src="/umrah-cabs-logo-v2.svg" // Replace with exact logo if needed
+                                src="/images/logo.png"
                                 alt={general.siteName}
                                 width={240}
-                                height={80}
-                                className="object-contain mix-blend-multiply"
+                                height={120}
+                                className="object-contain"
                             />
                         </Link>
                         <p className="text-[#64748B] text-sm leading-relaxed max-w-[280px]">

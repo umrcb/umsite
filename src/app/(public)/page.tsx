@@ -32,7 +32,7 @@ export default async function Home() {
         "@type": "Organization",
         "name": "Umrah Cabs",
         "url": baseUrl,
-        "logo": `${baseUrl}/umrah-cabs-logo-v2.svg`,
+        "logo": `${baseUrl}/images/logo.png`,
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+966-54-549-4921",

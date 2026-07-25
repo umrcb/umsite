@@ -11,7 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
         theme_color: '#D4AF37', // Gold
         icons: [
             {
-                src: '/umrah-cabs-logo-v2.svg', // Using the v2 logo as the primary icon
+                src: '/images/logo.png', // Using the v2 logo as the primary icon
                 sizes: 'any',
                 type: 'image/png',
             },

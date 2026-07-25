@@ -7,7 +7,7 @@ export const ORGANIZATION_SCHEMA = {
     "@type": "Organization",
     "name": "Umrah Cabs",
     "url": "https://UmrahCabs.com",
-    "logo": "https://UmrahCabs.com/umrah-cabs-logo-v2.svg",
+    "logo": "https://UmrahCabs.com/images/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+966-54-549-4921",
