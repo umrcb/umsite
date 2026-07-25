@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 
 const galleryImages = [
@@ -48,12 +47,8 @@ export default function FleetGallery() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {galleryImages.map((image, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             className={`relative group cursor-pointer overflow-hidden rounded-3xl ${index === 0 || index === 3 ? 'md:col-span-2 lg:col-span-2 aspect-[16/9]' : 'aspect-square md:aspect-[4/3]'}`}
                             onClick={() => setSelectedImage(image.src)}
                         >
@@ -74,7 +69,7 @@ export default function FleetGallery() {
                                     src={image.src}
                                     alt={image.alt}
                                     fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="object-cover"
                                     onError={() => handleImageError(image.src)}
                                 />
                             )}
@@ -93,55 +88,47 @@ export default function FleetGallery() {
             </div>
 
             {/* Lightbox Modal */}
-            <AnimatePresence>
-                {selectedImage && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+            {selectedImage && (
+                <div
+                    onClick={() => setSelectedImage(null)}
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 lg:p-12 cursor-zoom-out"
+                >
+                    <button 
                         onClick={() => setSelectedImage(null)}
-                        className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 lg:p-12 cursor-zoom-out"
+                        className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
                     >
-                        <button 
-                            onClick={() => setSelectedImage(null)}
-                            className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors"
-                        >
-                            <X size={36} />
-                        </button>
-                        
-                        <motion.div 
-                            initial={{ scale: 0.9 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0.9 }}
-                            className="relative w-full max-w-6xl aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            {imageErrors[selectedImage] ? (
-                                <div className="absolute inset-0 bg-slate-100 flex flex-col items-center justify-center p-6 text-center">
-                                    <div className="w-32 h-32 rounded-full bg-slate-200 flex items-center justify-center mb-6">
-                                        <Image
-                                            src="/fleet/cars/gmc-yukon.png"
-                                            alt="Fallback"
-                                            width={120}
-                                            height={60}
-                                            className="object-contain opacity-50"
-                                        />
-                                    </div>
-                                    <p className="text-slate-500 font-medium font-playfair text-xl">Image temporarily unavailable</p>
+                        <X size={36} />
+                    </button>
+                    
+                    <div 
+                        className="relative w-full max-w-6xl aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {imageErrors[selectedImage] ? (
+                            <div className="absolute inset-0 bg-slate-100 flex flex-col items-center justify-center p-6 text-center">
+                                <div className="w-32 h-32 rounded-full bg-slate-200 flex items-center justify-center mb-6">
+                                    <Image
+                                        src="/fleet/cars/gmc-yukon.png"
+                                        alt="Fallback"
+                                        width={120}
+                                        height={60}
+                                        className="object-contain opacity-50"
+                                    />
                                 </div>
-                            ) : (
-                                <Image
-                                    src={selectedImage}
-                                    alt="Gallery Lightbox"
-                                    fill
-                                    className="object-contain bg-black"
-                                    onError={() => handleImageError(selectedImage)}
-                                />
-                            )}
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                                <p className="text-slate-500 font-medium font-playfair text-xl">Image temporarily unavailable</p>
+                            </div>
+                        ) : (
+                            <Image
+                                src={selectedImage}
+                                alt="Gallery Lightbox"
+                                fill
+                                className="object-contain bg-black"
+                                onError={() => handleImageError(selectedImage)}
+                            />
+                        )}
+                    </div>
+                </div>
+            )}
         </section>
     );
 }

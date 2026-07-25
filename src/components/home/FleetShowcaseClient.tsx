@@ -2,7 +2,6 @@
 
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Users, Briefcase, Check, ArrowRight, Tag } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/whatsapp';
 
@@ -69,7 +68,7 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                 </button>
             </div>
 
-            <motion.div
+            <div
                 ref={scrollContainerRef}
                 className="flex gap-4 md:gap-6 overflow-x-auto pb-8 pt-4 cursor-grab active:cursor-grabbing no-scrollbar snap-x snap-mandatory"
                 onMouseEnter={() => setIsHovered(true)}
@@ -151,7 +150,7 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                         </div>
                     </div>
                 ))}
-            </motion.div>
+            </div>
         </div>
     );
 }
