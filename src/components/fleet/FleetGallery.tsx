@@ -12,11 +12,6 @@ const galleryImages = [
         category: 'Service'
     },
     {
-        src: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Luxury Leather Interior',
-        category: 'Interior'
-    },
-    {
         src: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200',
         alt: 'Spacious Luggage Compartment',
         category: 'Features'
@@ -25,16 +20,6 @@ const galleryImages = [
         src: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200',
         alt: 'Premium Chauffeur Service',
         category: 'Service'
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Comfortable Group Seating',
-        category: 'Interior'
-    },
-    {
-        src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1200',
-        alt: 'Fleet on the Road',
-        category: 'Exterior'
     }
 ];
 
