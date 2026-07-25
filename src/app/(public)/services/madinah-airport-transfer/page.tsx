@@ -40,7 +40,7 @@ const jsonLd = {
         "@type": "LocalBusiness",
         "name": "Umrah Taxi Services",
         "image": "/logo.png",
-        "telephone": "+966500000000",
+        "telephone": "+966534816935",
         "priceRange": "$$"
     },
     "serviceType": "Airport Transfer",

@@ -53,7 +53,7 @@ const jsonLd = {
                 "@type": "LocalBusiness",
                 "name": "Umrah Taxi Service",
                 "image": "https://umrahtaxiservice.com/logo.png",
-                "telephone": "+966502891323",
+                "telephone": "+966534816935",
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Makkah",

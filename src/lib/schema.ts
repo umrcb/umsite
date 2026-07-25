@@ -10,7 +10,7 @@ export const ORGANIZATION_SCHEMA = {
     "logo": "https://UmrahCabs.com/images/logo.png",
     "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+966-54-549-4921",
+        "telephone": "+966-53-481-6935",
         "contactType": "customer service",
         "areaServed": "SA",
         "availableLanguage": ["en", "ar", "ur"]

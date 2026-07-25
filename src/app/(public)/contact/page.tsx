@@ -26,7 +26,7 @@ export default async function ContactPage() {
     const settings = await getSettings();
 
     // Fallback values
-    const phone1 = settings?.contact.phone || '+966 54 549 4921';
+    const phone1 = settings?.contact.phone || '+966 53 481 6935';
     const email = settings?.contact.email || 'info@UmrahCabs.com';
     const address = settings?.contact.address || 'Al Aziziyah, Makkah, Saudi Arabia';
 

@@ -15,7 +15,7 @@ export async function generateMetadata() {
 
 export default async function TermsPage() {
     const settings = await getSettings();
-    const phone = settings.contact.phone || '+966 54 549 4921';
+    const phone = settings.contact.phone || '+966 53 481 6935';
     const email = settings.contact.email || 'info@UmrahCabs.com';
     const address = settings.contact.address || 'Al Aziziyah, Makkah, Saudi Arabia';
 

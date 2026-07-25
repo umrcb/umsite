@@ -34,7 +34,7 @@ export default function Footer() {
     if (!settings) return null;
     const { contact, general } = settings;
 
-    const whatsappNumber = contact.phone || '+966545494921';
+    const whatsappNumber = contact.phone || '+966534816935';
     const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}`;
 
     return (

@@ -5,7 +5,7 @@ import autoTable from 'jspdf-autotable';
 const COMPANY_NAME = "Umrah Cabs";
 const COMPANY_ISLAMIC_NAME = "Umrah Cabs";
 const COMPANY_ADDRESS = "Makkah Al Mukarramah, Saudi Arabia";
-const COMPANY_PHONE = "+966 50 123 4567";
+const COMPANY_PHONE = "+966 53 481 6935";
 const COMPANY_EMAIL = "info@umrahcabs.com";
 const PRIMARY_COLOR = "#0F172A"; // Navy (slate-900)
 

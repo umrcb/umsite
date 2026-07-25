@@ -12,7 +12,7 @@ export async function generateLocalBusinessSchema() {
         "image": `${baseUrl}/images/og-default.jpg`,
         "@id": baseUrl,
         "url": baseUrl,
-        "telephone": settings.contact.phone || "+966545494921",
+        "telephone": settings.contact.phone || "+966534816935",
         "priceRange": "$$",
         "address": {
             "@type": "PostalAddress",

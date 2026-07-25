@@ -64,7 +64,7 @@ export default function AboutPage() {
         "logo": "https://umrahtaxiservices.com/logo.png",
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+966-500-000-000",
+          "telephone": "+966-53-481-6935",
           "contactType": "customer service"
         }
       },
@@ -73,7 +73,7 @@ export default function AboutPage() {
         "@id": "https://umrahtaxiservices.com/#localbusiness",
         "name": "Umrah Cabs",
         "image": "https://images.unsplash.com/photo-1598462725916-24eb2fbff99d?q=80&w=1200&auto=format&fit=crop",
-        "telephone": "+966-500-000-000",
+        "telephone": "+966-53-481-6935",
         "url": "https://umrahtaxiservices.com/about",
         "address": {
           "@type": "PostalAddress",

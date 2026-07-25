@@ -95,7 +95,7 @@ export default function LeadGenModal({ resource, isOpen, onClose }: LeadGenModal
                                     type="tel"
                                     required
                                     className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-navy dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                                    placeholder="+966 50 123 4567"
+                                    placeholder="+966 53 481 6935"
                                     value={formData.whatsapp}
                                     onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
                                 />
