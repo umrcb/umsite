@@ -67,7 +67,6 @@ export const vehicles: VehicleData[] = [
     heroImage: "/fleet/cars/toyota-hiace-v3.png",
     gallery: [
       "/fleet/toyota-hiace-gallery/hiace_2026_exterior_1785014646800.png",
-      "/fleet/toyota-hiace-gallery/hiace_2026_interior_1785014666996.png",
       "/fleet/toyota-hiace-gallery/hiace_2026_luggage_1785014689488.png",
       "/fleet/toyota-hiace-gallery/hiace_2026_road_1785014710246.png"
     ],
