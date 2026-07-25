@@ -271,34 +271,15 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* SECTION 6 & 7 — Trust, Certifications, Newsletter */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 border-b border-[#E2E8F0] pb-16 mb-12 items-center">
-                        {/* SECTION 6: Trust & Certifications */}
-                        <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start text-sm text-[#475569] font-medium">
+                    {/* SECTION 6 — Trust & Certifications */}
+                    <div className="border-b border-[#E2E8F0] pb-16 mb-12 flex justify-center">
+                        <div className="flex flex-wrap gap-6 items-center justify-center text-sm text-[#475569] font-medium max-w-4xl">
                             <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Licensed Transportation Company</span>
                             <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Professional Chauffeurs</span>
                             <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Insured Vehicles</span>
                             <span className="flex items-center gap-1.5"><Lock className="w-5 h-5 text-[#115E39]" /> Secure Online Booking</span>
                             <span className="flex items-center gap-1.5"><Lock className="w-5 h-5 text-[#115E39]" /> SSL Secure Website</span>
                             <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> 24/7 Customer Support</span>
-                        </div>
-
-                        {/* SECTION 7: Newsletter */}
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#E2E8F0] max-w-lg mx-auto lg:mx-0 lg:ml-auto w-full">
-                            <h3 className="text-xl font-bold font-poppins text-[#0F172A] mb-2">Stay Updated</h3>
-                            <p className="text-[#475569] text-sm mb-4">Receive travel tips, Umrah guides, special offers, and service updates.</p>
-                            <form className="flex flex-col sm:flex-row gap-3">
-                                <input 
-                                    type="email" 
-                                    placeholder="Enter your email address" 
-                                    className="flex-1 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#115E39] focus:ring-1 focus:ring-[#115E39]"
-                                    required
-                                />
-                                <button type="submit" className="bg-[#115E39] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#0e4b2d] transition-colors whitespace-nowrap">
-                                    Subscribe
-                                </button>
-                            </form>
-                            <p className="text-[10px] text-[#94A3B8] mt-3">By subscribing, you agree to our Privacy Policy and consent to receive updates.</p>
                         </div>
                     </div>
 
