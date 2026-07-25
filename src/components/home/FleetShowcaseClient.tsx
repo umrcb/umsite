@@ -71,14 +71,14 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
 
             <motion.div
                 ref={scrollContainerRef}
-                className="flex gap-8 overflow-x-auto pb-8 pt-4 cursor-grab active:cursor-grabbing hide-scrollbar snap-x snap-mandatory"
+                className="flex gap-4 md:gap-6 overflow-x-auto pb-8 pt-4 cursor-grab active:cursor-grabbing hide-scrollbar snap-x snap-mandatory"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
                 {vehicles.map((vehicle, idx) => (
                     <div 
                         key={vehicle.id} 
-                        className="premium-card shrink-0 w-[320px] md:w-[400px] snap-center flex flex-col overflow-hidden bg-white hover:-translate-y-2 transition-transform duration-500"
+                        className="premium-card shrink-0 w-[320px] md:w-[400px] snap-center flex flex-col overflow-hidden bg-white hover:-translate-y-2 transition-transform duration-500 rounded-xl md:rounded-2xl"
                     >
                         {/* Image Section */}
                         <div className="relative h-[200px] w-full bg-[#F8FAFC]">
@@ -103,7 +103,7 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                         </div>
 
                         {/* Content Section */}
-                        <div className="p-5 flex-1 flex flex-col">
+                        <div className="px-3 py-4 md:px-5 md:py-5 flex-1 flex flex-col">
                             <div className="flex justify-between items-start mb-3 border-b border-[#E2E8F0] pb-3">
                                 <div>
                                     <h3 className="text-xl font-bold font-poppins text-[#0F172A]">{vehicle.name}</h3>
