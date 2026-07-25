@@ -12,7 +12,7 @@ const galleryImages = [
         category: 'Service'
     },
     {
-        src: 'https://images.unsplash.com/photo-1549687989-b003a27072cc?auto=format&fit=crop&q=80&w=1200',
+        src: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1200',
         alt: 'Luxury Leather Interior',
         category: 'Interior'
     },
@@ -27,12 +27,12 @@ const galleryImages = [
         category: 'Service'
     },
     {
-        src: 'https://images.unsplash.com/photo-1621285814345-9854743ebdf4?auto=format&fit=crop&q=80&w=1200',
+        src: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=1200',
         alt: 'Comfortable Group Seating',
         category: 'Interior'
     },
     {
-        src: 'https://images.unsplash.com/photo-1502877338535-346ce0d165f5?auto=format&fit=crop&q=80&w=1200',
+        src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1200',
         alt: 'Fleet on the Road',
         category: 'Exterior'
     }
@@ -40,6 +40,11 @@ const galleryImages = [
 
 export default function FleetGallery() {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
+
+    const handleImageError = (src: string) => {
+        setImageErrors(prev => ({ ...prev, [src]: true }));
+    };
 
     return (
         <section className="py-24 bg-white relative">
@@ -67,12 +72,27 @@ export default function FleetGallery() {
                             className={`relative group cursor-pointer overflow-hidden rounded-3xl ${index === 0 || index === 3 ? 'md:col-span-2 lg:col-span-2 aspect-[16/9]' : 'aspect-square md:aspect-[4/3]'}`}
                             onClick={() => setSelectedImage(image.src)}
                         >
-                            <Image
-                                src={image.src}
-                                alt={image.alt}
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
+                            {imageErrors[image.src] ? (
+                                <div className="absolute inset-0 bg-slate-100 flex flex-col items-center justify-center p-6 text-center">
+                                    <div className="w-16 h-16 rounded-full bg-slate-200 flex items-center justify-center mb-4">
+                                        <Image
+                                            src="/fleet/cars/gmc-yukon.png"
+                                            alt="Fallback"
+                                            width={60}
+                                            height={30}
+                                            className="object-contain opacity-50"
+                                        />
+                                    </div>
+                                </div>
+                            ) : (
+                                <Image
+                                    src={image.src}
+                                    alt={image.alt}
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    onError={() => handleImageError(image.src)}
+                                />
+                            )}
                             <div className="absolute inset-0 bg-navy/20 group-hover:bg-navy/40 transition-colors duration-300" />
                             
                             <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -111,12 +131,28 @@ export default function FleetGallery() {
                             className="relative w-full max-w-6xl aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <Image
-                                src={selectedImage}
-                                alt="Gallery Lightbox"
-                                fill
-                                className="object-contain bg-black"
-                            />
+                            {imageErrors[selectedImage] ? (
+                                <div className="absolute inset-0 bg-slate-100 flex flex-col items-center justify-center p-6 text-center">
+                                    <div className="w-32 h-32 rounded-full bg-slate-200 flex items-center justify-center mb-6">
+                                        <Image
+                                            src="/fleet/cars/gmc-yukon.png"
+                                            alt="Fallback"
+                                            width={120}
+                                            height={60}
+                                            className="object-contain opacity-50"
+                                        />
+                                    </div>
+                                    <p className="text-slate-500 font-medium font-playfair text-xl">Image temporarily unavailable</p>
+                                </div>
+                            ) : (
+                                <Image
+                                    src={selectedImage}
+                                    alt="Gallery Lightbox"
+                                    fill
+                                    className="object-contain bg-black"
+                                    onError={() => handleImageError(selectedImage)}
+                                />
+                            )}
                         </motion.div>
                     </motion.div>
                 )}
