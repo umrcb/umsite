@@ -207,19 +207,6 @@ export default function Footer() {
                     </div>
 
 
-
-                    {/* SECTION 6 — Trust & Certifications */}
-                    <div className="border-b border-[#E2E8F0] pb-8 mb-8 flex justify-center">
-                        <div className="flex flex-wrap gap-6 items-center justify-center text-sm text-[#475569] font-medium max-w-4xl">
-                            <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Licensed Transportation Company</span>
-                            <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Professional Chauffeurs</span>
-                            <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Insured Vehicles</span>
-                            <span className="flex items-center gap-1.5"><Lock className="w-5 h-5 text-[#115E39]" /> Secure Online Booking</span>
-                            <span className="flex items-center gap-1.5"><Lock className="w-5 h-5 text-[#115E39]" /> SSL Secure Website</span>
-                            <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> 24/7 Customer Support</span>
-                        </div>
-                    </div>
-
                     {/* SECTION 8 & 9 — Copyright */}
                     <div className="flex flex-col items-center justify-center gap-6 pt-4">
                         <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-[#64748B]">
