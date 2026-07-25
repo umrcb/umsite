@@ -1,185 +1,330 @@
 'use client';
 
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, MapPin, Phone, Facebook, Instagram, Youtube, Heart } from 'lucide-react';
 import { useSettings } from '@/context/SettingsContext';
+import { 
+    Facebook, Instagram, Youtube, Twitter, Linkedin, 
+    MapPin, Phone, Mail, Clock, ChevronDown, 
+    ShieldCheck, CheckCircle2, CreditCard, Lock
+} from 'lucide-react';
+
+const MobileAccordion = ({ title, children }: { title: string, children: React.ReactNode }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    return (
+        <div className="border-b border-[#E2E8F0] lg:border-none lg:pb-0 pb-4">
+            <button 
+                onClick={() => setIsOpen(!isOpen)} 
+                className="flex justify-between items-center w-full lg:hidden py-4 text-left font-bold text-[#0F172A]"
+            >
+                {title}
+                <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <h4 className="hidden lg:block text-lg font-bold text-[#0F172A] mb-6 tracking-wide">{title}</h4>
+            <div className={`${isOpen ? 'block' : 'hidden'} lg:block space-y-3`}>
+                {children}
+            </div>
+        </div>
+    );
+};
 
 export default function Footer() {
     const { settings } = useSettings();
-
     if (!settings) return null;
-
     const { contact, general } = settings;
 
-    // Split Quick Links into two columns for the exact design look
-    const quickLinksCol1 = [
-        { label: "Home", href: "/" },
-        { label: "Services", href: "/services" },
-        { label: "Fleet", href: "/fleet" },
-    ];
-
-    const quickLinksCol2 = [
-        { label: "Pricing", href: "/pricing" },
-        { label: "About Us", href: "/about" },
-        { label: "Contact Us", href: "/contact" },
-    ];
-
-    const servicesCol1 = [
-        { label: "Jeddah Airport Transfer", href: "/services/jeddah-airport-transfer" },
-        { label: "Madinah Airport Transfer", href: "/services/madinah-airport-transfer" },
-    ];
-
-    const servicesCol2 = [
-        { label: "Makkah to Madinah Taxi", href: "/services/makkah-madinah-taxi" },
-        { label: "Hotel Transfers", href: "/services/hotel-transfers" },
-        { label: "Intercity Transfers", href: "/services/intercity-transfer" },
-    ];
+    const whatsappNumber = contact.phone || '+966545494921';
+    const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g, '')}`;
 
     return (
-        <footer className="relative bg-[#F9FAFB] font-sans">
-            {/* Main Footer Content */}
-            <div className="container mx-auto px-6 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-8 xl:gap-6">
-                    
-                    {/* Column 1: Brand & Socials (3 cols) */}
-                    <div className="xl:col-span-3 space-y-4">
-                        <Link href="/" className="inline-block transition-transform duration-300 hover:opacity-90">
-                            <Image
-                                src="/images/logo.png"
-                                alt={general.siteName}
-                                width={240}
-                                height={120}
-                                className="object-contain"
-                            />
+        <footer className="relative font-sans bg-white pt-10">
+            {/* SECTION 1 — Premium CTA (Above Footer) */}
+            <section className="bg-[#115E39] text-white py-16 px-6 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10 bg-[url('/images/pattern-islamic.png')] bg-repeat" />
+                <div className="container mx-auto max-w-[1320px] relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+                    <div className="max-w-2xl text-center lg:text-left">
+                        <h2 className="text-3xl lg:text-4xl font-bold font-poppins mb-4">Ready for a Comfortable Journey Across Saudi Arabia?</h2>
+                        <p className="text-white/90 text-lg leading-relaxed">Book your airport transfer, intercity taxi, hotel transfer, or Umrah transportation with professional chauffeurs and luxury vehicles.</p>
+                        
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-8">
+                            <div className="flex items-center gap-2"><CheckCircle2 className="text-[#C9A227] w-5 h-5"/> <span>Licensed Drivers</span></div>
+                            <div className="flex items-center gap-2"><CheckCircle2 className="text-[#C9A227] w-5 h-5"/> <span>Fixed Pricing</span></div>
+                            <div className="flex items-center gap-2"><CheckCircle2 className="text-[#C9A227] w-5 h-5"/> <span>24/7 Support</span></div>
+                            <div className="flex items-center gap-2"><CheckCircle2 className="text-[#C9A227] w-5 h-5"/> <span>Luxury Fleet</span></div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                        <Link href="/book" className="px-8 py-4 bg-[#C9A227] text-white font-bold rounded-lg hover:bg-[#b08d22] transition-colors text-center shadow-lg whitespace-nowrap">
+                            Book Now
                         </Link>
-                        <p className="text-[#64748B] text-sm leading-relaxed max-w-[280px]">
-                            Premium Umrah taxi services in Makkah, Madinah, Jeddah & across Saudi Arabia.
-                        </p>
-                        
-                        <div className="flex gap-3">
-                            <a href={contact.social?.facebook || "#"} className="w-9 h-9 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors shadow-sm">
-                                <Facebook size={16} />
-                            </a>
-                            <a href={contact.social?.instagram || "#"} className="w-9 h-9 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors shadow-sm">
-                                <Instagram size={16} />
-                            </a>
-                            <a href={`https://wa.me/${(contact.phone || '').replace(/\D/g, '')}`} className="w-9 h-9 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors shadow-sm">
-                                <Phone size={16} /> {/* WhatsApp alternative icon */}
-                            </a>
-                            <a href={contact.social?.youtube || "#"} className="w-9 h-9 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors shadow-sm">
-                                <Youtube size={16} />
-                            </a>
-                        </div>
-                        
-                        <div className="pt-2">
-                            <a href="https://share.google/SS0Q2cwd1hUkcTSAx" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E2E8F0] rounded-lg shadow-sm text-sm font-medium text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors">
-                                <svg className="w-4 h-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-                                Review us on Google
-                            </a>
-                        </div>
+                        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-[#115E39] font-bold rounded-lg hover:bg-gray-50 transition-colors text-center shadow-lg whitespace-nowrap">
+                            WhatsApp
+                        </a>
+                        <a href={`tel:${contact.phone}`} className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors text-center whitespace-nowrap">
+                            Call Now
+                        </a>
                     </div>
-
-                    {/* Column 2: Quick Links (3 cols) */}
-                    <div className="xl:col-span-3">
-                        <h4 className="text-base font-bold text-[#0F172A] mb-4 tracking-wide">Quick Links</h4>
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                            <div className="space-y-2">
-                                {quickLinksCol1.map((link) => (
-                                    <Link key={link.label} href={link.href} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors font-medium">
-                                        {link.label}
-                                    </Link>
-                                ))}
-                            </div>
-                            <div className="space-y-2">
-                                {quickLinksCol2.map((link) => (
-                                    <Link key={link.label} href={link.href} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors font-medium">
-                                        {link.label}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Column 3: Our Services (3 cols) */}
-                    <div className="xl:col-span-3">
-                        <h4 className="text-base font-bold text-[#0F172A] mb-4 tracking-wide">Our Services</h4>
-                        <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                            <div className="space-y-2">
-                                {servicesCol1.map((link) => (
-                                    <Link key={link.label} href={link.href} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors font-medium">
-                                        {link.label}
-                                    </Link>
-                                ))}
-                            </div>
-                            <div className="space-y-2">
-                                {servicesCol2.map((link) => (
-                                    <Link key={link.label} href={link.href} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors font-medium">
-                                        {link.label}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Column 4: Contact Info (3 cols) */}
-                    <div className="xl:col-span-3 space-y-4">
-                        <h4 className="text-base font-bold text-[#0F172A] mb-4 tracking-wide">Contact Info</h4>
-                        
-                        <div className="flex items-center gap-3">
-                            <div className="text-[#115E39]">
-                                <Phone size={20} className="fill-[#115E39]" />
-                            </div>
-                            <span className="text-sm text-[#475569] font-medium">+966 50 123 4567</span>
-                        </div>
-                        
-                        <div className="flex items-center gap-3">
-                            <div className="text-[#115E39]">
-                                <Mail size={20} className="fill-[#115E39]" />
-                            </div>
-                            <span className="text-sm text-[#475569] font-medium">info@umrahtaxi.com</span>
-                        </div>
-
-                        <div className="flex items-center gap-3">
-                            <div className="text-[#115E39]">
-                                <MapPin size={20} className="fill-[#115E39]" />
-                            </div>
-                            <span className="text-sm text-[#475569] font-medium">Makkah, Saudi Arabia</span>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
+            </section>
 
-            {/* Bottom Bar */}
-            <div className="bg-[#115E39] py-3">
-                <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium">
-                    <p className="text-white/90">
-                        © 2026 Umrah Cabs. All Rights Reserved.
-                    </p>
+            {/* MAIN FOOTER */}
+            <div className="bg-[#F9FAFB] pt-20 pb-16 px-6 lg:px-8">
+                <div className="container mx-auto max-w-[1320px]">
                     
-                    <div className="flex items-center gap-6">
-                        <Link href="/privacy" className="text-white/90 hover:text-white transition-colors">Privacy Policy</Link>
-                        <span className="text-white/30">|</span>
-                        <Link href="/terms" className="text-white/90 hover:text-white transition-colors">Terms & Conditions</Link>
+                    {/* SECTION 2 — Main Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-12 border-b border-[#E2E8F0] pb-16 mb-16">
+                        
+                        {/* Column 1 — Company Information */}
+                        <div className="lg:col-span-3 space-y-6">
+                            <Link href="/" className="inline-block">
+                                <Image
+                                    src="/images/logo.png"
+                                    alt={general.siteName}
+                                    width={240}
+                                    height={100}
+                                    className="object-contain w-auto h-auto max-w-[200px]"
+                                />
+                            </Link>
+                            <p className="text-[#475569] text-sm leading-relaxed">
+                                Umrah Taxi Services provides premium airport transfers, hotel transfers, intercity transportation, and Umrah & Hajj travel across Saudi Arabia with professional chauffeurs and luxury vehicles.
+                            </p>
+                            
+                            <ul className="text-sm text-[#475569] space-y-2 font-medium">
+                                <li className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#115E39]" /> Licensed Company</li>
+                                <li className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#115E39]" /> Professional Drivers</li>
+                                <li className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#115E39]" /> Fixed Pricing</li>
+                                <li className="flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-[#115E39]" /> 24/7 Customer Support</li>
+                            </ul>
+
+                            <div className="flex gap-3 pt-4">
+                                <a href={contact.social?.facebook || "#"} aria-label="Facebook" className="w-10 h-10 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors shadow-sm"><Facebook size={18} /></a>
+                                <a href={contact.social?.instagram || "#"} aria-label="Instagram" className="w-10 h-10 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors shadow-sm"><Instagram size={18} /></a>
+                                <a href="#" aria-label="X (Twitter)" className="w-10 h-10 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors shadow-sm"><Twitter size={18} /></a>
+                                <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors shadow-sm"><Linkedin size={18} /></a>
+                                <a href={contact.social?.youtube || "#"} aria-label="YouTube" className="w-10 h-10 rounded-full bg-white border border-[#E2E8F0] flex items-center justify-center text-[#475569] hover:text-[#115E39] hover:border-[#115E39] transition-colors shadow-sm"><Youtube size={18} /></a>
+                            </div>
+                        </div>
+
+                        {/* Column 2 — Services */}
+                        <div className="lg:col-span-2">
+                            <MobileAccordion title="Services">
+                                {[
+                                    "Airport Transfers", "Jeddah Airport Transfer", "Madinah Airport Transfer",
+                                    "Hotel Transfers", "Intercity Transfers", "VIP Chauffeur",
+                                    "Umrah Taxi", "Hajj Transport", "Corporate Transport", 
+                                    "Group Transport", "Ziyarat Tours"
+                                ].map((item) => (
+                                    <Link key={item} href={`/services/${item.toLowerCase().replace(/ /g, '-')}`} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
+                                        {item}
+                                    </Link>
+                                ))}
+                            </MobileAccordion>
+                        </div>
+
+                        {/* Column 3 — Popular Routes */}
+                        <div className="lg:col-span-2">
+                            <MobileAccordion title="Popular Routes">
+                                {[
+                                    "Jeddah Airport to Makkah", "Jeddah Airport to Madinah", 
+                                    "Makkah to Madinah", "Madinah to Makkah", 
+                                    "Makkah to Taif", "Taif to Makkah", 
+                                    "Hotel to Airport", "Airport to Hotel", 
+                                    "Madinah Airport to Hotel", "Makkah Ziyarat", "Madinah Ziyarat"
+                                ].map((item) => (
+                                    <Link key={item} href={`/routes/${item.toLowerCase().replace(/ /g, '-')}`} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
+                                        {item}
+                                    </Link>
+                                ))}
+                            </MobileAccordion>
+                        </div>
+
+                        {/* Column 4 — Fleet */}
+                        <div className="lg:col-span-2">
+                            <MobileAccordion title="Fleet">
+                                {[
+                                    "Toyota Camry", "Toyota Hiace", "Toyota Coaster", 
+                                    "Hyundai Staria", "Hyundai H1", "Hyundai Starex", "GMC Yukon"
+                                ].map((item) => (
+                                    <Link key={item} href={`/fleet/${item.toLowerCase().replace(/ /g, '-')}`} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
+                                        {item}
+                                    </Link>
+                                ))}
+                            </MobileAccordion>
+                        </div>
+
+                        {/* Column 5 — Company */}
+                        <div className="lg:col-span-1">
+                            <MobileAccordion title="Company">
+                                {[
+                                    { label: "About Us", href: "/about" },
+                                    { label: "Fleet", href: "/fleet" },
+                                    { label: "Pricing", href: "/pricing" },
+                                    { label: "Booking", href: "/book" },
+                                    { label: "Blog", href: "/blog" },
+                                    { label: "FAQs", href: "/faqs" },
+                                    { label: "Contact", href: "/contact" },
+                                    { label: "Terms & Conditions", href: "/terms" },
+                                    { label: "Privacy Policy", href: "/privacy-policy" },
+                                    { label: "Refund Policy", href: "/refund-policy" },
+                                    { label: "Cancellation Policy", href: "/cancellation" },
+                                    { label: "Cookies Policy", href: "/cookies" },
+                                    { label: "Sitemap", href: "/sitemap.xml" },
+                                ].map((item) => (
+                                    <Link key={item.label} href={item.href} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
+                                        {item.label}
+                                    </Link>
+                                ))}
+                            </MobileAccordion>
+                        </div>
+
+                        {/* Column 6 — Contact */}
+                        <div className="lg:col-span-2 lg:pl-4">
+                            <h4 className="text-lg font-bold text-[#0F172A] mb-6 tracking-wide hidden lg:block">Contact</h4>
+                            <div className="space-y-6">
+                                <div className="flex gap-3">
+                                    <MapPin className="w-5 h-5 text-[#115E39] shrink-0" />
+                                    <div>
+                                        <p className="text-sm font-bold text-[#0F172A]">Office</p>
+                                        <p className="text-sm text-[#475569]">Makkah<br/>Saudi Arabia</p>
+                                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-sm text-[#115E39] hover:underline mt-1 inline-block font-medium">Google Maps Link</a>
+                                    </div>
+                                </div>
+                                <div className="flex gap-3">
+                                    <Phone className="w-5 h-5 text-[#115E39] shrink-0" />
+                                    <div>
+                                        <p className="text-sm font-bold text-[#0F172A]">Phone / WhatsApp</p>
+                                        <a href={`tel:${contact.phone}`} className="text-sm text-[#475569] hover:text-[#115E39] block">{contact.phone}</a>
+                                        <a href={whatsappLink} className="text-sm text-[#475569] hover:text-[#115E39] block">WhatsApp Chat</a>
+                                    </div>
+                                </div>
+                                <div className="flex gap-3">
+                                    <Mail className="w-5 h-5 text-[#115E39] shrink-0" />
+                                    <div>
+                                        <p className="text-sm font-bold text-[#0F172A]">Email</p>
+                                        <a href={`mailto:${contact.email}`} className="text-sm text-[#475569] hover:text-[#115E39]">{contact.email}</a>
+                                    </div>
+                                </div>
+                                <div className="flex gap-3">
+                                    <Clock className="w-5 h-5 text-[#115E39] shrink-0" />
+                                    <div>
+                                        <p className="text-sm font-bold text-[#0F172A]">Business Hours</p>
+                                        <p className="text-sm text-[#475569]">24/7 Emergency Contact</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <p className="flex items-center gap-1.5 text-white/90">
-                        Designed with <Heart size={12} className="fill-red-500 text-red-500" /> for Pilgrims
-                    </p>
+                    {/* SECTION 3, 4, 5 — SEO Blocks & Fleet Overview */}
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 border-b border-[#E2E8F0] pb-16 mb-16">
+                        
+                        {/* SECTION 3: Service Areas */}
+                        <div>
+                            <h3 className="text-lg font-bold text-[#0F172A] mb-6">Service Areas</h3>
+                            <div className="flex flex-wrap gap-2">
+                                {[
+                                    "Makkah", "Madinah", "Jeddah", "Taif", "KAEC", "Rabigh", "Yanbu", 
+                                    "King Abdulaziz Airport", "Prince Mohammad Airport", "Hotels", "Train Stations", "Holy Sites"
+                                ].map((area) => (
+                                    <Link key={area} href={`/service-areas/${area.toLowerCase().replace(/ /g, '-')}`} className="text-xs bg-white border border-[#E2E8F0] text-[#475569] px-3 py-1.5 rounded-full hover:bg-[#115E39] hover:text-white hover:border-[#115E39] transition-all">
+                                        {area}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* SECTION 4: Popular Searches */}
+                        <div>
+                            <h3 className="text-lg font-bold text-[#0F172A] mb-6">Popular Searches</h3>
+                            <div className="flex flex-wrap gap-2">
+                                {[
+                                    "Airport Taxi Saudi Arabia", "Umrah Taxi", "Makkah Taxi", "Madinah Taxi", 
+                                    "Airport Transfer", "Hotel Transfer", "Luxury Chauffeur", "VIP Taxi", 
+                                    "Saudi Taxi", "Private Driver Saudi Arabia"
+                                ].map((search) => (
+                                    <Link key={search} href={`/search/${search.toLowerCase().replace(/ /g, '-')}`} className="text-xs text-[#115E39] bg-[#115E39]/10 px-3 py-1.5 rounded-full hover:bg-[#115E39] hover:text-white transition-all font-medium">
+                                        {search}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* SECTION 5: Fleet Overview */}
+                        <div>
+                            <h3 className="text-lg font-bold text-[#0F172A] mb-6">Fleet Overview</h3>
+                            <div className="grid grid-cols-2 gap-3">
+                                {[
+                                    { name: "Toyota Camry", desc: "4 Pax • 4 Lugg" },
+                                    { name: "Toyota Hiace", desc: "11 Pax • 11 Lugg" },
+                                    { name: "Toyota Coaster", desc: "19 Pax • 15 Lugg" },
+                                    { name: "Hyundai Staria", desc: "7 Pax • 7 Lugg" },
+                                    { name: "Hyundai H1", desc: "7 Pax • 7 Lugg" },
+                                    { name: "GMC Yukon", desc: "Premium SUV" },
+                                ].map((vehicle) => (
+                                    <Link key={vehicle.name} href={`/fleet/${vehicle.name.toLowerCase().replace(/ /g, '-')}`} className="block bg-white border border-[#E2E8F0] p-3 rounded-lg hover:border-[#115E39] hover:shadow-md transition-all group">
+                                        <p className="text-sm font-bold text-[#0F172A] group-hover:text-[#115E39] transition-colors">{vehicle.name}</p>
+                                        <p className="text-xs text-[#64748B] mt-0.5">{vehicle.desc}</p>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* SECTION 6 & 7 — Trust, Certifications, Newsletter */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 border-b border-[#E2E8F0] pb-16 mb-12 items-center">
+                        {/* SECTION 6: Trust & Certifications */}
+                        <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start text-sm text-[#475569] font-medium">
+                            <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Licensed Transportation Company</span>
+                            <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Professional Chauffeurs</span>
+                            <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Insured Vehicles</span>
+                            <span className="flex items-center gap-1.5"><Lock className="w-5 h-5 text-[#115E39]" /> Secure Online Booking</span>
+                            <span className="flex items-center gap-1.5"><Lock className="w-5 h-5 text-[#115E39]" /> SSL Secure Website</span>
+                            <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> 24/7 Customer Support</span>
+                        </div>
+
+                        {/* SECTION 7: Newsletter */}
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#E2E8F0] max-w-lg mx-auto lg:mx-0 lg:ml-auto w-full">
+                            <h3 className="text-xl font-bold font-poppins text-[#0F172A] mb-2">Stay Updated</h3>
+                            <p className="text-[#475569] text-sm mb-4">Receive travel tips, Umrah guides, special offers, and service updates.</p>
+                            <form className="flex flex-col sm:flex-row gap-3">
+                                <input 
+                                    type="email" 
+                                    placeholder="Enter your email address" 
+                                    className="flex-1 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#115E39] focus:ring-1 focus:ring-[#115E39]"
+                                    required
+                                />
+                                <button type="submit" className="bg-[#115E39] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#0e4b2d] transition-colors whitespace-nowrap">
+                                    Subscribe
+                                </button>
+                            </form>
+                            <p className="text-[10px] text-[#94A3B8] mt-3">By subscribing, you agree to our Privacy Policy and consent to receive updates.</p>
+                        </div>
+                    </div>
+
+                    {/* SECTION 8 & 9 — Payment & Copyright */}
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-4">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-[#64748B]">
+                            <p>© {new Date().getFullYear()} Umrah Taxi Services. All Rights Reserved.</p>
+                            <div className="hidden sm:block w-1 h-1 rounded-full bg-[#CBD5E1]" />
+                            <div className="flex gap-4">
+                                <Link href="/privacy-policy" className="hover:text-[#115E39] transition-colors">Privacy</Link>
+                                <Link href="/terms" className="hover:text-[#115E39] transition-colors">Terms</Link>
+                                <Link href="/cookies" className="hover:text-[#115E39] transition-colors">Cookies</Link>
+                            </div>
+                        </div>
+
+                        {/* Payment Methods */}
+                        <div className="flex items-center gap-3 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
+                            {/* Simple text/icons representing payments, using lucide CreditCard for generic */}
+                            <div className="flex items-center gap-1.5 px-3 py-1.5 border border-[#E2E8F0] rounded bg-white text-xs font-bold text-[#475569]"><CreditCard className="w-4 h-4" /> Visa</div>
+                            <div className="flex items-center gap-1.5 px-3 py-1.5 border border-[#E2E8F0] rounded bg-white text-xs font-bold text-[#475569]"><CreditCard className="w-4 h-4" /> Mastercard</div>
+                            <div className="flex items-center gap-1.5 px-3 py-1.5 border border-[#E2E8F0] rounded bg-white text-xs font-bold text-[#475569]">Apple Pay</div>
+                            <div className="flex items-center gap-1.5 px-3 py-1.5 border border-[#E2E8F0] rounded bg-white text-xs font-bold text-[#475569]">Mada</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            {/* Floating WhatsApp Button */}
-            <a 
-                href={`https://wa.me/${(contact.phone || '').replace(/\D/g, '')}`}
-                target="_blank"
-                rel="noreferrer"
-                className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300"
-                aria-label="Chat on WhatsApp"
-            >
-                <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
-            </a>
         </footer>
     );
 }
