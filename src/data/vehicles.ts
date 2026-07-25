@@ -211,9 +211,9 @@ export const vehicles: VehicleData[] = [
     shortDescription: "7 Passenger Modern Minivan",
     heroImage: "/fleet/cars/hyundai-staria.png",
     gallery: [
-      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
+      "/fleet/staria-gallery/staria_exterior_1785016336596.png",
+      "/fleet/staria-gallery/staria_luggage_1785016345212.png",
+      "/fleet/staria-gallery/staria_road_1785016354724.png"
     ],
     passengers: 7,
     luggage: 7,
@@ -279,9 +279,9 @@ export const vehicles: VehicleData[] = [
     shortDescription: "7 Passenger Minivan",
     heroImage: "/fleet/cars/hyundai-h1.png",
     gallery: [
-      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
+      "/fleet/h1-gallery/h1_exterior_1785016378702.png",
+      "/fleet/h1-gallery/h1_luggage_1785016387624.png",
+      "/fleet/h1-gallery/h1_road_1785016397559.png"
     ],
     passengers: 7,
     luggage: 7,
@@ -340,9 +340,8 @@ export const vehicles: VehicleData[] = [
     shortDescription: "19 Passenger Minibus",
     heroImage: "/fleet/cars/toyota-coaster.png",
     gallery: [
-      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
+      "/fleet/coaster-gallery/coaster_exterior_1785016423400.png",
+      "/fleet/coaster-gallery/coaster_luggage_1785016434239.png"
     ],
     passengers: 19,
     luggage: 15,
@@ -404,9 +403,9 @@ export const vehicles: VehicleData[] = [
     shortDescription: "4 Passenger Premium Sedan",
     heroImage: "/fleet/cars/toyota-camry.png",
     gallery: [
-      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
+      "/fleet/camry-gallery/camry_exterior_1785016469336.png",
+      "/fleet/camry-gallery/camry_luggage_1785016477899.png",
+      "/fleet/camry-gallery/camry_road_1785016486801.png"
     ],
     passengers: 4,
     luggage: 4,
