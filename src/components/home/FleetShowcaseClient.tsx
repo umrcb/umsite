@@ -78,58 +78,58 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                 {vehicles.map((vehicle, idx) => (
                     <div 
                         key={vehicle.id} 
-                        className="premium-card shrink-0 w-[320px] md:w-[400px] snap-center flex flex-col overflow-hidden bg-white hover:-translate-y-2 transition-transform duration-500"
+                        className="premium-card shrink-0 w-[280px] md:w-[320px] snap-center flex flex-col overflow-hidden bg-white hover:-translate-y-2 transition-transform duration-500 rounded-2xl"
                     >
                         {/* Image Section */}
-                        <div className="relative h-[240px] w-full bg-[#F8FAFC]">
+                        <div className="relative h-[180px] w-full bg-[#F8FAFC]">
                             <Image
                                 src={vehicle.image}
                                 alt={vehicle.name}
                                 fill
-                                sizes="(max-width: 768px) 320px, 400px"
+                                sizes="(max-width: 768px) 280px, 320px"
                                 className="object-cover"
                                 draggable={false}
                             />
                             {isDiscountActive && (
-                                <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-md">
-                                    <Tag size={12} />
+                                <div className="absolute top-3 left-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-1 shadow-md">
+                                    <Tag size={10} />
                                     {discount?.type === 'percentage' ? `${discount.value}% OFF` : `${discount?.value} SAR OFF`}
                                 </div>
                             )}
                         </div>
 
                         {/* Content Section */}
-                        <div className="p-6 md:p-8 flex-1 flex flex-col">
-                            <div className="flex justify-between items-start mb-6 border-b border-[#E2E8F0] pb-4">
+                        <div className="p-5 flex-1 flex flex-col">
+                            <div className="flex justify-between items-start mb-4 border-b border-[#E2E8F0] pb-3">
                                 <div>
-                                    <h3 className="text-2xl font-bold font-poppins text-[#0F172A] mb-1">{vehicle.name}</h3>
+                                    <h3 className="text-xl font-bold font-poppins text-[#0F172A] mb-0.5">{vehicle.name}</h3>
                                 </div>
                                 <div className="text-right">
-                                    <span className="block text-xs font-bold text-[#94A3B8] uppercase tracking-wider mb-1">Starting</span>
-                                    <span className="text-lg font-bold text-primary">{vehicle.price}</span>
+                                    <span className="block text-[10px] font-bold text-[#94A3B8] uppercase tracking-wider mb-0.5">Starting</span>
+                                    <span className="text-base font-bold text-primary">{vehicle.price}</span>
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-6 mb-6">
-                                <div className="flex items-center gap-2 text-[#475569]">
-                                    <div className="w-8 h-8 rounded-full bg-[#F8FAFC] flex items-center justify-center text-primary">
-                                        <Users size={16} />
+                            <div className="flex items-center gap-4 mb-4">
+                                <div className="flex items-center gap-1.5 text-[#475569]">
+                                    <div className="w-7 h-7 rounded-full bg-[#F8FAFC] flex items-center justify-center text-primary">
+                                        <Users size={14} />
                                     </div>
-                                    <span className="font-medium text-sm">{vehicle.passengers} Pax</span>
+                                    <span className="font-medium text-xs">{vehicle.passengers} Pax</span>
                                 </div>
-                                <div className="flex items-center gap-2 text-[#475569]">
-                                    <div className="w-8 h-8 rounded-full bg-[#F8FAFC] flex items-center justify-center text-primary">
-                                        <Briefcase size={16} />
+                                <div className="flex items-center gap-1.5 text-[#475569]">
+                                    <div className="w-7 h-7 rounded-full bg-[#F8FAFC] flex items-center justify-center text-primary">
+                                        <Briefcase size={14} />
                                     </div>
-                                    <span className="font-medium text-sm">{vehicle.luggage} Bags</span>
+                                    <span className="font-medium text-xs">{vehicle.luggage} Bags</span>
                                 </div>
                             </div>
 
-                            <div className="space-y-2 mb-8">
+                            <div className="space-y-1.5 mb-5">
                                 {vehicle.features.slice(0, 3).map((feature, i) => (
-                                    <div key={i} className="flex items-center gap-3 text-sm text-[#475569]">
-                                        <Check size={16} className="text-primary" />
-                                        <span>{feature}</span>
+                                    <div key={i} className="flex items-center gap-2 text-xs text-[#475569]">
+                                        <Check size={14} className="text-primary shrink-0" />
+                                        <span className="truncate">{feature}</span>
                                     </div>
                                 ))}
                             </div>
@@ -139,9 +139,9 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                                     href={getWhatsAppLink(`Salam Umrah Cabs, I am interested in booking the ${vehicle.name} (${vehicle.passengers} pax).`)}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn-primary w-full py-3.5 flex justify-center text-sm"
+                                    className="btn-primary w-full py-2.5 flex justify-center text-xs rounded-xl"
                                 >
-                                    Book via WhatsApp <ArrowRight size={16} className="ml-2" />
+                                    Book via WhatsApp <ArrowRight size={14} className="ml-1.5" />
                                 </a>
                             </div>
                         </div>

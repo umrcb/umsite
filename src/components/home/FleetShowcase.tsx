@@ -14,10 +14,14 @@ async function FleetFetcher() {
         .filter(v => v.isActive)
         .slice(0, 6)
         .map((v, idx) => {
-            const staticMatch = staticVehicles.find(
-                sv => sv.name.toLowerCase() === v.name.toLowerCase() || 
-                     ((v as any).slug && sv.slug === (v as any).slug)
-            );
+            const vNameLower = v.name.toLowerCase();
+            const staticMatch = staticVehicles.find(sv => {
+                const svNameLower = sv.name.toLowerCase();
+                if (vNameLower === 'car' && svNameLower.includes('camry')) return true;
+                if (vNameLower === 'mp4' && svNameLower.includes('h1')) return true;
+                if (vNameLower === 'gmc' && svNameLower.includes('yukon')) return true;
+                return svNameLower.includes(vNameLower);
+            });
             const fallbackImage = staticMatch ? staticMatch.heroImage : '/images/placeholder.png';
             
             return {
