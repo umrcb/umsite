@@ -9,15 +9,15 @@ async function FleetFetcher() {
 
     // Map to FleetVehicle format
     const showcaseVehicles: FleetVehicle[] = vehicles
-        .filter(v => v.isActive && v.image && v.image.trim() !== '')
+        .filter(v => v.isActive && ((v.images && v.images.length > 0) || ((v as any).image && (v as any).image.trim() !== '')))
         .slice(0, 6)
         .map((v, idx) => ({
             id: (v as any)._id ? (v as any)._id.toString() : (v.id || `vehicle-${idx}`),
             name: v.name,
-            image: v.image,
+            image: v.images && v.images.length > 0 ? v.images[0] : (v as any).image,
             passengers: v.name.toLowerCase().includes('hiace') ? "10/11" : v.passengers,
             luggage: v.luggage,
-            features: v.features,
+            features: v.features || [],
             price: v.price > 0 ? `SAR ${v.price}` : getStartingPrice(v.name)
         }));
 

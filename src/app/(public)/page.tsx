@@ -58,21 +58,19 @@ export default async function Home() {
       {/* 1. Hero Section */}
       <HomeHero />
 
+      {/* 2. Fleet Showcase */}
+      <ScrollReveal width="100%">
+        <FleetShowcase />
+      </ScrollReveal>
+
       {/* 3. Transport Services */}
       <ScrollReveal width="100%">
         <TransportServices />
       </ScrollReveal>
 
-      {/* 4. Why Choose Us (Replaces Features, SafetyPromise, PassengerCare) */}
+      {/* 4. Why Choose Us */}
       <ScrollReveal width="100%">
         <WhyChooseUs />
-      </ScrollReveal>
-
-
-
-      {/* 6. Fleet Showcase (Replaces Gallery & Carousel) */}
-      <ScrollReveal width="100%">
-        <FleetShowcase />
       </ScrollReveal>
 
       {/* 7. Pilgrim Experiences (Replaces Testimonials, Reviews, CustomerGallery) */}
