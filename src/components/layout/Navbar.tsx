@@ -92,23 +92,15 @@ export default function Navbar() {
             <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between relative z-10">
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative flex items-center">
-                        <div className={`transition-all duration-500 ease-out ${showDarkNav ? 'w-12 h-12 lg:w-16 lg:h-16' : 'w-16 h-16 lg:w-20 lg:h-20'} relative`}>
+                        <div className={`transition-all duration-500 ease-out ${showDarkNav ? 'w-32 h-16 lg:w-40 lg:h-20' : 'w-40 h-20 lg:w-48 lg:h-24'} relative flex items-center justify-center`}>
                             <Image
-                                src="/umrah-cabs-logo-v2.svg"
+                                src="/images/logo.png"
                                 alt="Umrah Cabs"
                                 fill
-                                className="object-contain drop-shadow-md mix-blend-multiply"
+                                className="object-contain drop-shadow-md"
                                 priority
-                                sizes="(max-width: 768px) 48px, 64px"
+                                sizes="(max-width: 768px) 160px, 192px"
                             />
-                        </div>
-                        <div className={`flex flex-col ml-3 transition-opacity duration-300 ${showDarkNav ? 'opacity-100' : 'opacity-100'}`}>
-                            <span className={`text-xl lg:text-2xl font-bold font-poppins leading-none tracking-tight transition-colors duration-300 flex items-center gap-2 ${useDarkText ? 'text-slate-900' : 'text-white'}`}>
-                                <span>Umrah <span className="text-primary">Cabs</span></span>
-                            </span>
-                            <span className={`text-[0.65rem] lg:text-xs font-bold tracking-[0.2em] uppercase leading-none mt-1 transition-colors duration-300 ${useDarkText ? 'text-slate-500' : 'text-white/80'}`}>
-                                Premium Services
-                            </span>
                         </div>
                     </div>
                 </Link>
@@ -204,18 +196,14 @@ export default function Navbar() {
             >
                 <div className="relative flex items-center justify-between p-6 border-b border-border/50">
                     <Link href="/" className="flex items-center gap-3">
-                        <div className="relative w-10 h-10">
+                        <div className="relative w-32 h-16 flex items-center justify-center">
                             <Image
-                                src="/umrah-cabs-logo-v2.svg"
+                                src="/images/logo.png"
                                 alt="Umrah Cabs"
                                 fill
                                 className="object-contain"
-                                sizes="40px"
+                                sizes="128px"
                             />
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-lg font-bold text-slate-900 font-poppins flex items-center gap-1.5">Umrah <span className="text-primary">Cabs</span></span>
-                            <span className="text-[0.6rem] font-bold text-slate-500 tracking-widest uppercase">Premium Services</span>
                         </div>
                     </Link>
                 </div>
