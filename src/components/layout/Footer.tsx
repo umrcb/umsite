@@ -216,60 +216,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* SECTION 3, 4, 5 — SEO Blocks & Fleet Overview */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 border-b border-[#E2E8F0] pb-16 mb-16">
-                        
-                        {/* SECTION 3: Service Areas */}
-                        <div>
-                            <h3 className="text-lg font-bold text-[#0F172A] mb-6">Service Areas</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {[
-                                    "Makkah", "Madinah", "Jeddah", "Taif", "KAEC", "Rabigh", "Yanbu", 
-                                    "King Abdulaziz Airport", "Prince Mohammad Airport", "Hotels", "Train Stations", "Holy Sites"
-                                ].map((area) => (
-                                    <Link key={area} href={`/service-areas/${area.toLowerCase().replace(/ /g, '-')}`} className="text-xs bg-white border border-[#E2E8F0] text-[#475569] px-3 py-1.5 rounded-full hover:bg-[#115E39] hover:text-white hover:border-[#115E39] transition-all">
-                                        {area}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
 
-                        {/* SECTION 4: Popular Searches */}
-                        <div>
-                            <h3 className="text-lg font-bold text-[#0F172A] mb-6">Popular Searches</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {[
-                                    "Airport Taxi Saudi Arabia", "Umrah Taxi", "Makkah Taxi", "Madinah Taxi", 
-                                    "Airport Transfer", "Hotel Transfer", "Luxury Chauffeur", "VIP Taxi", 
-                                    "Saudi Taxi", "Private Driver Saudi Arabia"
-                                ].map((search) => (
-                                    <Link key={search} href={`/search/${search.toLowerCase().replace(/ /g, '-')}`} className="text-xs text-[#115E39] bg-[#115E39]/10 px-3 py-1.5 rounded-full hover:bg-[#115E39] hover:text-white transition-all font-medium">
-                                        {search}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* SECTION 5: Fleet Overview */}
-                        <div>
-                            <h3 className="text-lg font-bold text-[#0F172A] mb-6">Fleet Overview</h3>
-                            <div className="grid grid-cols-2 gap-3">
-                                {[
-                                    { name: "Toyota Camry", desc: "4 Pax • 4 Lugg" },
-                                    { name: "Toyota Hiace", desc: "11 Pax • 11 Lugg" },
-                                    { name: "Toyota Coaster", desc: "19 Pax • 15 Lugg" },
-                                    { name: "Hyundai Staria", desc: "7 Pax • 7 Lugg" },
-                                    { name: "Hyundai H1", desc: "7 Pax • 7 Lugg" },
-                                    { name: "GMC Yukon", desc: "Premium SUV" },
-                                ].map((vehicle) => (
-                                    <Link key={vehicle.name} href={`/fleet/${vehicle.name.toLowerCase().replace(/ /g, '-')}`} className="block bg-white border border-[#E2E8F0] p-3 rounded-lg hover:border-[#115E39] hover:shadow-md transition-all group">
-                                        <p className="text-sm font-bold text-[#0F172A] group-hover:text-[#115E39] transition-colors">{vehicle.name}</p>
-                                        <p className="text-xs text-[#64748B] mt-0.5">{vehicle.desc}</p>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
 
                     {/* SECTION 6 — Trust & Certifications */}
                     <div className="border-b border-[#E2E8F0] pb-16 mb-12 flex justify-center">
