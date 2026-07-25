@@ -1,12 +1,8 @@
 import { getBaseUrl } from '@/lib/url-utils';
 import React from 'react';
-import { Clock, ShieldCheck, Globe, Star } from 'lucide-react';
-import FadeIn from '@/components/common/FadeIn';
 import ContactForm from '@/components/contact/ContactForm';
 import Hero from '@/components/common/Hero';
-import Breadcrumbs from '@/components/common/Breadcrumbs';
-import GlassCard from '@/components/ui/GlassCard';
-import ContactGrid from '@/components/contact/ContactGrid';
+import Link from 'next/link';
 import { constructMetadata } from '@/lib/metadata';
 import { getSettings } from '@/lib/settings-storage';
 
@@ -79,6 +75,8 @@ export default async function ContactPage() {
         }
     };
 
+    const whatsappLink = `https://wa.me/${phone1.replace(/[^0-9]/g, '')}`;
+
     return (
         <div className="bg-slate-50 min-h-screen pb-20">
             <script
@@ -88,74 +86,89 @@ export default async function ContactPage() {
             <Hero
                 title="Get in Touch"
                 subtitle="Reliable Booking & 24/7 Support for Your Umrah Journey. Premium Transport Services from Makkah to Madinah."
-                bgImage="/images/contact-hero.jpg"
-                breadcrumbs={<Breadcrumbs />}
+                bgImage="https://images.unsplash.com/photo-1542314831-c6a4d14b8fc4?auto=format&fit=crop&q=80&w=2500"
+                alt="Contact Umrah Cabs"
+                breadcrumbs={
+                    <div className="flex items-center justify-center gap-2 text-sm font-medium">
+                        <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                        <span>›</span>
+                        <span className="text-primary font-semibold">Contact</span>
+                    </div>
+                }
             />
 
-            <div className="container mx-auto px-4 -mt-16 relative z-10">
-                {/* Intro Trust Strip */}
-                <FadeIn direction="up" delay={0.1}>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-                        {[
-                            { icon: Clock, text: "24/7 Service", sub: "Round-the-clock support" },
-                            { icon: ShieldCheck, text: "Licensed & Safe", sub: "Fully insured vehicles" },
-                            { icon: Globe, text: "Multilingual", sub: "English, Urdu, Arabic" },
-                            { icon: Star, text: "Top Rated", sub: "Excellent service" }
-                        ].map((item, idx) => (
-                            <div key={idx} className="bg-white p-4 rounded-xl shadow-lg border border-slate-100 text-center transform hover:-translate-y-1 transition-transform duration-300">
-                                <div className="w-10 h-10 mx-auto mb-2 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
-                                    <item.icon className="w-5 h-5" />
-                                </div>
-                                <h3 className="font-bold text-navy text-sm md:text-base">{item.text}</h3>
-                                <p className="text-xs text-slate-500">{item.sub}</p>
-                            </div>
-                        ))}
-                    </div>
-                </FadeIn>
-
-                <div className="grid lg:grid-cols-12 gap-8 items-start">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 max-w-6xl">
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
                     {/* Contact Info Column */}
-                    <div className="lg:col-span-5 space-y-6">
-                        <ContactGrid contactSettings={{
-                            phone: phone1,
-                            email,
-                            address
-                        }} />
+                    <div className="space-y-12">
+                        <div>
+                            <h2 className="text-3xl font-bold text-slate-900 mb-6 font-poppins">Contact Information</h2>
+                            <p className="text-slate-600 mb-8 leading-relaxed text-lg">
+                                Whether you have a question about our fleet, need a custom quote for a large group, or require immediate assistance during your Umrah journey, our team is ready to help 24/7.
+                            </p>
+                            
+                            <div className="space-y-8">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-slate-900 text-lg mb-1">Phone Number</h3>
+                                        <a href={`tel:${phone1}`} className="text-slate-600 hover:text-primary transition-colors text-lg">{phone1}</a>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 bg-[#25D366]/10 rounded-full flex items-center justify-center shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#25D366]"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-slate-900 text-lg mb-1">WhatsApp</h3>
+                                        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-[#25D366] transition-colors text-lg">Message us on WhatsApp</a>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"></path><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path><path d="m16 19 2 2 4-4"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-slate-900 text-lg mb-1">Email Address</h3>
+                                        <a href={`mailto:${email}`} className="text-slate-600 hover:text-primary transition-colors text-lg">{email}</a>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex items-start gap-4">
+                                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-slate-900 text-lg mb-1">Office Address</h3>
+                                        <p className="text-slate-600 text-lg leading-relaxed">{address}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                        {/* Map Placeholder */}
-                        <FadeIn direction="up" delay={0.4}>
-                            <GlassCard className="p-0 overflow-hidden min-h-[400px] relative flex items-center justify-center bg-white border border-primary/20 shadow-lg" id="map">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.526883410923!2d39.8126588!3d21.447833599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21d9da1e4d599%3A0xb8a485c3949902cc!2sAl%20Aqsa%20Umrah%20Transport!5e0!3m2!1sen!2s"
-                                    width="100%"
-                                    height="100%"
-                                    loading="lazy"
-                                    className="w-full h-full min-h-[400px] border-0 grayscale hover:grayscale-0 transition-all duration-700"
-                                    title="Umrah Cabs Map"
-                                    allowFullScreen
-                                />
-                            </GlassCard>
-                        </FadeIn>
+                        {/* Map */}
+                        <div className="w-full h-[300px] rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3713.526883410923!2d39.8126588!3d21.447833599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c21d9da1e4d599%3A0xb8a485c3949902cc!2sAl%20Aqsa%20Umrah%20Transport!5e0!3m2!1sen!2s"
+                                width="100%"
+                                height="100%"
+                                loading="lazy"
+                                className="border-0 grayscale hover:grayscale-0 transition-all duration-700"
+                                title="Umrah Cabs Map"
+                                allowFullScreen
+                            />
+                        </div>
                     </div>
 
                     {/* Contact Form Column */}
-                    <div className="lg:col-span-7">
-                        <FadeIn direction="left" delay={0.3}>
-                            <GlassCard className="p-8 md:p-10 border-t-4 border-t-secondary bg-white shadow-xl relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -mr-10 -mt-10" />
-                                <div className="mb-8 relative z-10">
-                                    <h2 className="text-3xl font-bold text-navy mb-2 font-playfair">
-                                        Send Us a Message
-                                        <span className="block text-xl font-normal text-secondary mt-2">Get in touch</span>
-                                    </h2>
-                                    <p className="text-slate-600 leading-relaxed">
-                                        Need a custom quote for your Umrah group? Have questions about our GMC Yukon fleet?
-                                        Fill out the form below and our team will get back to you within minutes.
-                                    </p>
-                                </div>
-                                <ContactForm />
-                            </GlassCard>
-                        </FadeIn>
+                    <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-200">
+                        <h2 className="text-3xl font-bold text-slate-900 mb-2 font-poppins">Send a Message</h2>
+                        <p className="text-slate-600 mb-8 text-lg">We typically reply within a few minutes.</p>
+                        <ContactForm />
                     </div>
                 </div>
             </div>
