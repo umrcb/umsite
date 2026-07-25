@@ -110,13 +110,19 @@ export default function Footer() {
                         <div className="lg:col-span-2">
                             <MobileAccordion title="Services">
                                 {[
-                                    "Airport Transfers", "Jeddah Airport Transfer", "Madinah Airport Transfer",
-                                    "Hotel Transfers", "Intercity Transfers", "VIP Chauffeur",
-                                    "Umrah Taxi", "Hajj Transport", "Corporate Transport", 
-                                    "Group Transport", "Ziyarat Tours"
+                                    { label: "Airport Transfers", href: "/services/airport-transfers" },
+                                    { label: "Jeddah Airport Transfer", href: "/services/jeddah-airport-transfer" },
+                                    { label: "Madinah Airport Transfer", href: "/services/madinah-airport-transfer" },
+                                    { label: "Hotel Transfers", href: "/services/hotel-transfers" },
+                                    { label: "Intercity Transfers", href: "/services/intercity-transfer" },
+                                    { label: "VIP Chauffeur", href: "/fleet/gmc-yukon" },
+                                    { label: "Umrah Taxi", href: "/services/makkah-madinah-taxi" },
+                                    { label: "Hajj Transport", href: "/services/makkah-madinah-taxi" },
+                                    { label: "Group Transport", href: "/fleet/toyota-coaster" },
+                                    { label: "Ziyarat Tours", href: "/services/intercity-transfer" }
                                 ].map((item) => (
-                                    <Link key={item} href={`/services/${item.toLowerCase().replace(/ /g, '-')}`} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
-                                        {item}
+                                    <Link key={item.label} href={item.href} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
+                                        {item.label}
                                     </Link>
                                 ))}
                             </MobileAccordion>
@@ -126,14 +132,19 @@ export default function Footer() {
                         <div className="lg:col-span-2">
                             <MobileAccordion title="Popular Routes">
                                 {[
-                                    "Jeddah Airport to Makkah", "Jeddah Airport to Madinah", 
-                                    "Makkah to Madinah", "Madinah to Makkah", 
-                                    "Makkah to Taif", "Taif to Makkah", 
-                                    "Hotel to Airport", "Airport to Hotel", 
-                                    "Madinah Airport to Hotel", "Makkah Ziyarat", "Madinah Ziyarat"
+                                    { label: "Jeddah Airport to Makkah", href: "/services/jeddah-airport-transfer" },
+                                    { label: "Jeddah Airport to Madinah", href: "/services/jeddah-airport-transfer" },
+                                    { label: "Makkah to Madinah", href: "/services/makkah-madinah-taxi" },
+                                    { label: "Madinah to Makkah", href: "/services/makkah-madinah-taxi" },
+                                    { label: "Makkah to Taif", href: "/services/intercity-transfer" },
+                                    { label: "Taif to Makkah", href: "/services/intercity-transfer" },
+                                    { label: "Hotel to Airport", href: "/services/hotel-transfers" },
+                                    { label: "Airport to Hotel", href: "/services/airport-transfers" },
+                                    { label: "Makkah Ziyarat", href: "/services/intercity-transfer" },
+                                    { label: "Madinah Ziyarat", href: "/services/intercity-transfer" }
                                 ].map((item) => (
-                                    <Link key={item} href={`/routes/${item.toLowerCase().replace(/ /g, '-')}`} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
-                                        {item}
+                                    <Link key={item.label} href={item.href} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
+                                        {item.label}
                                     </Link>
                                 ))}
                             </MobileAccordion>
@@ -143,11 +154,15 @@ export default function Footer() {
                         <div className="lg:col-span-2">
                             <MobileAccordion title="Fleet">
                                 {[
-                                    "Toyota Camry", "Toyota Hiace", "Toyota Coaster", 
-                                    "Hyundai Staria", "Hyundai H1", "Hyundai Starex", "GMC Yukon"
+                                    { label: "Toyota Camry", href: "/fleet/toyota-camry" },
+                                    { label: "Toyota Hiace", href: "/fleet/toyota-hiace" },
+                                    { label: "Toyota Coaster", href: "/fleet/toyota-coaster" },
+                                    { label: "Hyundai Staria", href: "/fleet/hyundai-staria" },
+                                    { label: "Hyundai H1", href: "/fleet/hyundai-h1" },
+                                    { label: "GMC Yukon", href: "/fleet/gmc-yukon" }
                                 ].map((item) => (
-                                    <Link key={item} href={`/fleet/${item.toLowerCase().replace(/ /g, '-')}`} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
-                                        {item}
+                                    <Link key={item.label} href={item.href} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
+                                        {item.label}
                                     </Link>
                                 ))}
                             </MobileAccordion>
