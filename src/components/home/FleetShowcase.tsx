@@ -3,23 +3,33 @@ import { VehicleService } from '@/services/vehicleService';
 import { getSettings } from '@/lib/settings-storage';
 import FleetShowcaseClient, { FleetVehicle } from './FleetShowcaseClient';
 
+import { vehicles as staticVehicles } from '@/data/vehicles';
+
 async function FleetFetcher() {
     const vehicles = await VehicleService.getActiveVehicles();
     const settings = await getSettings();
 
-    // Map to FleetVehicle format
+    // Map to FleetVehicle format, with fallback to static images if DB images are missing
     const showcaseVehicles: FleetVehicle[] = vehicles
-        .filter(v => v.isActive && ((v.images && v.images.length > 0) || ((v as any).image && (v as any).image.trim() !== '')))
+        .filter(v => v.isActive)
         .slice(0, 6)
-        .map((v, idx) => ({
-            id: (v as any)._id ? (v as any)._id.toString() : (v.id || `vehicle-${idx}`),
-            name: v.name,
-            image: v.images && v.images.length > 0 ? v.images[0] : (v as any).image,
-            passengers: v.name.toLowerCase().includes('hiace') ? "10/11" : v.passengers,
-            luggage: v.luggage,
-            features: v.features || [],
-            price: v.price > 0 ? `SAR ${v.price}` : getStartingPrice(v.name)
-        }));
+        .map((v, idx) => {
+            const staticMatch = staticVehicles.find(
+                sv => sv.name.toLowerCase() === v.name.toLowerCase() || 
+                     ((v as any).slug && sv.slug === (v as any).slug)
+            );
+            const fallbackImage = staticMatch ? staticMatch.heroImage : '/images/placeholder.png';
+            
+            return {
+                id: (v as any)._id ? (v as any)._id.toString() : (v.id || `vehicle-${idx}`),
+                name: v.name,
+                image: (v.images && v.images.length > 0) ? v.images[0] : ((v as any).image || fallbackImage),
+                passengers: v.name.toLowerCase().includes('hiace') ? "10/11" : v.passengers,
+                luggage: v.luggage,
+                features: v.features || [],
+                price: v.price > 0 ? `SAR ${v.price}` : getStartingPrice(v.name)
+            };
+        });
 
     return <FleetShowcaseClient vehicles={showcaseVehicles} discount={settings.discount} />;
 }
