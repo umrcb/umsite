@@ -46,7 +46,7 @@ const TopBar = async () => {
                             <div className="w-6 h-6 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                                 <Phone size={12} className="text-primary group-hover:text-background transition-colors duration-300" />
                             </div>
-                            <span className="group-hover:text-primary transition-colors duration-300">{contact.phone}</span>
+                            <span className="group-hover:text-primary transition-colors duration-300">WhatsApp Chat</span>
                         </a>
                     )}
                     {contact.phone2 && (
@@ -61,7 +61,7 @@ const TopBar = async () => {
                                 <div className="w-6 h-6 rounded-full bg-primary/5 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                                     <Phone size={12} className="text-primary group-hover:text-background transition-colors duration-300" />
                                 </div>
-                                <span className="group-hover:text-primary transition-colors duration-300">{contact.phone2}</span>
+                                <span className="group-hover:text-primary transition-colors duration-300">Support</span>
                             </a>
                         </>
                     )}

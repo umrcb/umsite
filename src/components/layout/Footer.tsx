@@ -61,9 +61,6 @@ export default function Footer() {
                         <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-[#115E39] font-bold rounded-lg hover:bg-gray-50 transition-colors text-center shadow-lg whitespace-nowrap">
                             WhatsApp
                         </a>
-                        <a href={`tel:${contact.phone}`} className="px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-colors text-center whitespace-nowrap">
-                            Call Now
-                        </a>
                     </div>
                 </div>
             </section>
@@ -183,8 +180,7 @@ export default function Footer() {
                                 <div className="flex gap-3">
                                     <Phone className="w-5 h-5 text-[#115E39] shrink-0" />
                                     <div>
-                                        <p className="text-sm font-bold text-[#0F172A]">Phone / WhatsApp</p>
-                                        <a href={`tel:${contact.phone}`} className="text-sm text-[#475569] hover:text-[#115E39] block">{contact.phone}</a>
+                                        <p className="text-sm font-bold text-[#0F172A]">WhatsApp</p>
                                         <a href={whatsappLink} className="text-sm text-[#475569] hover:text-[#115E39] block">WhatsApp Chat</a>
                                     </div>
                                 </div>

@@ -83,9 +83,6 @@ export default function TrustAndFAQ() {
                         <a href="https://wa.me/966500000000" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 bg-emerald-600 text-white hover:bg-emerald-500 transition-colors shadow-lg">
                             <MessageCircle size={20} /> Chat on WhatsApp
                         </a>
-                        <a href="tel:+966500000000" className="px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 border border-slate-700 text-white hover:bg-slate-800 transition-colors">
-                            <Phone size={20} /> Call Now
-                        </a>
                     </div>
                 </div>
             </div>

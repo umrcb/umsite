@@ -35,7 +35,7 @@ export default function ServicesContactSection() {
                                     <Phone size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-navy mb-1">Phone / WhatsApp</h4>
+                                    <h4 className="font-bold text-navy mb-1">WhatsApp</h4>
                                     <p className="text-slate-600 mb-2">24/7 Support for Bookings & Queries</p>
                                     <a 
                                         href={getWhatsAppLink("Hello! I need help with booking.")}
@@ -44,7 +44,7 @@ export default function ServicesContactSection() {
                                         className="text-primary font-bold text-lg hover:text-primary transition-colors inline-flex items-center gap-2"
                                     >
                                         <MessageCircle size={18} />
-                                        +966 50 123 4567
+                                        WhatsApp Chat
                                     </a>
                                 </div>
                             </div>
