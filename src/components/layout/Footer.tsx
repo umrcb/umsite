@@ -153,33 +153,8 @@ export default function Footer() {
                             </MobileAccordion>
                         </div>
 
-                        {/* Column 5 — Company */}
-                        <div className="lg:col-span-1">
-                            <MobileAccordion title="Company">
-                                {[
-                                    { label: "About Us", href: "/about" },
-                                    { label: "Fleet", href: "/fleet" },
-                                    { label: "Pricing", href: "/pricing" },
-                                    { label: "Booking", href: "/book" },
-                                    { label: "Blog", href: "/blog" },
-                                    { label: "FAQs", href: "/faqs" },
-                                    { label: "Contact", href: "/contact" },
-                                    { label: "Terms & Conditions", href: "/terms" },
-                                    { label: "Privacy Policy", href: "/privacy-policy" },
-                                    { label: "Refund Policy", href: "/refund-policy" },
-                                    { label: "Cancellation Policy", href: "/cancellation" },
-                                    { label: "Cookies Policy", href: "/cookies" },
-                                    { label: "Sitemap", href: "/sitemap.xml" },
-                                ].map((item) => (
-                                    <Link key={item.label} href={item.href} className="block text-sm text-[#475569] hover:text-[#115E39] transition-colors">
-                                        {item.label}
-                                    </Link>
-                                ))}
-                            </MobileAccordion>
-                        </div>
-
-                        {/* Column 6 — Contact */}
-                        <div className="lg:col-span-2 lg:pl-4">
+                        {/* Column 5 — Contact */}
+                        <div className="lg:col-span-3 lg:pl-4">
                             <h4 className="text-lg font-bold text-[#0F172A] mb-6 tracking-wide hidden lg:block">Contact</h4>
                             <div className="space-y-6">
                                 <div className="flex gap-3">
