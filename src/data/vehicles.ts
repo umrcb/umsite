@@ -66,9 +66,10 @@ export const vehicles: VehicleData[] = [
     shortDescription: "11 Passenger Luxury Van",
     heroImage: "/fleet/cars/toyota-hiace-v3.png",
     gallery: [
-      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
+      "/fleet/toyota-hiace-gallery/hiace_2026_exterior_1785014646800.png",
+      "/fleet/toyota-hiace-gallery/hiace_2026_interior_1785014666996.png",
+      "/fleet/toyota-hiace-gallery/hiace_2026_luggage_1785014689488.png",
+      "/fleet/toyota-hiace-gallery/hiace_2026_road_1785014710246.png"
     ],
     passengers: 11,
     luggage: 11,
