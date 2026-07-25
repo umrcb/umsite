@@ -73,7 +73,7 @@ export default function Footer() {
                 <div className="container mx-auto max-w-[1320px]">
                     
                     {/* SECTION 2 — Main Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-12 border-b border-[#E2E8F0] pb-8 mb-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-12">
                         
                         {/* Column 1 — Company Information */}
                         <div className="lg:col-span-3 space-y-6">
@@ -208,7 +208,7 @@ export default function Footer() {
 
 
                     {/* SECTION 8 & 9 — Copyright */}
-                    <div className="flex flex-col items-center justify-center gap-6 pt-4">
+                    <div className="flex flex-col items-center justify-center gap-6 mt-12 pt-6 border-t border-[#E2E8F0]">
                         <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-[#64748B]">
                             <p>© {new Date().getFullYear()} Umrah Taxi Services. All Rights Reserved.</p>
                             <div className="hidden sm:block w-1 h-1 rounded-full bg-[#CBD5E1]" />
