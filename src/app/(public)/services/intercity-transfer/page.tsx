@@ -100,6 +100,8 @@ const jsonLd = {
     ]
 };
 
+import Hero from '@/components/common/Hero';
+
 export default function IntercityTransferPage() {
     return (
         <main className="bg-white min-h-screen font-inter text-slate-600">
@@ -109,59 +111,28 @@ export default function IntercityTransferPage() {
             />
 
             {/* 1. PREMIUM HERO SECTION */}
-            <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="https://images.unsplash.com/photo-1549317661-bd32c8ce0be2?auto=format&fit=crop&q=80&w=2000"
-                        alt="Luxury SUV on Saudi Highway"
-                        fill
-                        className="object-cover object-center"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-white/90"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-50 via-white/50 to-transparent"></div>
-                </div>
-
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center gap-10">
-                    <div className="max-w-4xl w-full flex flex-col items-center">
-                        {/* Breadcrumb */}
-                        <div className="mb-6 text-sm font-medium text-slate-500 flex items-center justify-center gap-2">
-                            <Link href="/" className="hover:text-[#2E8B57] transition-colors">Home</Link>
-                            <ChevronRight size={14} />
-                            <Link href="/services" className="hover:text-[#2E8B57] transition-colors">Services</Link>
-                            <ChevronRight size={14} />
-                            <span className="text-[#2E8B57]">Intercity Transfers</span>
-                        </div>
-
-                        {/* Trust Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-[#E2E8F0] shadow-sm mb-8">
-                            <Star className="text-[#C9A227] fill-[#C9A227]" size={16} />
-                            <span className="text-sm font-semibold text-slate-800">Saudi Arabia's Premier Long-Distance Chauffeur Service</span>
-                        </div>
-
-                        <h1 className="text-5xl md:text-6xl lg:text-[72px] font-bold text-[#0F172A] leading-tight mb-6 font-poppins tracking-tight">
-                            Premium <span className="text-[#2E8B57]">Intercity Transfers</span><br />
-                            Across Saudi Arabia
-                        </h1>
-
-                        <p className="text-lg md:text-xl text-[#475569] leading-relaxed mb-10 max-w-3xl">
-                            Travel comfortably between Saudi Arabia's major cities with professional chauffeurs, luxury vehicles, fixed pricing, and 24/7 customer support.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                            <Link href="/booking" className="w-full sm:w-auto px-8 py-4 bg-[#2E8B57] hover:bg-[#1B5E20] text-white rounded-xl font-semibold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
-                                Book Now <ArrowRight size={20} />
-                            </Link>
-                            <div className="flex gap-4 w-full sm:w-auto">
-                                <Link href="#routes" className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-[#E2E8F0] hover:border-[#2E8B57] text-slate-700 hover:text-[#2E8B57] rounded-xl font-semibold text-lg transition-all flex items-center justify-center">
-                                    View Routes
-                                </Link>
-                                <a href="https://wa.me/966502891323" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 bg-white border-2 border-[#E2E8F0] hover:border-[#2E8B57] text-[#2E8B57] rounded-xl font-semibold text-lg transition-all flex items-center justify-center gap-2">
-                                    <MessageCircle size={20} /> WhatsApp
-                                </a>
-                            </div>
-                        </div>
+            <Hero
+                title={<>Premium Intercity Transfers<br />Across Saudi Arabia</>}
+                subtitle="Travel comfortably between Saudi Arabia's major cities with professional chauffeurs, luxury vehicles, fixed pricing, and 24/7 customer support."
+                bgImage="https://images.unsplash.com/photo-1549317661-bd32c8ce0be2?auto=format&fit=crop&q=80&w=2500"
+                alt="Luxury SUV on Saudi Highway"
+                badge="Saudi Arabia's Premier Long-Distance Chauffeur Service"
+                ctaText="Book Now"
+                ctaLink="/booking"
+                secondaryCtaText="View Routes"
+                secondaryCtaLink="#routes"
+                breadcrumbs={
+                    <div className="flex items-center gap-2 text-sm font-medium">
+                        <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                        <span>›</span>
+                        <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+                        <span>›</span>
+                        <span className="text-primary font-semibold">Intercity Transfers</span>
                     </div>
+                }
+            />
+
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30 -mt-24 lg:-mt-32 flex justify-center">
 
                     {/* FLOATING BOOKING WIDGET */}
                     <div className="w-full max-w-5xl mt-12">
@@ -209,7 +180,6 @@ export default function IntercityTransferPage() {
                         </div>
                     </div>
                 </div>
-            </section>
 
             {/* 2. TRUST BAR */}
             <section className="bg-white border-y border-[#E2E8F0] py-6 relative z-20">

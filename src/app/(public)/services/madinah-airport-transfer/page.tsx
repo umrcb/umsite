@@ -102,51 +102,26 @@ export default async function MadinahAirportTransferPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* 1. PREMIUM HERO SECTION */}
-            <section className="relative min-h-[90vh] flex items-center pt-32 pb-24 overflow-hidden bg-slate-50">
-                <div className="absolute inset-0 z-0">
-                    <Image 
-                        src="/images/routes/madinah-airport-hero.png" 
-                        alt="Madinah Airport Transfer"
-                        fill
-                        className="object-cover object-center opacity-90"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-white/90"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#F8FAFC] via-white/50 to-transparent"></div>
-                </div>
-
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center gap-12">
-                    <div className="max-w-4xl w-full flex flex-col items-center">
-                        <div className="mb-4 text-sm font-medium text-slate-500 font-inter">
-                            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-                            <span className="mx-2">→</span>
-                            <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
-                            <span className="mx-2">→</span>
-                            <span className="text-primary">Madinah Airport Transfer</span>
-                        </div>
-
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 border border-primary/20 backdrop-blur-md">
-                            <Star size={14} className="fill-[#C9A227] text-[#C9A227]" /> Trusted Airport Transfer Service for Umrah & Hajj Travelers
-                        </div>
-
-                        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-[1.1] font-poppins tracking-tight">
-                            Premium <span className="text-primary block mt-2">Madinah Airport Transfer</span> Services
-                        </h1>
-                        <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-inter max-w-3xl">
-                            Professional airport transfer services between Prince Mohammad Bin Abdulaziz Airport, Madinah hotels, Masjid An-Nabawi, Makkah, and surrounding destinations. Enjoy fixed pricing, luxury vehicles, meet-and-greet service, and professional chauffeurs.
-                        </p>
-                        
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="/booking" className="inline-flex items-center gap-2 bg-primary text-white hover:bg-[#1B5E20] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(46,139,87,0.3)] hover:shadow-[0_0_30px_rgba(46,139,87,0.5)] hover:-translate-y-1">
-                                Book Airport Transfer <ArrowRight size={20} />
-                            </Link>
-                            <Link href={whatsappLink} className="inline-flex items-center gap-2 bg-white text-slate-800 border border-slate-200 hover:border-slate-300 hover:bg-slate-50 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-sm hover:shadow-md">
-                                <PhoneCall size={20} className="text-primary" /> WhatsApp Support
-                            </Link>
-                        </div>
+            <Hero
+                title={<>Premium <span className="text-primary block mt-2">Madinah Airport Transfer</span> Services</>}
+                subtitle="Professional airport transfer services between Prince Mohammad Bin Abdulaziz Airport, Madinah hotels, Masjid An-Nabawi, Makkah, and surrounding destinations. Enjoy fixed pricing, luxury vehicles, meet-and-greet service, and professional chauffeurs."
+                bgImage="/images/routes/madinah-airport-hero.png"
+                alt="Madinah Airport Transfer"
+                badge="Trusted Airport Transfer Service for Umrah & Hajj Travelers"
+                ctaText="Book Airport Transfer"
+                ctaLink="/booking"
+                secondaryCtaText="WhatsApp Support"
+                secondaryCtaLink={whatsappLink}
+                breadcrumbs={
+                    <div className="flex items-center gap-2 text-sm font-medium">
+                        <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                        <span>›</span>
+                        <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+                        <span>›</span>
+                        <span className="text-primary font-semibold">Madinah Airport Transfer</span>
                     </div>
-                </div>
-            </section>
+                }
+            />
 
             {/* 3. TRUST BAR */}
             <section className="py-12 bg-white border-b border-slate-200 relative z-20">

@@ -69,6 +69,8 @@ export async function generateMetadata() {
     });
 }
 
+import Hero from '@/components/common/Hero';
+
 export default async function JeddahAirportTransferLuxuryPage() {
     const settings = await getSettings();
     const phoneNumber = settings.contact.phone;
@@ -79,60 +81,45 @@ export default async function JeddahAirportTransferLuxuryPage() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* 1. PREMIUM HERO */}
-            <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden bg-slate-50">
-                <div className="absolute inset-0 z-0">
-                    <Image 
-                        src="/images/routes/jeddah-airport-hero-professional.png" 
-                        alt="Jeddah Airport Luxury Transfer"
-                        fill
-                        className="object-cover object-center opacity-90"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/90"></div>
-                </div>
+            <Hero
+                title={<>Jeddah Airport to Makkah.<br /><span className="text-primary italic font-light">Elevated.</span></>}
+                subtitle="Begin your Umrah journey with absolute peace of mind. Professional drivers, VIP meet & greet, and luxury vehicles ensuring a serene arrival."
+                bgImage="/images/routes/jeddah-airport-hero-professional.png"
+                alt="Jeddah Airport Luxury Transfer"
+                badge="Premium Chauffeur Service"
+                ctaText="Book Arrival Transfer"
+                ctaLink="/booking"
+                secondaryCtaText="Explore Fleet"
+                secondaryCtaLink="#fleet"
+                breadcrumbs={
+                    <div className="flex items-center gap-2 text-sm font-medium">
+                        <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                        <span>›</span>
+                        <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+                        <span>›</span>
+                        <span className="text-primary font-semibold">Jeddah Airport to Makkah</span>
+                    </div>
+                }
+            />
 
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="max-w-2xl">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 border border-primary/20 backdrop-blur-md">
-                            <Star size={14} className="fill-primary" /> Premium Chauffeur Service
-                        </div>
-                        <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-[1.1] font-poppins tracking-tight">
-                            Jeddah Airport to Makkah.
-                            <span className="block text-primary font-light italic mt-2">Elevated.</span>
-                        </h1>
-                        <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed font-inter max-w-xl">
-                            Begin your Umrah journey with absolute peace of mind. Professional drivers, VIP meet & greet, and luxury vehicles ensuring a serene arrival.
-                        </p>
-                        
-                        <div className="flex flex-wrap gap-4">
-                            <Link href={whatsappLink} className="inline-flex items-center gap-2 bg-primary text-white hover:bg-[#1B5E20] px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-primary/30 hover:-translate-y-1">
-                                Book Arrival Transfer <ArrowRight size={20} />
-                            </Link>
-                            <Link href="#fleet" className="inline-flex items-center gap-2 bg-white text-slate-800 border border-slate-200 hover:border-slate-300 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-sm hover:shadow-md">
-                                Explore Fleet
-                            </Link>
-                        </div>
-
-                        {/* Floating Trust Indicators */}
-                        <div className="mt-12 flex items-center gap-6 pt-8 border-t border-slate-200/60">
-                            <div className="flex -space-x-4">
-                                {[1,2,3,4].map((i) => (
-                                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden relative">
-                                        <Image src={`/images/reviews/avatar-${i}.jpg`} alt="User" fill className="object-cover" />
-                                    </div>
-                                ))}
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-30 -mt-8 flex justify-center">
+                {/* Floating Trust Indicators */}
+                <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-6 flex flex-col sm:flex-row items-center gap-6">
+                    <div className="flex -space-x-4">
+                        {[1,2,3,4].map((i) => (
+                            <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-slate-200 overflow-hidden relative shadow-sm">
+                                <Image src={`/images/reviews/avatar-${i}.jpg`} alt="User" fill className="object-cover" />
                             </div>
-                            <div>
-                                <div className="flex items-center gap-1 text-[#C9A227] mb-1">
-                                    <Star size={16} className="fill-current" /><Star size={16} className="fill-current" /><Star size={16} className="fill-current" /><Star size={16} className="fill-current" /><Star size={16} className="fill-current" />
-                                </div>
-                                <p className="text-sm text-slate-600 font-medium">Trusted by 25,000+ Pilgrims</p>
-                            </div>
+                        ))}
+                    </div>
+                    <div className="text-center sm:text-left">
+                        <div className="flex items-center justify-center sm:justify-start gap-1 text-[#C9A227] mb-1">
+                            <Star size={16} className="fill-current" /><Star size={16} className="fill-current" /><Star size={16} className="fill-current" /><Star size={16} className="fill-current" /><Star size={16} className="fill-current" />
                         </div>
+                        <p className="text-sm text-slate-600 font-medium">Trusted by 25,000+ Pilgrims</p>
                     </div>
                 </div>
-            </section>
+            </div>
 
             {/* 2. TRUST STATISTICS */}
             <section className="py-16 bg-white border-b border-slate-100">

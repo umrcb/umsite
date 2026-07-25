@@ -1,22 +1,15 @@
 import React from 'react';
-import styles from './BlogHero.module.css';
-import FadeIn from '@/components/common/FadeIn';
+import Hero from '@/components/common/Hero';
 
 export default function BlogHero() {
     return (
-        <section className={styles.hero}>
-            <div className="container">
-                <div className={styles.heroContent}>
-                    <FadeIn direction="down">
-                        <h1 className={styles.title}>Pilgrim Resources & Insights</h1>
-                    </FadeIn>
-                    <FadeIn delay={0.2} direction="up">
-                        <p className={styles.subtitle}>
-                            Expert guides, travel tips, and answers to your questions for a blessed and hassle-free Umrah journey.
-                        </p>
-                    </FadeIn>
-                </div>
-            </div>
-        </section>
+        <Hero
+            title="Pilgrim Resources & Insights"
+            subtitle="Expert guides, travel tips, and answers to your questions for a blessed and hassle-free Umrah journey."
+            bgImage="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=2500"
+            alt="Pilgrim Resources"
+            badge="Travel Guide"
+        />
     );
 }
+
