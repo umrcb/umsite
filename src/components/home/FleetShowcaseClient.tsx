@@ -78,7 +78,7 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                 {vehicles.map((vehicle, idx) => (
                     <div 
                         key={vehicle.id} 
-                        className="premium-card shrink-0 w-[320px] md:w-[400px] snap-center flex flex-col overflow-hidden bg-white hover:-translate-y-2 transition-transform duration-500 rounded-xl md:rounded-2xl"
+                        className="shrink-0 w-[320px] md:w-[400px] snap-center flex flex-col overflow-hidden bg-white border border-[#E2E8F0] shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-xl md:rounded-2xl"
                     >
                         {/* Image Section */}
                         <div className="relative h-[200px] w-full bg-[#F8FAFC]">
