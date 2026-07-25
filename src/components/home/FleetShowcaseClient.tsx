@@ -129,10 +129,10 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                                 </div>
                             </div>
 
-                            <div className="space-y-1.5 mb-5">
+                            <div className="flex flex-wrap gap-x-4 gap-y-2 mb-5">
                                 {vehicle.features.slice(0, 3).map((feature, i) => (
-                                    <div key={i} className="flex items-center gap-2 text-xs text-[#475569]">
-                                        <Check size={14} className="text-primary" />
+                                    <div key={i} className="flex items-center gap-1.5 text-xs text-[#475569]">
+                                        <Check size={14} className="text-primary shrink-0" />
                                         <span>{feature}</span>
                                     </div>
                                 ))}
