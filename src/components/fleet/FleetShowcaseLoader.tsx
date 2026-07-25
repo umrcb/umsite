@@ -6,13 +6,13 @@ export default async function FleetShowcaseLoader() {
     const vehicles = await VehicleService.getActiveVehicles();
 
     const showcaseVehicles: ShowcaseVehicle[] = vehicles.map(v => ({
-        id: v.id || '',
+        id: (v._id || (v as any).id || '').toString(),
         name: v.name,
         price: v.price > 0 ? `SAR ${v.price}` : getStartingPrice(v.name),
         passengers: v.passengers,
         luggage: v.luggage,
-        features: v.features,
-        image: v.image
+        features: v.features || [],
+        image: v.images && v.images.length > 0 ? v.images[0] : (v as any).image || '/images/placeholder.png'
     }));
 
     return <FleetShowcase vehicles={showcaseVehicles} />;
