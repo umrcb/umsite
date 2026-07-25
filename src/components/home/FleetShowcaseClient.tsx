@@ -71,7 +71,7 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
 
             <motion.div
                 ref={scrollContainerRef}
-                className="flex gap-4 md:gap-6 overflow-x-auto pb-8 pt-4 cursor-grab active:cursor-grabbing hide-scrollbar snap-x snap-mandatory"
+                className="flex gap-4 md:gap-6 overflow-x-auto pb-8 pt-4 cursor-grab active:cursor-grabbing no-scrollbar snap-x snap-mandatory"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
@@ -103,8 +103,8 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                         </div>
 
                         {/* Content Section */}
-                        <div className="px-3 py-4 md:px-5 md:py-5 flex-1 flex flex-col">
-                            <div className="flex justify-between items-start mb-3 border-b border-[#E2E8F0] pb-3">
+                        <div className="px-3 pt-4 pb-3 md:px-5 md:pt-4 md:pb-4 flex-1 flex flex-col">
+                            <div className="flex justify-between items-start mb-3 border-b border-[#E2E8F0] pb-2">
                                 <div>
                                     <h3 className="text-xl font-bold font-poppins text-[#0F172A]">{vehicle.name}</h3>
                                 </div>
@@ -114,22 +114,22 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                                 </div>
                             </div>
 
-                            <div className="flex items-center gap-4 mb-4">
+                            <div className="flex items-center gap-4 mb-3">
                                 <div className="flex items-center gap-2 text-[#475569]">
-                                    <div className="w-7 h-7 rounded-full bg-[#F8FAFC] flex items-center justify-center text-primary">
-                                        <Users size={14} />
+                                    <div className="w-6 h-6 rounded-full bg-[#F8FAFC] flex items-center justify-center text-primary">
+                                        <Users size={12} />
                                     </div>
                                     <span className="font-medium text-xs">{vehicle.passengers} Pax</span>
                                 </div>
                                 <div className="flex items-center gap-2 text-[#475569]">
-                                    <div className="w-7 h-7 rounded-full bg-[#F8FAFC] flex items-center justify-center text-primary">
-                                        <Briefcase size={14} />
+                                    <div className="w-6 h-6 rounded-full bg-[#F8FAFC] flex items-center justify-center text-primary">
+                                        <Briefcase size={12} />
                                     </div>
                                     <span className="font-medium text-xs">{vehicle.luggage} Bags</span>
                                 </div>
                             </div>
 
-                            <div className="flex flex-wrap gap-x-4 gap-y-2 mb-5">
+                            <div className="flex flex-wrap gap-x-4 gap-y-1.5 mb-3">
                                 {vehicle.features.slice(0, 3).map((feature, i) => (
                                     <div key={i} className="flex items-center gap-1.5 text-xs text-[#475569]">
                                         <Check size={14} className="text-primary shrink-0" />
@@ -138,12 +138,12 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                                 ))}
                             </div>
 
-                            <div className="mt-auto">
+                            <div className="mt-auto pt-2">
                                 <a
                                     href={getWhatsAppLink(`Salam Umrah Cabs, I am interested in booking the ${vehicle.name} (${vehicle.passengers} pax).`)}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn-primary w-full py-2.5 flex justify-center text-sm"
+                                    className="btn-primary w-full py-2 flex justify-center text-sm"
                                 >
                                     Book via WhatsApp <ArrowRight size={16} className="ml-2" />
                                 </a>
@@ -152,16 +152,6 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                     </div>
                 ))}
             </motion.div>
-
-            <style jsx>{`
-                .hide-scrollbar::-webkit-scrollbar {
-                    display: none;
-                }
-                .hide-scrollbar {
-                    -ms-overflow-style: none;
-                    scrollbar-width: none;
-                }
-            `}</style>
         </div>
     );
 }

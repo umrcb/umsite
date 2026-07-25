@@ -113,4 +113,13 @@
   .nav-glass {
     @apply bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20;
   }
+
+  /* Hide Scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
