@@ -280,7 +280,6 @@ export const vehicles: VehicleData[] = [
     heroImage: "/fleet/cars/hyundai-h1.png",
     gallery: [
       "/fleet/h1-gallery/h1_exterior_1785016378702.png",
-      "/fleet/h1-gallery/h1_luggage_1785016387624.png",
       "/fleet/h1-gallery/h1_road_1785016397559.png"
     ],
     passengers: 7,
