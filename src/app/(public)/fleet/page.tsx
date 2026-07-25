@@ -16,7 +16,6 @@ import FleetShowcaseGrid from '@/components/fleet/FleetShowcaseGrid';
 import FleetComparisonTable from '@/components/fleet/FleetComparisonTable';
 import FleetRecommendation from '@/components/fleet/FleetRecommendation';
 import FleetFeatures from '@/components/fleet/FleetFeatures';
-import FleetGallery from '@/components/fleet/FleetGallery';
 import FleetCTABanner from '@/components/fleet/FleetCTABanner';
 
 // Dynamic import for testimonials
@@ -74,7 +73,6 @@ export default function FleetPage() {
             <FleetComparisonTable />
             <FleetRecommendation />
             <FleetFeatures />
-            <FleetGallery />
             
             {/* Testimonials */}
             <div className="bg-slate-50 py-16">
