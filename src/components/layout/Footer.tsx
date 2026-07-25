@@ -69,11 +69,11 @@ export default function Footer() {
             </section>
 
             {/* MAIN FOOTER */}
-            <div className="bg-[#F9FAFB] pt-20 pb-16 px-6 lg:px-8">
+            <div className="bg-[#F9FAFB] pt-12 pb-8 px-6 lg:px-8">
                 <div className="container mx-auto max-w-[1320px]">
                     
                     {/* SECTION 2 — Main Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-12 border-b border-[#E2E8F0] pb-16 mb-16">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-12 border-b border-[#E2E8F0] pb-8 mb-8">
                         
                         {/* Column 1 — Company Information */}
                         <div className="lg:col-span-3 space-y-6">
@@ -219,7 +219,7 @@ export default function Footer() {
 
 
                     {/* SECTION 6 — Trust & Certifications */}
-                    <div className="border-b border-[#E2E8F0] pb-16 mb-12 flex justify-center">
+                    <div className="border-b border-[#E2E8F0] pb-8 mb-8 flex justify-center">
                         <div className="flex flex-wrap gap-6 items-center justify-center text-sm text-[#475569] font-medium max-w-4xl">
                             <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Licensed Transportation Company</span>
                             <span className="flex items-center gap-1.5"><ShieldCheck className="w-5 h-5 text-[#115E39]" /> Professional Chauffeurs</span>
@@ -230,8 +230,8 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* SECTION 8 & 9 — Payment & Copyright */}
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-4">
+                    {/* SECTION 8 & 9 — Copyright */}
+                    <div className="flex flex-col items-center justify-center gap-6 pt-4">
                         <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-[#64748B]">
                             <p>© {new Date().getFullYear()} Umrah Taxi Services. All Rights Reserved.</p>
                             <div className="hidden sm:block w-1 h-1 rounded-full bg-[#CBD5E1]" />
@@ -240,15 +240,6 @@ export default function Footer() {
                                 <Link href="/terms" className="hover:text-[#115E39] transition-colors">Terms</Link>
                                 <Link href="/cookies" className="hover:text-[#115E39] transition-colors">Cookies</Link>
                             </div>
-                        </div>
-
-                        {/* Payment Methods */}
-                        <div className="flex items-center gap-3 opacity-70 grayscale hover:grayscale-0 transition-all duration-300">
-                            {/* Simple text/icons representing payments, using lucide CreditCard for generic */}
-                            <div className="flex items-center gap-1.5 px-3 py-1.5 border border-[#E2E8F0] rounded bg-white text-xs font-bold text-[#475569]"><CreditCard className="w-4 h-4" /> Visa</div>
-                            <div className="flex items-center gap-1.5 px-3 py-1.5 border border-[#E2E8F0] rounded bg-white text-xs font-bold text-[#475569]"><CreditCard className="w-4 h-4" /> Mastercard</div>
-                            <div className="flex items-center gap-1.5 px-3 py-1.5 border border-[#E2E8F0] rounded bg-white text-xs font-bold text-[#475569]">Apple Pay</div>
-                            <div className="flex items-center gap-1.5 px-3 py-1.5 border border-[#E2E8F0] rounded bg-white text-xs font-bold text-[#475569]">Mada</div>
                         </div>
                     </div>
                 </div>
