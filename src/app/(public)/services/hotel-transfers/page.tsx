@@ -565,7 +565,7 @@ export default function HotelTransfersPage() {
                             </div>
                             <div className="flex gap-4 text-sm text-slate-600 mb-8 border-b border-[#E2E8F0] pb-6">
                                 <div className="flex items-center gap-1"><Users size={16}/> Up to 4</div>
-                                <div className="flex items-center gap-1"><Luggage size={16}/> 3 Bags</div>
+                                <div className="flex items-center gap-1"><Luggage size={16}/> 4 Bags</div>
                             </div>
                             <ul className="space-y-4 mb-8">
                                 <li className="flex items-center gap-3 text-slate-700"><Check size={16} className="text-[#2E8B57]" /> Local Hotel Transfer</li>
@@ -589,7 +589,7 @@ export default function HotelTransfersPage() {
                             </div>
                             <div className="flex gap-4 text-sm text-slate-300 mb-8 border-b border-slate-700 pb-6">
                                 <div className="flex items-center gap-1"><Users size={16}/> Up to 7</div>
-                                <div className="flex items-center gap-1"><Luggage size={16}/> 5 Bags</div>
+                                <div className="flex items-center gap-1"><Luggage size={16}/> 6 Bags</div>
                             </div>
                             <ul className="space-y-4 mb-8">
                                 <li className="flex items-center gap-3 text-slate-200"><Check size={16} className="text-[#C9A227]" /> Hotel to Airport</li>
@@ -611,7 +611,7 @@ export default function HotelTransfersPage() {
                             </div>
                             <div className="flex gap-4 text-sm text-slate-600 mb-8 border-b border-[#E2E8F0] pb-6">
                                 <div className="flex items-center gap-1"><Users size={16}/> Up to 11</div>
-                                <div className="flex items-center gap-1"><Luggage size={16}/> 10 Bags</div>
+                                <div className="flex items-center gap-1"><Luggage size={16}/> 11 Bags</div>
                             </div>
                             <ul className="space-y-4 mb-8">
                                 <li className="flex items-center gap-3 text-slate-700"><Check size={16} className="text-[#2E8B57]" /> Group Intercity</li>

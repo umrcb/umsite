@@ -16,7 +16,7 @@ export default function HyundaiStariaSEO() {
                         Hyundai Staria: The Smart Choice for Umrah Group Travel
                     </h2>
                     <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl mx-auto">
-                        Traveling to the Holy Cities as an extended family or a tight-knit group? The <Link href="/booking?vehicle=staria" className="text-amber-600 font-semibold hover:underline border-b border-amber-600/30">Hyundai Staria 9-Seater</Link> is revolutionizing group Umrah transport. It bridges the gap between hiring multiple small taxis and booking an oversized, expensive Coaster bus, offering a premium yet highly economical solution.
+                        Traveling to the Holy Cities as an extended family or a tight-knit group? The <Link href="/booking?vehicle=staria" className="text-amber-600 font-semibold hover:underline border-b border-amber-600/30">Hyundai Staria 7-Seater</Link> is revolutionizing group Umrah transport. It bridges the gap between hiring multiple small taxis and booking an oversized, expensive Coaster bus, offering a premium yet highly economical solution.
                     </p>
                 </div>
 

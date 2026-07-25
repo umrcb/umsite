@@ -1,6 +1,7 @@
 import { getBaseUrl } from '@/lib/url-utils';
 import { getSettings } from '@/lib/settings-storage';
 import { constructMetadata } from '@/lib/metadata';
+import { getVehicleBySlug } from '@/data/vehicles';
 import Link from 'next/link';
 import { 
     ArrowRight, MapPin, Clock, ShieldCheck, Star, UserCheck, 
@@ -59,7 +60,7 @@ const faqs = [
     },
     {
         question: "Is luggage included?",
-        answer: "Yes, standard luggage is included based on the vehicle capacity. For example, a GMC Yukon can easily accommodate up to 5 large suitcases. There are no hidden fees for luggage within the vehicle's capacity."
+        answer: "Yes, standard luggage is included based on the vehicle capacity. For example, a GMC Yukon can easily accommodate up to 6 large suitcases. There are no hidden fees for luggage within the vehicle's capacity."
     },
     {
         question: "Are prices fixed?",
@@ -264,40 +265,40 @@ export default async function MakkahMadinahTaxiLuxuryPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {[
-                            { name: "Toyota Hiace", class: "Group Transport", img: "/images/fleet/hiace.png", seats: "12", luggage: "10", price: "550", bestFor: "Large Families" },
-                            { name: "Hyundai Staria", class: "Premium Minivan", img: "/images/fleet/staria.png", seats: "7", luggage: "6", price: "450", bestFor: "Comfort Seekers" },
-                            { name: "GMC Yukon AT4", class: "VIP SUV", img: "/images/fleet/yukon.png", seats: "7", luggage: "5", price: "700", bestFor: "Luxury Travel" }
-                        ].map((vehicle, idx) => (
+                            { vehicle: getVehicleBySlug('toyota-hiace'), class: "Group Transport", bestFor: "Large Families", fallbackPrice: "550" },
+                            { vehicle: getVehicleBySlug('hyundai-staria'), class: "Premium Minivan", bestFor: "Comfort Seekers", fallbackPrice: "450" },
+                            { vehicle: getVehicleBySlug('gmc-yukon'), class: "VIP SUV", bestFor: "Luxury Travel", fallbackPrice: "700" }
+                        ].map((item, idx) => (
                             <div key={idx} className="bg-white rounded-[24px] p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 group flex flex-col">
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full uppercase tracking-wider">
-                                        {vehicle.class}
+                                        {item.class}
                                     </div>
                                     <div className="inline-block px-3 py-1 bg-[#C9A227]/10 text-[#C9A227] text-xs font-bold rounded-full">
-                                        {vehicle.bestFor}
+                                        {item.bestFor}
                                     </div>
                                 </div>
                                 <div className="aspect-[16/9] relative mb-8 rounded-xl overflow-hidden bg-white flex items-center justify-center p-4">
-                                    <Image src={vehicle.img} alt={vehicle.name} fill className="object-contain group-hover:scale-105 transition-transform duration-500" />
+                                    <Image src={item.vehicle?.heroImage || ""} alt={item.vehicle?.name || ""} fill className="object-contain group-hover:scale-105 transition-transform duration-500" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-slate-900 mb-6 font-poppins">{vehicle.name}</h3>
+                                <h3 className="text-2xl font-bold text-slate-900 mb-6 font-poppins">{item.vehicle?.name}</h3>
                                 <div className="flex items-center justify-between border-y border-slate-100 py-4 mb-6">
                                     <div className="flex items-center gap-2">
                                         <UserCheck size={18} className="text-slate-400" />
-                                        <span className="text-sm font-medium text-slate-600">{vehicle.seats} Passengers</span>
+                                        <span className="text-sm font-medium text-slate-600">{item.vehicle?.passengers} Passengers</span>
                                     </div>
                                     <div className="w-px h-8 bg-slate-100"></div>
                                     <div className="flex items-center gap-2">
                                         <div className="w-4 h-4 rounded border-2 border-slate-400 relative">
                                             <div className="absolute top-0.5 left-1 w-1 h-2 bg-slate-400 rounded-sm"></div>
                                         </div>
-                                        <span className="text-sm font-medium text-slate-600">{vehicle.luggage} Bags</span>
+                                        <span className="text-sm font-medium text-slate-600">{item.vehicle?.luggage} Bags</span>
                                     </div>
                                 </div>
                                 <div className="mt-auto">
                                     <p className="text-sm text-slate-500 mb-1">Intercity Fare from</p>
-                                    <p className="text-3xl font-bold text-slate-900 mb-6 font-poppins">{vehicle.price} <span className="text-base text-slate-500 font-normal">SAR</span></p>
-                                    <Link href="/booking" className="block w-full text-center bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white py-3.5 rounded-xl font-bold transition-colors">
+                                    <p className="text-3xl font-bold text-slate-900 mb-6 font-poppins">{item.fallbackPrice} <span className="text-base text-slate-500 font-normal">SAR</span></p>
+                                    <Link href={`/booking?vehicle=${item.vehicle?.slug}`} className="block w-full text-center bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white py-3.5 rounded-xl font-bold transition-colors">
                                         Book This Vehicle
                                     </Link>
                                 </div>

@@ -72,7 +72,7 @@ const faqItems = [
     },
     {
         question: "How much luggage can I bring?",
-        answer: "Luggage capacity depends on the vehicle you select. Our standard sedans accommodate 2-3 bags, while our SUVs and vans can comfortably hold up to 10+ bags for larger families."
+        answer: "Luggage capacity depends on the vehicle you select. Our standard sedans accommodate up to 4 bags, while our SUVs and vans can comfortably hold between 6 to 11 bags for larger families."
     },
     {
         question: "Can I book a return transfer?",
@@ -439,9 +439,9 @@ export default async function MadinahAirportTransferPage() {
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
-                            { vehicle: "Luxury Sedan", cap: "2-3 Passengers", price: "150 SAR", rec: false },
-                            { vehicle: "Premium SUV", cap: "6-7 Passengers", price: "350 SAR", rec: true },
-                            { vehicle: "Family Van", cap: "10-13 Passengers", price: "450 SAR", rec: false }
+                            { vehicle: "Luxury Sedan", cap: "4 Passengers", price: "150 SAR", rec: false },
+                            { vehicle: "Premium SUV", cap: "7 Passengers", price: "350 SAR", rec: true },
+                            { vehicle: "Family Van", cap: "11 Passengers", price: "450 SAR", rec: false }
                         ].map((tier, idx) => (
                             <div key={idx} className={`rounded-[32px] p-8 border ${tier.rec ? 'border-primary shadow-2xl relative bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-900 shadow-xl'} transition-transform hover:-translate-y-2 duration-300`}>
                                 {tier.rec && (

@@ -51,8 +51,8 @@ export default function ContactGrid({ contactSettings }: ContactGridProps) {
             title: "Visit Our Office",
             value: address,
             sub: "Open Daily: 9 AM - 10 PM",
-            action: "#map",
-            btnText: "View Location",
+            action: "https://share.google/SS0Q2cwd1hUkcTSAx",
+            btnText: "View on Google Maps",
             type: 'other'
         }
     ];

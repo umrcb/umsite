@@ -50,7 +50,7 @@ export default function PilgrimExperiences() {
 
                             <div className="flex flex-col items-center sm:items-start gap-4">
                                 <a
-                                    href="https://search.google.com/local/writereview?placeid=ChIJmdXkoZ0dwhURzAKZlMOFpLg"
+                                    href="https://share.google/SS0Q2cwd1hUkcTSAx"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn-primary inline-flex items-center gap-2 py-3 px-6 shadow-md hover:shadow-lg"
@@ -120,7 +120,7 @@ export default function PilgrimExperiences() {
                 <FadeIn delay={0.6}>
                     <div className="text-center">
                         <a
-                            href="https://www.google.com/maps?cid=13304906274217460428"
+                            href="https://share.google/SS0Q2cwd1hUkcTSAx"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 text-[#475569] hover:text-primary transition-colors font-medium text-sm group"

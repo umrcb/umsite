@@ -9,8 +9,6 @@ import { ArrowRight } from 'lucide-react';
 import { getWhatsAppLink } from '@/lib/whatsapp';
 import { CheckCircle2 } from 'lucide-react';
 
-// Consolidated Components
-import UnifiedBookingWidget from '@/components/home/UnifiedBookingWidget';
 import WhyChooseUs from '@/components/home/WhyChooseUs';
 import FleetShowcase from '@/components/home/FleetShowcase';
 import PilgrimExperiences from '@/components/home/PilgrimExperiences';
@@ -59,9 +57,6 @@ export default async function Home() {
       
       {/* 1. Hero Section */}
       <HomeHero />
-
-      {/* 2. Unified Booking Widget (Replaces Horizontal Form & Calculator) */}
-      <UnifiedBookingWidget />
 
       {/* 3. Transport Services */}
       <ScrollReveal width="100%">

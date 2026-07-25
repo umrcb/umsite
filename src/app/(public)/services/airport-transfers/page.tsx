@@ -10,6 +10,7 @@ import AirportInteractiveMap from '@/components/services/airport/AirportInteract
 import { Metadata } from 'next';
 
 import { constructMetadata } from '@/lib/metadata';
+import { getVehicleBySlug } from '@/data/vehicles';
 
 export async function generateMetadata() {
     return constructMetadata({
@@ -200,7 +201,7 @@ export default async function AirportTransfersPage() {
                             <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-800 h-full flex flex-col">
                                 <div className="h-56 relative overflow-hidden group bg-white dark:bg-slate-800 flex items-center justify-center p-4">
                                     <Image
-                                        src="/images/fleet/camry.png"
+                                        src={getVehicleBySlug('toyota-camry')?.heroImage || "/images/fleet/camry.png"}
                                         alt="Toyota Camry Standard Sedan for Affordable Makkah Airport Transfer"
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -208,11 +209,11 @@ export default async function AirportTransfersPage() {
                                     />
                                 </div>
                                 <div className="p-6 flex-1 flex flex-col border-t border-slate-100 dark:border-slate-800">
-                                    <h3 className="text-xl font-bold mb-2">Standard Sedan</h3>
+                                    <h3 className="text-xl font-bold mb-2">{getVehicleBySlug('toyota-camry')?.name || "Standard Sedan"}</h3>
                                     <p className="text-muted-foreground text-sm mb-4">Perfect for couples or solo travelers with light luggage.</p>
                                     <ul className="text-sm space-y-3 mb-6 mt-auto text-slate-600 dark:text-slate-400">
-                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Comfortable for 2-3 Passengers</li>
-                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Space for 2 Standard Suitcases</li>
+                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Comfortable for {getVehicleBySlug('toyota-camry')?.passengers} Passengers</li>
+                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Space for {getVehicleBySlug('toyota-camry')?.luggage} Suitcases</li>
                                     </ul>
                                 </div>
                             </div>
@@ -222,7 +223,7 @@ export default async function AirportTransfersPage() {
                                 <div className="absolute top-4 right-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">Most Popular</div>
                                 <div className="h-56 relative overflow-hidden group bg-white dark:bg-slate-800 flex items-center justify-center p-4">
                                     <Image
-                                        src="/images/fleet/gmc.png"
+                                        src={getVehicleBySlug('gmc-yukon')?.heroImage || "/images/fleet/gmc.png"}
                                         alt="GMC Yukon XL VIP Luxury SUV for Jeddah Airport Pickup"
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -230,11 +231,11 @@ export default async function AirportTransfersPage() {
                                     />
                                 </div>
                                 <div className="p-6 flex-1 flex flex-col border-t border-slate-100 dark:border-slate-800">
-                                    <h3 className="text-xl font-bold mb-2">VIP GMC Yukon</h3>
+                                    <h3 className="text-xl font-bold mb-2">{getVehicleBySlug('gmc-yukon')?.name || "VIP GMC Yukon"}</h3>
                                     <p className="text-muted-foreground text-sm mb-4">Luxury and space for families. Travel like a VIP.</p>
                                     <ul className="text-sm space-y-3 mb-6 mt-auto text-slate-600 dark:text-slate-400">
-                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Luxury seating for 7 Passengers</li>
-                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Large boot for 5-6 Suitcases</li>
+                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Luxury seating for {getVehicleBySlug('gmc-yukon')?.passengers} Passengers</li>
+                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Large boot for {getVehicleBySlug('gmc-yukon')?.luggage} Suitcases</li>
                                     </ul>
                                 </div>
                             </div>
@@ -242,19 +243,20 @@ export default async function AirportTransfersPage() {
                         <FadeIn delay={0.3}>
                             <div className="bg-slate-50 dark:bg-slate-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-100 dark:border-slate-800 h-full flex flex-col">
                                 <div className="h-56 relative overflow-hidden group bg-white dark:bg-slate-800 flex items-center justify-center p-4">
-                                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                                    <img
-                                        src="/images/fleet/hiace.png"
-                                        alt="Toyota Hiace 10-Seater Family Van for Airport Group Transport"
-                                        className="w-auto h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                    <Image
+                                        src={getVehicleBySlug('toyota-hiace')?.heroImage || "/images/fleet/hiace.png"}
+                                        alt="Toyota Hiace 11-Seater Family Van for Airport Group Transport"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        className="object-contain transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>
                                 <div className="p-6 flex-1 flex flex-col border-t border-slate-100 dark:border-slate-800">
-                                    <h3 className="text-xl font-bold mb-2">Family Van (Hiace)</h3>
+                                    <h3 className="text-xl font-bold mb-2">{getVehicleBySlug('toyota-hiace')?.name || "Family Van"}</h3>
                                     <p className="text-muted-foreground text-sm mb-4">Ideal for large groups or families with extra luggage.</p>
                                     <ul className="text-sm space-y-3 mb-6 mt-auto text-slate-600 dark:text-slate-400">
-                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Spacious for 10 Passengers</li>
-                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Capacity for 8-10 Suitcases</li>
+                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Spacious for {getVehicleBySlug('toyota-hiace')?.passengers} Passengers</li>
+                                        <li className="flex items-center gap-3"><MapPin size={16} className="text-amber-500" /> Capacity for {getVehicleBySlug('toyota-hiace')?.luggage} Suitcases</li>
                                     </ul>
                                 </div>
                             </div>

@@ -10,7 +10,6 @@ import MissionVision from '@/components/about/MissionVision';
 import CoreValues from '@/components/about/CoreValues';
 import WhyChooseUs from '@/components/about/WhyChooseUs';
 import CompanyStatistics from '@/components/about/CompanyStatistics';
-import MeetOurTeam from '@/components/about/MeetOurTeam';
 import FleetPreview from '@/components/about/FleetPreview';
 import SafetyCommitment from '@/components/about/SafetyCommitment';
 import ServiceAreas from '@/components/about/ServiceAreas';
@@ -153,7 +152,6 @@ export default function AboutPage() {
       <CoreValues />
       <WhyChooseUs />
       <CompanyStatistics />
-      <MeetOurTeam />
       <FleetPreview />
       <SafetyCommitment />
       <ServiceAreas />

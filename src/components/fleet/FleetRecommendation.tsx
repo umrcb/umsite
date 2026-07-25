@@ -9,47 +9,47 @@ import { Users, ChevronRight, ArrowRight, Shield, CheckCircle } from 'lucide-rea
 const recommendations = [
     {
         id: '2-4',
-        passengers: '2–4 Passengers',
+        passengers: 'Up to 4 Passengers',
         vehicle: 'GMC Yukon',
-        image: '/images/fleet/gmc-yukon-hero-professional.png',
+        image: '/fleet/cars/gmc-yukon.png',
         description: 'Enjoy ultimate comfort and privacy. Perfect for couples or small families wanting a VIP experience.',
-        luggage: '5-6 Large Bags',
+        luggage: '6 Bags',
         link: '/booking?service=vip&vehicle=yukon'
     },
     {
         id: '5-8',
-        passengers: '5–8 Passengers',
+        passengers: 'Up to 7 Passengers',
         vehicle: 'Hyundai Staria',
-        image: '/images/fleet/hyundai-staria-hero.png',
+        image: '/fleet/cars/hyundai-staria.png',
         description: 'A spacious and modern premium van that provides an incredibly smooth ride for families.',
-        luggage: '7-9 Bags',
+        luggage: '7 Bags',
         link: '/booking?service=family&vehicle=staria'
     },
     {
         id: '8-10',
-        passengers: '8–10 Passengers',
+        passengers: 'Up to 7 Passengers',
         vehicle: 'Hyundai Starex',
-        image: '/images/fleet/hyundai-starex-hero.png',
+        image: '/fleet/cars/hyundai-h1.png',
         description: 'The perfect balance of space and comfort for medium-sized families or small groups.',
-        luggage: '8-10 Bags',
+        luggage: '7 Bags',
         link: '/booking?service=group&vehicle=starex'
     },
     {
         id: '10-13',
-        passengers: '10–13 Passengers',
+        passengers: 'Up to 11 Passengers',
         vehicle: 'Toyota Hiace',
-        image: '/images/fleet/toyota-hiace-hero.png',
+        image: '/fleet/cars/toyota-hiace-v3.png',
         description: 'Highly reliable and spacious. The standard choice for Umrah groups and large families.',
-        luggage: '12-15 Bags',
+        luggage: '11 Bags',
         link: '/booking?service=group&vehicle=hiace'
     },
     {
         id: '20-30',
-        passengers: '20–30 Passengers',
+        passengers: 'Up to 19 Passengers',
         vehicle: 'Toyota Coaster',
-        image: '/images/fleet/toyota-coaster-hero.png',
+        image: '/fleet/cars/toyota-coaster.png',
         description: 'A comfortable mini-bus designed specifically for large tours and Hajj groups.',
-        luggage: '20+ Bags',
+        luggage: '15 Bags',
         link: '/booking?service=group&vehicle=coaster'
     }
 ];

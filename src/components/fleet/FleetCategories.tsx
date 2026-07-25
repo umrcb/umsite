@@ -11,21 +11,21 @@ const categories = [
         icon: <Shield size={24} />,
         vehicles: "GMC Yukon, Chevrolet Tahoe",
         idealFor: ["VIP Guests", "Business Travelers", "Small Families"],
-        image: "/images/fleet/gmc-yukon-hero-professional.png"
+        image: "/fleet/cars/gmc-yukon.png"
     },
     {
         title: "Premium Van",
         icon: <Users size={24} />,
         vehicles: "Hyundai Staria, Hyundai Starex",
         idealFor: ["Families", "Airport Transfers", "Umrah Groups"],
-        image: "/images/fleet/hyundai-staria-hero.png"
+        image: "/fleet/cars/hyundai-staria.png"
     },
     {
         title: "Group Transport",
         icon: <Briefcase size={24} />,
         vehicles: "Toyota Hiace, Toyota Coaster",
         idealFor: ["Large Families", "Group Pilgrims", "Hajj & Umrah Tours"],
-        image: "/images/fleet/toyota-hiace-hero.png"
+        image: "/fleet/cars/toyota-hiace-v3.png"
     }
 ];
 

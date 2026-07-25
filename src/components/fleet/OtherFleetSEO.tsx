@@ -52,7 +52,7 @@ export default function OtherFleetSEO({ vehicleId }: { vehicleId: string }) {
                             <BadgeCheck size={18} /> Group Economy Guide
                         </span>
                         <h2 className="text-3xl md:text-5xl font-bold font-playfair text-slate-900 dark:text-white mb-6 leading-tight">
-                            The Definitive 9-11 Seater Umrah Solution
+                            The Definitive 11-Seater Umrah Solution
                         </h2>
                         <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl mx-auto">
                             For extended families and mid-sized tour groups, booking a <Link href={`/booking?vehicle=${vehicleId}`} className="text-amber-600 font-semibold hover:underline border-b border-amber-600/30">{vehicleId === 'hiace' ? 'Toyota Hiace' : 'Hyundai Starex'}</Link> is the most economical way to travel between Makkah, Madinah, and Jeddah Airport.
@@ -97,7 +97,7 @@ export default function OtherFleetSEO({ vehicleId }: { vehicleId: string }) {
                             Toyota Coaster: Premium Bus Service for Umrah Campaigns
                         </h2>
                         <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl mx-auto">
-                            The <Link href="/booking?vehicle=coaster" className="text-amber-600 font-semibold hover:underline border-b border-amber-600/30">Toyota Coaster (22-25 Seater)</Link> is the industry standard for organized Umrah and Hajj campaigns. It offers coach-level comfort for <Link href="/services/makkah-madinah-taxi" className="text-amber-600 hover:underline">intercity transport</Link> without the massive footprint of a 50-seater bus.
+                            The <Link href="/booking?vehicle=coaster" className="text-amber-600 font-semibold hover:underline border-b border-amber-600/30">Toyota Coaster (19-Seater)</Link> is the industry standard for organized Umrah and Hajj campaigns. It offers coach-level comfort for <Link href="/services/makkah-madinah-taxi" className="text-amber-600 hover:underline">intercity transport</Link> without the massive footprint of a 50-seater bus.
                         </p>
                     </div>
 

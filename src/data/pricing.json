@@ -4,7 +4,7 @@
       "id": "car",
       "name": "Car",
       "capacity": "4 Seater",
-      "luggage": "3 Bags",
+      "luggage": "4 Bags",
       "features": ["Air Conditioning", "Comfortable Seats"],
       "category": "Standard",
       "hourlyRate": 70
@@ -22,7 +22,7 @@
       "id": "gmc",
       "name": "GMC",
       "capacity": "7 Seater",
-      "luggage": "7 Bags",
+      "luggage": "6 Bags",
       "features": ["Luxury", "Air Conditioning", "Leather Seats"],
       "category": "SUV",
       "hourlyRate": 140
@@ -30,8 +30,8 @@
     {
       "id": "mp4",
       "name": "MP4",
-      "capacity": "4 Seater",
-      "luggage": "5 Bags",
+      "capacity": "7 Seater",
+      "luggage": "7 Bags",
       "features": ["Air Conditioning", "Comfortable Seats"],
       "category": "Standard",
       "hourlyRate": 80
@@ -48,8 +48,8 @@
     {
       "id": "coaster",
       "name": "Coaster",
-      "capacity": "18 Seater",
-      "luggage": "20 Bags",
+      "capacity": "19 Seater",
+      "luggage": "15 Bags",
       "features": ["Air Conditioning", "Group Travel"],
       "category": "Bus",
       "hourlyRate": 200

@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { getVehicleBySlug } from '../data/vehicles';
 
 export const BookingSchema = z.object({
     name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -9,7 +10,7 @@ export const BookingSchema = z.object({
     date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Invalid date format (YYYY-MM-DD)'),
     time: z.string().regex(/^\d{2}:\d{2}$/, 'Invalid time format (HH:MM)'),
     vehicle: z.string().optional(), // Made optional for backward compatibility
-    passengers: z.number().int().min(1, 'At least 1 passenger is required').max(50, 'Max 50 passengers').optional(), // Made optional as vehicle capacity determines this
+    passengers: z.number().int().min(1, 'At least 1 passenger is required').optional(), // Capacity validated dynamically
     vehicleCount: z.number().int().min(1, 'At least 1 vehicle is required').max(10, 'Max 10 vehicles').optional(),
     luggage: z.number().int().min(0, 'Luggage cannot be negative').optional(),
     notes: z.string().optional(),
@@ -30,6 +31,21 @@ export const BookingSchema = z.object({
     paymentMethod: z.string().optional(),
     paymentStatus: z.enum(['paid', 'unpaid', 'refunded']).optional(),
     price: z.string().optional(),
+}).superRefine((data, ctx) => {
+    if (data.vehicle && data.passengers) {
+        const vehicleData = getVehicleBySlug(data.vehicle);
+        if (vehicleData) {
+            const count = data.vehicleCount || 1;
+            const maxPassengers = vehicleData.passengers * count;
+            if (data.passengers > maxPassengers) {
+                ctx.addIssue({
+                    code: z.ZodIssueCode.custom,
+                    message: `Maximum capacity for ${count} ${vehicleData.name}(s) is ${maxPassengers} passengers.`,
+                    path: ['passengers']
+                });
+            }
+        }
+    }
 });
 
 export const VehicleSchema = z.object({

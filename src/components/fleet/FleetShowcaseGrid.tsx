@@ -6,63 +6,19 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Users, Briefcase, Snowflake, ArrowRight } from 'lucide-react';
 
-const vehicles = [
-    {
-        id: 'hiace',
-        name: 'Toyota Hiace',
-        tag: '15 Seats',
-        capacity: '15 Seats',
-        luggage: '15 Luggage',
-        description: 'Spacious and comfortable van perfect for group travel and Umrah trips.',
-        price: 'SAR 450',
-        image: '/images/fleet/toyota-hiace-hero.png',
-        link: '/booking?service=group&vehicle=hiace'
-    },
-    {
-        id: 'yukon',
-        name: 'GMC Yukon',
-        tag: '7 Seats',
-        capacity: '7 Seats',
-        luggage: '6 Luggage',
-        description: 'Luxury SUV with premium comfort for VIP and family travel.',
-        price: 'SAR 650',
-        image: '/images/fleet/gmc-yukon-hero-professional.png',
-        link: '/booking?service=vip&vehicle=yukon'
-    },
-    {
-        id: 'staria',
-        name: 'Hyundai Staria',
-        tag: '11 Seats',
-        capacity: '11 Seats',
-        luggage: '9 Luggage',
-        description: 'Modern and stylish van with spacious interior and smooth ride.',
-        price: 'SAR 500',
-        image: '/images/fleet/hyundai-staria-hero.png',
-        link: '/booking?service=family&vehicle=staria'
-    },
-    {
-        id: 'starex',
-        name: 'Hyundai Starex',
-        tag: '12 Seats',
-        capacity: '12 Seats',
-        luggage: '10 Luggage',
-        description: 'Reliable and comfortable option for medium sized groups.',
-        price: 'SAR 400',
-        image: '/images/fleet/hyundai-starex-hero.png', // Fallback to generic van or placeholder
-        link: '/booking?service=group&vehicle=starex'
-    },
-    {
-        id: 'coaster',
-        name: 'Toyota Coaster',
-        tag: '22 Seats',
-        capacity: '22 Seats',
-        luggage: '20 Luggage',
-        description: 'Ideal for large groups with ample space and premium comfort.',
-        price: 'SAR 700',
-        image: '/images/fleet/toyota-coaster-hero.png',
-        link: '/booking?service=group&vehicle=coaster'
-    }
-];
+import { vehicles as vehicleData } from '@/data/vehicles';
+
+const vehicles = vehicleData.map(v => ({
+    id: v.slug,
+    name: v.name,
+    tag: `${v.passengers} Seats`,
+    capacity: `${v.passengers} Seats`,
+    luggage: `${v.luggage} Luggage`,
+    description: v.shortDescription,
+    price: `SAR ${v.pricing.startingPrice}`,
+    image: v.heroImage,
+    link: `/booking?vehicle=${v.slug}`
+}));
 
 export default function FleetShowcaseGrid() {
     return (

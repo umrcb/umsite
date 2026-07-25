@@ -60,7 +60,15 @@ export default function Navbar() {
         },
         { 
             href: '/fleet', 
-            label: 'Fleet'
+            label: 'Fleet',
+            dropdown: [
+                { href: '/fleet/gmc-yukon', label: 'GMC Yukon (VIP)' },
+                { href: '/fleet/toyota-hiace', label: 'Toyota Hiace' },
+                { href: '/fleet/hyundai-staria', label: 'Hyundai Staria' },
+                { href: '/fleet/hyundai-h1', label: 'Hyundai H1 / Starex' },
+                { href: '/fleet/toyota-coaster', label: 'Toyota Coaster' },
+                { href: '/fleet/toyota-camry', label: 'Toyota Camry' }
+            ]
         },
         { href: '/pricing', label: 'Pricing' },
         { href: '/about', label: 'About' },
@@ -69,8 +77,8 @@ export default function Navbar() {
 
     const showDarkNav = scrolled || isMenuOpen;
     const isHomePage = pathname === '/';
-    // Make sure we use dark text on all pages that have light backgrounds at the top
-    const useDarkText = showDarkNav || isHomePage || pathname === '/booking' || pathname.startsWith('/services') || pathname.startsWith('/about') || pathname.startsWith('/contact') || pathname.startsWith('/pricing');
+    // All our current pages have light backgrounds at the top, so we always want dark text
+    const useDarkText = true;
 
     const whatsappUrl = getWhatsAppLink("Hello! I would like to inquire about Umrah Cabs.");
 

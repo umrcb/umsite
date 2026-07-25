@@ -7,8 +7,8 @@ import { CheckCircle2, Minus } from 'lucide-react';
 const comparisonData = [
     {
         vehicle: 'GMC Yukon',
-        passengers: '6 - 7',
-        luggage: '5 - 6',
+        passengers: '7',
+        luggage: '6',
         luxury: 'VIP Premium',
         bestFor: 'Executives, VIPs',
         ac: true,
@@ -20,8 +20,8 @@ const comparisonData = [
     },
     {
         vehicle: 'Hyundai Staria',
-        passengers: '7 - 9',
-        luggage: '6 - 7',
+        passengers: '7',
+        luggage: '7',
         luxury: 'Premium',
         bestFor: 'Families',
         ac: true,
@@ -33,8 +33,8 @@ const comparisonData = [
     },
     {
         vehicle: 'Hyundai Starex',
-        passengers: '8 - 10',
-        luggage: '7 - 8',
+        passengers: '7',
+        luggage: '7',
         luxury: 'Standard Plus',
         bestFor: 'Small Groups',
         ac: true,
@@ -46,8 +46,8 @@ const comparisonData = [
     },
     {
         vehicle: 'Toyota Hiace',
-        passengers: '10 - 13',
-        luggage: '10+',
+        passengers: '11',
+        luggage: '11',
         luxury: 'Standard',
         bestFor: 'Large Families',
         ac: true,
@@ -59,8 +59,8 @@ const comparisonData = [
     },
     {
         vehicle: 'Toyota Coaster',
-        passengers: '20 - 30',
-        luggage: '20+',
+        passengers: '19',
+        luggage: '15',
         luxury: 'Standard',
         bestFor: 'Tour Groups',
         ac: true,

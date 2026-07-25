@@ -502,7 +502,7 @@ export default function IntercityTransferPage() {
                             </div>
                             <div className="flex gap-4 text-sm text-slate-600 mb-8 border-b border-[#E2E8F0] pb-6">
                                 <div className="flex items-center gap-1"><Users size={16}/> Up to 4</div>
-                                <div className="flex items-center gap-1"><Luggage size={16}/> 3 Bags</div>
+                                <div className="flex items-center gap-1"><Luggage size={16}/> 4 Bags</div>
                             </div>
                             <Link href="/booking" className="block w-full py-3 text-center border-2 border-[#2E8B57] text-[#2E8B57] hover:bg-[#2E8B57] hover:text-white rounded-xl font-semibold transition-all">
                                 Book Sedan
@@ -522,7 +522,7 @@ export default function IntercityTransferPage() {
                             </div>
                             <div className="flex gap-4 text-sm text-slate-300 mb-8 border-b border-slate-700 pb-6">
                                 <div className="flex items-center gap-1"><Users size={16}/> Up to 7</div>
-                                <div className="flex items-center gap-1"><Luggage size={16}/> 5 Bags</div>
+                                <div className="flex items-center gap-1"><Luggage size={16}/> 6 Bags</div>
                             </div>
                             <Link href="/booking" className="block w-full py-3 text-center bg-[#2E8B57] hover:bg-[#1B5E20] text-white rounded-xl font-semibold transition-all">
                                 Book Premium SUV
@@ -538,8 +538,8 @@ export default function IntercityTransferPage() {
                                 <span className="text-slate-500"> / trip</span>
                             </div>
                             <div className="flex gap-4 text-sm text-slate-600 mb-8 border-b border-[#E2E8F0] pb-6">
-                                <div className="flex items-center gap-1"><Users size={16}/> Up to 12</div>
-                                <div className="flex items-center gap-1"><Luggage size={16}/> 10 Bags</div>
+                                <div className="flex items-center gap-1"><Users size={16}/> Up to 11</div>
+                                <div className="flex items-center gap-1"><Luggage size={16}/> 11 Bags</div>
                             </div>
                             <Link href="/booking" className="block w-full py-3 text-center border-2 border-[#2E8B57] text-[#2E8B57] hover:bg-[#2E8B57] hover:text-white rounded-xl font-semibold transition-all">
                                 Book Van
