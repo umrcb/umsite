@@ -66,10 +66,9 @@ export const vehicles: VehicleData[] = [
     shortDescription: "11 Passenger Luxury Van",
     heroImage: "/fleet/cars/toyota-hiace-v3.png",
     gallery: [
-      "https://images.unsplash.com/photo-1596700078864-77a83d09a06b?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1621376829774-783359d48b11?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1635338901248-26f63f5383f5?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1582236829399-52824be812d4?auto=format&fit=crop&q=80&w=1200"
+      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
     ],
     passengers: 11,
     luggage: 11,
@@ -140,10 +139,9 @@ export const vehicles: VehicleData[] = [
     shortDescription: "7 Passenger Premium SUV",
     heroImage: "/fleet/cars/gmc-yukon.png",
     gallery: [
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1563720225384-9c0f129e66ff?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=1200"
+      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
     ],
     passengers: 7,
     luggage: 6,
@@ -213,9 +211,9 @@ export const vehicles: VehicleData[] = [
     shortDescription: "7 Passenger Modern Minivan",
     heroImage: "/fleet/cars/hyundai-staria.png",
     gallery: [
-      "https://images.unsplash.com/photo-1629897048514-3dd741432732?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1542282088-fe8426682b8f?auto=format&fit=crop&q=80&w=1200"
+      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
     ],
     passengers: 7,
     luggage: 7,
@@ -281,8 +279,9 @@ export const vehicles: VehicleData[] = [
     shortDescription: "7 Passenger Minivan",
     heroImage: "/fleet/cars/hyundai-h1.png",
     gallery: [
-      "https://images.unsplash.com/photo-1552554707-1b03362140bb?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=1200"
+      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
     ],
     passengers: 7,
     luggage: 7,
@@ -341,8 +340,9 @@ export const vehicles: VehicleData[] = [
     shortDescription: "19 Passenger Minibus",
     heroImage: "/fleet/cars/toyota-coaster.png",
     gallery: [
-      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&q=80&w=1200"
+      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
     ],
     passengers: 19,
     luggage: 15,
@@ -404,8 +404,9 @@ export const vehicles: VehicleData[] = [
     shortDescription: "4 Passenger Premium Sedan",
     heroImage: "/fleet/cars/toyota-camry.png",
     gallery: [
-      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fd?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1558221295-d2fc05d4df19?auto=format&fit=crop&q=80&w=1200"
+      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
     ],
     passengers: 4,
     luggage: 4,
