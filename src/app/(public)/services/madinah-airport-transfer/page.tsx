@@ -10,6 +10,8 @@ import { getSettings } from '@/lib/settings-storage';
 import FleetShowcase from '@/components/home/FleetShowcase';
 import FAQSection from '@/components/services/FAQSection';
 
+import Hero from '@/components/common/Hero';
+
 export const metadata: Metadata = {
     title: "Premium Madinah Airport Transfer | Airport Taxi & Hotel Transfer | Umrah Taxi Services",
     description: "Book reliable Madinah Airport transfers with licensed chauffeurs, luxury vehicles, flight tracking, meet-and-greet service, and fixed pricing. Safe transportation to hotels, Makkah, and major destinations.",
