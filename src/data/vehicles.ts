@@ -64,7 +64,7 @@ export const vehicles: VehicleData[] = [
     slug: "toyota-hiace",
     badge: "Premium Group Transport",
     shortDescription: "11 Passenger Luxury Van",
-    heroImage: "/fleet/cars/toyota-hiace-v3.png",
+    heroImage: "/images/fleet/hiace-transparent.png",
     gallery: [
       "/fleet/toyota-hiace-gallery/hiace_2026_exterior_1785014646800.png",
       "/fleet/toyota-hiace-gallery/hiace_2026_luggage_1785014689488.png",
@@ -137,11 +137,11 @@ export const vehicles: VehicleData[] = [
     slug: "gmc-yukon",
     badge: "VIP Luxury SUV",
     shortDescription: "7 Passenger Premium SUV",
-    heroImage: "/fleet/cars/gmc-yukon.png",
+    heroImage: "/images/fleet/gmc-transparent.png",
     gallery: [
-      "https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1200",
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&q=80&w=1200"
+      "/images/fleet/gmc-gallery/1.png",
+      "/images/fleet/gmc-gallery/2.png",
+      "/images/vip_transport.png"
     ],
     passengers: 7,
     luggage: 6,
@@ -209,7 +209,7 @@ export const vehicles: VehicleData[] = [
     slug: "hyundai-staria",
     badge: "Modern Comfort",
     shortDescription: "7 Passenger Modern Minivan",
-    heroImage: "/fleet/cars/hyundai-staria.png",
+    heroImage: "/images/fleet/staria-transparent.png",
     gallery: [
       "/fleet/staria-gallery/staria_exterior_1785016336596.png",
       "/fleet/staria-gallery/staria_luggage_1785016345212.png",
@@ -277,7 +277,7 @@ export const vehicles: VehicleData[] = [
     slug: "hyundai-h1",
     badge: "Family Classic",
     shortDescription: "7 Passenger Minivan",
-    heroImage: "/fleet/cars/hyundai-h1.png",
+    heroImage: "/images/fleet/h1-transparent.png",
     gallery: [
       "/fleet/h1-gallery/h1_exterior_1785016378702.png",
       "/fleet/h1-gallery/h1_road_1785016397559.png"
@@ -337,7 +337,7 @@ export const vehicles: VehicleData[] = [
     slug: "toyota-coaster",
     badge: "Large Group Travel",
     shortDescription: "19 Passenger Minibus",
-    heroImage: "/fleet/cars/toyota-coaster.png",
+    heroImage: "/images/fleet/coaster-transparent.png",
     gallery: [
       "/fleet/coaster-gallery/coaster_exterior_1785016423400.png",
       "/fleet/coaster-gallery/coaster_luggage_1785016434239.png"
@@ -400,7 +400,7 @@ export const vehicles: VehicleData[] = [
     slug: "toyota-camry",
     badge: "Executive Sedan",
     shortDescription: "4 Passenger Premium Sedan",
-    heroImage: "/fleet/cars/toyota-camry.png",
+    heroImage: "/images/fleet/camry-transparent.png",
     gallery: [
       "/fleet/camry-gallery/camry_exterior_1785016469336.png",
       "/fleet/camry-gallery/camry_luggage_1785016477899.png",

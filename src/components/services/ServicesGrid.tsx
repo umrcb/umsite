@@ -12,7 +12,7 @@ const services = [
         icon: <Plane size={24} />,
         title: 'Airport Transfer',
         description: 'Hassle-free airport pickup with meet & greet. Start your journey with our reliable service.',
-        image: 'https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=800',
+        image: 'https://images.unsplash.com/photo-1530521954074-e64f6810b32d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8YWlycG9ydCUyMHRheGl8ZW58MHx8fHwxNzg1MDk2MTk3fDA&ixlib=rb-4.1.0&q=80&w=1080',
         features: ['Meet & Greet', 'Flight Tracking', 'Luggage Assistance', 'Fixed Price'],
         link: '/services/jeddah-airport-transfer'
     },
@@ -21,7 +21,7 @@ const services = [
         icon: <Building2 size={24} />,
         title: 'Makkah Hotel Transfers',
         description: 'Luxury pickups and drops between your hotel, apartment, and the Haram in Makkah.',
-        image: 'https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=800',
+        image: 'https://images.unsplash.com/photo-1627728734379-a5f8c099763e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8bWFra2FofGVufDB8fHx8MTc4NDkwNDc2Mnww&ixlib=rb-4.1.0&q=80&w=1080',
         features: ['Luxury Vehicle', 'Private Transfer', '24/7 Availability', 'Haram Drops'],
         link: '/booking?service=makkah-hotel'
     },
@@ -30,7 +30,7 @@ const services = [
         icon: <MapPin size={24} />,
         title: 'Madinah Transfers',
         description: 'Seamless transportation across Madinah, including airport, hotels, and the Prophet\'s Mosque.',
-        image: 'https://images.unsplash.com/photo-1565552643952-b43cb4c16a67?auto=format&fit=crop&q=80&w=800',
+        image: 'https://images.unsplash.com/photo-1572358899655-f63ece97bfa5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8bWFkaW5haHxlbnwwfHx8fDE3ODUwMTE2MjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
         features: ['Airport Pickup', 'Hotel Transfers', 'Station Drops', 'Private Rides'],
         link: '/booking?service=madinah-transfer'
     },
@@ -39,7 +39,7 @@ const services = [
         icon: <Route size={24} />,
         title: 'Intercity Transfers',
         description: 'Comfortable long-distance travel between Makkah, Madinah, Jeddah, Taif, and Yanbu.',
-        image: '/images/routes/makkah-madinah-route-hero.png',
+        image: 'https://images.unsplash.com/photo-1486673748761-a8d18475c757?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8aGlnaHdheSUyMGRyaXZpbmd8ZW58MHx8fHwxNzg1MDk2MTk5fDA&ixlib=rb-4.1.0&q=80&w=1080',
         features: ['Flexible Schedule', 'Door-to-Door', 'Comfortable Ride', 'Rest Stops'],
         link: '/services/makkah-madinah-taxi'
     },
@@ -48,7 +48,7 @@ const services = [
         icon: <Moon size={24} />,
         title: 'Umrah Transportation',
         description: 'Dedicated Umrah vehicles for private family transportation with professional drivers.',
-        image: '/images/fleet/hyundai-staria-hero.png',
+        image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8ZmFtaWx5JTIwY2FyfGVufDB8fHx8MTc4NDk0ODgwMXww&ixlib=rb-4.1.0&q=80&w=1080',
         features: ['Family Transport', 'Professional Drivers', 'Spacious Vehicles', 'Safe Journey'],
         link: '/booking?service=umrah'
     },
@@ -57,7 +57,7 @@ const services = [
         icon: <Camera size={24} />,
         title: 'Ziyarat Tours',
         description: 'Guided tours to historical places and Islamic landmarks in Makkah and Madinah.',
-        image: '/images/routes/makkah-ziyarat-hero.png',
+        image: 'https://images.unsplash.com/photo-1574246604907-db69e30ddb97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8aXNsYW1pYyUyMGhpc3RvcmljYWx8ZW58MHx8fHwxNzg1MDk2MjAxfDA&ixlib=rb-4.1.0&q=80&w=1080',
         features: ['Custom Itinerary', 'Half/Full Day', 'Historical Sites', 'Knowledgeable Drivers'],
         link: '/services/ziyarat-tours'
     },
@@ -66,7 +66,7 @@ const services = [
         icon: <Diamond size={24} />,
         title: 'VIP Luxury Transport',
         description: 'Executive SUVs and premium vans for business travelers and VIP pilgrims seeking the best.',
-        image: '/images/fleet/gmc-yukon-hero-professional.png',
+        image: 'https://images.unsplash.com/photo-1700884520248-92092bd21e63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8bHV4dXJ5JTIwc3V2fGVufDB8fHx8MTc4NTA3MzQ3Nnww&ixlib=rb-4.1.0&q=80&w=1080',
         features: ['Executive SUVs', 'Luxury Experience', 'Premium Amenities', 'Maximum Privacy'],
         link: '/booking?service=vip'
     },
@@ -75,7 +75,7 @@ const services = [
         icon: <Users size={24} />,
         title: 'Group Transportation',
         description: 'Reliable transport for families, travel groups, and Hajj groups using Hiace and Coaster buses.',
-        image: '/images/fleet/toyota-hiace-hero.png',
+        image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8dG91ciUyMGJ1c3xlbnwwfHx8fDE3ODUwOTMzMDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
         features: ['Hiace & Coaster', 'Large Groups', 'Ample Luggage', 'Coordinated Travel'],
         link: '/booking?service=group'
     }

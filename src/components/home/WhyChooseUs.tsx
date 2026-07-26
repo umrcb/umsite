@@ -177,7 +177,7 @@ export default function WhyChooseUs() {
                                     className="grid md:grid-cols-2 gap-10 items-center w-full"
                                 >
                                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#E2E8F0]">
-                                        <Image src="/images/blog/solo-sister-travel.jpg" alt="Solo Sisters" fill className="object-cover" />
+                                        <Image src="/images/solo_sisters.png" alt="Solo Sisters" fill className="object-cover" />
                                     </div>
                                     <div>
                                         <h3 className="text-2xl font-bold font-poppins mb-2 text-[#0F172A]">Trusted & Secure for Solo Sisters</h3>
@@ -201,7 +201,7 @@ export default function WhyChooseUs() {
                                     className="grid md:grid-cols-2 gap-10 items-center w-full"
                                 >
                                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#E2E8F0]">
-                                        <Image src="/images/blog/family-umrah-transport.png" alt="Families" fill className="object-cover" />
+                                        <Image src="/images/family_suv.png" alt="Families" fill className="object-cover" />
                                     </div>
                                     <div>
                                         <h3 className="text-2xl font-bold font-poppins mb-2 text-[#0F172A]">Privacy & Space for Families</h3>
@@ -225,7 +225,7 @@ export default function WhyChooseUs() {
                                     className="grid md:grid-cols-2 gap-10 items-center w-full"
                                 >
                                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#E2E8F0]">
-                                        <Image src="/images/blog/elderly-care-gmc.jpg" alt="Elderly" fill className="object-cover" />
+                                        <Image src="/images/elderly_care.png" alt="Elderly" fill className="object-cover" />
                                     </div>
                                     <div>
                                         <h3 className="text-2xl font-bold font-poppins mb-2 text-[#0F172A]">Dignity & Patience for Elderly</h3>

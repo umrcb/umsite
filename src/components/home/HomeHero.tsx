@@ -9,21 +9,23 @@ import { getWhatsAppLink } from '@/lib/whatsapp';
 
 export default function HomeHero() {
     return (
-        <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-black">
+        <section className="relative min-h-[70vh] flex flex-col justify-center overflow-hidden bg-black">
             {/* Background Image */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <Image
-                    src="https://images.unsplash.com/photo-1565552643952-b43cb4c16a67?auto=format&fit=crop&q=80&w=2500"
-                    alt="Masjid Al Haram, Makkah"
+                    src="/images/user_hero_nabawi.jpg"
+                    alt="Masjid al-Nabawi, Madinah"
                     fill
-                    className="object-cover object-center"
+                    sizes="100vw"
+                    quality={100}
+                    className="object-cover object-bottom"
                     priority
                 />
                 {/* Gradient Overlay for Text Readability */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30"></div>
             </div>
 
-            <div className="container mx-auto px-4 lg:px-8 relative z-20 pt-24 pb-16 lg:pt-32 lg:pb-32">
+            <div className="container mx-auto px-4 lg:px-8 relative z-20 pt-24 pb-8 lg:pt-32 lg:pb-16">
                 <div className="flex flex-col items-start gap-8 max-w-3xl">
                     
                     {/* Content */}

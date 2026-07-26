@@ -10,8 +10,8 @@ const recommendations = [
     {
         id: 'airport',
         category: 'Solo / Couple (Airport)',
-        vehicle: 'Toyota Camry / Hyundai Sonata',
-        image: '/images/fleet/toyota-camry-hero.png',
+        vehicle: 'Toyota Camry / Premium Sedan',
+        image: '/images/fleet/camry-transparent.png',
         capacity: '3 Passengers',
         luggage: '2-3 Medium Bags',
         description: 'Perfect for individuals or couples traveling light. Enjoy a smooth, comfortable ride from the airport directly to your hotel.',
@@ -21,46 +21,46 @@ const recommendations = [
     {
         id: 'family',
         category: 'Family Travel',
-        vehicle: 'Toyota Fortuner / Innova',
-        image: '/images/fleet/toyota-fortuner-hero.png',
-        capacity: '5 Passengers',
-        luggage: '4-5 Bags',
+        vehicle: 'Hyundai H1 / Family Van',
+        image: '/images/fleet/h1-transparent.png',
+        capacity: '7 Passengers',
+        luggage: '5-6 Bags',
         description: 'The ideal choice for families. Spacious interiors ensure everyone travels comfortably, with plenty of room for luggage.',
-        features: ['Spacious SUV', 'Family Friendly', 'Extra Luggage Space'],
-        link: '/booking?service=makkah-hotel&vehicle=suv'
+        features: ['Spacious Family Van', 'Comfortable Ride', 'Extra Luggage Space'],
+        link: '/booking?service=makkah-hotel&vehicle=van'
     },
     {
         id: 'vip',
         category: 'VIP Experience',
-        vehicle: 'GMC Yukon XL',
-        image: '/images/fleet/gmc-yukon-hero-professional.png',
-        capacity: '6 Passengers',
-        luggage: '5-6 Bags',
-        description: 'Experience ultimate luxury and privacy. Perfect for business travelers or VIP pilgrims seeking top-tier comfort.',
-        features: ['Executive Luxury', 'Privacy Windows', 'Premium Leather'],
+        vehicle: 'Hyundai Staria VIP',
+        image: '/images/fleet/staria-transparent.png',
+        capacity: '7 Passengers',
+        luggage: '6-7 Bags',
+        description: 'Experience ultimate modern luxury. Perfect for business travelers or VIP pilgrims seeking a futuristic, premium cabin.',
+        features: ['Modern VIP Van', 'Captain Seats', 'Panoramic Windows'],
         link: '/booking?service=vip'
     },
     {
         id: 'group',
         category: 'Small Group',
-        vehicle: 'Hyundai Staria',
-        image: '/images/fleet/hyundai-staria-hero.png',
-        capacity: '7 Passengers',
-        luggage: '6-7 Bags',
-        description: 'A modern, comfortable van perfect for small groups or large families traveling together.',
-        features: ['Modern Van', 'Captain Seats', 'Panoramic Windows'],
-        link: '/booking?service=group&vehicle=staria'
+        vehicle: 'Toyota Hiace',
+        image: '/images/fleet/hiace-transparent.png',
+        capacity: '11-14 Passengers',
+        luggage: '10+ Bags',
+        description: 'A highly reliable, spacious minibus perfect for small travel groups or large families traveling together.',
+        features: ['Spacious Minibus', 'High Roof', 'Great for Groups'],
+        link: '/booking?service=group&vehicle=hiace'
     },
     {
         id: 'large-group',
         category: 'Large Groups',
-        vehicle: 'Toyota Hiace',
-        image: '/images/fleet/toyota-hiace-hero.png',
-        capacity: '12-14 Passengers',
-        luggage: '10+ Bags',
-        description: 'The best solution for travel groups and Hajj groups. Reliable, spacious, and extremely practical.',
-        features: ['Group Transport', 'High Roof', 'Maximum Capacity'],
-        link: '/booking?service=group&vehicle=hiace'
+        vehicle: 'Toyota Coaster',
+        image: '/images/fleet/coaster-transparent.png',
+        capacity: '19-22 Passengers',
+        luggage: '15+ Bags',
+        description: 'The ultimate solution for large travel groups and Hajj groups. Extremely practical, cool, and coordinated travel.',
+        features: ['Large Group Transport', 'PA System', 'Maximum Capacity'],
+        link: '/booking?service=group&vehicle=coaster'
     }
 ];
 
@@ -114,14 +114,25 @@ export default function VehicleRecommendation() {
                                 transition={{ duration: 0.3 }}
                                 className="w-full flex flex-col lg:flex-row gap-8 items-center"
                             >
-                                {/* Image */}
-                                <div className="w-full lg:w-1/2 relative h-48 lg:h-64">
-                                    <Image
-                                        src={activeData.image}
-                                        alt={activeData.vehicle}
-                                        fill
-                                        className="object-contain drop-shadow-xl"
-                                    />
+                                {/* Professional Image Presentation */}
+                                <div className="w-full lg:w-1/2 relative h-64 lg:h-80 flex items-center justify-center rounded-3xl overflow-hidden bg-gradient-to-br from-slate-200 to-slate-100 border border-slate-200 shadow-inner group">
+                                    {/* Lighting and depth effects */}
+                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/60 rounded-full blur-[50px] mix-blend-overlay"></div>
+                                    <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-slate-300/50 to-transparent"></div>
+                                    
+                                    <div className="relative w-full h-full p-6 transition-transform duration-700 ease-out group-hover:scale-110 flex items-center justify-center">
+                                        <div className="relative w-full h-full">
+                                            <Image
+                                                src={activeData.image}
+                                                alt={activeData.vehicle}
+                                                fill
+                                                className="object-contain drop-shadow-[0_25px_25px_rgba(0,0,0,0.3)] z-10 relative"
+                                                priority
+                                            />
+                                            {/* Floor shadow effect */}
+                                            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-black/20 blur-xl rounded-[100%]"></div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 {/* Details */}

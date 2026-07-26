@@ -80,21 +80,24 @@ export default function FleetShowcaseClient({ vehicles, discount }: FleetShowcas
                         className="shrink-0 w-[320px] md:w-[400px] snap-center flex flex-col overflow-hidden bg-white border border-[#E2E8F0] shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-xl md:rounded-2xl"
                     >
                         {/* Image Section */}
-                        <div className="relative h-[200px] w-full bg-[#F8FAFC]">
+                        <div className="relative h-[220px] w-full bg-gradient-to-br from-slate-200 to-slate-50 flex items-center justify-center overflow-hidden transition-colors duration-300">
+                            {/* Decorative lighting effect */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-white/70 rounded-full blur-[30px] mix-blend-overlay"></div>
+                            
                             {vehicle.image ? (
                                 <Image
                                     src={vehicle.image}
                                     alt={vehicle.name}
                                     fill
                                     sizes="(max-width: 768px) 320px, 400px"
-                                    className="object-cover"
+                                    className="object-contain p-6 drop-shadow-[0_15px_15px_rgba(0,0,0,0.2)] mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-110"
                                     draggable={false}
                                 />
                             ) : (
                                 <div className="absolute inset-0 flex items-center justify-center text-slate-400">No Image</div>
                             )}
                             {isDiscountActive && (
-                                <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-md">
+                                <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1 shadow-md z-20">
                                     <Tag size={12} />
                                     {discount?.type === 'percentage' ? `${discount.value}% OFF` : `${discount?.value} SAR OFF`}
                                 </div>

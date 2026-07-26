@@ -11,21 +11,21 @@ const categories = [
         icon: <Shield size={24} />,
         vehicles: "GMC Yukon, Chevrolet Tahoe",
         idealFor: ["VIP Guests", "Business Travelers", "Small Families"],
-        image: "/fleet/cars/gmc-yukon.png"
+        image: "/images/fleet/gmc-transparent.png"
     },
     {
         title: "Premium Van",
         icon: <Users size={24} />,
         vehicles: "Hyundai Staria, Hyundai Starex",
         idealFor: ["Families", "Airport Transfers", "Umrah Groups"],
-        image: "/fleet/cars/hyundai-staria.png"
+        image: "/images/fleet/staria-transparent.png"
     },
     {
         title: "Group Transport",
         icon: <Briefcase size={24} />,
         vehicles: "Toyota Hiace, Toyota Coaster",
         idealFor: ["Large Families", "Group Pilgrims", "Hajj & Umrah Tours"],
-        image: "/fleet/cars/toyota-hiace-v3.png"
+        image: "/images/fleet/hiace-transparent.png"
     }
 ];
 
@@ -64,12 +64,13 @@ export default function FleetCategories() {
                                 </div>
                             </div>
                             
-                            <div className="relative h-40 w-full mb-6">
+                            <div className="relative h-56 w-full mb-8 rounded-2xl overflow-hidden bg-gradient-to-br from-slate-200 to-slate-50 border border-slate-200/60 shadow-inner flex items-center justify-center p-4">
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-white/80 rounded-full blur-[40px]"></div>
                                 <Image 
                                     src={category.image} 
                                     alt={category.title} 
                                     fill 
-                                    className="object-contain group-hover:scale-110 transition-transform duration-500" 
+                                    className="object-contain p-4 group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_15px_15px_rgba(0,0,0,0.2)] z-10 mix-blend-multiply" 
                                 />
                             </div>
 
