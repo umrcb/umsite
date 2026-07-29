@@ -41,7 +41,7 @@ export default async function Home() {
           "availableLanguage": ["en", "ar"]
         },
         "sameAs": [
-          "https://www.facebook.com/UmrahCabs",
+          "https://www.facebook.com/profile.php?id=61576800249973",
           "https://www.instagram.com/UmrahCabs"
         ]
       }

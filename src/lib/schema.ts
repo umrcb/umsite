@@ -16,7 +16,7 @@ export const ORGANIZATION_SCHEMA = {
         "availableLanguage": ["en", "ar", "ur"]
     },
     "sameAs": [
-        "https://www.facebook.com/UmrahCabs",
+        "https://www.facebook.com/profile.php?id=61576800249973",
         "https://www.instagram.com/UmrahCabs",
         "https://twitter.com/UmrahCabs"
     ]

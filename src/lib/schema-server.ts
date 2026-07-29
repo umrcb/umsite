@@ -42,7 +42,7 @@ export async function generateLocalBusinessSchema() {
             "closes": "23:59"
         },
         "sameAs": [
-            "https://www.facebook.com/UmrahCabs",
+            "https://www.facebook.com/profile.php?id=61576800249973",
             "https://www.instagram.com/UmrahCabs"
         ]
     };
