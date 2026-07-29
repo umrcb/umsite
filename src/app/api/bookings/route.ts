@@ -12,7 +12,45 @@ import { calculateFinalPrice } from '@/lib/pricing';
 export async function GET() {
     try {
         const bookings = await getBookings();
-        return NextResponse.json(bookings);
+        
+        // Map nested Mongoose structure back to flat structure expected by admin UI
+        const formattedBookings = bookings.map((booking: any) => {
+            let date = '';
+            let time = '';
+            
+            if (booking.datetime) {
+                const dt = new Date(booking.datetime);
+                if (!isNaN(dt.getTime())) {
+                    date = dt.toISOString().split('T')[0];
+                    time = dt.toTimeString().split(' ')[0].substring(0, 5);
+                }
+            }
+
+            return {
+                id: booking._id ? booking._id.toString() : booking.id,
+                name: booking.customerInfo?.name || booking.name || 'Unknown',
+                email: booking.customerInfo?.email || booking.email || '',
+                phone: booking.customerInfo?.phone || booking.phone || '',
+                pickup: booking.pickup,
+                dropoff: booking.dropoff,
+                date: date || booking.date,
+                time: time || booking.time,
+                passengers: booking.passengers,
+                luggage: booking.luggage,
+                notes: booking.notes,
+                flightNumber: booking.flightNumber,
+                status: booking.status || 'pending',
+                paymentMethod: booking.payment?.method || booking.paymentMethod || 'cash',
+                paymentStatus: booking.payment?.status || booking.paymentStatus || 'unpaid',
+                price: booking.payment?.amount || booking.price || 0,
+                selectedVehicles: booking.selectedVehicles || [], // Fallback for the flat format
+                vehicle: booking.vehicle || '',
+                createdAt: booking.createdAt,
+                updatedAt: booking.updatedAt
+            };
+        });
+
+        return NextResponse.json(formattedBookings);
     } catch (error) {
         console.error('Error fetching bookings:', error);
         return NextResponse.json({ error: 'Failed to fetch bookings' }, { status: 500 });
