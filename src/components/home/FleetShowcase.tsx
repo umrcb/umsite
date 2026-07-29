@@ -1,39 +1,22 @@
 import React, { Suspense } from 'react';
-import { VehicleService } from '@/services/vehicleService';
 import { getSettings } from '@/lib/settings-storage';
 import FleetShowcaseClient, { FleetVehicle } from './FleetShowcaseClient';
 
 import { vehicles as staticVehicles } from '@/data/vehicles';
 
 async function FleetFetcher() {
-    const vehicles = await VehicleService.getActiveVehicles();
     const settings = await getSettings();
 
-    // Map to FleetVehicle format, with fallback to static images if DB images are missing
-    const showcaseVehicles: FleetVehicle[] = vehicles
-        .filter(v => v.isActive)
-        .slice(0, 6)
-        .map((v, idx) => {
-            const vNameLower = v.name.toLowerCase();
-            const staticMatch = staticVehicles.find(sv => {
-                const svNameLower = sv.name.toLowerCase();
-                if (vNameLower === 'car' && svNameLower.includes('camry')) return true;
-                if (vNameLower === 'mp4' && svNameLower.includes('h1')) return true;
-                if (vNameLower === 'gmc' && svNameLower.includes('yukon')) return true;
-                return svNameLower.includes(vNameLower);
-            });
-            const fallbackImage = staticMatch ? staticMatch.heroImage : '/images/placeholder.png';
-            
-            return {
-                id: (v as any)._id ? (v as any)._id.toString() : (v.id || `vehicle-${idx}`),
-                name: v.name,
-                image: (v.images && v.images.length > 0) ? v.images[0] : ((v as any).image || fallbackImage),
-                passengers: v.name.toLowerCase().includes('hiace') ? "10/11" : v.passengers,
-                luggage: v.luggage,
-                features: v.features || [],
-                price: v.price > 0 ? `SAR ${v.price}` : getStartingPrice(v.name)
-            };
-        });
+    // Map static vehicles to FleetVehicle format
+    const showcaseVehicles: FleetVehicle[] = staticVehicles.map((v, idx) => ({
+        id: v.slug || `vehicle-${idx}`,
+        name: v.name,
+        image: v.heroImage || v.image || '/images/placeholder.png',
+        passengers: v.passengers,
+        luggage: v.luggage,
+        features: v.features || [],
+        price: v.startingPrice || getStartingPrice(v.name)
+    }));
 
     return <FleetShowcaseClient vehicles={showcaseVehicles} discount={settings.discount} />;
 }

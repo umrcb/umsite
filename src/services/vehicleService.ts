@@ -11,6 +11,14 @@ export class VehicleService {
     }
 
     /**
+     * Get all vehicles (for Admin panel)
+     */
+    static async getAllVehicles(): Promise<IVehicle[]> {
+        await dbConnect();
+        return Vehicle.find({}).lean();
+    }
+
+    /**
      * Get a single vehicle by ID
      */
     static async getVehicleById(id: string): Promise<IVehicle | null> {

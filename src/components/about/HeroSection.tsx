@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <section className={`${styles.section} ${styles.heroSection}`}>
       <div className={`${styles.fadeInUp}`} style={{ animationDelay: '0.1s' }}>
-        <div className={styles.trustBadge}>
+        <div className={`${styles.trustBadge} max-md:sr-only`}>
           <Star size={16} fill="#C9A227" color="#C9A227" />
           <span>Trusted by Thousands of Pilgrims Since Our Journey Began</span>
         </div>
@@ -16,7 +16,7 @@ export default function HeroSection() {
           More Than Transportation — We Deliver <span>Peace of Mind</span>
         </h1>
         
-        <p className={styles.sectionSubtitle} style={{ marginBottom: '2rem' }}>
+        <p className={`${styles.sectionSubtitle} max-md:sr-only`} style={{ marginBottom: '2rem' }}>
           Umrah Cabs is committed to providing safe, reliable, and premium transportation for pilgrims across Makkah, Madinah, Jeddah, Taif, and surrounding cities. Your spiritual journey deserves the highest standard of comfort.
         </p>
         

@@ -45,6 +45,7 @@ The hero section must be a full-width container with a background image, a gradi
   - Highlights: Use `<span className="text-primary">...</span>` for accent words.
 - **Subheading (`p`)**:
   - Classes: `text-lg md:text-xl text-gray-200 max-w-xl font-normal leading-relaxed`
+  - **SEO Note**: For responsive designs where text might clutter mobile views, use `max-md:sr-only` to visually hide the text on mobile while retaining it in the DOM for search engines.
 
 ### 4. Buttons (CTAs)
 - **Primary Button**: `btn-primary py-4 px-8 text-lg hover:scale-105 transition-transform duration-300`
@@ -52,8 +53,10 @@ The hero section must be a full-width container with a background image, a gradi
 
 ### 5. Badges (Optional)
 - **Trust/Info Badge**: `inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-sm`
+- **SEO Note**: Similar to subheadings, use `max-md:sr-only` to hide badges professionally on mobile devices without deleting them for SEO purposes.
 
 ## Rules
 - NO right-side or split layout images.
 - Images must be high resolution (e.g., Unsplash 80+ quality, 2000px+ width).
 - Always use `priority` on the `Image` component since it's above the fold.
+- **SEO-Friendly Hiding**: When hiding elements like badges or long descriptions on mobile screens to save space and improve design, **do not** use `hidden` (which translates to `display: none`). Instead, use Tailwind's `max-md:sr-only`. This ensures the element is visually removed for mobile users but remains perfectly accessible to search engine crawlers and screen readers.

@@ -75,10 +75,11 @@ export default function Navbar() {
         { href: '/contact', label: 'Contact' },
     ];
 
-    const showDarkNav = scrolled || isMenuOpen;
     const isHomePage = pathname === '/';
-    // All our current pages have light backgrounds at the top, so we always want dark text
-    const useDarkText = true;
+    const isBookingPage = pathname?.startsWith('/booking');
+    const showDarkNav = scrolled || isMenuOpen || isBookingPage;
+    // Use dark text when the navbar has a solid white background (scrolled or menu open or booking page)
+    const useDarkText = showDarkNav;
 
     const whatsappUrl = getWhatsAppLink("Hello! I would like to inquire about Umrah Cabs.");
 

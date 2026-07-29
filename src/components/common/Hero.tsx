@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({
 
                         {/* Badge */}
                         {badge && (
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-sm">
+                            <div className="max-md:sr-only inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-sm">
                                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                                 <span className="text-sm font-medium text-white">{badge}</span>
                             </div>
@@ -87,21 +87,21 @@ const Hero: React.FC<HeroProps> = ({
                         </h1>
 
                         {/* Subtitle */}
-                        <div className="text-lg md:text-xl text-gray-200 max-w-xl font-normal leading-relaxed">
+                        <div className="max-md:sr-only text-lg md:text-xl text-gray-200 max-w-xl font-normal leading-relaxed">
                             {subtitle}
                         </div>
 
                         {/* CTAs */}
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                        <div className="flex flex-row gap-3 sm:gap-4 pt-4 w-full">
                             {ctaText && ctaLink && (
-                                <Link href={ctaLink} className="btn-primary py-4 px-8 text-lg hover:scale-105 transition-transform duration-300 inline-flex items-center justify-center">
-                                    {ctaText}
-                                    <ArrowRight className="ml-2 w-5 h-5" />
+                                <Link href={ctaLink} className="btn-primary flex-1 py-3 px-2 sm:py-4 sm:px-8 text-sm sm:text-lg inline-flex items-center justify-center text-center hover:scale-105 transition-transform duration-300">
+                                    <span className="truncate">{ctaText}</span>
+                                    <ArrowRight className="ml-1.5 sm:ml-2 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                                 </Link>
                             )}
                             {secondaryCtaText && secondaryCtaLink && (
-                                <Link href={secondaryCtaLink} className="bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border border-white/20 py-4 px-8 text-lg flex items-center justify-center transition-all duration-300 hover:scale-105 backdrop-blur-sm">
-                                    {secondaryCtaText}
+                                <Link href={secondaryCtaLink} className="bg-white/10 hover:bg-white/20 flex-1 text-white font-semibold rounded-lg border border-white/20 py-3 px-2 sm:py-4 sm:px-8 text-sm sm:text-lg inline-flex items-center justify-center transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+                                    <span className="truncate">{secondaryCtaText}</span>
                                 </Link>
                             )}
                         </div>

@@ -10,7 +10,7 @@ export interface RouteWithPrices extends IRoute {
 
 export const routeService = {
     // Optimized method for public facing pages - Aggregation pipeline
-    getRoutes: unstable_cache(async () => {
+    getRoutes: async () => {
         console.log('[routeService] getRoutes starting...');
         const start = Date.now();
         try {
@@ -60,11 +60,11 @@ export const routeService = {
             console.error('Error in routeService.getRoutes:', error);
             throw error;
         }
-    }, ['all-routes'], { revalidate: 3600, tags: ['routes'] }),
+    },
 
     // Optimized method for public facing pages - Aggregation pipeline
     // Optimized method for public facing pages - Aggregation pipeline
-    getActiveRoutes: unstable_cache(async () => {
+    getActiveRoutes: async () => {
         try {
             await dbConnect();
             const routes = await Route.aggregate([
@@ -114,7 +114,7 @@ export const routeService = {
             console.error('Error in routeService.getActiveRoutes:', error);
             throw error;
         }
-    }, ['active-routes'], { revalidate: 3600, tags: ['routes'] }),
+    },
 
     async getRouteById(id: string) {
         await dbConnect();

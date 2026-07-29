@@ -35,8 +35,7 @@ export default function HomeHero() {
                         transition={{ duration: 0.8 }}
                         className="w-full space-y-6 lg:space-y-8"
                     >
-                        {/* Trust Badge */}
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-sm">
+                        <div className="max-md:sr-only inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-sm">
                             <Star size={16} className="text-[#C9A227] fill-[#C9A227]" />
                             <span className="text-sm font-medium text-white">Trusted by Thousands of Pilgrims</span>
                         </div>
@@ -49,23 +48,25 @@ export default function HomeHero() {
                         </h1>
 
                         {/* Subheading */}
-                        <p className="text-lg md:text-xl text-gray-200 max-w-xl font-normal leading-relaxed">
+                        <p className="max-md:sr-only text-lg md:text-xl text-gray-200 max-w-xl font-normal leading-relaxed">
                             Experience the ultimate comfort and reliability with our luxury fleet. Dedicated to making your spiritual journey seamless, safe, and stress-free.
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <Link href="/booking" className="btn-primary py-4 px-8 text-lg hover:scale-105 transition-transform duration-300">
-                                Book Your Ride &rarr;
+                        <div className="flex flex-row gap-3 sm:gap-4 pt-4 w-full">
+                            <Link href="/booking" className="btn-primary flex-1 py-3 px-2 sm:py-4 sm:px-8 text-sm sm:text-lg inline-flex items-center justify-center text-center hover:scale-105 transition-transform duration-300">
+                                <span className="truncate">Book Your Ride</span>
+                                <span className="ml-1 sm:ml-2">&rarr;</span>
                             </Link>
                             <a 
                                 href={getWhatsAppLink("Hello! I want to book a ride.")} 
                                 target="_blank"
                                 rel="noreferrer"
-                                className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold rounded-lg py-4 px-8 text-lg flex items-center justify-center transition-all duration-300 hover:scale-105"
+                                className="bg-[#25D366] hover:bg-[#20bd5a] flex-1 text-white font-semibold rounded-lg py-3 px-2 sm:py-4 sm:px-8 text-sm sm:text-lg inline-flex items-center justify-center transition-all duration-300 hover:scale-105"
                             >
-                                <MessageCircle size={20} className="mr-2" />
-                                Chat on WhatsApp
+                                <MessageCircle className="mr-1.5 sm:mr-2 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+                                <span className="truncate hidden sm:inline">Chat on WhatsApp</span>
+                                <span className="truncate sm:hidden">WhatsApp</span>
                             </a>
                         </div>
 

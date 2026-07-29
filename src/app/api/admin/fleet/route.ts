@@ -10,7 +10,7 @@ export async function GET() {
     }
 
     try {
-        const rawVehicles = await VehicleService.getActiveVehicles();
+        const rawVehicles = await VehicleService.getAllVehicles();
         const vehicles = rawVehicles.map(v => ({
             ...v,
             id: v._id?.toString() || (v as any).id,

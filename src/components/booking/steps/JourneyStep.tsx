@@ -33,6 +33,14 @@ export default function JourneyStep({ data, updateData, onNext }: JourneyStepPro
 
     // Attempt to match a predefined route for better pricing/UX
     useEffect(() => {
+        if (data.serviceType === 'Hourly') {
+            const hourlyRoute = routes.find(r => r.category === 'Hourly');
+            if (hourlyRoute && hourlyRoute.id !== data.routeId) {
+                updateData({ routeId: hourlyRoute.id, dropoff: 'Hourly Booking' });
+            }
+            return;
+        }
+
         if (!data.pickup || !data.dropoff) return;
 
         const matched = routes.find(r => {
@@ -47,7 +55,7 @@ export default function JourneyStep({ data, updateData, onNext }: JourneyStepPro
         } else if (!matched && data.routeId !== 'custom') {
             updateData({ routeId: 'custom' });
         }
-    }, [data.pickup, data.dropoff, routes]);
+    }, [data.pickup, data.dropoff, data.serviceType, routes]);
 
     return (
         <div className="space-y-10">
@@ -57,15 +65,23 @@ export default function JourneyStep({ data, updateData, onNext }: JourneyStepPro
             </div>
 
             {/* Service Type Selector */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
                     { id: 'Intercity', icon: Building2, label: 'Intercity' },
                     { id: 'Airport', icon: PlaneLanding, label: 'Airport' },
-                    { id: 'Ziarat', icon: Navigation, label: 'Ziarat' }
+                    { id: 'Ziarat', icon: Navigation, label: 'Ziarat' },
+                    { id: 'Hourly', icon: Clock, label: 'Hourly' }
                 ].map((type) => (
                     <button
                         key={type.id}
-                        onClick={() => updateData({ serviceType: type.id })}
+                        onClick={() => {
+                            updateData({ serviceType: type.id });
+                            if (type.id === 'Hourly') {
+                                updateData({ dropoff: 'Hourly Booking' });
+                            } else if (data.dropoff === 'Hourly Booking') {
+                                updateData({ dropoff: '' });
+                            }
+                        }}
                         className={`
                             flex flex-col items-center justify-center p-6 rounded-2xl border transition-all duration-300 group
                             ${data.serviceType === type.id
@@ -88,13 +104,24 @@ export default function JourneyStep({ data, updateData, onNext }: JourneyStepPro
                     onChange={(val) => updateData({ pickup: val })}
                     error={errors.pickup}
                 />
-                <MapAutocomplete
-                    label="Dropoff Destination"
-                    placeholder="Enter Dropoff Destination"
-                    value={data.dropoff}
-                    onChange={(val) => updateData({ dropoff: val })}
-                    error={errors.dropoff}
-                />
+                {data.serviceType !== 'Hourly' ? (
+                    <MapAutocomplete
+                        label="Dropoff Destination"
+                        placeholder="Enter Dropoff Destination"
+                        value={data.dropoff}
+                        onChange={(val) => updateData({ dropoff: val })}
+                        error={errors.dropoff}
+                    />
+                ) : (
+                    <div className="flex flex-col gap-2 opacity-50 pointer-events-none">
+                        <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Dropoff Destination</label>
+                        <input
+                            disabled
+                            value="Hourly Booking (As Directed)"
+                            className="w-full pl-4 pr-4 py-4 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-500 font-medium"
+                        />
+                    </div>
+                )}
             </div>
 
             {/* Schedule */}
