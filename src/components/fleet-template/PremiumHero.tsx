@@ -10,7 +10,7 @@ export default function PremiumHero({ vehicle }: { vehicle: VehicleData }) {
     <Hero
         title={vehicle.name}
         subtitle={vehicle.shortDescription}
-        bgImage="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&q=80&w=2500" // Standard premium background
+        bgImage={vehicle.gallery && vehicle.gallery.length > 0 ? vehicle.gallery[0] : vehicle.heroImage}
         alt={vehicle.name}
         badge={vehicle.badge}
         ctaText="Book This Vehicle"

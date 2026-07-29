@@ -74,7 +74,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${interMono.variable} ${poppins.variable} ${openSans.variable} ${reemKufi.variable}`}>
+      <body className={`font-sans ${inter.variable} ${interMono.variable} ${poppins.variable} ${openSans.variable} ${reemKufi.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

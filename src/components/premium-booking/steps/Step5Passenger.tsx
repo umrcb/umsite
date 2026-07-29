@@ -12,7 +12,6 @@ export default function Step5Passenger({ hideButtons = false }: { hideButtons?: 
         const newErrors: Record<string, string> = {};
         if (!state.passengerInfo.firstName.trim()) newErrors.firstName = 'First name is required';
         if (!state.passengerInfo.lastName.trim()) newErrors.lastName = 'Last name is required';
-        if (!state.passengerInfo.country.trim()) newErrors.country = 'Country is required';
         if (!state.passengerInfo.phone.trim()) newErrors.phone = 'Phone is required';
         if (!state.passengerInfo.email.trim() || !/^\S+@\S+\.\S+$/.test(state.passengerInfo.email)) {
             newErrors.email = 'Valid email is required';
@@ -80,19 +79,6 @@ export default function Step5Passenger({ hideButtons = false }: { hideButtons?: 
                     </div>
                     {errors.email && <p className="text-red-500 text-xs mt-1 ml-1">{errors.email}</p>}
                 </div>
-                <div className="relative">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 ml-1 block">Country *</label>
-                    <div className="relative">
-                        <Globe className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                        <input
-                            type="text"
-                            value={state.passengerInfo.country}
-                            onChange={(e) => updatePassengerInfo({ country: e.target.value })}
-                            className={inputClasses(!!errors.country)}
-                        />
-                    </div>
-                    {errors.country && <p className="text-red-500 text-xs mt-1 ml-1">{errors.country}</p>}
-                </div>
 
                 <div className="relative">
                     <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 ml-1 block">Phone Number *</label>
@@ -107,18 +93,6 @@ export default function Step5Passenger({ hideButtons = false }: { hideButtons?: 
                         />
                     </div>
                     {errors.phone && <p className="text-red-500 text-xs mt-1 ml-1">{errors.phone}</p>}
-                </div>
-                <div className="relative">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 ml-1 block">WhatsApp (Optional)</label>
-                    <div className="relative">
-                        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                        <input
-                            type="tel"
-                            value={state.passengerInfo.whatsapp}
-                            onChange={(e) => updatePassengerInfo({ whatsapp: e.target.value })}
-                            className={inputClasses(false)}
-                        />
-                    </div>
                 </div>
             </div>
 

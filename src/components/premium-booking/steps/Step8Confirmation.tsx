@@ -12,9 +12,11 @@ export default function Step8Confirmation({ hideButtons = false }: { hideButtons
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [bookingRef, setBookingRef] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
 
     const handleSubmit = async () => {
         setIsSubmitting(true);
+        setErrorMsg('');
         try {
             // Replicate the exact payload expected by /api/bookings to ensure admin panel compatibility
             const payload = {
@@ -41,15 +43,16 @@ export default function Step8Confirmation({ hideButtons = false }: { hideButtons
             });
 
             if (!res.ok) {
-                throw new Error('Failed to submit booking');
+                const data = await res.json().catch(() => ({}));
+                throw new Error(data.message || 'Failed to submit booking');
             }
 
             const data = await res.json();
             setBookingRef(data.id || 'REF-' + Math.floor(Math.random() * 1000000));
             setIsSuccess(true);
-        } catch (error) {
+        } catch (error: any) {
             console.error('Booking submission error:', error);
-            alert('Failed to submit booking. Please try again.');
+            setErrorMsg(error.message || 'Failed to submit booking. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -66,7 +69,7 @@ export default function Step8Confirmation({ hideButtons = false }: { hideButtons
                 <p className="text-slate-500 mb-8 max-w-md mx-auto">We have received your booking and will send a confirmation email with driver details shortly.</p>
                 
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://wa.me/966500000000" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20">
+                    <a href="https://wa.me/966534816935" target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20">
                         Chat on WhatsApp
                     </a>
                     <Link href="/" className="px-8 py-4 rounded-full font-bold border-2 border-slate-200 text-slate-600 hover:border-slate-300 transition-colors">
@@ -105,22 +108,31 @@ export default function Step8Confirmation({ hideButtons = false }: { hideButtons
                 </label>
             </div>
 
-            <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-4">
-                {!hideButtons && (
-                    <button
-                        onClick={prevStep}
-                        disabled={isSubmitting}
-                        className="w-full sm:w-auto px-6 py-3 rounded-full text-slate-600 font-bold hover:bg-slate-100 transition-colors disabled:opacity-50"
-                    >
-                        Back
-                    </button>
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 mt-8 border-t border-slate-100 justify-end items-center relative">
+                {errorMsg && (
+                    <div className="absolute top-[-60px] right-0 left-0 bg-red-50 text-red-600 border border-red-200 px-4 py-3 rounded-xl text-sm font-medium flex items-center gap-2">
+                        <span className="flex-shrink-0">⚠️</span>
+                        <span>{errorMsg}</span>
+                    </div>
                 )}
+                
+                <button
+                    onClick={() => console.log('Save for later')}
+                    className="px-6 py-3 text-slate-500 font-medium hover:bg-slate-50 rounded-full transition-colors order-2 sm:order-1"
+                >
+                    Save for Later
+                </button>
+
                 <div className={`flex flex-col sm:flex-row gap-4 w-full ${hideButtons ? 'sm:w-full justify-end' : 'sm:w-auto'}`}>
-                    <button
-                        className="w-full sm:w-auto px-6 py-3 rounded-full font-bold border-2 border-slate-200 text-slate-600 hover:border-slate-300 transition-colors"
-                    >
-                        Save for Later
-                    </button>
+                    {!hideButtons && (
+                        <button
+                            onClick={prevStep}
+                            disabled={isSubmitting}
+                            className="w-full sm:w-auto px-6 py-3 rounded-full text-slate-600 font-bold hover:bg-slate-100 transition-colors disabled:opacity-50"
+                        >
+                            Back
+                        </button>
+                    )}
                     <button
                         onClick={handleSubmit}
                         disabled={!confirmed || !agreed || isSubmitting}

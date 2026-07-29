@@ -1,124 +1,50 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
+import { Metadata } from 'next';
 
 // SEO & Metadata
 import { constructMetadata } from '@/lib/metadata';
 
-// Reusable Components
-import FAQSection from '@/components/services/FAQSection';
-
-// Pricing Components
+// New Pricing Components
 import PricingHero from '@/components/pricing/PricingHero';
-import PricingValueProps from '@/components/pricing/PricingValueProps';
-import PricingRoutesTable from '@/components/pricing/PricingRoutesTable';
-import PricingFleetShowcase from '@/components/pricing/PricingFleetShowcase';
-import PricingWhatsIncluded from '@/components/pricing/PricingWhatsIncluded';
-import PricingEstimator from '@/components/pricing/PricingEstimator';
-import PricingComparison from '@/components/pricing/PricingComparison';
-import PricingCorporate from '@/components/pricing/PricingCorporate';
-import PricingPayments from '@/components/pricing/PricingPayments';
-import PricingCTABanner from '@/components/pricing/PricingCTABanner';
+import PricingTrustBar from '@/components/pricing-new/PricingTrustBar';
+import PricingMainSection from '@/components/pricing-new/PricingMainSection';
+import VehicleComparison from '@/components/pricing-new/VehicleComparison';
+import PricingWhatsIncluded from '@/components/pricing-new/PricingWhatsIncluded';
+import PricingWhyUs from '@/components/pricing-new/PricingWhyUs';
+import PricingFAQ from '@/components/pricing-new/PricingFAQ';
+import PricingRelated from '@/components/pricing-new/PricingRelated';
+import PricingCTA from '@/components/pricing-new/PricingCTA';
 
-const PilgrimExperiences = dynamic(() => import('@/components/home/PilgrimExperiences'), {
-    loading: () => <div className="h-[400px] w-full bg-slate-50 animate-pulse" />
-});
-
-export async function generateMetadata() {
+export async function generateMetadata(): Promise<Metadata> {
     return constructMetadata({
-        title: "Umrah Taxi Pricing & Fixed Fares | Get Instant Quote",
-        description: "Transparent, fixed pricing for Umrah transportation, airport transfers, and intercity travel. No hidden fees. Check rates for Jeddah to Makkah, Madinah, and more.",
+        title: "Umrah Taxi Pricing | Airport Transfers & Intercity Taxi Fares",
+        description: "Compare fixed prices for airport transfers, hotel transfers, Umrah transportation, Ziyarat tours, and intercity taxi services across Makkah, Madinah, Jeddah, Taif, and other Saudi destinations. No hidden charges.",
         keywords: [
-            "Umrah Taxi Pricing", "Makkah Taxi Fare", "Jeddah Airport Transfer", 
-            "Madinah Taxi", "Luxury Taxi Saudi Arabia", "Fixed Fare Taxi", 
-            "Umrah Transportation", "Ziyarat Transport"
+            "Umrah Taxi Prices", "Makkah Taxi Fare", "Madinah Taxi Fare", 
+            "Jeddah Airport Transfer Price", "Makkah to Madinah Taxi Cost", 
+            "Saudi Arabia Taxi Rates", "Airport Taxi Pricing", 
+            "Intercity Taxi Price", "Luxury Taxi Saudi Arabia", 
+            "Private Transfer Price"
         ],
         canonicalUrl: '/pricing',
     });
 }
 
 export default function PricingPage() {
-    const pricingFAQs = [
-        {
-            question: "Are there any hidden charges in your pricing?",
-            answer: "No. Our pricing is 100% transparent and fixed. The quote you receive includes fuel, tolls, parking, and driver fees. What you see is exactly what you pay."
-        },
-        {
-            question: "Can I pay online before the trip?",
-            answer: "Yes, you can pay securely online using Visa, Mastercard, Apple Pay, Google Pay, or Mada during the booking process."
-        },
-        {
-            question: "What is your cancellation policy?",
-            answer: "We offer free cancellation up to 24 hours before your scheduled pickup time. For cancellations within 24 hours, a small fee may apply."
-        },
-        {
-            question: "What happens if my flight is delayed?",
-            answer: "We offer complimentary flight monitoring. Your driver will track your flight status and adjust the pickup time automatically, so you won't be charged for flight delays."
-        },
-        {
-            question: "Is there a limit to the waiting time?",
-            answer: "We provide 60 minutes of free waiting time at the airport after your flight lands, and 15 minutes of free waiting time for hotel or city pickups."
-        },
-        {
-            question: "Do you charge extra for child seats?",
-            answer: "No, child seats are available upon request at absolutely no extra charge. Please request them during booking so we can prepare them for you."
-        }
-    ];
-
     return (
-        <main className="bg-white min-h-screen flex flex-col">
+        <main className="bg-white min-h-screen flex flex-col font-inter">
             <PricingHero />
-            <PricingValueProps />
-
-            {/* Layout Wrappers for Side-by-Side components */}
-            <section className="py-16 lg:py-24 bg-white">
-                <div className="container mx-auto px-4 lg:px-8 max-w-[1500px]">
-                    
-                    {/* Row 1: Routes & Fleet */}
-                    <div className="flex flex-col xl:flex-row gap-8 lg:gap-12 mb-16 lg:mb-24">
-                        <div className="w-full xl:w-[40%] flex-shrink-0">
-                            <PricingRoutesTable />
-                        </div>
-                        <div className="w-full xl:w-[60%] overflow-hidden">
-                            <PricingFleetShowcase />
-                        </div>
-                    </div>
-
-                    {/* Row 2: Included & Estimator */}
-                    <div className="flex flex-col xl:flex-row gap-8 lg:gap-12 mb-16 lg:mb-24">
-                        <div className="w-full xl:w-[60%]">
-                            <PricingWhatsIncluded />
-                        </div>
-                        <div className="w-full xl:w-[40%]">
-                            <PricingEstimator />
-                        </div>
-                    </div>
-
-                    {/* Row 3: Comparison & Corporate */}
-                    <div className="flex flex-col xl:flex-row gap-8 lg:gap-12">
-                        <div className="w-full xl:w-[60%]">
-                            <PricingComparison />
-                        </div>
-                        <div className="w-full xl:w-[40%]">
-                            <PricingCorporate />
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            <PricingPayments />
+            <PricingTrustBar />
             
-            {/* Testimonials */}
-            <div className="bg-slate-50 py-16 border-b border-slate-100">
-                <PilgrimExperiences />
-            </div>
-
-            {/* FAQs */}
-            <div className="bg-white">
-                <FAQSection items={pricingFAQs} title="Frequently Asked Questions about Pricing" />
-            </div>
-
-            <PricingCTABanner />
+            {/* Main Interactive Search and Route Cards Section */}
+            <PricingMainSection />
+            
+            <VehicleComparison />
+            <PricingWhatsIncluded />
+            <PricingWhyUs />
+            <PricingFAQ />
+            <PricingRelated />
+            <PricingCTA />
 
             {/* Schema.org JSON-LD */}
             <script
@@ -126,18 +52,51 @@ export default function PricingPage() {
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
-                        "@type": "Service",
-                        "name": "Umrah Taxi Transportation Services",
-                        "provider": {
-                            "@type": "LocalBusiness",
-                            "name": "Umrah Cabs"
-                        },
-                        "offers": {
-                            "@type": "AggregateOffer",
-                            "priceCurrency": "SAR",
-                            "lowPrice": "100",
-                            "highPrice": "700"
-                        }
+                        "@graph": [
+                            {
+                                "@type": "Service",
+                                "name": "Umrah Taxi Transportation Services",
+                                "provider": {
+                                    "@type": "LocalBusiness",
+                                    "name": "Umrah Taxi Services"
+                                },
+                                "offers": {
+                                    "@type": "AggregateOffer",
+                                    "priceCurrency": "SAR",
+                                    "lowPrice": "70",
+                                    "highPrice": "1200"
+                                }
+                            },
+                            {
+                                "@type": "FAQPage",
+                                "mainEntity": [
+                                    {
+                                        "@type": "Question",
+                                        "name": "Are prices fixed?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Yes, all our prices are 100% fixed. The quote you receive includes all taxes, tolls, parking, and driver fees. You won't pay a Riyal more."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Are tolls included?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Absolutely. All road tolls and parking fees are already included in the final price of your journey."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "How do I pay?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "You can pay securely online using Visa, Mastercard, Apple Pay, Mada, or choose to pay cash to the driver upon arrival."
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     })
                 }}
             />

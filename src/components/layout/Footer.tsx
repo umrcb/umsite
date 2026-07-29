@@ -39,31 +39,7 @@ export default function Footer() {
 
     return (
         <footer className="relative font-sans bg-white pt-10">
-            {/* SECTION 1 — Premium CTA (Above Footer) */}
-            <section className="bg-[#115E39] text-white py-16 px-6 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10 bg-[url('/images/pattern-islamic.png')] bg-repeat" />
-                <div className="container mx-auto max-w-[1320px] relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-                    <div className="max-w-2xl text-center lg:text-left">
-                        <h2 className="text-3xl lg:text-4xl font-bold font-poppins mb-4">Ready for a Comfortable Journey Across Saudi Arabia?</h2>
-                        <p className="text-white/90 text-lg leading-relaxed">Book your airport transfer, intercity taxi, hotel transfer, or Umrah transportation with professional chauffeurs and luxury vehicles.</p>
-                        
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-8">
-                            <div className="flex items-center gap-2"><CheckCircle2 className="text-[#C9A227] w-5 h-5"/> <span>Licensed Drivers</span></div>
-                            <div className="flex items-center gap-2"><CheckCircle2 className="text-[#C9A227] w-5 h-5"/> <span>Fixed Pricing</span></div>
-                            <div className="flex items-center gap-2"><CheckCircle2 className="text-[#C9A227] w-5 h-5"/> <span>24/7 Support</span></div>
-                            <div className="flex items-center gap-2"><CheckCircle2 className="text-[#C9A227] w-5 h-5"/> <span>Luxury Fleet</span></div>
-                        </div>
-                    </div>
-                    <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                        <Link href="/book" className="px-8 py-4 bg-[#C9A227] text-white font-bold rounded-lg hover:bg-[#b08d22] transition-colors text-center shadow-lg whitespace-nowrap">
-                            Book Now
-                        </Link>
-                        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-white text-[#115E39] font-bold rounded-lg hover:bg-gray-50 transition-colors text-center shadow-lg whitespace-nowrap">
-                            WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </section>
+
 
             {/* MAIN FOOTER */}
             <div className="bg-[#F9FAFB] pt-12 pb-8 px-6 lg:px-8">

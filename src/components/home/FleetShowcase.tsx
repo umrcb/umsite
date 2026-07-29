@@ -11,11 +11,11 @@ async function FleetFetcher() {
     const showcaseVehicles: FleetVehicle[] = staticVehicles.map((v, idx) => ({
         id: v.slug || `vehicle-${idx}`,
         name: v.name,
-        image: v.heroImage || v.image || '/images/placeholder.png',
+        image: v.heroImage || '/images/placeholder.png',
         passengers: v.passengers,
         luggage: v.luggage,
-        features: v.features || [],
-        price: v.startingPrice || getStartingPrice(v.name)
+        features: v.amenities || [],
+        price: v.pricing?.startingPrice ? `SAR ${v.pricing.startingPrice}` : getStartingPrice(v.name)
     }));
 
     return <FleetShowcaseClient vehicles={showcaseVehicles} discount={settings.discount} />;

@@ -82,7 +82,7 @@ export default function FleetGallery() {
                                 <span className="text-white font-bold font-playfair text-xl tracking-wide">{image.alt}</span>
                                 <span className="text-white/80 text-sm uppercase tracking-wider mt-1">{image.category}</span>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
