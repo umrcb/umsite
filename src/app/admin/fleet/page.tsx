@@ -14,7 +14,8 @@ const PasswordConfirmModal = dynamic(() => import('@/components/admin/PasswordCo
 interface Vehicle {
     id: string;
     name: string;
-    image: string;
+    image?: string;
+    images?: string[];
     passengers: number;
     luggage: number;
     features: string[];
@@ -76,7 +77,7 @@ export default function FleetPage() {
         setEditingId(vehicle.id);
         setFormData({
             name: vehicle.name,
-            image: vehicle.image,
+            image: vehicle.image || (vehicle.images && vehicle.images.length > 0 ? vehicle.images[0] : ''),
             passengers: vehicle.passengers,
             luggage: vehicle.luggage,
             features: vehicle.features,
@@ -255,7 +256,7 @@ export default function FleetPage() {
                                 >
                                     <div className="relative h-52 mb-4 rounded-xl overflow-hidden bg-gray-100 dark:bg-slate-800">
                                         <Image
-                                            src={vehicle.image || '/placeholder-car.png'}
+                                            src={vehicle.image || (vehicle.images && vehicle.images.length > 0 ? vehicle.images[0] : null) || '/placeholder-car.png'}
                                             alt={vehicle.name}
                                             fill
                                             className="object-cover transition-transform duration-500 group-hover:scale-110"

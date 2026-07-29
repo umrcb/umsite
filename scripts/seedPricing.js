@@ -5,27 +5,28 @@ const vehiclesData = [
     { key: 'Car', name: 'Toyota Camry', category: 'Standard', passengers: 4, luggage: 4, images: ['/images/fleet/camry-transparent.png'], isActive: true },
     { key: 'Hiace', name: 'Toyota Hiace', category: 'Premium', passengers: 11, luggage: 11, images: ['/images/fleet/hiace-transparent.png'], isActive: true },
     { key: 'GMC', name: 'GMC Yukon', category: 'Premium', passengers: 7, luggage: 7, images: ['/images/fleet/gmc-transparent.png'], isActive: true },
+    { key: 'H1', name: 'Hyundai H1', category: 'Standard', passengers: 4, luggage: 5, images: ['/images/fleet/h1-transparent.png'], isActive: true },
     { key: 'Staria', name: 'Hyundai Staria', category: 'Premium', passengers: 7, luggage: 7, images: ['/images/fleet/staria-transparent.png'], isActive: true },
     { key: 'Coaster', name: 'Toyota Coaster', category: 'Standard', passengers: 19, luggage: 15, images: ['/images/fleet/coaster-transparent.png'], isActive: true },
 ];
 
 const pricingMatrix = [
-    { route: 'Per Hour Rates', car: 70, hiace: 100, gmc: 140, staria: 90, coaster: 200 },
-    { route: 'Jeddah Airport → Jeddah Hotel', car: 130, hiace: 200, gmc: 300, staria: 150, coaster: 350 },
-    { route: 'Jeddah Airport → Makkah Hotel', car: 200, hiace: 300, gmc: 450, staria: 225, coaster: 500 },
-    { route: 'Jeddah Airport → Madinah Hotel', car: 380, hiace: 530, gmc: 1000, staria: 425, coaster: 850 },
-    { route: 'Madinah Hotel → Jeddah Airport', car: 360, hiace: 500, gmc: 900, staria: 420, coaster: 800 },
-    { route: 'Makkah Ziyarat', car: 170, hiace: 250, gmc: 350, staria: 200, coaster: 400 },
-    { route: 'Madinah Ziyarat', car: 170, hiace: 250, gmc: 350, staria: 200, coaster: 400 },
-    { route: 'Makkah → Taif (Return)', car: 400, hiace: 550, gmc: 900, staria: 450, coaster: 800 },
-    { route: 'Jeddah → Taif (Return)', car: 550, hiace: 700, gmc: 1000, staria: 600, coaster: 1200 },
-    { route: 'Makkah Hotel → Madinah Hotel', car: 350, hiace: 500, gmc: 800, staria: 420, coaster: 800 },
-    { route: 'Madinah Hotel → Makkah Hotel', car: 350, hiace: 500, gmc: 800, staria: 420, coaster: 800 },
-    { route: 'Madinah Hotel → Madinah Airport', car: 100, hiace: 200, gmc: 250, staria: 150, coaster: 300 },
-    { route: 'Madinah Airport → Madinah Hotel', car: 150, hiace: 250, gmc: 300, staria: 200, coaster: 350 },
-    { route: 'Makkah Hotel → Jeddah Airport', car: 150, hiace: 250, gmc: 350, staria: 200, coaster: 350 },
-    { route: 'Makkah Hotel → Train Station', car: 100, hiace: 200, gmc: 250, staria: 150, coaster: 300 },
-    { route: 'Madinah Hotel → Train Station', car: 120, hiace: 200, gmc: 250, staria: 150, coaster: 300 },
+    { route: 'Per Hour Rates', car: 70, hiace: 100, gmc: 140, h1: 80, staria: 90, coaster: 200 },
+    { route: 'Jeddah Airport → Jeddah Hotel', car: 130, hiace: 200, gmc: 300, h1: 140, staria: 150, coaster: 350 },
+    { route: 'Jeddah Airport → Makkah Hotel', car: 200, hiace: 300, gmc: 450, h1: 210, staria: 225, coaster: 500 },
+    { route: 'Jeddah Airport → Madinah Hotel', car: 380, hiace: 530, gmc: 1000, h1: 400, staria: 425, coaster: 850 },
+    { route: 'Madinah Hotel → Jeddah Airport', car: 360, hiace: 500, gmc: 900, h1: 400, staria: 420, coaster: 800 },
+    { route: 'Makkah Ziyarat', car: 170, hiace: 250, gmc: 350, h1: 175, staria: 200, coaster: 400 },
+    { route: 'Madinah Ziyarat', car: 170, hiace: 250, gmc: 350, h1: 175, staria: 200, coaster: 400 },
+    { route: 'Makkah → Taif (Return)', car: 400, hiace: 550, gmc: 900, h1: 400, staria: 450, coaster: 800 },
+    { route: 'Jeddah → Taif (Return)', car: 550, hiace: 700, gmc: 1000, h1: 550, staria: 600, coaster: 1200 },
+    { route: 'Makkah Hotel → Madinah Hotel', car: 350, hiace: 500, gmc: 800, h1: 400, staria: 420, coaster: 800 },
+    { route: 'Madinah Hotel → Makkah Hotel', car: 350, hiace: 500, gmc: 800, h1: 400, staria: 420, coaster: 800 },
+    { route: 'Madinah Hotel → Madinah Airport', car: 100, hiace: 200, gmc: 250, h1: 130, staria: 150, coaster: 300 },
+    { route: 'Madinah Airport → Madinah Hotel', car: 150, hiace: 250, gmc: 300, h1: 180, staria: 200, coaster: 350 },
+    { route: 'Makkah Hotel → Jeddah Airport', car: 150, hiace: 250, gmc: 350, h1: 180, staria: 200, coaster: 350 },
+    { route: 'Makkah Hotel → Train Station', car: 100, hiace: 200, gmc: 250, h1: 150, staria: 150, coaster: 300 },
+    { route: 'Madinah Hotel → Train Station', car: 120, hiace: 200, gmc: 250, h1: 150, staria: 150, coaster: 300 },
 ];
 
 function parseRouteName(routeName) {
@@ -42,7 +43,7 @@ function parseRouteName(routeName) {
 async function run() {
     const client = new MongoClient(process.env.MONGODB_URI);
     await client.connect();
-    const db = client.db('umrahcabs');
+    const db = client.db();
 
     const vehiclesCol = db.collection('vehicles');
     const routesCol = db.collection('routes');
@@ -106,6 +107,7 @@ async function run() {
             { vKey: 'Car', price: p.car },
             { vKey: 'Hiace', price: p.hiace },
             { vKey: 'GMC', price: p.gmc },
+            { vKey: 'H1', price: p.h1 },
             { vKey: 'Staria', price: p.staria },
             { vKey: 'Coaster', price: p.coaster },
         ];

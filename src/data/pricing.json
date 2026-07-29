@@ -5,7 +5,10 @@
       "name": "Car",
       "capacity": "4 Seater",
       "luggage": "4 Bags",
-      "features": ["Air Conditioning", "Comfortable Seats"],
+      "features": [
+        "Air Conditioning",
+        "Comfortable Seats"
+      ],
       "category": "Standard",
       "hourlyRate": 70
     },
@@ -14,7 +17,10 @@
       "name": "Hiace",
       "capacity": "11 Seater",
       "luggage": "11 Bags",
-      "features": ["Air Conditioning", "Spacious"],
+      "features": [
+        "Air Conditioning",
+        "Spacious"
+      ],
       "category": "Van",
       "hourlyRate": 100
     },
@@ -22,17 +28,24 @@
       "id": "gmc",
       "name": "GMC",
       "capacity": "7 Seater",
-      "luggage": "6 Bags",
-      "features": ["Luxury", "Air Conditioning", "Leather Seats"],
+      "luggage": "7 Bags",
+      "features": [
+        "Luxury",
+        "Air Conditioning",
+        "Leather Seats"
+      ],
       "category": "SUV",
       "hourlyRate": 140
     },
     {
-      "id": "mp4",
-      "name": "MP4",
-      "capacity": "7 Seater",
-      "luggage": "7 Bags",
-      "features": ["Air Conditioning", "Comfortable Seats"],
+      "id": "h1",
+      "name": "Hyundai H1",
+      "capacity": "4 Seater",
+      "luggage": "5 Bags",
+      "features": [
+        "Air Conditioning",
+        "Comfortable Seats"
+      ],
       "category": "Standard",
       "hourlyRate": 80
     },
@@ -41,7 +54,11 @@
       "name": "Staria",
       "capacity": "7 Seater",
       "luggage": "7 Bags",
-      "features": ["Luxury", "Air Conditioning", "Spacious"],
+      "features": [
+        "Luxury",
+        "Air Conditioning",
+        "Spacious"
+      ],
       "category": "Minivan",
       "hourlyRate": 90
     },
@@ -50,19 +67,44 @@
       "name": "Coaster",
       "capacity": "19 Seater",
       "luggage": "15 Bags",
-      "features": ["Air Conditioning", "Group Travel"],
+      "features": [
+        "Air Conditioning",
+        "Group Travel"
+      ],
       "category": "Bus",
       "hourlyRate": 200
     }
   ],
   "routes": [
     {
+      "id": "per-hour",
+      "name": "Per Hour Rates",
+      "distance": "N/A",
+      "time": "1 hr",
+      "baseRate": 70,
+      "customRates": {
+        "car": 70,
+        "hiace": 100,
+        "gmc": 140,
+        "staria": 90,
+        "coaster": 200,
+        "h1": 80
+      }
+    },
+    {
       "id": "jed-jed",
       "name": "Jeddah Airport to Jeddah Hotel",
       "distance": "20 km",
       "time": "30 min",
       "baseRate": 130,
-      "customRates": { "car": 130, "hiace": 200, "gmc": 300, "mp4": 140, "staria": 150, "coaster": 350 }
+      "customRates": {
+        "car": 130,
+        "hiace": 200,
+        "gmc": 300,
+        "staria": 150,
+        "coaster": 350,
+        "h1": 140
+      }
     },
     {
       "id": "jed-mak",
@@ -70,7 +112,14 @@
       "distance": "100 km",
       "time": "1 hr 30 min",
       "baseRate": 200,
-      "customRates": { "car": 200, "hiace": 300, "gmc": 450, "mp4": 210, "staria": 225, "coaster": 500 }
+      "customRates": {
+        "car": 200,
+        "hiace": 300,
+        "gmc": 450,
+        "staria": 225,
+        "coaster": 500,
+        "h1": 210
+      }
     },
     {
       "id": "jed-mad",
@@ -78,23 +127,44 @@
       "distance": "420 km",
       "time": "4 hrs",
       "baseRate": 380,
-      "customRates": { "car": 380, "hiace": 530, "gmc": 1000, "mp4": 400, "staria": 425, "coaster": 850 }
+      "customRates": {
+        "car": 380,
+        "hiace": 530,
+        "gmc": 1000,
+        "staria": 425,
+        "coaster": 850,
+        "h1": 400
+      }
     },
     {
       "id": "mad-jed",
-      "name": "Madina Hotel to Jeddah Airport",
+      "name": "Madinah Hotel to Jeddah Airport",
       "distance": "420 km",
       "time": "4 hrs",
       "baseRate": 360,
-      "customRates": { "car": 360, "hiace": 500, "gmc": 900, "mp4": 400, "staria": 420, "coaster": 800 }
+      "customRates": {
+        "car": 360,
+        "hiace": 500,
+        "gmc": 900,
+        "staria": 420,
+        "coaster": 800,
+        "h1": 400
+      }
     },
     {
       "id": "mak-ziy",
-      "name": "Makkah Ziyyarat",
+      "name": "Makkah Ziyarat",
       "distance": "40 km",
       "time": "3 hrs",
       "baseRate": 170,
-      "customRates": { "car": 170, "hiace": 250, "gmc": 350, "mp4": 175, "staria": 200, "coaster": 400 }
+      "customRates": {
+        "car": 170,
+        "hiace": 250,
+        "gmc": 350,
+        "staria": 200,
+        "coaster": 400,
+        "h1": 175
+      }
     },
     {
       "id": "mad-ziy",
@@ -102,23 +172,44 @@
       "distance": "40 km",
       "time": "3 hrs",
       "baseRate": 170,
-      "customRates": { "car": 170, "hiace": 250, "gmc": 350, "mp4": 175, "staria": 200, "coaster": 400 }
+      "customRates": {
+        "car": 170,
+        "hiace": 250,
+        "gmc": 350,
+        "staria": 200,
+        "coaster": 400,
+        "h1": 175
+      }
     },
     {
       "id": "mak-taif",
-      "name": "Makkah to Taif and Return",
-      "distance": "180 km",
-      "time": "8 hrs",
+      "name": "Makkah to Taif (Return)",
+      "distance": "200 km",
+      "time": "5 hrs",
       "baseRate": 400,
-      "customRates": { "car": 400, "hiace": 550, "gmc": 900, "mp4": 400, "staria": 450, "coaster": 800 }
+      "customRates": {
+        "car": 400,
+        "hiace": 550,
+        "gmc": 900,
+        "staria": 450,
+        "coaster": 800,
+        "h1": 400
+      }
     },
     {
       "id": "jed-taif",
-      "name": "Jeddah to Taif and Return",
-      "distance": "350 km",
-      "time": "10 hrs",
+      "name": "Jeddah to Taif (Return)",
+      "distance": "300 km",
+      "time": "6 hrs",
       "baseRate": 550,
-      "customRates": { "car": 550, "hiace": 700, "gmc": 1000, "mp4": 550, "staria": 600, "coaster": 1200 }
+      "customRates": {
+        "car": 550,
+        "hiace": 700,
+        "gmc": 1000,
+        "staria": 600,
+        "coaster": 1200,
+        "h1": 550
+      }
     },
     {
       "id": "mak-mad",
@@ -126,7 +217,14 @@
       "distance": "450 km",
       "time": "4.5 hrs",
       "baseRate": 350,
-      "customRates": { "car": 350, "hiace": 500, "gmc": 800, "mp4": 400, "staria": 420, "coaster": 800 }
+      "customRates": {
+        "car": 350,
+        "hiace": 500,
+        "gmc": 800,
+        "staria": 420,
+        "coaster": 800,
+        "h1": 400
+      }
     },
     {
       "id": "mad-mak",
@@ -134,7 +232,14 @@
       "distance": "450 km",
       "time": "4.5 hrs",
       "baseRate": 350,
-      "customRates": { "car": 350, "hiace": 500, "gmc": 800, "mp4": 400, "staria": 420, "coaster": 800 }
+      "customRates": {
+        "car": 350,
+        "hiace": 500,
+        "gmc": 800,
+        "staria": 420,
+        "coaster": 800,
+        "h1": 400
+      }
     },
     {
       "id": "mad-mad-apt",
@@ -142,7 +247,14 @@
       "distance": "20 km",
       "time": "30 min",
       "baseRate": 100,
-      "customRates": { "car": 100, "hiace": 200, "gmc": 250, "mp4": 130, "staria": 150, "coaster": 300 }
+      "customRates": {
+        "car": 100,
+        "hiace": 200,
+        "gmc": 250,
+        "staria": 150,
+        "coaster": 300,
+        "h1": 130
+      }
     },
     {
       "id": "mad-apt-mad",
@@ -150,7 +262,14 @@
       "distance": "20 km",
       "time": "30 min",
       "baseRate": 150,
-      "customRates": { "car": 150, "hiace": 250, "gmc": 300, "mp4": 180, "staria": 200, "coaster": 350 }
+      "customRates": {
+        "car": 150,
+        "hiace": 250,
+        "gmc": 300,
+        "staria": 200,
+        "coaster": 350,
+        "h1": 180
+      }
     },
     {
       "id": "mak-jed-apt",
@@ -158,23 +277,44 @@
       "distance": "100 km",
       "time": "1.5 hrs",
       "baseRate": 150,
-      "customRates": { "car": 150, "hiace": 250, "gmc": 350, "mp4": 180, "staria": 200, "coaster": 350 }
+      "customRates": {
+        "car": 150,
+        "hiace": 250,
+        "gmc": 350,
+        "staria": 200,
+        "coaster": 350,
+        "h1": 180
+      }
     },
     {
-      "id": "mak-train",
+      "id": "mak-trn",
       "name": "Makkah Hotel to Train Station",
       "distance": "15 km",
-      "time": "25 min",
+      "time": "20 min",
       "baseRate": 100,
-      "customRates": { "car": 100, "hiace": 200, "gmc": 250, "mp4": 150, "staria": 150, "coaster": 300 }
+      "customRates": {
+        "car": 100,
+        "hiace": 200,
+        "gmc": 250,
+        "staria": 150,
+        "coaster": 300,
+        "h1": 150
+      }
     },
     {
-      "id": "mad-train",
+      "id": "mad-trn",
       "name": "Madinah Hotel to Train Station",
       "distance": "15 km",
-      "time": "25 min",
+      "time": "20 min",
       "baseRate": 120,
-      "customRates": { "car": 120, "hiace": 200, "gmc": 250, "mp4": 150, "staria": 150, "coaster": 300 }
+      "customRates": {
+        "car": 120,
+        "hiace": 200,
+        "gmc": 250,
+        "staria": 150,
+        "coaster": 300,
+        "h1": 150
+      }
     }
   ]
 }

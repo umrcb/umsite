@@ -72,7 +72,7 @@ export async function GET() {
                 multiplier: 1, // Default
                 features: vehicle.features,
                 luggage: `${vehicle.luggage} Bags`,
-                image: vehicle.image,
+                image: (vehicle as any).image || (vehicle.images && vehicle.images.length > 0 ? vehicle.images[0] : null),
                 category: vehicle.category,
                 // Include other fields if needed
                 seo: { title: vehicle.name, description: vehicle.name, keywords: [] }

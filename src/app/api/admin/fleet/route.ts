@@ -50,7 +50,7 @@ export async function POST(request: Request) {
 
         const vehicle = await VehicleService.createVehicle({
             name,
-            image,
+            images: image ? [image] : [],
             passengers: parseInt(passengers),
             luggage: parseInt(luggage),
             features,
@@ -96,7 +96,7 @@ export async function PUT(request: Request) {
 
         const vehicle = await VehicleService.updateVehicle(id, {
             name,
-            image,
+            images: image ? [image] : undefined,
             passengers: parseInt(passengers),
             luggage: parseInt(luggage),
             features,
