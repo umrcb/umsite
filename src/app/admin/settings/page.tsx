@@ -413,7 +413,7 @@ export default function SettingsPage() {
                                                     value={settings.contact_email}
                                                     onChange={handleChange}
                                                     className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 dark:border-navy-700 bg-white/50 dark:bg-navy-950/50 text-navy-900 dark:text-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
-                                                    placeholder="info@UmrahCabs.com"
+                                                    placeholder="umrahcabs1@gmail.com"
                                                 />
                                             </div>
                                         </div>

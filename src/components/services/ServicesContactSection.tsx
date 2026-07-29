@@ -56,8 +56,8 @@ export default function ServicesContactSection() {
                                 <div>
                                     <h4 className="font-bold text-navy mb-1">Email Address</h4>
                                     <p className="text-slate-600 mb-2">For Corporate & Group Inquiries</p>
-                                    <a href="mailto:info@umrahtaxi.com" className="text-primary font-bold hover:text-primary transition-colors">
-                                        info@umrahtaxi.com
+                                    <a href="mailto:umrahcabs1@gmail.com" className="text-primary font-bold hover:text-primary transition-colors">
+                                        umrahcabs1@gmail.com
                                     </a>
                                 </div>
                             </div>

@@ -51,7 +51,7 @@ export const generateInvoice = async (booking: any) => {
     doc.text("Umrah Cabs", 15, yPos + 6);
     doc.setFont("helvetica", "normal");
     doc.text("Makkah, Saudi Arabia", 15, yPos + 11);
-    doc.text("info@umrahcabs.com", 15, yPos + 16);
+    doc.text("umrahcabs1@gmail.com", 15, yPos + 16);
 
     // To (Customer)
     doc.setFontSize(10);

@@ -6,7 +6,7 @@ const COMPANY_NAME = "Umrah Cabs";
 const COMPANY_ISLAMIC_NAME = "Umrah Cabs";
 const COMPANY_ADDRESS = "Makkah Al Mukarramah, Saudi Arabia";
 const COMPANY_PHONE = "+966 53 481 6935";
-const COMPANY_EMAIL = "info@umrahcabs.com";
+const COMPANY_EMAIL = "umrahcabs1@gmail.com";
 const PRIMARY_COLOR = "#0F172A"; // Navy (slate-900)
 
 interface InvoiceData {

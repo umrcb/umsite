@@ -15,7 +15,7 @@ const DEFAULT_SETTINGS: Settings = {
         googleAnalyticsId: '',
     },
     contact: {
-        email: 'info@umrahcabs.com',
+        email: 'umrahcabs1@gmail.com',
         phone: '+966 53 481 6935',
         phone2: '',
         address: 'Makkah, Saudi Arabia',
