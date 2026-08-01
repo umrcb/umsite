@@ -5,7 +5,6 @@ export * from './Booking';
 export * from './Review';
 export * from './Setting';
 export * from './AuditLog';
-export * from './BlogPost';
 export * from './Section';
 export * from './RoutePrice';
 export * from './Subscriber';

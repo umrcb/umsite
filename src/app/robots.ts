@@ -1,27 +1,46 @@
 import { MetadataRoute } from 'next';
 
-const CANONICAL_URL = 'https://www.UmrahCabs.com';
+// Use the same env var as getBaseUrl() so this stays in sync across environments.
+// Falls back to the canonical production domain as a safety net.
+const CANONICAL_URL =
+    process.env.NEXT_PUBLIC_APP_URL ??
+    `https://${process.env.VERCEL_URL}` ??
+    'https://umrahcabs.com';
 
 export default function robots(): MetadataRoute.Robots {
     return {
         rules: [
-            // Block ALL crawlers on the raw Vercel subdomain
-            {
-                userAgent: '*',
-                disallow: '/',
-                // This rule applies when host is UmrahCabs.vercel.app
-            },
-            // Allow crawlers only on the canonical custom domain
+            // ── General crawlers ───────────────────────────────────────────────
+            // Allow all public content; block admin, API, and internal routes.
             {
                 userAgent: '*',
                 allow: '/',
-                disallow: ['/admin/', '/api/', '/_next/', '/private/', '/fleet-debug/'],
+                disallow: [
+                    '/admin/',    // Admin dashboard — never index
+                    '/api/',      // REST API endpoints
+                    '/_next/',    // Next.js internal assets
+                    '/private/',  // Any private staging content
+                ],
             },
+            // ── Googlebot — explicit allow for key indexable sections ──────────
             {
                 userAgent: 'Googlebot',
-                allow: ['/', '/images/', '/fleet/', '/manifest.webmanifest', '/manifest.json'],
-                disallow: ['/admin/', '/api/'],
-            }
+                allow: [
+                    '/',
+                    '/services/',
+                    '/fleet/',
+                    '/pricing',
+                    '/booking',
+                    '/about',
+                    '/contact',
+                    '/images/',
+                    '/manifest.webmanifest',
+                ],
+                disallow: [
+                    '/admin/',
+                    '/api/',
+                ],
+            },
         ],
         sitemap: `${CANONICAL_URL}/sitemap.xml`,
         host: CANONICAL_URL,

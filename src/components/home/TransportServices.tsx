@@ -43,7 +43,7 @@ const services = [
         subtitle: 'Historical Sites • Guided Tours',
         description: 'Enrich your Umrah with visits to sacred sites like Masjid Quba, Mount Uhud, and Cave Hira. Our knowledgeable drivers ensure you experience the history of Islam with comfort and convenience.',
         icon: <MapPin size={32} className="text-primary" />,
-        image: '/images/blog/makkah-haram-view.jpg',
+        image: '/images/services/ziyarat-tours-v2.png',
         link: '/services/ziyarat-tours',
         keywords: ['Makkah Ziyarat', 'Madinah Ziyarat']
     }
