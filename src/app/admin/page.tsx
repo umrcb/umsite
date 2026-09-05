@@ -52,11 +52,16 @@ export default async function AdminDashboard() {
         confirmedBookings: safeStats.completedBookings || 0,
         routesCount: await routeService.getRoutes().then(r => r.length).catch(() => 0),
         totalRevenue: safeStats.revenue || 0,
-        recentBookings: (recentBookings || []).map(b => ({
-            ...b,
-            id: b.id || (b as any)._id?.toString() || '',
-            status: b.status || 'pending'
-        })) as any, 
+        recentBookings: (recentBookings || []).map(b => {
+            const { _id, ...rest } = b as any;
+            return {
+                ...rest,
+                id: b.id || _id?.toString() || '',
+                createdAt: rest.createdAt ? new Date(rest.createdAt).toISOString() : null,
+                updatedAt: rest.updatedAt ? new Date(rest.updatedAt).toISOString() : null,
+                status: b.status || 'pending'
+            };
+        }) as any, 
         recentLogs: (logsData ? logsData.logs : []).map(l => ({
             ...l,
             timestamp: new Date(l.timestamp),

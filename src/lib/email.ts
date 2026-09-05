@@ -1,6 +1,20 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Delay instantiation to prevent crashing if RESEND_API_KEY is missing on module load
+let resend: Resend | null = null;
+const getResend = () => {
+    if (!resend) {
+        if (!process.env.RESEND_API_KEY) {
+            console.warn("RESEND_API_KEY is missing. Email sending will not work.");
+            // Create a dummy instance or let it throw when actually used.
+            // Better to throw when actually sending, so we just instantiate it anyway 
+            // and let it fail later, or we can check during send.
+        }
+        resend = new Resend(process.env.RESEND_API_KEY || 'dummy_key_to_prevent_crash');
+    }
+    return resend;
+};
+
 const FROM_EMAIL = 'Umrah Cabs <booking@umrahcabs.com>'; // Professional sender name with verified domain
 const REPLY_TO_EMAIL = 'umrahcabs1@gmail.com'; // Where customer replies will go
 
@@ -15,7 +29,7 @@ export const sendEmail = async ({ to, subject, html }: EmailOptions) => {
     console.log(`[Email] Environment check - RESEND_API_KEY: ${!!process.env.RESEND_API_KEY ? 'Set' : 'Missing'}`);
 
     try {
-        const { data, error } = await resend.emails.send({
+        const { data, error } = await getResend().emails.send({
             from: FROM_EMAIL,
             reply_to: REPLY_TO_EMAIL,
             to,
