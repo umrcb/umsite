@@ -15,12 +15,12 @@ const STORAGE_KEY = 'transport_bookings';
 
 export const getBookings = (): Booking[] => {
     if (typeof window === 'undefined') return [];
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) return [];
     try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (!stored) return [];
         return JSON.parse(stored).sort((a: Booking, b: Booking) => b.timestamp - a.timestamp);
     } catch (e) {
-        console.error('Failed to parse bookings', e);
+        console.warn('localStorage access denied or failed to parse', e);
         return [];
     }
 };
@@ -35,13 +35,21 @@ export const saveBooking = (booking: Omit<Booking, 'id' | 'timestamp' | 'status'
     };
 
     bookings.unshift(newBooking);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(bookings));
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(bookings));
+    } catch (e) {
+        console.warn('localStorage access denied', e);
+    }
     return newBooking;
 };
 
 export const updateBookingStatus = (id: string, status: Booking['status']) => {
     const bookings = getBookings();
     const updated = bookings.map(b => b.id === id ? { ...b, status } : b);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    } catch (e) {
+        console.warn('localStorage access denied', e);
+    }
     return updated;
 };

@@ -27,40 +27,54 @@ export default function CookieConsent() {
     };
 
     useEffect(() => {
-        // Check if user has already made a choice
-        const consent = localStorage.getItem('cookie_consent');
+        try {
+            // Check if user has already made a choice
+            const consent = localStorage.getItem('cookie_consent');
 
-        if (consent) {
-            // Apply existing preference
-            if (consent === 'accepted') {
-                updateConsent(true);
-            } else if (consent === 'rejected') {
-                updateConsent(false);
+            if (consent) {
+                // Apply existing preference
+                if (consent === 'accepted') {
+                    updateConsent(true);
+                } else if (consent === 'rejected') {
+                    updateConsent(false);
+                }
+            } else {
+                // Function to show banner
+                const showBanner = () => setIsVisible(true);
+
+                window.addEventListener('preloader-complete', showBanner);
+
+                // Fallback
+                const fallbackTimer = setTimeout(showBanner, 2500);
+
+                return () => {
+                    window.removeEventListener('preloader-complete', showBanner);
+                    clearTimeout(fallbackTimer);
+                };
             }
-        } else {
-            // Function to show banner
-            const showBanner = () => setIsVisible(true);
-
-            window.addEventListener('preloader-complete', showBanner);
-
-            // Fallback
-            const fallbackTimer = setTimeout(showBanner, 2500);
-
-            return () => {
-                window.removeEventListener('preloader-complete', showBanner);
-                clearTimeout(fallbackTimer);
-            };
+        } catch (error) {
+            console.warn('localStorage access denied:', error);
+            // Show banner anyway if we can't access localStorage
+            setIsVisible(true);
         }
     }, []);
 
     const handleAccept = () => {
-        localStorage.setItem('cookie_consent', 'accepted');
+        try {
+            localStorage.setItem('cookie_consent', 'accepted');
+        } catch (error) {
+            console.warn('localStorage access denied:', error);
+        }
         updateConsent(true);
         setIsVisible(false);
     };
 
     const handleReject = () => {
-        localStorage.setItem('cookie_consent', 'rejected');
+        try {
+            localStorage.setItem('cookie_consent', 'rejected');
+        } catch (error) {
+            console.warn('localStorage access denied:', error);
+        }
         updateConsent(false);
         setIsVisible(false);
     };

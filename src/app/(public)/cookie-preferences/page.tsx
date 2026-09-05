@@ -24,19 +24,23 @@ export default function CookiePreferences() {
     const [saved, setSaved] = useState(false);
 
     useEffect(() => {
-        const savedConsent = localStorage.getItem('cookie_preferences');
-        if (savedConsent) {
-            try {
+        try {
+            const savedConsent = localStorage.getItem('cookie_preferences');
+            if (savedConsent) {
                 setSettings(JSON.parse(savedConsent));
-            } catch (e) {
-                console.error('Failed to parse cookie preferences', e);
             }
+        } catch (error) {
+            console.warn('localStorage access denied', error);
         }
     }, []);
 
     const handleSave = () => {
-        localStorage.setItem('cookie_preferences', JSON.stringify(settings));
-        localStorage.setItem('cookie_consent', 'custom');
+        try {
+            localStorage.setItem('cookie_preferences', JSON.stringify(settings));
+            localStorage.setItem('cookie_consent', 'custom');
+        } catch (error) {
+            console.warn('localStorage access denied', error);
+        }
         setSaved(true);
         setTimeout(() => {
             setSaved(false);
