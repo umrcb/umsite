@@ -1,13 +1,8 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-// Create a transporter using environment variables
-const transporter = nodemailer.createTransport({
-    service: 'gmail', // Or use 'host', 'port', etc. for other providers
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-    },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
+const FROM_EMAIL = 'Umrah Cabs <booking@umrahcabs.com>'; // Professional sender name with verified domain
+const REPLY_TO_EMAIL = 'umrahcabs1@gmail.com'; // Where customer replies will go
 
 interface EmailOptions {
     to: string;
@@ -16,26 +11,27 @@ interface EmailOptions {
 }
 
 export const sendEmail = async ({ to, subject, html }: EmailOptions) => {
-    // Debug logging for server-side troubleshooting
     console.log(`[Email] Attempting to send email to: ${to.substring(0, 3)}***@${to.split('@')[1]}`);
-    console.log(`[Email] Environment check - USER: ${!!process.env.EMAIL_USER ? 'Set' : 'Missing'}, PASS: ${!!process.env.EMAIL_PASS ? 'Set' : 'Missing'}`);
+    console.log(`[Email] Environment check - RESEND_API_KEY: ${!!process.env.RESEND_API_KEY ? 'Set' : 'Missing'}`);
 
     try {
-        const mailOptions = {
-            from: process.env.EMAIL_USER,
+        const { data, error } = await resend.emails.send({
+            from: FROM_EMAIL,
+            reply_to: REPLY_TO_EMAIL,
             to,
             subject,
             html,
-        };
+        });
 
-        const info = await transporter.sendMail(mailOptions);
-        console.log('[Email] Sent successfully. MessageId:', info.messageId);
+        if (error) {
+            console.error('[Email] Resend API Error:', error);
+            return false;
+        }
+
+        console.log('[Email] Sent successfully. Id:', data?.id);
         return true;
     } catch (error: any) {
-        console.error('[Email] Failed to send:', error.message);
-        if (error.response) {
-            console.error('[Email] SMTP Response:', error.response);
-        }
+        console.error('[Email] Failed to send exception:', error.message);
         return false;
     }
 };
@@ -80,10 +76,10 @@ const formatVehicles = (booking: BookingData) => {
 const formatPriceRow = (booking: BookingData) => {
     if (!booking.price) return '';
     return `<tr>
-        <td style="padding: 15px 20px; border-bottom: 1px solid #eee; width: 40%; color: #666;">
-            <div style="font-size: 12px; text-transform: uppercase;">Total Price</div>
+        <td style="padding: 16px 20px; border-bottom: 1px solid #E2E8F0; width: 40%; color: #64748B;">
+            <div style="font-size: 12px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;">Total Price</div>
         </td>
-        <td style="padding: 15px 20px; border-bottom: 1px solid #eee; font-weight: bold; color: #0F172A; font-size: 18px;">
+        <td style="padding: 16px 20px; border-bottom: 1px solid #E2E8F0; font-weight: 700; color: #0F172A; font-size: 18px;">
             ${booking.price}
         </td>
     </tr>`;
@@ -128,17 +124,23 @@ interface ContactFeedbackData {
 
 export const getContactFeedbackTemplate = ({ name, message }: ContactFeedbackData) => {
     return `
-    <div style="font-family: Arial, sans-serif; color: #333;">
-        <h1 style="color: #d4af37;">Thank you for contacting us</h1>
-        <p>Dear ${name},</p>
-        <p>We have received your message and will get back to you as soon as possible.</p>
-        
-        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
-            <h3>Your Message:</h3>
-            <p>${message}</p>
+    <div style="font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #0F172A; max-width: 600px; margin: 0 auto; background-color: #FFFFFF; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(15, 23, 42, 0.05); border: 1px solid #E2E8F0;">
+        <div style="text-align: center; border-bottom: 3px solid #D4AF37; padding-bottom: 20px; margin-bottom: 30px;">
+            <h1 style="color: #0F172A; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; margin: 0;">Thank You for Reaching Out</h1>
         </div>
+        
+        <div style="color: #334155; font-size: 16px; line-height: 1.6;">
+            <p style="margin-bottom: 15px;">Dear <strong>${name}</strong>,</p>
+            <p style="margin-bottom: 25px;">We have received your message and our support team will get back to you as soon as possible. Your inquiry is important to us.</p>
+            
+            <div style="background-color: #F8FAFC; padding: 20px; border-radius: 8px; border-left: 4px solid #D4AF37; margin: 30px 0;">
+                <h3 style="margin: 0 0 10px 0; font-size: 14px; text-transform: uppercase; color: #64748B; letter-spacing: 0.5px;">Your Message</h3>
+                <p style="margin: 0; color: #0F172A; font-style: italic;">"${message}"</p>
+            </div>
 
-        <p>Best Regards,<br/>Umrah Cabs Team</p>
+            <p style="margin-top: 30px; margin-bottom: 5px;">Best Regards,</p>
+            <p style="margin: 0; font-weight: 700; color: #D4AF37;">Umrah Cabs Support Team</p>
+        </div>
     </div>
 `;
 };
@@ -163,7 +165,7 @@ export const sendBookingConfirmationEmail = async (booking: BookingData) => {
 };
 
 export const sendAdminNewBookingEmail = async (booking: BookingData) => {
-    const adminEmail = process.env.ADMIN_EMAIL_NOTIFICATIONS || process.env.EMAIL_USER; // Fallback
+    const adminEmail = process.env.ADMIN_EMAIL_NOTIFICATIONS || 'umrahcabs1@gmail.com'; // Fallback
     if (!adminEmail) return false;
 
     // 1. Fetch Request Settings

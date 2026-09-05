@@ -11,7 +11,7 @@ export default function Step2Route({ hideButtons = false }: { hideButtons?: bool
     const [search, setSearch] = useState('');
 
     useEffect(() => {
-        fetch(`/api/pricing?t=${Date.now()}`, { cache: 'no-store' })
+        fetch(`/api/pricing`)
             .then(res => res.json())
             .then(data => {
                 if (data.routes) {

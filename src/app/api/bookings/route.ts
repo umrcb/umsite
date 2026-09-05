@@ -198,10 +198,10 @@ export async function POST(request: Request) {
 
         const booking = await addBooking(dbPayload as any);
 
-        // Send standardized confirmation email to customer
-        console.log('[Booking API] Processing customer email...');
+        // Send standardized emails and notifications
+        console.log('[Booking API] Processing emails and notifications...');
         try {
-            if (booking && bookingData.email) {
+            if (booking) {
                 const { sendBookingConfirmationEmail, sendAdminNewBookingEmail } = await import('@/lib/email');
 
                 const emailData = {
@@ -226,7 +226,9 @@ export async function POST(request: Request) {
                     phone: bookingData.phone,
                 };
 
-                await sendBookingConfirmationEmail(emailData);
+                if (bookingData.email) {
+                    await sendBookingConfirmationEmail(emailData);
+                }
                 await sendAdminNewBookingEmail(emailData);
                 console.log('Standardized emails sent successfully');
 

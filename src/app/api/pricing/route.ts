@@ -2,18 +2,13 @@ import { NextResponse } from 'next/server';
 import { routeService } from '@/services/routeService';
 import { VehicleService } from '@/services/vehicleService';
 import pricingData from '@/data/pricing.json';
-import { revalidateTag } from 'next/cache';
-
 const DEFAULT_ROUTES = pricingData.routes;
 const DEFAULT_VEHICLES = pricingData.vehicles;
 
-export const dynamic = 'force-dynamic'; // Force dynamic to avoid caching for debug
+export const revalidate = 300; // Cache for 5 minutes (300 seconds)
 
 export async function GET() {
     try {
-        revalidateTag('routes');
-        revalidateTag('vehicles');
-        
         const [routes, vehicles] = await Promise.all([
             routeService.getActiveRoutes(),
             VehicleService.getActiveVehicles()
