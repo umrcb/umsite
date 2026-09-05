@@ -618,7 +618,7 @@ export default function HotelTransfersPage() {
                                 <p className="text-slate-700 mb-6 italic">"{review.rev}"</p>
                                 <div className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-600">
-                                        {review.name.charAt(0)}
+                                        {(review.name || 'G').charAt(0)}
                                     </div>
                                     <div>
                                         <div className="font-bold text-[#0F172A]">{review.name}</div>

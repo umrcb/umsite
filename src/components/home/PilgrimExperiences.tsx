@@ -98,7 +98,7 @@ export default function PilgrimExperiences() {
 
                                 <div className="flex items-center gap-4 mt-auto pt-6 border-t border-[#F1F5F9]">
                                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-lg shrink-0 font-poppins">
-                                        {testimonial.name.charAt(0)}
+                                        {(testimonial.name || 'G').charAt(0)}
                                     </div>
                                     <div>
                                         <div className="font-bold text-[#0F172A] font-poppins">

@@ -61,7 +61,7 @@ export default function RecentBookingsTable({ bookings, onStatusChange }: Recent
                                 <td className="p-4">
                                     <div className="flex items-center gap-3">
                                         <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-navy-800 border border-gray-200 dark:border-navy-700 flex items-center justify-center text-xs font-bold text-gray-600 dark:text-gray-300">
-                                            {booking.name.charAt(0)}
+                                            {(booking.name || 'G').charAt(0)}
                                         </div>
                                         <div>
                                             <div className="font-semibold text-navy-900 dark:text-white text-sm">{booking.name}</div>

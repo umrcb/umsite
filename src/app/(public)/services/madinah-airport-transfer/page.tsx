@@ -472,7 +472,7 @@ export default async function MadinahAirportTransferPage() {
                                 <div className="flex items-center justify-between">
                                     <div className="flex items-center gap-3">
                                         <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-600">
-                                            {review.name.charAt(0)}
+                                            {(review.name || 'G').charAt(0)}
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-slate-900">{review.name}</h4>
