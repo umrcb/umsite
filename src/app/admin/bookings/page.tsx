@@ -483,7 +483,7 @@ export default function BookingsPage() {
 
                                                 <td className="p-4">
                                                     <span className={`px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wide border ${getStatusBadge(booking.status)}`}>
-                                                        {booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
+                                                        {(booking.status || 'pending').charAt(0).toUpperCase() + (booking.status || 'pending').slice(1)}
                                                     </span>
                                                     {booking.rating && (
                                                         <div className="mt-1 flex items-center gap-1 text-[10px] text-primary font-bold">

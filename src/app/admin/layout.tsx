@@ -122,7 +122,7 @@ export default function AdminLayout({
                 </div>
                 {user && (
                     <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-navy-900 font-bold text-sm shadow-md">
-                        {user.name.charAt(0)}
+                        {(user.name || 'Admin').charAt(0)}
                     </div>
                 )}
             </div>
@@ -177,10 +177,10 @@ export default function AdminLayout({
                 <div className="p-4 border-t border-navy-800 bg-navy-950/30">
                     <div className="flex items-center gap-3 p-2 rounded-xl bg-navy-800/50 border border-navy-700/50">
                         <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-navy-900 font-bold shadow-inner">
-                            {user.name.charAt(0)}
+                            {(user.name || 'Admin').charAt(0)}
                         </div>
                         <div className="flex-1 min-w-0">
-                            <div className="text-sm font-medium text-white truncate">{user.name}</div>
+                            <div className="text-sm font-medium text-white truncate">{user.name || 'Admin'}</div>
                             <div className="text-xs text-gray-400 truncate">{getRoleDisplay(user.role)}</div>
                         </div>
                         <button

@@ -175,7 +175,7 @@ function LogsContent() {
                                         <td>
                                             <div className="flex items-center gap-2">
                                                 <div className="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-xs font-bold">
-                                                    {log.user.charAt(0).toUpperCase()}
+                                                    {(log.user || 'U').charAt(0).toUpperCase()}
                                                 </div>
                                                 <span className="font-medium text-sm">{log.user}</span>
                                             </div>
