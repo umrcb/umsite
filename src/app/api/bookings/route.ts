@@ -7,6 +7,7 @@ import { getSettings } from '@/lib/settings-storage';
 import { routeService, RouteWithPrices } from '@/services/routeService';
 import { VehicleService } from '@/services/vehicleService';
 import { calculateFinalPrice } from '@/lib/pricing';
+import { formatBookingReference } from '@/lib/formatters';
 
 
 export async function GET() {
@@ -208,7 +209,7 @@ export async function POST(request: Request) {
                     name: bookingData.name,
                     email: bookingData.email,
                     status: booking.status || 'pending',
-                    id: ((booking as any)._id || booking.id).toString().slice(-8).toUpperCase(),
+                    id: formatBookingReference(((booking as any)._id || booking.id).toString()),
                     vehicle: bookingData.vehicle || selectedVehiclesList.map(v => `${v.quantity}x ${v.name}`).join(', '),
                     pickup: bookingData.pickup,
                     dropoff: bookingData.dropoff,

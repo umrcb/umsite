@@ -8,6 +8,7 @@ import { Toast } from '@/components/ui/Toast';
 import dynamic from 'next/dynamic';
 import { downloadCSV } from '@/lib/export';
 import { usePusher } from '@/hooks/usePusher';
+import { formatBookingReference } from '@/lib/formatters';
 
 import BookingDetailsModal from '@/components/admin/bookings/BookingDetailsModal';
 
@@ -238,7 +239,7 @@ export default function BookingsPage() {
             const vehiclesStr = b.selectedVehicles?.map(v => `${v.name} (x${v.quantity})`).join('; ') || b.vehicle || 'Unknown';
 
             return {
-                'Booking ID': b.id,
+                'Booking ID': formatBookingReference(b.id),
                 'Date': b.date,
                 'Time': b.time,
                 'Name': b.name,
@@ -415,7 +416,7 @@ export default function BookingsPage() {
                                             >
                                                 <td className="p-4">
                                                     <div className="flex flex-col gap-1">
-                                                        <span className="font-mono text-xs text-primary">#{booking.id.slice(0, 8)}</span>
+                                                        <span className="font-mono text-xs text-primary font-bold">{formatBookingReference(booking.id)}</span>
                                                         <div className="flex items-center gap-2">
                                                             <span className="font-bold text-navy-900 dark:text-white">{booking.name}</span>
                                                         </div>

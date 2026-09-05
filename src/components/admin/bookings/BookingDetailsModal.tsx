@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { X, Calendar, MapPin, User, Mail, Phone, Briefcase, Car, Check, XCircle, CheckCircle2, CarFront } from 'lucide-react';
 import { format } from 'date-fns';
-
 import { Booking } from '@/lib/validations';
+import { formatBookingReference } from '@/lib/formatters';
 
 interface BookingWithDetails extends Omit<Booking, 'driverStatus'> {
     id: string; // Ensure id is required here since we use it
@@ -52,7 +52,7 @@ export default function BookingDetailsModal({ booking, isOpen, onClose, onStatus
                                 {booking.status}
                             </span>
                         </div>
-                        <p className="text-sm text-primary font-mono">ID: #{booking.id}</p>
+                        <p className="text-sm text-primary font-mono font-bold">ID: {formatBookingReference(booking.id)}</p>
                     </div>
                     <button
                         onClick={onClose}

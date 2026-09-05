@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Check, Clock, MapPin, X, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import { formatBookingReference } from '@/lib/formatters';
 
 // Helper icon component for arrows
 function ArrowUpRightIcon({ size = 24 }: { size?: number }) {
