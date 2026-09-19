@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Users, Briefcase, ArrowRight } from 'lucide-react';
 import styles from './About.module.css';
 
@@ -9,19 +10,19 @@ export default function FleetPreview() {
       name: "GMC Yukon",
       bestFor: "VIP Families",
       capacity: "7 Passengers",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800&auto=format&fit=crop"
+      image: "/images/fleet/gmc-transparent.png"
     },
     {
       name: "Toyota Hiace",
       bestFor: "Large Groups",
       capacity: "12 Passengers",
-      image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop"
+      image: "/images/fleet/hiace-transparent.png"
     },
     {
       name: "Hyundai Staria",
       bestFor: "Comfort Seekers",
       capacity: "9 Passengers",
-      image: "https://images.unsplash.com/photo-1633519842426-1fcb9e782d49?q=80&w=800&auto=format&fit=crop"
+      image: "/images/fleet/staria-transparent.png"
     }
   ];
 
@@ -41,10 +42,18 @@ export default function FleetPreview() {
         {fleet.map((vehicle, index) => (
           <div 
             key={index} 
-            className={`${styles.card} ${styles.fleetCard} ${styles.fadeInUp}`}
+            className={`group ${styles.card} ${styles.fleetCard} ${styles.fadeInUp} overflow-hidden`}
             style={{ animationDelay: `${0.1 * (index + 1)}s` }}
           >
-            <img src={vehicle.image} alt={vehicle.name} />
+            <div className="relative h-[220px] w-full bg-gradient-to-br from-slate-200 to-slate-50 flex items-center justify-center overflow-hidden transition-colors duration-300">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-white/70 rounded-full blur-[30px] mix-blend-overlay"></div>
+              <Image 
+                src={vehicle.image} 
+                alt={vehicle.name} 
+                fill
+                className="object-contain p-6 drop-shadow-[0_15px_15px_rgba(0,0,0,0.2)] mix-blend-multiply transition-transform duration-700 ease-out group-hover:scale-110"
+              />
+            </div>
             <div className={styles.fleetContent}>
               <h3 className={styles.cardTitle}>{vehicle.name}</h3>
               <div className={styles.fleetDetails}>

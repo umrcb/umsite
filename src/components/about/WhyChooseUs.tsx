@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
         
         <div className={`${styles.heroImageContainer} ${styles.fadeInUp}`} style={{ animationDelay: '0.3s' }}>
           <img 
-            src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop" 
+            src="/images/why_choose_us.jpg" 
             alt="Luxury vehicle interior showing premium comfort"
           />
         </div>
